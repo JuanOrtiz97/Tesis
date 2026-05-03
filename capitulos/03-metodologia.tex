@@ -1,88 +1,80 @@
 \chapter{Metodología}
 
-El capítulo metodológico define el tipo de investigación, la unidad de análisis, los materiales, herramientas, escenarios de simulación y procedimientos necesarios para evaluar la incidencia de estrategias pasivas y materiales sostenibles sobre el desempeño energético y el confort térmico del proyecto arquitectónico.
+La metodología organiza el proceso de investigación como una adaptación del flujo desarrollado por \textcite{torres-barriusoSustainableBuildingStandards2025} para la definición, simulación e implementación de estándares sostenibles en Galápagos. En el artículo de referencia, el procedimiento parte de la caracterización de edificios representativos, establece una línea base, simula estrategias de mejora, define soluciones sostenibles y valida su aplicabilidad mediante Living Labs. En esta tesis, esa lógica se adapta al proyecto arquitectónico de la Defensoría del Pueblo en la isla San Cristóbal como caso de estudio, sin ejecutar una intervención física directa.
 
-La secuencia metodológica toma como referencia la lógica planteada por \textcite{torres-barriusoSustainableBuildingStandards2025} para el desarrollo de estándares sostenibles en Galápagos: caracterización de casos representativos, definición de una línea base, simulación de estrategias, validación técnica y generación de lineamientos replicables. En esta tesis, dicha lógica se adapta al proyecto de la Defensoría del Pueblo como caso de estudio arquitectónico, sin plantear una intervención física directa.
+El propósito metodológico no es replicar literalmente los Living Labs del artículo, sino trasladar su estructura de trabajo a una evaluación proyectual: construir una línea base del edificio, simular escenarios de optimización, comparar impactos y convertir los resultados en criterios aplicables para edificaciones públicas en contextos insulares.
 
 \section{Diseño de investigación}
 
-La investigación se plantea como no experimental, cuantitativa, prospectiva y comparativa. No se propone una intervención física directa sobre la edificación, sino la evaluación y comparación de escenarios de diseño mediante modelado digital y simulación energética.
+La investigación se plantea como no experimental, cuantitativa, prospectiva y comparativa. Es no experimental porque no modifica físicamente el edificio; cuantitativa porque evalúa indicadores de desempeño energético, confort térmico y sostenibilidad; prospectiva porque analiza escenarios de mejora antes de su implementación; y comparativa porque contrasta el escenario base con escenarios optimizados.
 
-El enfoque se basa en la construcción de un escenario base y tres escenarios optimizados. La comparación entre estos escenarios permitirá determinar la incidencia de las estrategias pasivas y materiales sostenibles sobre indicadores de desempeño energético, confort térmico y sostenibilidad.
+El enfoque se apoya en la relación BIM-BES: el modelado BIM permite organizar la información geométrica y constructiva del proyecto, mientras que la simulación energética permite evaluar el comportamiento del edificio bajo diferentes configuraciones de diseño.
 
 \section{Unidad de análisis}
 
-La unidad de análisis corresponde al proyecto arquitectónico de la Defensoría del Pueblo en la isla San Cristóbal, Galápagos. Se considera como modelo base el diseño actual del edificio público, sus condiciones constructivas, especificaciones materiales, criterios de ocupación y datos climáticos locales.
+La unidad de análisis corresponde al proyecto arquitectónico de la Defensoría del Pueblo en la isla San Cristóbal, Galápagos. El edificio se estudia como caso representativo de edificación pública en un contexto insular de alta sensibilidad ambiental, donde la eficiencia energética, el confort térmico y la selección de materiales deben responder a condiciones climáticas, logísticas y ecológicas particulares.
 
-\section{Fases metodológicas}
+\section{Estructura metodológica}
 
-La metodología se organiza en cinco fases vinculadas con el flujo del artículo de referencia y con los objetivos específicos de la tesis:
+La metodología se organiza en cinco fases consecutivas. Cada fase produce un insumo específico para la siguiente, de manera que el trabajo avance desde la caracterización del edificio hasta la formulación de lineamientos replicables.
 
-\begin{enumerate}
-  \item Caracterización del caso de estudio y levantamiento de información técnica.
-  \item Construcción del escenario base y definición de indicadores mínimos de evaluación.
-  \item Simulación de escenarios con estrategias pasivas y materiales sostenibles.
-  \item Comparación de impactos entre escenario base y escenarios optimizados.
-  \item Formulación de criterios de optimización y lineamientos replicables para edificaciones públicas en Galápagos.
-\end{enumerate}
+\begin{table}[H]
+  \centering
+  \caption{Fases metodológicas de la investigación}
+  \begin{tabular}{p{1.4cm}p{4cm}p{6.8cm}}
+    \toprule
+    Fase & Propósito & Producto esperado \\
+    \midrule
+    1 & Caracterización del caso de estudio & Ficha técnica del edificio, contexto climático y condiciones constructivas iniciales. \\
+    2 & Definición de línea base e indicadores & Modelo base y matriz de evaluación con criterios de energía, confort y sostenibilidad. \\
+    3 & Simulación de escenarios & Resultados comparables para escenario base, estrategias pasivas, materiales sostenibles y escenario combinado. \\
+    4 & Evaluación comparativa & Identificación de impactos, porcentajes de mejora y estrategias con mayor incidencia. \\
+    5 & Transferencia a criterios de optimización & Lineamientos replicables para edificaciones públicas en Galápagos. \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
-\section{Materiales e información de entrada}
+\section{Fase 1: caracterización del caso de estudio}
 
-Para el desarrollo del modelo base se utilizarán planos arquitectónicos, planos estructurales, topografía, especificaciones de materiales y sistemas constructivos actuales. Asimismo, se recopilarán datos climáticos de San Cristóbal, Galápagos, relacionados con temperatura, humedad, radiación solar y viento.
+La primera fase consiste en levantar y ordenar la información técnica del proyecto. Se considerarán planos arquitectónicos, planos estructurales, topografía, especificaciones de materiales, sistemas constructivos actuales, datos de implantación y condiciones climáticas de San Cristóbal.
 
-La información técnica del edificio permitirá definir parámetros térmicos, propiedades de materiales, sistemas de ventilación, condiciones de ocupación, horarios de uso y cargas internas necesarias para el análisis energético.
+Esta fase permite identificar las condiciones de partida del edificio: orientación, forma, envolvente, aperturas, protecciones solares, criterios de ventilación, materiales predominantes y posibles condicionantes de uso. También permite reconocer restricciones propias del contexto insular, como disponibilidad de materiales, transporte, mantenimiento y sensibilidad ambiental.
 
-\section{Herramientas de trabajo}
+\section{Fase 2: línea base e indicadores de evaluación}
 
-La investigación utilizará software BIM para modelado y coordinación, principalmente Revit, junto con herramientas de simulación energética como DesignBuilder, basado en el motor EnergyPlus. También se emplearán matrices de análisis en hojas de cálculo para comparar materiales sostenibles, huella de carbono e indicadores de desempeño.
+La segunda fase construye el escenario base del proyecto. Este escenario representa el diseño actual y sirve como punto de comparación para evaluar la incidencia de las estrategias propuestas. Para su construcción se definirán propiedades térmicas, datos climáticos, horarios de ocupación, cargas internas, ventilación, infiltración, sombreamiento y sistemas activos cuando correspondan.
 
-\section{Construcción del escenario base}
+De forma paralela se configurará una matriz de indicadores mínimos de sostenibilidad. Esta matriz integrará criterios provenientes de estándares como Minergie, WELL, CEELA, EDGE y LEED, junto con normativa local aplicable a Galápagos. La matriz no se plantea como una certificación formal, sino como una herramienta de lectura comparativa para ordenar el desempeño del proyecto.
 
-El escenario base se construirá a partir del proyecto arquitectónico disponible. Esta fase equivale a la línea base de desempeño: permite fijar las condiciones actuales del proyecto antes de introducir medidas de optimización. Se definirán parámetros térmicos, materiales y sistemas actuales, incluyendo:
+\section{Fase 3: simulación de escenarios}
 
-\begin{itemize}
-  \item Coeficiente de transmisión térmica de muros, techos, pisos y ventanas.
-  \item Espesores, densidades, conductividad y capacidad térmica de los materiales de la envolvente.
-  \item Factores de ganancia solar de ventanas y vidrios.
-  \item Hermeticidad, infiltración de aire y ventilación natural o mecánica.
-  \item Temperaturas internas de referencia, humedad relativa interior y exterior.
-  \item Radiación solar incidente, sombreado existente, ocupación y horarios de uso.
-  \item Tipo, capacidad y eficiencia de sistemas HVAC, cuando correspondan.
-\end{itemize}
-
-\section{Definición de escenarios de evaluación}
-
-La investigación contempla un escenario base y tres escenarios optimizados:
+La tercera fase evalúa el comportamiento del edificio mediante simulaciones energéticas. Los escenarios se estructuran de la siguiente manera:
 
 \begin{enumerate}
   \item Escenario base: diseño y materiales actuales del proyecto.
-  \item Escenario optimizado 1: incorporación de estrategias pasivas, como orientación, ventilación natural, inercia térmica y protección solar.
-  \item Escenario optimizado 2: incorporación de materiales sostenibles de bajo carbono, reciclados o con menor huella ambiental.
-  \item Escenario optimizado 3: combinación de estrategias pasivas y materiales sostenibles.
+  \item Escenario pasivo: incorporación de estrategias como control solar, ventilación natural, inercia térmica y protección de la envolvente.
+  \item Escenario material: incorporación de materiales sostenibles, de menor huella ambiental o mejor comportamiento térmico.
+  \item Escenario combinado: integración de estrategias pasivas y materiales sostenibles.
 \end{enumerate}
 
-Cada escenario será modelado digitalmente y evaluado mediante simulaciones energéticas comparables, de manera que los resultados permitan identificar mejoras frente al escenario base.
+Cada escenario deberá modelarse con criterios comparables para que las diferencias respondan a las estrategias evaluadas y no a cambios arbitrarios de configuración.
 
-\section{Simulación energética e indicadores}
+\section{Fase 4: evaluación comparativa}
 
-Las simulaciones se orientarán a evaluar pérdidas y ganancias térmicas, demanda energética, consumo, confort térmico, iluminación natural y ventilación. El uso de DesignBuilder permitirá configurar los parámetros climáticos, constructivos y operativos del edificio para cada escenario.
+La cuarta fase compara los resultados obtenidos en cada escenario. Los indicadores principales serán demanda energética, cargas térmicas, consumo estimado, horas de confort térmico, temperatura operativa, desempeño lumínico, ventilación y emisiones asociadas cuando exista información suficiente.
 
-La comparación de resultados se realizará entre el modelo base y los escenarios optimizados, considerando indicadores como carga térmica, consumo energético, horas de confort, temperatura operativa, emisiones asociadas y desempeño lumínico cuando exista información suficiente. Esta lógica permitirá pasar de una evaluación descriptiva del edificio a una evaluación cuantificada de impacto.
+El análisis se expresará mediante tablas y gráficos que permitan identificar variaciones entre escenarios. La comparación deberá priorizar porcentajes de mejora, reducciones de demanda, cambios en confort y factibilidad técnica de implementación.
 
-\section{Análisis comparativo y validación técnica}
+\section{Fase 5: criterios de optimización y transferencia}
 
-Los resultados se procesarán mediante tablas comparativas entre el escenario base y los modelos con estrategias pasivas, materiales sostenibles y combinación de ambos. Se utilizarán indicadores cuantitativos para estimar porcentajes de mejora, reducción de demanda energética y variación en condiciones de confort.
+La quinta fase transforma los resultados en criterios de optimización arquitectónica. Esta fase es equivalente a la transferencia del aprendizaje que el artículo de referencia desarrolla mediante Living Labs: los resultados del caso de estudio se convierten en lineamientos que pueden orientar decisiones de diseño en otras edificaciones públicas de Galápagos.
 
-La validación técnica se realizará mediante consistencia de parámetros, revisión de supuestos de modelado, comparación con literatura especializada y contraste con estándares de sostenibilidad aplicables al contexto de Galápagos. El análisis permitirá identificar las estrategias y materiales con mayor impacto, evaluar su viabilidad técnica y establecer recomendaciones para la optimización del proyecto arquitectónico.
+Los criterios resultantes deberán distinguir entre medidas prioritarias, medidas complementarias y medidas condicionadas por disponibilidad técnica o económica. Esta clasificación permitirá que la propuesta no sea solo una lista de recomendaciones, sino un conjunto de decisiones jerarquizadas por impacto y viabilidad.
 
-\section{Procedimiento operativo}
+\section{Herramientas de trabajo}
 
-El procedimiento se desarrollará en cinco fases:
+La investigación utilizará Revit para modelado y coordinación BIM, DesignBuilder como interfaz de simulación energética y EnergyPlus como motor de cálculo. También se emplearán matrices de análisis en hojas de cálculo para organizar indicadores, comparar escenarios, estimar mejoras y documentar criterios de selección de materiales.
 
-\begin{enumerate}
-  \item Recolección de datos: obtención de planos arquitectónicos, estructurales, especificaciones técnicas, datos climáticos y condiciones de uso.
-  \item Modelado y configuración: creación del modelo digital, definición de propiedades térmicas y configuración del escenario base.
-  \item Simulación: ejecución de simulaciones energéticas para el escenario base y escenarios optimizados.
-  \item Validación y comparación: revisión de resultados, contraste con literatura técnica, evaluación frente a indicadores y ajuste de supuestos.
-  \item Transferencia a lineamientos: formulación de criterios de optimización según impacto, factibilidad y pertinencia para el contexto insular.
-\end{enumerate}
+\section{Validación técnica}
+
+La validación técnica se realizará mediante revisión de consistencia de parámetros, contraste con literatura especializada, comparación con estándares de sostenibilidad aplicables y revisión crítica de supuestos de modelado. Cuando no existan mediciones reales del edificio, se explicitarán las limitaciones del modelo y se priorizará la consistencia comparativa entre escenarios.
