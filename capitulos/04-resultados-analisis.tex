@@ -8,6 +8,32 @@ La caracterización describe las condiciones arquitectónicas, climáticas y con
 
 El objetivo de esta sección es reconocer las condiciones iniciales que inciden en el desempeño ambiental del proyecto. En el contexto de Galápagos, la lectura del edificio debe considerar no solo el consumo energético, sino también las restricciones de transporte, mantenimiento, disponibilidad material y fragilidad ambiental.
 
+\section{Caracterización climática de San Cristóbal}
+
+La caracterización climática se construye a partir del archivo diario de San Cristóbal incorporado en la carpeta de datos de la tesis. El registro corresponde al año climático de referencia 2002 y contiene temperatura exterior, punto de rocío, radiación solar directa y difusa, velocidad y dirección del viento, presión atmosférica, altura solar y acimut solar.
+
+Los datos describen una condición cálido-húmeda, con temperatura media anual de $24,28\,^{\circ}\mathrm{C}$, humedad relativa media estimada de $81,06\,\%$ y radiación global diaria media estimada de $7,29\,\mathrm{kWh}/\mathrm{m}^{2}$. La temperatura media mensual más alta se registra en marzo, con $27,10\,^{\circ}\mathrm{C}$, mientras que septiembre presenta la media mensual más baja, con $21,73\,^{\circ}\mathrm{C}$. La velocidad media anual del viento es de $4,90\,\mathrm{m/s}$, con dirección media cercana a $156^{\circ}$, lo que sugiere la necesidad de analizar la ventilación natural según orientación, permeabilidad de fachada y recorrido interior del aire.
+
+\begin{table}[H]
+  \centering
+  \caption{Indicadores climáticos base para el caso de estudio}
+  \begin{tabular}{p{4.2cm}p{3cm}p{5.2cm}}
+    \toprule
+    Indicador & Valor & Implicación para el proyecto \\
+    \midrule
+    Temperatura media anual & $24,28\,^{\circ}\mathrm{C}$ & Priorizar estrategias de enfriamiento pasivo y control de cargas internas. \\
+    Rango diario anual & $19,96\,^{\circ}\mathrm{C}$ a $28,82\,^{\circ}\mathrm{C}$ & Evaluar oscilación térmica y capacidad de disipación nocturna. \\
+    Humedad relativa estimada & $81,06\,\%$ & Controlar ventilación, condensación y selección de materiales. \\
+    Radiación global diaria media & $7,29\,\mathrm{kWh}/\mathrm{m}^{2}$ & Diseñar protecciones solares y reducir ganancias por cubierta y fachada. \\
+    Velocidad media del viento & $4,90\,\mathrm{m/s}$ & Evaluar ventilación cruzada y extracción natural. \\
+    Dirección media del viento & $156^{\circ}$ & Relacionar orientación de aberturas con vientos predominantes. \\
+    \bottomrule
+  \end{tabular}
+  \fuente{Elaboración propia a partir del archivo climático de San Cristóbal.}
+\end{table}
+
+Esta lectura climática orienta la construcción de la línea base. Antes de simular escenarios de optimización, el modelo debe representar correctamente la exposición solar, la ventilación disponible, la sensibilidad de la envolvente a la radiación y el comportamiento higrotérmico de los materiales. En consecuencia, las estrategias a comparar no deben limitarse al cambio de materiales, sino incluir control solar, ventilación natural, sombreamiento, reducción de cargas térmicas y selección de envolventes compatibles con un ambiente húmedo.
+
 \section{Matriz de indicadores}
 
 La matriz de indicadores organiza los criterios con los que se evaluará el edificio. A diferencia de una certificación completa, esta matriz funciona como una herramienta de comparación entre escenarios. Los indicadores se agrupan en cinco dimensiones: energía, confort térmico, iluminación natural, materiales y adaptación al contexto insular.

@@ -47,7 +47,27 @@ La documentación del edificio incluirá la revisión de planos arquitectónicos
 
 \subsection{Datos climáticos}
 
-Se recopilarán datos climáticos históricos y actuales de San Cristóbal, Galápagos, considerando temperatura, humedad relativa, radiación solar y viento. Estos datos permitirán configurar las condiciones exteriores del modelo y evaluar la pertinencia de estrategias pasivas como ventilación natural, control solar e inercia térmica.
+Se recopilarán datos climáticos históricos y actuales de San Cristóbal, Galápagos, considerando temperatura, humedad, radiación solar, viento, presión atmosférica y geometría solar. Como insumo inicial se incorpora un archivo climático diario de referencia para el año 2002, con 365 registros comprendidos entre el 1 de enero y el 31 de diciembre. Este archivo permite configurar las condiciones exteriores del modelo y evaluar la pertinencia de estrategias pasivas como ventilación natural, control solar, reducción de ganancias térmicas e inercia térmica.
+
+La lectura preliminar del archivo muestra una temperatura media anual de $24,28\,^{\circ}\mathrm{C}$, con valores diarios entre $19,96\,^{\circ}\mathrm{C}$ y $28,82\,^{\circ}\mathrm{C}$. La humedad relativa media estimada a partir del punto de rocío es de $81,06\,\%$, la radiación global diaria media estimada alcanza $7,29\,\mathrm{kWh}/\mathrm{m}^{2}$ y la velocidad media del viento es de $4,90\,\mathrm{m/s}$. Estos valores confirman que el caso de estudio debe evaluarse como una edificación ubicada en un clima cálido-húmedo, con alta incidencia solar y potencial de ventilación natural.
+
+\begin{table}[H]
+  \centering
+  \caption{Variables climáticas consideradas para el modelo}
+  \begin{tabular}{p{4cm}p{3cm}p{5.5cm}}
+    \toprule
+    Variable & Unidad & Uso metodológico \\
+    \midrule
+    Temperatura de bulbo seco & $^{\circ}\mathrm{C}$ & Condición exterior para cargas térmicas y confort. \\
+    Punto de rocío & $^{\circ}\mathrm{C}$ & Estimación de humedad relativa y condición higrotérmica. \\
+    Radiación directa y difusa & $\mathrm{kWh}/\mathrm{m}^{2}$ & Evaluación de ganancias solares y control de sombreamiento. \\
+    Velocidad y dirección del viento & $\mathrm{m/s}$ y grados & Análisis del potencial de ventilación natural. \\
+    Presión atmosférica & Pa & Condición atmosférica de entrada para simulación. \\
+    Altura y acimut solar & grados & Definición de orientación, exposición y protecciones solares. \\
+    \bottomrule
+  \end{tabular}
+  \fuente{Elaboración propia a partir del archivo climático de San Cristóbal.}
+\end{table}
 
 \subsection{Condiciones de uso}
 

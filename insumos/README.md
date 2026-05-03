@@ -13,3 +13,4 @@ Regla de uso:
 ## Documentos guardados
 
 - `2026-02-23 Denuncia Tesis Juan Ortiz.docx`: denuncia de tesis usada como insumo base para estructurar resumen, problematica, objetivos, marco teorico, metodologia, plan de trabajo y anexos.
+- `datos-climaticos-san-cristobal-resumen.md`: sintesis del archivo climatico diario de San Cristobal para integrar a la metodologia y al caso de estudio.
