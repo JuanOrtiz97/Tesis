@@ -1,0 +1,162 @@
+\documentclass[12pt,a4paper]{report}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{titlesec}
+\usepackage{csquotes}
+\usepackage[style=apa,backend=biber]{biblatex}
+\usepackage{mathptmx}
+\usepackage{graphicx}
+\graphicspath{{Imagenes/}}
+
+\addbibresource{referencias.bib}
+
+\geometry{
+  left=3cm,
+  right=2.5cm,
+  top=2.5cm,
+  bottom=2.5cm
+}
+
+\onehalfspacing
+\setlength{\parindent}{1cm}
+\setlength{\parskip}{6pt}
+
+\titleformat{\chapter}
+  {\normalfont\bfseries\fontsize{16}{18}\selectfont}
+  {\thechapter.}{1em}{\MakeUppercase}
+
+\titleformat{\section}
+  {\normalfont\bfseries\fontsize{14}{16}\selectfont}
+  {\thesection}{1em}{}
+
+\titleformat{\subsection}
+  {\normalfont\bfseries\fontsize{12}{14}\selectfont}
+  {\thesubsection}{1em}{}
+
+\begin{document}
+
+% PORTADA
+\begin{titlepage}
+\centering
+
+\includegraphics[width=3cm]{Imagenes/logo_uda.png}
+
+\vspace{0.5cm}
+
+{\bfseries\fontsize{20}{22}\selectfont Universidad del Azuay\par}
+\vspace{0.4cm}
+
+{\bfseries\fontsize{18}{20}\selectfont Facultad de Diseño, Arquitectura y Arte\par}
+\vspace{0.4cm}
+
+{\fontsize{16}{18}\selectfont Maestría en Arquitectura con mención en\\ Construcción Sostenible\par}
+
+\vspace{1.2cm}
+
+{\bfseries\fontsize{16}{18}\selectfont
+EVALUACIÓN DE LA INCIDENCIA DE ESTRATEGIAS PASIVAS Y MATERIALES SOSTENIBLES EN EL DESEMPEÑO ENERGÉTICO Y EL CONFORT TÉRMICO DEL PROYECTO ARQUITECTÓNICO DE LA DEFENSORÍA DEL PUEBLO EN LA ISLA SAN CRISTÓBAL, GALÁPAGOS
+\par}
+
+\vspace{1.2cm}
+
+{\bfseries Autor:\par}
+Juan Daniel Ortiz Pacheco
+
+\vspace{0.8cm}
+
+{\bfseries Director:\par}
+Pablo Esteban Ochoa Pesantez
+
+\vfill
+
+Cuenca -- Ecuador\\
+2026
+
+\end{titlepage}
+
+\pagenumbering{roman}
+
+\chapter*{Dedicatoria}
+Texto de dedicatoria.
+
+\chapter*{Agradecimiento}
+Texto de agradecimiento.
+
+\chapter*{Resumen}
+Texto máximo de 150 palabras.
+
+\textbf{Palabras clave:} eficiencia energética, confort térmico, Galápagos, simulación energética, sostenibilidad.
+
+\chapter*{Abstract}
+English abstract.
+
+\textbf{Keywords:} energy efficiency, Galapagos, sustainability, thermal comfort.
+
+\tableofcontents
+\listoftables
+\listoffigures
+
+\clearpage
+\pagenumbering{arabic}
+
+\chapter{Introducción}
+
+\section{Planteamiento del problema}
+
+\section{Justificación}
+
+\section{Objetivos}
+
+\chapter{Marco teórico}
+
+\section{Sostenibilidad en arquitectura}
+
+\section{Eficiencia energética en edificaciones}
+
+\section{Estrategias pasivas de diseño}
+
+\section{Materiales sostenibles}
+
+\section{Normativas y estándares}
+
+\chapter{Metodología}
+
+\section{Tipo de investigación}
+
+\section{Modelación energética}
+
+\section{Definición de escenarios}
+
+\section{Parámetros de simulación}
+
+\chapter{Resultados}
+
+\section{Demanda energética}
+
+\section{Consumo energético}
+
+\section{Confort térmico}
+
+\section{Comparación de escenarios}
+
+\chapter{Discusión y conclusiones}
+
+\section{Discusión}
+
+\section{Conclusiones}
+
+\printbibliography
+
+\appendix
+
+\chapter{Anexos}
+
+\end{document}
