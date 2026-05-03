@@ -10,6 +10,7 @@ Repositorio remoto:
 
 - `main.tex`: archivo principal usado por Overleaf.
 - `normativas/`: documento oficial `Normas Apa UDA.docx` y resumen operativo `normas-apa-uda.md` para futuros trabajos.
+- `insumos/`: documentos fuente que se revisan antes de integrarlos al texto de la tesis.
 - `plantilla-main.tex`: plantilla base creada inicialmente para referencia.
 - `capitulos/`: capitulos separados que puedes usar si decides modularizar la tesis.
 - `anexos/`: anexos del documento.
