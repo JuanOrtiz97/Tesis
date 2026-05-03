@@ -15,7 +15,9 @@ Repositorio remoto:
 - `anexos/`: anexos del documento.
 - `Imagenes/`: imagenes usadas actualmente por `main.tex`.
 - `figuras/`: carpeta alternativa para figuras nuevas.
-- `referencias.bib`: bibliografia en formato BibTeX/BibLaTeX.
+- `referencias.bib`: bibliografia manual en formato BibTeX/BibLaTeX.
+- `bibliografia/Maestria.bib`: bibliografia exportada desde Zotero con Better BibTeX.
+- `scripts/actualizar-bibliografia.ps1`: actualiza `bibliografia/Maestria.bib` desde Zotero local.
 
 ## Flujo recomendado
 
@@ -33,6 +35,16 @@ git push
 ## Compilacion recomendada
 
 Usa `pdfLaTeX` con `Biber` para la bibliografia.
+
+## Zotero y Better BibTeX
+
+Para actualizar la bibliografia desde Zotero, abre Zotero en esta computadora y ejecuta:
+
+```powershell
+.\scripts\actualizar-bibliografia.ps1
+```
+
+El script descarga la coleccion `Maestria` desde Better BibTeX y elimina los campos `file` y `abstract` antes de guardar el archivo, para evitar subir rutas locales y textos largos innecesarios.
 
 ## Normas de formato
 
