@@ -13,3 +13,4 @@
 *.lot
 *.pdf
 _minted-*/
+insumos/*.docx
