@@ -9,7 +9,7 @@ Repositorio remoto:
 ## Estructura
 
 - `main.tex`: archivo principal usado por Overleaf.
-- `normas-apa-uda.md`: resumen operativo de las normas extraidas del documento oficial UDA.
+- `normativas/`: documento oficial `Normas Apa UDA.docx` y resumen operativo `normas-apa-uda.md` para futuros trabajos.
 - `plantilla-main.tex`: plantilla base creada inicialmente para referencia.
 - `capitulos/`: capitulos separados que puedes usar si decides modularizar la tesis.
 - `anexos/`: anexos del documento.
@@ -36,4 +36,4 @@ Usa `pdfLaTeX` con `Biber` para la bibliografia.
 
 ## Normas de formato
 
-El archivo `main.tex` esta configurado para seguir las indicaciones del documento `Normas Apa UDA.docx`: papel A4, Times, margenes institucionales, portada UDA, numeracion preliminar romana, capitulos numerados, interlineado y referencias APA con `biblatex`.
+El archivo `main.tex` esta configurado para seguir las indicaciones de `normativas/Normas Apa UDA.docx`: papel A4, Times, margenes institucionales, portada UDA, numeracion preliminar romana, capitulos numerados, interlineado y referencias APA con `biblatex`.
