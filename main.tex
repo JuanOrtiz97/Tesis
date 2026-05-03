@@ -1,9 +1,9 @@
-\documentclass[12pt,a4paper]{report}
+\documentclass[12pt,a4paper,oneside]{report}
 
-\usepackage[spanish]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{times}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{mathptmx}
 \usepackage{setspace}
 \usepackage{geometry}
 \usepackage{graphicx}
@@ -11,11 +11,11 @@
 \usepackage{caption}
 \usepackage{titlesec}
 \usepackage{csquotes}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
 \usepackage[style=apa,backend=biber]{biblatex}
-\usepackage{mathptmx}
-\usepackage{graphicx}
-\graphicspath{{Imagenes/}}
 
+\graphicspath{{Imagenes/}{figuras/}}
 \addbibresource{referencias.bib}
 
 \geometry{
@@ -29,83 +29,121 @@
 \setlength{\parindent}{1cm}
 \setlength{\parskip}{6pt}
 
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\fontsize{11}{13}\selectfont\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
 \titleformat{\chapter}
   {\normalfont\bfseries\fontsize{16}{18}\selectfont}
   {\thechapter.}{1em}{\MakeUppercase}
+\titlespacing*{\chapter}{0pt}{0pt}{12pt}
 
 \titleformat{\section}
   {\normalfont\bfseries\fontsize{14}{16}\selectfont}
   {\thesection}{1em}{}
+\titlespacing*{\section}{0pt}{12pt}{12pt}
 
 \titleformat{\subsection}
   {\normalfont\bfseries\fontsize{12}{14}\selectfont}
   {\thesubsection}{1em}{}
+\titlespacing*{\subsection}{0pt}{12pt}{12pt}
+
+\captionsetup{
+  font=normalsize,
+  labelfont=bf,
+  justification=raggedright,
+  singlelinecheck=false
+}
+
+\newcommand{\preliminar}[1]{%
+  \chapter*{\centering\fontsize{12}{14}\selectfont\bfseries\MakeUppercase{#1}}
+  \addcontentsline{toc}{chapter}{#1}
+}
+
+\newcommand{\fuente}[1]{%
+  {\fontsize{8}{10}\selectfont Fuente: #1\par}
+}
 
 \begin{document}
 
-% PORTADA
 \begin{titlepage}
-\centering
+  \centering
+  \includegraphics[width=2cm,height=2cm,keepaspectratio]{logo_uda.png}
 
-\includegraphics[width=3cm]{Imagenes/logo_uda.png}
+  \vspace{0.5cm}
 
-\vspace{0.5cm}
+  {\bfseries\fontsize{22}{24}\selectfont Universidad del Azuay\par}
+  \vspace{22pt}
 
-{\bfseries\fontsize{20}{22}\selectfont Universidad del Azuay\par}
-\vspace{0.4cm}
+  {\bfseries\fontsize{22}{24}\selectfont Facultad de Diseño, Arquitectura y Arte\par}
+  \vspace{22pt}
 
-{\bfseries\fontsize{18}{20}\selectfont Facultad de Diseño, Arquitectura y Arte\par}
-\vspace{0.4cm}
+  {\fontsize{22}{24}\selectfont Maestría en Arquitectura con mención en\\ Construcción Sostenible\par}
+  \vspace{26pt}
 
-{\fontsize{16}{18}\selectfont Maestría en Arquitectura con mención en\\ Construcción Sostenible\par}
+  {\bfseries\fontsize{20}{22}\selectfont
+  EVALUACIÓN DE LA INCIDENCIA DE ESTRATEGIAS PASIVAS Y MATERIALES SOSTENIBLES EN EL DESEMPEÑO ENERGÉTICO Y EL CONFORT TÉRMICO DEL PROYECTO ARQUITECTÓNICO DE LA DEFENSORÍA DEL PUEBLO EN LA ISLA SAN CRISTÓBAL, GALÁPAGOS
+  \par}
 
-\vspace{1.2cm}
+  \vspace{1.2cm}
 
-{\bfseries\fontsize{16}{18}\selectfont
-EVALUACIÓN DE LA INCIDENCIA DE ESTRATEGIAS PASIVAS Y MATERIALES SOSTENIBLES EN EL DESEMPEÑO ENERGÉTICO Y EL CONFORT TÉRMICO DEL PROYECTO ARQUITECTÓNICO DE LA DEFENSORÍA DEL PUEBLO EN LA ISLA SAN CRISTÓBAL, GALÁPAGOS
-\par}
+  {\bfseries\fontsize{16}{18}\selectfont Autor:\par}
+  {\bfseries\fontsize{16}{18}\selectfont Juan Daniel Ortiz Pacheco\par}
+  \vspace{16pt}
 
-\vspace{1.2cm}
+  {\bfseries\fontsize{16}{18}\selectfont Director:\par}
+  {\bfseries\fontsize{16}{18}\selectfont Pablo Esteban Ochoa Pesantez\par}
 
-{\bfseries Autor:\par}
-Juan Daniel Ortiz Pacheco
+  \vfill
 
-\vspace{0.8cm}
-
-{\bfseries Director:\par}
-Pablo Esteban Ochoa Pesantez
-
-\vfill
-
-Cuenca -- Ecuador\\
-2026
-
+  {\bfseries\fontsize{16}{18}\selectfont Cuenca -- Ecuador\par}
+  {\bfseries\fontsize{16}{18}\selectfont 2026\par}
 \end{titlepage}
 
 \pagenumbering{roman}
 
-\chapter*{Dedicatoria}
+\chapter*{\raggedleft\fontsize{12}{14}\selectfont\bfseries DEDICATORIA}
+\addcontentsline{toc}{chapter}{Dedicatoria}
+\begin{flushright}
+\begin{minipage}{0.5\textwidth}
+\singlespacing
 Texto de dedicatoria.
+\end{minipage}
+\end{flushright}
 
-\chapter*{Agradecimiento}
+\chapter*{\raggedleft\fontsize{12}{14}\selectfont\bfseries AGRADECIMIENTO}
+\addcontentsline{toc}{chapter}{Agradecimiento}
+\begin{flushright}
+\begin{minipage}{0.5\textwidth}
+\singlespacing
 Texto de agradecimiento.
+\end{minipage}
+\end{flushright}
 
-\chapter*{Resumen}
-Texto máximo de 150 palabras.
+\preliminar{Resumen}
+\singlespacing
+Texto máximo de 150 palabras. El resumen debe presentar una breve explicación de los objetivos del trabajo, la corriente teórica en la que se basa la investigación, los métodos o recursos utilizados, los hallazgos y las conclusiones más relevantes.
 
 \textbf{Palabras clave:} eficiencia energética, confort térmico, Galápagos, simulación energética, sostenibilidad.
 
-\chapter*{Abstract}
+\preliminar{Abstract}
+\singlespacing
 English abstract.
 
 \textbf{Keywords:} energy efficiency, Galapagos, sustainability, thermal comfort.
 
+\clearpage
+\pagestyle{empty}
+\preliminar{Índice}
 \tableofcontents
 \listoftables
 \listoffigures
 
 \clearpage
+\pagestyle{fancy}
 \pagenumbering{arabic}
+\onehalfspacing
 
 \chapter{Introducción}
 
@@ -129,15 +167,20 @@ English abstract.
 
 \chapter{Metodología}
 
-\section{Tipo de investigación}
+Se deberá iniciar precisando las características del estudio, si es bajo el enfoque cuantitativo, cualitativo o mixto. A continuación, se explicará el alcance del estudio y el tipo de diseño metodológico.
 
-\section{Modelación energética}
+\section{Participantes}
+Presentar el contexto, la población y la forma en la que se seleccionaron los participantes.
 
-\section{Definición de escenarios}
+\section{Instrumentos}
+Explicar los instrumentos utilizados, sus autores, variables o categorías de análisis, confiabilidad y validez cuando corresponda.
 
-\section{Parámetros de simulación}
+\section{Procedimiento}
+Precisar el procedimiento utilizado para el estudio, el análisis y el software empleado. Se recomienda construir el procedimiento por fases vinculadas con los objetivos específicos.
 
 \chapter{Resultados}
+
+En la redacción de los resultados hay que ser directo, breve y claro. No se deben repetir literalmente los datos de tablas o figuras; el texto debe integrar los hallazgos relevantes.
 
 \section{Demanda energética}
 
@@ -150,13 +193,21 @@ English abstract.
 \chapter{Discusión y conclusiones}
 
 \section{Discusión}
+Relacionar los resultados con estudios recientes, ventajas, aportes, limitaciones y sugerencias para futuras investigaciones.
 
 \section{Conclusiones}
+Recoger los aspectos más destacados del estudio. Se recomienda no utilizar viñetas ni numerales.
 
-\printbibliography
+\clearpage
+\chapter*{REFERENCIAS}
+\addcontentsline{toc}{chapter}{Referencias}
+\singlespacing
+\printbibliography[heading=none]
 
 \appendix
-
+\clearpage
 \chapter{Anexos}
+
+Se ubicará en anexos la información estrictamente necesaria para la comprensión del trabajo de grado: datos inéditos, textos de difícil acceso, cuestionarios, cálculos especializados u otros respaldos.
 
 \end{document}
