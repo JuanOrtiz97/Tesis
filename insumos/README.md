@@ -15,3 +15,4 @@ Regla de uso:
 - `2026-02-23 Denuncia Tesis Juan Ortiz.docx`: denuncia de tesis usada como insumo base para estructurar resumen, problematica, objetivos, marco teorico, metodologia, plan de trabajo y anexos.
 - `datos-climaticos-san-cristobal-resumen.md`: sintesis del archivo climatico diario de San Cristobal para integrar a la metodologia y al caso de estudio.
 - `epw-san-cristobal-tmyx-2011-2025-resumen.md`: sintesis del archivo EPW horario TMYx 2011-2025 de San Cristobal, fuente climatica principal para simulacion.
+- `marco-teorico-borrador-extraido.md`: extraccion del documento Word de marco teorico usado para reconstruir el capitulo 2 con citas BibLaTeX.
