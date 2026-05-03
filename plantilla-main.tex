@@ -1,0 +1,78 @@
+\documentclass[12pt,letterpaper,oneside]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{lmodern}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{csquotes}
+\usepackage[hidelinks]{hyperref}
+\usepackage[backend=biber,style=apa]{biblatex}
+
+\geometry{
+  left=3cm,
+  right=2.5cm,
+  top=2.5cm,
+  bottom=2.5cm
+}
+
+\addbibresource{referencias.bib}
+\graphicspath{{figuras/}}
+\onehalfspacing
+
+\title{Titulo de la tesis}
+\author{Nombre del autor}
+\date{\today}
+
+\begin{document}
+
+\begin{titlepage}
+  \centering
+  {\Large Nombre de la universidad\par}
+  \vspace{1cm}
+  {\large Facultad o carrera\par}
+  \vspace{2cm}
+  {\bfseries\Large Titulo de la tesis\par}
+  \vspace{2cm}
+  {\large Trabajo de titulacion presentado por:\par}
+  \vspace{0.5cm}
+  {\large Nombre del autor\par}
+  \vfill
+  {\large Tutor: Nombre del tutor\par}
+  \vspace{1cm}
+  {\large Ciudad, Pais\par}
+  {\large \the\year\par}
+\end{titlepage}
+
+\pagenumbering{roman}
+\chapter*{Resumen}
+\addcontentsline{toc}{chapter}{Resumen}
+Escribe aqui el resumen de la investigacion.
+
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+Write the thesis abstract here.
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\clearpage
+\pagenumbering{arabic}
+
+\include{capitulos/01-introduccion}
+\include{capitulos/02-marco-teorico}
+\include{capitulos/03-metodologia}
+\include{capitulos/04-resultados}
+\include{capitulos/05-conclusiones}
+
+\printbibliography[heading=bibintoc,title={Referencias}]
+
+\appendix
+\include{anexos/anexo-a}
+
+\end{document}
