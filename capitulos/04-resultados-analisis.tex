@@ -35,7 +35,7 @@ Los datos describen una condición cálido-húmeda, con temperatura media anual 
   \fuente{Basado en el archivo climático EPW de San Cristóbal.}
 \end{table}
 
-La lectura gráfica del EPW permite reconocer la estacionalidad térmica, la disponibilidad de radiación, el comportamiento del viento y la condición de cielo del caso de estudio. Estos gráficos no sustituyen la simulación energética del edificio, pero permiten justificar las variables climáticas que deben controlarse en el modelo base y en los escenarios de optimización.
+La lectura gráfica del EPW se concentra en las variables más relevantes para el caso de estudio: temperatura y humedad, radiación solar, viento y variación horaria de la temperatura exterior. Estos gráficos no sustituyen la simulación energética del edificio, pero permiten justificar las variables climáticas que deben controlarse en el modelo base y en los escenarios de optimización.
 
 \begin{figure}[H]
   \centering
@@ -60,66 +60,8 @@ La lectura gráfica del EPW permite reconocer la estacionalidad térmica, la dis
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{figuras/epw-cielo-precipitacion-mensual.pdf}
-  \caption{Cobertura de cielo y precipitación mensual}
-  \fuente{Basado en el archivo EPW TMYx 2011--2025 de San Cristóbal.}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth]{figuras/epw-perfil-horario-temperatura-radiacion.pdf}
-  \caption{Perfil horario medio de temperatura exterior y radiación global horizontal}
-  \fuente{Basado en el archivo EPW TMYx 2011--2025 de San Cristóbal.}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
   \includegraphics[width=\textwidth]{figuras/epw-mapa-calor-temperatura.pdf}
   \caption{Mapa horario de temperatura exterior del año meteorológico típico}
-  \fuente{Basado en el archivo EPW TMYx 2011--2025 de San Cristóbal.}
-\end{figure}
-
-Como apoyo a la lectura climática, se generaron visualizaciones complementarias con diferentes tipos de gráfico. Estas permiten observar los mismos datos desde enfoques distintos: distribución, comparación mensual, relación entre variables y síntesis de indicadores.
-
-\begin{figure}[H]
-  \centering
-  \begin{minipage}{0.48\textwidth}
-    \includegraphics[width=\textwidth]{figuras/epw-tipo-area-rango-temperatura.pdf}
-  \end{minipage}\hfill
-  \begin{minipage}{0.48\textwidth}
-    \includegraphics[width=\textwidth]{figuras/epw-tipo-barras-viento-mensual.pdf}
-  \end{minipage}
-
-  \vspace{0.3cm}
-
-  \begin{minipage}{0.48\textwidth}
-    \includegraphics[width=\textwidth]{figuras/epw-tipo-columnas-3d-radiacion.pdf}
-  \end{minipage}\hfill
-  \begin{minipage}{0.48\textwidth}
-    \includegraphics[width=\textwidth]{figuras/epw-tipo-anillos-rangos-temperatura.pdf}
-  \end{minipage}
-  \caption{Visualizaciones complementarias del EPW: área, barras, columnas 3D y anillos}
-  \fuente{Basado en el archivo EPW TMYx 2011--2025 de San Cristóbal.}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \begin{minipage}{0.48\textwidth}
-    \includegraphics[width=\textwidth]{figuras/epw-tipo-radar-indicadores-climaticos.pdf}
-  \end{minipage}\hfill
-  \begin{minipage}{0.48\textwidth}
-    \includegraphics[width=\textwidth]{figuras/epw-tipo-xy-temperatura-humedad.pdf}
-  \end{minipage}
-
-  \vspace{0.3cm}
-
-  \begin{minipage}{0.48\textwidth}
-    \includegraphics[width=\textwidth]{figuras/epw-tipo-combinado-radiacion-temperatura.pdf}
-  \end{minipage}\hfill
-  \begin{minipage}{0.48\textwidth}
-    \includegraphics[width=\textwidth]{figuras/epw-tipo-superficie-3d-temperatura.pdf}
-  \end{minipage}
-  \caption{Visualizaciones complementarias del EPW: radar, dispersión, combinado y superficie 3D}
   \fuente{Basado en el archivo EPW TMYx 2011--2025 de San Cristóbal.}
 \end{figure}
 
