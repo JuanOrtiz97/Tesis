@@ -12,5 +12,6 @@
 *.lof
 *.lot
 *.pdf
+!figuras/*.pdf
 _minted-*/
 insumos/*.docx

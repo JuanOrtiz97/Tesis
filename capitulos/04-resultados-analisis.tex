@@ -22,7 +22,7 @@ Los datos describen una condición cálido-húmeda, con temperatura media anual 
     Indicador & Valor & Implicación para el proyecto \\
     \midrule
     Temperatura media anual & $24,28\,^{\circ}\mathrm{C}$ & Priorizar estrategias de enfriamiento pasivo y control de cargas internas. \\
-    Rango diario anual & $19,96\,^{\circ}\mathrm{C}$ a $28,82\,^{\circ}\mathrm{C}$ & Evaluar oscilación térmica y capacidad de disipación nocturna. \\
+    Rango horario anual & $15,70\,^{\circ}\mathrm{C}$ a $32,90\,^{\circ}\mathrm{C}$ & Evaluar oscilación térmica y capacidad de disipación nocturna. \\
     Humedad relativa media & $81,37\,\%$ & Controlar ventilación, condensación y selección de materiales. \\
     Radiación global horizontal media diaria & $5,89\,\mathrm{kWh}/\mathrm{m}^{2}$ por día & Diseñar protecciones solares y reducir ganancias por cubierta y fachada. \\
     Velocidad media del viento & $4,90\,\mathrm{m/s}$ & Evaluar ventilación cruzada y extracción natural. \\
@@ -31,6 +31,50 @@ Los datos describen una condición cálido-húmeda, con temperatura media anual 
   \end{tabular}
   \fuente{Elaboración propia a partir del archivo climático de San Cristóbal.}
 \end{table}
+
+La lectura gráfica del EPW permite reconocer la estacionalidad térmica, la disponibilidad de radiación, el comportamiento del viento y la condición de cielo del caso de estudio. Estos gráficos no sustituyen la simulación energética del edificio, pero permiten justificar las variables climáticas que deben controlarse en el modelo base y en los escenarios de optimización.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{epw-temperatura-humedad-mensual.pdf}
+  \caption{Temperatura media y humedad relativa mensual de San Cristóbal}
+  \fuente{Elaboración propia a partir del archivo EPW TMYx 2011--2025.}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{epw-radiacion-mensual.pdf}
+  \caption{Radiación solar mensual: GHI, DNI y DHI}
+  \fuente{Elaboración propia a partir del archivo EPW TMYx 2011--2025.}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{epw-viento-direcciones.pdf}
+  \caption{Distribución de viento por dirección}
+  \fuente{Elaboración propia a partir del archivo EPW TMYx 2011--2025.}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{epw-cielo-precipitacion-mensual.pdf}
+  \caption{Cobertura de cielo y precipitación mensual}
+  \fuente{Elaboración propia a partir del archivo EPW TMYx 2011--2025.}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{epw-perfil-horario-temperatura-radiacion.pdf}
+  \caption{Perfil horario medio de temperatura exterior y radiación global horizontal}
+  \fuente{Elaboración propia a partir del archivo EPW TMYx 2011--2025.}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{epw-mapa-calor-temperatura.pdf}
+  \caption{Mapa horario de temperatura exterior del año meteorológico típico}
+  \fuente{Elaboración propia a partir del archivo EPW TMYx 2011--2025.}
+\end{figure}
 
 Esta lectura climática orienta la construcción de la línea base. Antes de simular escenarios de optimización, el modelo debe representar correctamente la exposición solar, la ventilación disponible, la sensibilidad de la envolvente a la radiación y el comportamiento higrotérmico de los materiales. En consecuencia, las estrategias a comparar no deben limitarse al cambio de materiales, sino incluir control solar, ventilación natural, sombreamiento, reducción de cargas térmicas y selección de envolventes compatibles con un ambiente húmedo.
 
