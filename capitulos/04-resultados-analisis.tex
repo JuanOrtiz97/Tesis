@@ -152,6 +152,33 @@ La matriz de indicadores organiza los criterios con los que se evaluará el edif
 
 La línea base corresponde al estado actual del proyecto antes de aplicar estrategias de optimización. Esta línea base debe documentar los parámetros usados en el modelo: geometría, orientación, materiales, valores térmicos, infiltración, ventilación, horarios de uso, cargas internas, sombreamiento y datos climáticos.
 
+El modelo base fue exportado desde DesignBuilder como archivo IDF de EnergyPlus. La revisión del archivo permite identificar 28 zonas térmicas, 320 superficies constructivas detalladas, 102 superficies de fenestración, 204 superficies de sombreado y 19 sistemas \texttt{Ideal Loads Air System}. Esto indica que el modelo es adecuado para estimar demanda térmica y comparar escenarios, aunque no representa todavía el consumo real de equipos HVAC específicos.
+
+\begin{table}[H]
+  \centering
+  \caption{Síntesis del modelo IDF del caso base}
+  {\fontsize{9}{11}\selectfont
+  \begin{tabular}{p{5cm}p{6.5cm}}
+    \toprule
+    Parámetro revisado & Valor identificado \\
+    \midrule
+    Software de origen & DesignBuilder 7.3.1.003 / EnergyPlus 9.4.0.002 \\
+    Zonas térmicas totales & 28 zonas \\
+    Zonas con cargas y HVAC ideal & 19 zonas \\
+    Área de pisos modelada & $378,17\,\mathrm{m}^{2}$ \\
+    Área de cubierta & $136,48\,\mathrm{m}^{2}$ \\
+    Área de superficies exteriores & $650,15\,\mathrm{m}^{2}$ \\
+    Área de fenestración exterior & $108,75\,\mathrm{m}^{2}$ \\
+    Relación ventana-muro exterior aproximada & $17,77\,\%$ \\
+    Sistema de aire & AirflowNetwork multizona e Ideal Loads Air System \\
+    \bottomrule
+  \end{tabular}
+  }
+  \fuente{Basado en el archivo IDF del caso base exportado desde DesignBuilder.}
+\end{table}
+
+La lectura del IDF también permite identificar aspectos que deben revisarse antes de consolidar los resultados finales. El archivo referencia el clima EPW TMYx 2011--2025 de San Cristóbal, pero el periodo de simulación aparece rotulado con el año 2002. Además, el \texttt{Site:Location} del IDF usa zona horaria y elevación que no coinciden exactamente con el encabezado del EPW. Estas diferencias deben corregirse o documentarse para asegurar coherencia entre clima, localización y simulación.
+
 El resultado esperado de esta sección es una lectura clara de los puntos críticos del edificio. Entre ellos pueden aparecer ganancias solares excesivas, baja protección de la envolvente, ventilación insuficiente, alta demanda de enfriamiento o dependencia de sistemas activos.
 
 \section{Escenarios de simulación}
