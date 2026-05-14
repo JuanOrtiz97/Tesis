@@ -46,3 +46,14 @@ Fuente local: `datos/ECU_GA_San.Cristobal.Intl.AP.840080_TMYx.2011-2025.epw`
 | Oct | 22.14 | 74.6 | 183.0 | 138.8 | 75.1 | 5.21 | 6.69 | 2.7 |
 | Nov | 22.49 | 78.3 | 179.5 | 155.2 | 64.3 | 6.02 | 6.69 | 1.3 |
 | Dic | 23.69 | 84.5 | 182.3 | 173.7 | 55.3 | 5.15 | 7.06 | 1.8 |
+
+## Figuras complementarias por tipo de grafico
+
+- `figuras/epw-tipo-area-rango-temperatura.pdf`
+- `figuras/epw-tipo-barras-viento-mensual.pdf`
+- `figuras/epw-tipo-columnas-3d-radiacion.pdf`
+- `figuras/epw-tipo-anillos-rangos-temperatura.pdf`
+- `figuras/epw-tipo-radar-indicadores-climaticos.pdf`
+- `figuras/epw-tipo-xy-temperatura-humedad.pdf`
+- `figuras/epw-tipo-combinado-radiacion-temperatura.pdf`
+- `figuras/epw-tipo-superficie-3d-temperatura.pdf`
