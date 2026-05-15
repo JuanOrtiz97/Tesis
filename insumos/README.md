@@ -21,3 +21,4 @@ Regla de uso:
 - `marco-teorico-borrador-extraido.md`: extraccion del documento Word de marco teorico usado para reconstruir el capitulo 2 con citas BibLaTeX.
 - `summary-espacios.md`, `summary-espacios.csv` y `summary-espacios-tablas.tex`: cuadros de geometria, envolvente y cargas internas por espacio extraidos del reporte Summary de EnergyPlus.
 - `../datos/iluminancia-designbuilder.csv`: resultados tabulares de iluminancia y factor de luz dia por zona, exportados desde DesignBuilder.
+- `iluminancia-resumen-tabla.tex`: tabla LaTeX con el resumen de iluminancia natural por espacio.
