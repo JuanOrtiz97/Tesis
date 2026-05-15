@@ -470,6 +470,10 @@ La desagregación por zonas permite reconocer qué espacios concentran mayor ár
 }
 \fuente{Basado en el archivo IDF del caso base exportado desde DesignBuilder.}
 
+El reporte \textit{Summary} de EnergyPlus complementa la lectura anterior porque resume los parámetros verificados durante la simulación. A partir de este archivo se extraen dos cuadros: el primero registra la geometría y la envolvente de cada espacio; el segundo documenta las cargas internas asignadas en iluminación, ocupación y equipos. Estos valores permiten revisar la coherencia del caso base antes de comparar escenarios de optimización.
+
+\input{insumos/summary-espacios-tablas.tex}
+
 La lectura del IDF también permite identificar aspectos que deben revisarse antes de consolidar los resultados finales. El archivo referencia el clima EPW TMYx 2011--2025 de San Cristóbal, pero el periodo de simulación aparece rotulado con el año 2002. Además, el \texttt{Site:Location} del IDF usa zona horaria y elevación que no coinciden exactamente con el encabezado del EPW. Estas diferencias deben corregirse o documentarse para asegurar coherencia entre clima, localización y simulación.
 
 El resultado esperado de esta sección es una lectura clara de los puntos críticos del edificio. Entre ellos pueden aparecer ganancias solares excesivas, baja protección de la envolvente, ventilación insuficiente, alta demanda de enfriamiento o dependencia de sistemas activos.

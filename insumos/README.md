@@ -19,3 +19,4 @@ Regla de uso:
 - `idf-caso-base-1-3-resumen.md`: interpretacion tecnica del archivo IDF exportado desde DesignBuilder para el escenario base.
 - `idf-zonas-caso-base.md` y `idf-zonas-caso-base.csv`: tabla de zonas termicas extraida del IDF del caso base.
 - `marco-teorico-borrador-extraido.md`: extraccion del documento Word de marco teorico usado para reconstruir el capitulo 2 con citas BibLaTeX.
+- `summary-espacios.md`, `summary-espacios.csv` y `summary-espacios-tablas.tex`: cuadros de geometria, envolvente y cargas internas por espacio extraidos del reporte Summary de EnergyPlus.

@@ -1,0 +1,29 @@
+planta,espacio,area_m2,condicionado,parte_area_total,volumen_m3,multiplicador,muro_exterior_m2,muro_subterraneo_m2,vidrio_m2,aberturas_m2,iluminacion_w_m2,ocupacion_m2_persona,equipos_w_m2
+Planta baja,PB-ES-01,5.36,Yes,No,18.48,1.00,10.21,0.00,0.00,0.00,0.0000,,0.0000
+Planta baja,PB-BO-01,2.08,Yes,Yes,7.17,1.00,4.71,0.00,0.00,0.00,10.0000,,0.0000
+Planta baja,PB-BA-01,4.58,Yes,Yes,15.81,1.00,5.83,0.00,0.00,0.00,10.0000,9.09,0.5000
+Planta baja,PB-RE-01,9.33,Yes,Yes,32.18,1.00,22.63,0.00,0.00,0.00,15.0000,5.00,3.0000
+Planta baja,ASCENSOR,2.57,Yes,No,8.86,1.00,0.00,0.00,0.00,0.00,0.0000,,0.0000
+Planta baja,PB-SE-01,54.10,Yes,Yes,186.64,1.00,51.63,0.00,17.19,17.90,15.0000,5.00,3.0000
+Planta baja,PB-OF-03,13.46,Yes,Yes,46.45,1.00,27.17,0.00,4.08,4.41,25.0000,10.00,7.5000
+Planta baja,PB-OF-02,9.87,Yes,Yes,34.07,1.00,10.02,0.00,4.08,4.41,25.0000,10.00,7.5000
+Planta baja,PB-OF-01,12.72,Yes,Yes,43.87,1.00,26.51,0.00,4.08,4.41,25.0000,10.00,7.5000
+Primera planta alta,1PA-DC,7.85,Yes,Yes,23.60,1.00,9.56,0.00,0.00,0.00,10.0000,,500.0000
+Primera planta alta,1PA-ES,9.12,Yes,No,27.30,1.00,15.32,0.00,0.00,0.00,0.0000,,0.0000
+Primera planta alta,ASCENSOR,0.57,Yes,No,6.76,1.00,0.00,0.00,0.00,0.00,0.0000,,0.0000
+Primera planta alta,1PA-SR,12.69,Yes,Yes,38.17,1.00,27.32,0.00,7.47,7.92,25.0000,10.00,7.5000
+Primera planta alta,1PA-PAS,21.85,Yes,Yes,65.69,1.00,4.73,0.00,3.21,3.54,10.0000,9.09,0.0000
+Primera planta alta,1PA-OF-02,10.53,Yes,Yes,31.66,1.00,11.64,0.00,9.03,9.51,25.0000,10.00,7.5000
+Primera planta alta,1PA-BA-02,4.85,Yes,Yes,14.58,1.00,17.84,0.00,1.92,2.15,10.0000,9.09,0.5000
+Primera planta alta,1PA-BA-01,3.99,Yes,Yes,11.99,1.00,5.64,0.00,3.98,4.33,10.0000,9.09,0.5000
+Primera planta alta,VACIO,1.88,Yes,Yes,43.81,1.00,15.00,0.00,5.33,5.33,0.0000,,0.0000
+Primera planta alta,1PA-OF-03,18.66,Yes,Yes,47.91,1.00,37.84,0.00,6.93,7.60,25.0000,10.00,7.5000
+Primera planta alta,1PA-OF-01,15.20,Yes,Yes,45.69,1.00,32.52,0.00,10.99,11.77,25.0000,10.00,7.5000
+Segunda planta alta,2PA-BA-01,4.36,Yes,Yes,13.10,1.00,16.39,0.00,2.16,2.40,10.0000,9.09,0.5000
+Segunda planta alta,2PA-CAF,5.85,Yes,Yes,17.59,1.00,8.78,0.00,0.00,0.00,15.0000,2.00,25.0000
+Segunda planta alta,2PA-ES,8.85,Yes,No,26.43,1.00,26.00,0.00,0.00,0.00,0.0000,,0.0000
+Segunda planta alta,2PA-SUM,31.45,Yes,Yes,94.56,1.00,45.11,0.00,18.82,19.82,15.0000,10.00,5.0000
+Segunda planta alta,ASCENSOR,2.26,Yes,No,6.74,1.00,0.00,0.00,0.00,0.00,0.0000,,0.0000
+Segunda planta alta,2PA-PAS,10.08,Yes,Yes,27.85,1.00,7.83,0.00,0.00,0.00,10.0000,9.09,0.0000
+Segunda planta alta,VACIO,2.34,Yes,Yes,42.38,1.00,27.54,0.00,14.94,16.55,0.0000,,0.0000
+Cubierta,VACIO,6.22,Yes,Yes,29.38,1.00,35.44,0.00,4.09,4.68,0.0000,,0.0000
