@@ -22,3 +22,5 @@ Regla de uso:
 - `summary-espacios.md`, `summary-espacios.csv` y `summary-espacios-tablas.tex`: cuadros de geometria, envolvente y cargas internas por espacio extraidos del reporte Summary de EnergyPlus.
 - `../datos/iluminancia-designbuilder.csv`: resultados tabulares de iluminancia y factor de luz dia por zona, exportados desde DesignBuilder.
 - `iluminancia-resumen-tabla.tex`: tabla LaTeX con el resumen de iluminancia natural por espacio.
+- `../datos/cooling-design-designbuilder.csv`: serie horaria del dia de diseno de enfriamiento exportada desde DesignBuilder.
+- `cooling-design-resumen.md` y `cooling-design-resumen-tabla.tex`: resumen de componentes y condiciones criticas del dia de diseno de enfriamiento.
