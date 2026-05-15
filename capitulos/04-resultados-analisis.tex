@@ -124,71 +124,92 @@ La zonificación de la planta baja permite relacionar la codificación del model
 \begin{figure}[H]
   \centering
   \resizebox{0.95\textwidth}{!}{%
-  \begin{tikzpicture}[x=0.46cm,y=0.46cm, every node/.style={font=\small}]
-    \definecolor{oficina}{RGB}{247,241,248}
-    \definecolor{espera}{RGB}{205,232,219}
-    \definecolor{recepcion}{RGB}{207,207,207}
-    \definecolor{banos}{RGB}{205,226,242}
-    \definecolor{servicio}{RGB}{246,215,215}
-    \definecolor{bodega}{RGB}{251,243,243}
+  \begin{tikzpicture}[
+    x=0.47cm,
+    y=0.47cm,
+    line join=round,
+    zone/.style={draw=black, line width=0.65pt},
+    outline/.style={draw=black, line width=1.05pt},
+    innerline/.style={draw=gray!65, dashed, line width=0.35pt},
+    zonelabel/.style={font=\sffamily\small, align=center, text=black},
+    smalllabel/.style={font=\sffamily\scriptsize, align=center, text=black!75},
+    legendlabel/.style={font=\sffamily\scriptsize, anchor=west}
+  ]
+    \definecolor{oficina}{RGB}{245,239,247}
+    \definecolor{espera}{RGB}{208,234,222}
+    \definecolor{recepcion}{RGB}{214,214,214}
+    \definecolor{banos}{RGB}{204,225,242}
+    \definecolor{servicio}{RGB}{245,211,211}
+    \definecolor{bodega}{RGB}{250,241,241}
 
-    \draw[black, line width=0.8pt] (0,0) rectangle (29,18.5);
+    \node[font=\sffamily\bfseries\small, anchor=west] at (0,20.1) {Planta baja};
+    \node[font=\sffamily\scriptsize, anchor=west, text=black!70] at (0,19.35) {Zonas térmicas exportadas desde DesignBuilder};
 
-    \filldraw[fill=oficina, draw=black] (0,12.5) rectangle (9.8,18.5);
-    \node at (4.9,15.6) {PB-OF-01};
+    \draw[outline, fill=white] (0,0) rectangle (29,18.5);
 
-    \filldraw[fill=oficina, draw=black] (0,6.4) rectangle (7.5,12.5);
-    \node at (3.75,9.45) {PB-OF-02};
+    \filldraw[zone, fill=oficina] (0,12.5) rectangle (9.8,18.5);
+    \node[zonelabel] at (4.9,15.9) {PB-OF-01};
+    \node[smalllabel] at (4.9,15.1) {Oficina};
 
-    \filldraw[fill=oficina, draw=black] (0,0) rectangle (9.8,6.4);
-    \node at (4.9,3.2) {PB-OF-03};
+    \filldraw[zone, fill=oficina] (0,6.4) rectangle (7.5,12.5);
+    \node[zonelabel] at (3.75,9.75) {PB-OF-02};
+    \node[smalllabel] at (3.75,8.95) {Oficina};
 
-    \filldraw[fill=servicio, draw=black] (9.8,11.7) rectangle (12.5,18.5);
-    \node at (11.15,15.2) {PB-ES-01};
+    \filldraw[zone, fill=oficina] (0,0) rectangle (9.8,6.4);
+    \node[zonelabel] at (4.9,3.55) {PB-OF-03};
+    \node[smalllabel] at (4.9,2.75) {Oficina};
 
-    \filldraw[fill=servicio, draw=black] (12.5,11.7) rectangle (16.0,15.6);
-    \node at (14.25,13.65) {Ascensor};
+    \filldraw[zone, fill=servicio] (9.8,11.7) rectangle (12.5,18.5);
+    \node[zonelabel] at (11.15,15.7) {PB-ES-01};
+    \node[smalllabel] at (11.15,14.9) {Servicio};
 
-    \filldraw[fill=bodega, draw=black] (16.0,14.4) rectangle (18.8,18.5);
-    \node at (17.4,16.45) {PB-BO-01};
+    \filldraw[zone, fill=servicio] (12.5,11.7) rectangle (16.0,15.6);
+    \node[zonelabel] at (14.25,13.95) {Ascensor};
 
-    \filldraw[fill=espera, draw=black] (7.5,0) -- (29,0) -- (29,11.7) -- (18.8,11.7) -- (18.8,14.4) -- (16.0,14.4) -- (16.0,11.7) -- (7.5,11.7) -- cycle;
-    \node at (22.4,5.8) {PB-SE-01};
+    \filldraw[zone, fill=bodega] (16.0,14.4) rectangle (18.8,18.5);
+    \node[zonelabel] at (17.4,16.65) {PB-BO-01};
+    \node[smalllabel] at (17.4,15.85) {Bodega};
 
-    \filldraw[fill=banos, draw=black] (18.8,11.7) rectangle (22.3,18.5);
-    \node at (20.55,15.2) {PB-BA-01};
+    \filldraw[zone, fill=espera] (7.5,0) -- (29,0) -- (29,11.7) -- (18.8,11.7) -- (18.8,14.4) -- (16.0,14.4) -- (16.0,11.7) -- (7.5,11.7) -- cycle;
+    \node[zonelabel] at (22.4,6.15) {PB-SE-01};
+    \node[smalllabel] at (22.4,5.35) {Sala de espera};
 
-    \filldraw[fill=recepcion, draw=black] (22.3,11.7) rectangle (29,18.5);
-    \node at (25.65,15.2) {PB-RE-01};
+    \filldraw[zone, fill=banos] (18.8,11.7) rectangle (22.3,18.5);
+    \node[zonelabel] at (20.55,15.65) {PB-BA-01};
+    \node[smalllabel] at (20.55,14.85) {Baños};
 
-    \foreach \x/\y/\w/\h in {
-      0.35/0.35/28.3/17.8,
-      10.0/12.0/2.3/6.1,
-      12.65/12.0/3.1/3.3,
-      16.2/14.65/2.25/3.5,
-      19.0/12.0/3.0/6.1,
-      22.55/12.0/6.0/6.1
-    } {
-      \draw[dashed, gray] (\x,\y) rectangle ++(\w,\h);
-    }
+    \filldraw[zone, fill=recepcion] (22.3,11.7) rectangle (29,18.5);
+    \node[zonelabel] at (25.65,15.65) {PB-RE-01};
+    \node[smalllabel] at (25.65,14.85) {Recepción};
 
-    \begin{scope}[shift={(31.0,12.0)}]
-      \draw[->, line width=1.2pt, red] (0,0) -- (2.2,0);
-      \draw[->, line width=1.2pt, green!70!black] (0,0) -- (0,2.2);
-      \fill[blue] (0,0) circle (0.16);
+    \draw[innerline] (0.35,0.35) rectangle (28.65,18.15);
+    \draw[innerline] (10.0,12.0) rectangle (12.3,18.1);
+    \draw[innerline] (12.65,12.0) rectangle (15.75,15.3);
+    \draw[innerline] (16.2,14.65) rectangle (18.45,18.15);
+    \draw[innerline] (19.0,12.0) rectangle (22.0,18.1);
+    \draw[innerline] (22.55,12.0) rectangle (28.55,18.1);
+
+    \begin{scope}[shift={(31.0,14.1)}]
+      \draw[->, line width=0.9pt] (0,0) -- (0,2.6);
+      \node[font=\sffamily\scriptsize, anchor=south] at (0,2.75) {N};
+      \draw[->, line width=0.9pt, black!70] (0,0) -- (2.6,0);
+      \node[font=\sffamily\scriptsize, anchor=west] at (2.75,0) {E};
+      \fill[black] (0,0) circle (0.09);
     \end{scope}
 
-    \begin{scope}[shift={(-6.6,13.4)}]
-      \draw[fill=oficina] (0,4.0) rectangle (1.2,5.0);
-      \node[anchor=west, text=blue] at (1.5,4.5) {Oficina};
-      \draw[fill=espera] (0,2.8) rectangle (1.2,3.8);
-      \node[anchor=west, text=blue] at (1.5,3.3) {Sala de espera};
-      \draw[fill=recepcion] (0,1.6) rectangle (1.2,2.6);
-      \node[anchor=west, text=blue] at (1.5,2.1) {Recepción};
-      \draw[fill=banos] (0,0.4) rectangle (1.2,1.4);
-      \node[anchor=west, text=blue] at (1.5,0.9) {Baños};
-      \draw[fill=servicio] (0,-0.8) rectangle (1.2,0.2);
-      \node[anchor=west, text=blue] at (1.5,-0.3) {Servicio};
+    \begin{scope}[shift={(0,-2.2)}]
+      \draw[fill=oficina, draw=black, line width=0.45pt] (0,0) rectangle (0.75,0.55);
+      \node[legendlabel] at (0.95,0.28) {Oficina};
+      \draw[fill=espera, draw=black, line width=0.45pt] (5.0,0) rectangle (5.75,0.55);
+      \node[legendlabel] at (5.95,0.28) {Sala de espera};
+      \draw[fill=recepcion, draw=black, line width=0.45pt] (11.2,0) rectangle (11.95,0.55);
+      \node[legendlabel] at (12.15,0.28) {Recepción};
+      \draw[fill=banos, draw=black, line width=0.45pt] (16.3,0) rectangle (17.05,0.55);
+      \node[legendlabel] at (17.25,0.28) {Baños};
+      \draw[fill=servicio, draw=black, line width=0.45pt] (20.2,0) rectangle (20.95,0.55);
+      \node[legendlabel] at (21.15,0.28) {Servicio / ascensor};
+      \draw[fill=bodega, draw=black, line width=0.45pt] (26.4,0) rectangle (27.15,0.55);
+      \node[legendlabel] at (27.35,0.28) {Bodega};
     \end{scope}
   \end{tikzpicture}%
   }
