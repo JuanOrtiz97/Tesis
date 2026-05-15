@@ -119,6 +119,17 @@ El modelo base fue exportado desde DesignBuilder como archivo IDF de EnergyPlus.
   \fuente{Basado en el archivo IDF del caso base exportado desde DesignBuilder.}
 \end{table}
 
+La vista axonométrica del modelo en DesignBuilder permite verificar la composición volumétrica del caso base sin alterar la geometría exportada por el programa. En esta lectura se observan los cuerpos principales del edificio, los bordes perimetrales, los voladizos y los elementos verticales de protección solar. Estos componentes son relevantes porque condicionan el sombreado propio, la exposición de la envolvente y la relación entre superficies opacas, transparentes y espacios exteriores.
+
+\IfFileExists{figuras/axonometria-designbuilder.png}{%
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.86\textwidth]{figuras/axonometria-designbuilder.png}
+  \caption{Axonometría del modelo energético del caso base en DesignBuilder}
+  \fuente{Basado en la vista axonométrica original exportada desde DesignBuilder.}
+\end{figure}
+}{}
+
 La zonificación de la planta baja permite relacionar la codificación del modelo IDF con la distribución arquitectónica observada en DesignBuilder. En esta planta se concentran oficinas hacia el borde occidental, áreas de recepción y servicio hacia el costado oriental, y un espacio de espera de mayor superficie que organiza la circulación interior.
 
 \begin{figure}[H]
