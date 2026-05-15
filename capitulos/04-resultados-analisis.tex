@@ -327,6 +327,97 @@ En la primera planta alta se mantiene la organización por oficinas y circulaci�
   \fuente{Basado en el esquema de zonificación del modelo energético del caso base desarrollado en DesignBuilder.}
 \end{figure}
 
+La segunda planta alta concentra espacios de apoyo y reunión. En este nivel aparecen el baño, la cafetería, el salón de uso múltiple, la circulación, el núcleo de ascensor y el vacío interior. La lectura de esta planta es importante porque el salón de uso múltiple y las áreas bajo cubierta pueden presentar una mayor sensibilidad térmica por exposición solar directa y por acumulación de cargas internas durante eventos o reuniones.
+
+\begin{figure}[H]
+  \centering
+  \resizebox{0.82\textwidth}{!}{%
+  \begin{tikzpicture}[
+    x=0.52cm,
+    y=0.52cm,
+    line join=round,
+    zone/.style={draw=black, line width=0.65pt},
+    outline/.style={draw=black, line width=1.05pt},
+    innerline/.style={draw=gray!65, dashed, line width=0.35pt},
+    zonelabel/.style={font=\sffamily\small, align=center, text=black},
+    smalllabel/.style={font=\sffamily\scriptsize, align=center, text=black!75},
+    legendlabel/.style={font=\sffamily\scriptsize, anchor=west}
+  ]
+    \definecolor{banos}{RGB}{204,225,242}
+    \definecolor{cafeteria}{RGB}{214,214,214}
+    \definecolor{sum}{RGB}{207,207,207}
+    \definecolor{circulacion}{RGB}{252,244,235}
+    \definecolor{servicio}{RGB}{245,211,211}
+    \definecolor{vacio}{RGB}{245,211,211}
+
+    \node[font=\sffamily\bfseries\small, anchor=west] at (0,25.1) {Segunda planta alta};
+    \node[font=\sffamily\scriptsize, anchor=west, text=black!70] at (0,24.35) {Zonas térmicas exportadas desde DesignBuilder};
+
+    \draw[outline, fill=white] (0,0) -- (22,0) -- (22,2.5) -- (32.2,2.5) -- (32.2,22.8) -- (0,22.8) -- cycle;
+
+    \filldraw[zone, fill=banos] (0,16.8) rectangle (6.3,22.8);
+    \node[zonelabel] at (3.15,20.0) {2PA-BA-01};
+    \node[smalllabel] at (3.15,19.2) {Baños};
+
+    \filldraw[zone, fill=cafeteria] (6.3,16.8) rectangle (13.2,22.8);
+    \node[zonelabel] at (9.75,20.0) {2PA-CAF};
+    \node[smalllabel] at (9.75,19.2) {Cafetería};
+
+    \filldraw[zone, fill=servicio] (13.2,15.8) rectangle (22.0,22.8);
+    \node[zonelabel] at (15.25,19.4) {2PA-ES};
+    \node[smalllabel] at (15.25,18.6) {Servicio};
+
+    \filldraw[zone, fill=servicio] (17.0,15.8) rectangle (21.0,19.7);
+    \node[zonelabel] at (19.0,17.95) {Ascensor};
+
+    \filldraw[zone, fill=circulacion] (13.2,10.6) rectangle (32.2,15.8);
+    \node[zonelabel] at (22.7,13.45) {2PA-PAS};
+    \node[smalllabel] at (22.7,12.65) {Circulación};
+
+    \filldraw[zone, fill=sum] (0,0) rectangle (13.4,16.8);
+    \node[zonelabel] at (6.7,5.15) {2PA-SUM};
+    \node[smalllabel] at (6.7,4.35) {Salón de uso múltiple};
+
+    \filldraw[zone, fill=vacio] (13.4,2.5) rectangle (32.2,10.6);
+    \node[zonelabel] at (22.8,6.9) {Vacío};
+    \node[smalllabel] at (22.8,6.1) {Espacio vacío};
+
+    \draw[innerline] (0.35,0.35) rectangle (13.05,16.45);
+    \draw[innerline] (0.35,17.15) rectangle (5.95,22.4);
+    \draw[innerline] (6.65,17.15) rectangle (12.85,22.4);
+    \draw[innerline] (13.55,16.15) rectangle (21.65,22.4);
+    \draw[innerline] (17.35,16.15) rectangle (20.65,19.35);
+    \draw[innerline] (13.55,10.95) rectangle (31.85,15.45);
+    \draw[innerline] (13.75,2.85) rectangle (31.85,10.25);
+
+    \begin{scope}[shift={(34.0,18.2)}]
+      \draw[->, line width=0.9pt] (0,0) -- (0,2.6);
+      \node[font=\sffamily\scriptsize, anchor=south] at (0,2.75) {N};
+      \draw[->, line width=0.9pt, black!70] (0,0) -- (2.6,0);
+      \node[font=\sffamily\scriptsize, anchor=west] at (2.75,0) {E};
+      \fill[black] (0,0) circle (0.09);
+    \end{scope}
+
+    \begin{scope}[shift={(0,-2.2)}]
+      \draw[fill=sum, draw=black, line width=0.45pt] (0,0) rectangle (0.75,0.55);
+      \node[legendlabel] at (0.95,0.28) {Salón de uso múltiple};
+      \draw[fill=circulacion, draw=black, line width=0.45pt] (8.0,0) rectangle (8.75,0.55);
+      \node[legendlabel] at (8.95,0.28) {Circulación};
+      \draw[fill=banos, draw=black, line width=0.45pt] (13.8,0) rectangle (14.55,0.55);
+      \node[legendlabel] at (14.75,0.28) {Baños};
+      \draw[fill=cafeteria, draw=black, line width=0.45pt] (17.8,0) rectangle (18.55,0.55);
+      \node[legendlabel] at (18.75,0.28) {Cafetería};
+      \draw[fill=servicio, draw=black, line width=0.45pt] (22.8,0) rectangle (23.55,0.55);
+      \node[legendlabel] at (23.75,0.28) {Servicio / ascensor};
+      \draw[fill=vacio, draw=black, line width=0.45pt] (30.0,0) rectangle (30.75,0.55);
+      \node[legendlabel] at (30.95,0.28) {Vacío};
+    \end{scope}
+  \end{tikzpicture}%
+  }
+  \caption{Zonificación térmica de la segunda planta alta del caso base en DesignBuilder}
+  \fuente{Basado en el esquema de zonificación del modelo energético del caso base desarrollado en DesignBuilder.}
+\end{figure}
+
 La desagregación por zonas permite reconocer qué espacios concentran mayor área útil, mayor exposición de envolvente y mayor presencia de fenestración exterior. Esta lectura es necesaria para interpretar posteriormente las cargas térmicas y para priorizar estrategias pasivas por orientación, cubierta y relación lleno-vacío. Para facilitar la lectura, los códigos exportados por el IDF con la letra \texttt{X} como separador se presentan con guion.
 
 {\fontsize{9}{11}\selectfont
