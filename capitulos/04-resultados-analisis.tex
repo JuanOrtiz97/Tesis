@@ -217,6 +217,116 @@ La zonificación de la planta baja permite relacionar la codificación del model
   \fuente{Basado en el esquema de zonificación del modelo energético del caso base desarrollado en DesignBuilder.}
 \end{figure}
 
+En la primera planta alta se mantiene la organización por oficinas y circulación central, pero aparece una mayor diversidad de zonas: baños, datacenter, sala de reuniones, pasillo, vacío interior y núcleo de ascensor. Esta configuración permite diferenciar espacios de permanencia, apoyo técnico y circulación, lo cual es relevante para la asignación de cargas internas y horarios de uso en la simulación energética.
+
+\begin{figure}[H]
+  \centering
+  \resizebox{0.95\textwidth}{!}{%
+  \begin{tikzpicture}[
+    x=0.47cm,
+    y=0.47cm,
+    line join=round,
+    zone/.style={draw=black, line width=0.65pt},
+    outline/.style={draw=black, line width=1.05pt},
+    innerline/.style={draw=gray!65, dashed, line width=0.35pt},
+    zonelabel/.style={font=\sffamily\small, align=center, text=black},
+    smalllabel/.style={font=\sffamily\scriptsize, align=center, text=black!75},
+    legendlabel/.style={font=\sffamily\scriptsize, anchor=west}
+  ]
+    \definecolor{oficina}{RGB}{245,239,247}
+    \definecolor{vacio}{RGB}{245,211,211}
+    \definecolor{datacenter}{RGB}{207,207,207}
+    \definecolor{circulacion}{RGB}{252,244,235}
+    \definecolor{banos}{RGB}{204,225,242}
+    \definecolor{servicio}{RGB}{245,211,211}
+
+    \node[font=\sffamily\bfseries\small, anchor=west] at (0,20.1) {Primera planta alta};
+    \node[font=\sffamily\scriptsize, anchor=west, text=black!70] at (0,19.35) {Zonas térmicas exportadas desde DesignBuilder};
+
+    \draw[outline, fill=white] (0,0) -- (9.4,0) -- (9.4,2.0) -- (18.8,2.0) -- (18.8,0) -- (30.2,0) -- (30.2,0.6) -- (29.2,0.6) -- (27.9,3.0) -- (27.9,18.5) -- (0,18.5) -- cycle;
+
+    \filldraw[zone, fill=banos] (0,12.6) rectangle (3.6,18.5);
+    \node[zonelabel] at (1.8,15.95) {1PA-BA-02};
+    \node[smalllabel] at (1.8,15.15) {Baños};
+
+    \filldraw[zone, fill=datacenter] (3.6,12.6) rectangle (9.0,18.5);
+    \node[zonelabel] at (6.3,15.95) {1PA-DC};
+    \node[smalllabel] at (6.3,15.15) {Datacenter};
+
+    \filldraw[zone, fill=servicio] (9.0,12.9) rectangle (17.7,18.5);
+    \node[zonelabel] at (10.75,15.9) {1PA-ES};
+    \node[smalllabel] at (10.75,15.1) {Servicio};
+
+    \filldraw[zone, fill=servicio] (11.7,12.9) rectangle (15.0,16.1);
+    \node[zonelabel] at (13.35,14.7) {Ascensor};
+
+    \filldraw[zone, fill=oficina] (17.7,13.1) rectangle (27.9,18.5);
+    \node[zonelabel] at (22.8,16.15) {1PA-SR};
+    \node[smalllabel] at (22.8,15.35) {Sala de reuniones};
+
+    \filldraw[zone, fill=circulacion] (0,6.8) -- (20.5,6.8) -- (20.5,13.1) -- (17.7,13.1) -- (17.7,12.9) -- (9.0,12.9) -- (9.0,12.4) -- (0,12.4) -- cycle;
+    \node[zonelabel] at (13.35,10.2) {1PA-PAS};
+    \node[smalllabel] at (13.35,9.4) {Circulación};
+
+    \filldraw[zone, fill=banos] (0,6.8) rectangle (5.7,10.1);
+    \node[zonelabel] at (2.85,8.75) {1PA-BA-01};
+    \node[smalllabel] at (2.85,7.95) {Baños};
+
+    \filldraw[zone, fill=oficina] (20.5,6.8) rectangle (27.9,13.1);
+    \node[zonelabel] at (24.2,10.25) {1PA-OF-02};
+    \node[smalllabel] at (24.2,9.45) {Oficina};
+
+    \filldraw[zone, fill=oficina] (0,0) rectangle (9.4,6.8);
+    \node[zonelabel] at (4.7,3.75) {1PA-OF-01};
+    \node[smalllabel] at (4.7,2.95) {Oficina};
+
+    \filldraw[zone, fill=vacio] (9.4,2.0) rectangle (18.8,8.6);
+    \node[zonelabel] at (14.1,5.55) {Vacío};
+    \node[smalllabel] at (14.1,4.75) {Espacio vacío};
+
+    \filldraw[zone, fill=oficina] (18.8,0) -- (30.2,0) -- (30.2,0.6) -- (29.2,0.6) -- (27.9,3.0) -- (27.9,6.8) -- (18.8,6.8) -- cycle;
+    \node[zonelabel] at (24.5,3.6) {1PA-OF-03};
+    \node[smalllabel] at (24.5,2.8) {Oficina};
+
+    \draw[innerline] (0.35,0.35) rectangle (9.05,6.45);
+    \draw[innerline] (0.35,7.05) rectangle (5.35,9.75);
+    \draw[innerline] (0.35,12.9) rectangle (3.25,18.15);
+    \draw[innerline] (3.85,12.9) rectangle (8.65,18.15);
+    \draw[innerline] (9.35,13.2) rectangle (17.35,18.15);
+    \draw[innerline] (11.95,13.2) rectangle (14.7,15.85);
+    \draw[innerline] (18.05,13.45) rectangle (27.55,18.15);
+    \draw[innerline] (20.85,7.1) rectangle (27.55,12.75);
+    \draw[innerline] (9.75,2.35) rectangle (18.45,8.25);
+    \draw[innerline] (19.15,0.35) -- (29.85,0.35) -- (29.85,0.32) -- (28.85,0.95) -- (27.55,3.25) -- (27.55,6.45) -- (19.15,6.45) -- cycle;
+
+    \begin{scope}[shift={(31.4,14.1)}]
+      \draw[->, line width=0.9pt] (0,0) -- (0,2.6);
+      \node[font=\sffamily\scriptsize, anchor=south] at (0,2.75) {N};
+      \draw[->, line width=0.9pt, black!70] (0,0) -- (2.6,0);
+      \node[font=\sffamily\scriptsize, anchor=west] at (2.75,0) {E};
+      \fill[black] (0,0) circle (0.09);
+    \end{scope}
+
+    \begin{scope}[shift={(0,-2.2)}]
+      \draw[fill=oficina, draw=black, line width=0.45pt] (0,0) rectangle (0.75,0.55);
+      \node[legendlabel] at (0.95,0.28) {Oficina};
+      \draw[fill=circulacion, draw=black, line width=0.45pt] (4.5,0) rectangle (5.25,0.55);
+      \node[legendlabel] at (5.45,0.28) {Circulación};
+      \draw[fill=banos, draw=black, line width=0.45pt] (10.4,0) rectangle (11.15,0.55);
+      \node[legendlabel] at (11.35,0.28) {Baños};
+      \draw[fill=datacenter, draw=black, line width=0.45pt] (14.4,0) rectangle (15.15,0.55);
+      \node[legendlabel] at (15.35,0.28) {Datacenter};
+      \draw[fill=servicio, draw=black, line width=0.45pt] (20.0,0) rectangle (20.75,0.55);
+      \node[legendlabel] at (20.95,0.28) {Servicio / ascensor};
+      \draw[fill=vacio, draw=black, line width=0.45pt] (27.0,0) rectangle (27.75,0.55);
+      \node[legendlabel] at (27.95,0.28) {Vacío};
+    \end{scope}
+  \end{tikzpicture}%
+  }
+  \caption{Zonificación térmica de la primera planta alta del caso base en DesignBuilder}
+  \fuente{Basado en el esquema de zonificación del modelo energético del caso base desarrollado en DesignBuilder.}
+\end{figure}
+
 La desagregación por zonas permite reconocer qué espacios concentran mayor área útil, mayor exposición de envolvente y mayor presencia de fenestración exterior. Esta lectura es necesaria para interpretar posteriormente las cargas térmicas y para priorizar estrategias pasivas por orientación, cubierta y relación lleno-vacío.
 
 {\fontsize{9}{11}\selectfont
