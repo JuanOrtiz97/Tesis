@@ -418,6 +418,51 @@ La segunda planta alta concentra espacios de apoyo y reunión. En este nivel apa
   \fuente{Basado en el esquema de zonificación del modelo energético del caso base desarrollado en DesignBuilder.}
 \end{figure}
 
+La cubierta se modela como un espacio vacío independiente. Aunque no corresponde a un área principal de ocupación, su inclusión en el modelo permite representar la exposición superior del edificio, la transmisión térmica por cubierta y la relación con las superficies de envolvente que inciden en el desempeño del caso base.
+
+\begin{figure}[H]
+  \centering
+  \resizebox{0.48\textwidth}{!}{%
+  \begin{tikzpicture}[
+    x=0.58cm,
+    y=0.58cm,
+    line join=round,
+    zone/.style={draw=black, line width=0.75pt},
+    outline/.style={draw=black, line width=1.05pt},
+    innerline/.style={draw=gray!65, dashed, line width=0.35pt},
+    zonelabel/.style={font=\sffamily\small, align=center, text=black},
+    smalllabel/.style={font=\sffamily\scriptsize, align=center, text=black!75},
+    legendlabel/.style={font=\sffamily\scriptsize, anchor=west}
+  ]
+    \definecolor{vacio}{RGB}{245,211,211}
+
+    \node[font=\sffamily\bfseries\small, anchor=west] at (0,20.1) {Cubierta};
+    \node[font=\sffamily\scriptsize, anchor=west, text=black!70] at (0,19.35) {Zona térmica exportada desde DesignBuilder};
+
+    \filldraw[outline, fill=vacio] (0,0) rectangle (12.5,18.0);
+    \draw[innerline] (0.55,0.55) rectangle (11.95,17.45);
+
+    \node[zonelabel] at (6.25,9.35) {Vacío};
+    \node[smalllabel] at (6.25,8.55) {Espacio vacío de cubierta};
+
+    \begin{scope}[shift={(14.3,14.1)}]
+      \draw[->, line width=0.9pt] (0,0) -- (0,2.6);
+      \node[font=\sffamily\scriptsize, anchor=south] at (0,2.75) {N};
+      \draw[->, line width=0.9pt, black!70] (0,0) -- (2.6,0);
+      \node[font=\sffamily\scriptsize, anchor=west] at (2.75,0) {E};
+      \fill[black] (0,0) circle (0.09);
+    \end{scope}
+
+    \begin{scope}[shift={(0,-2.0)}]
+      \draw[fill=vacio, draw=black, line width=0.45pt] (0,0) rectangle (0.75,0.55);
+      \node[legendlabel] at (0.95,0.28) {Espacio vacío};
+    \end{scope}
+  \end{tikzpicture}%
+  }
+  \caption{Zonificación térmica del espacio vacío de cubierta del caso base en DesignBuilder}
+  \fuente{Basado en el esquema de zonificación del modelo energético del caso base desarrollado en DesignBuilder.}
+\end{figure}
+
 La desagregación por zonas permite reconocer qué espacios concentran mayor área útil, mayor exposición de envolvente y mayor presencia de fenestración exterior. Esta lectura es necesaria para interpretar posteriormente las cargas térmicas y para priorizar estrategias pasivas por orientación, cubierta y relación lleno-vacío. Para facilitar la lectura, los códigos exportados por el IDF con la letra \texttt{X} como separador se presentan con guion.
 
 {\fontsize{9}{11}\selectfont
