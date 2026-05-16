@@ -167,6 +167,15 @@ def y_labels(c: canvas.Canvas, x: float, y: float, h: float, low: float, high: f
         c.drawRightString(x - 8, yy - 2, f"{value:.0f}{suffix}")
 
 
+def y_labels_right(c: canvas.Canvas, x: float, y: float, h: float, low: float, high: float, suffix: str = "") -> None:
+    c.setFont("Helvetica", 7)
+    c.setFillColor(MUTED)
+    for i in range(6):
+        value = low + (high - low) * i / 5
+        yy = y + h * i / 5
+        c.drawString(x + 8, yy - 2, f"{value:.0f}{suffix}")
+
+
 def legend(c: canvas.Canvas, items: list[tuple[str, object]], x: float, y: float) -> None:
     c.setFont("Helvetica", 8)
     for label, color in items:
@@ -219,15 +228,14 @@ def draw_temp_humidity(data: dict[str, list[float]]) -> None:
     )
     x, y, w, h = chart_area(c)
     y_labels(c, x, y, h, 20, 30, " C")
+    y_labels_right(c, x + w, y, h, 70, 90, "%")
+    c.setStrokeColor(AXIS)
+    c.setLineWidth(0.7)
+    c.line(x + w, y, x + w, y + h)
     month_labels(c, x, y, w)
-    draw_line(c, x, y, w, h, data["temp_min"], 20, 30, TEMP_MIN)
     draw_line(c, x, y, w, h, data["temp_mean"], 20, 30, TEMP)
-    draw_line(c, x, y, w, h, data["temp_max"], 20, 30, TEMP_MAX)
     draw_line(c, x, y, w, h, data["rh"], 70, 90, RH)
-    c.setFillColor(MUTED)
-    c.setFont("Helvetica", 7)
-    c.drawString(654, 336, "HR: 70-90 %")
-    legend(c, [("Temp. min.", TEMP_MIN), ("Temp. media", TEMP), ("Temp. max.", TEMP_MAX), ("HR media", RH)], 82, 60)
+    legend(c, [("Temperatura media (C)", TEMP), ("Humedad relativa media (%)", RH)], 82, 60)
     finish(c)
 
 
