@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+import math
 from collections import defaultdict
 from pathlib import Path
 
@@ -39,6 +40,7 @@ DHI = colors.HexColor("#3a86ff")
 WIND = colors.HexColor("#2a9d8f")
 SKY = colors.HexColor("#6c757d")
 PRECIP = colors.HexColor("#4dabf7")
+DIRECTIONS = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSO", "SO", "OSO", "O", "ONO", "NO", "NNO"]
 
 
 def parse_epw() -> list[dict[str, float | str]]:
@@ -65,6 +67,7 @@ def valid(value: float, field: str) -> bool:
         "ghi": (0, 1500),
         "dni": (0, 1500),
         "dhi": (0, 1500),
+        "wind_dir": (0, 360),
         "wind_speed": (0, 60),
         "total_sky_cover": (0, 10),
         "liquid_precip_depth": (0, 500),
@@ -86,17 +89,38 @@ def monthly(rows: list[dict[str, float | str]]) -> dict[str, list[float]]:
     for month in range(1, 13):
         subset = [r for r in rows if int(float(r["month"])) == month]
         temps = values(subset, "dry_bulb")
+        rhs = values(subset, "rh")
+        winds = values(subset, "wind_speed")
         data["temp_mean"].append(mean(temps))
         data["temp_min"].append(min(temps))
         data["temp_max"].append(max(temps))
-        data["rh"].append(mean(values(subset, "rh")))
+        data["rh_mean"].append(mean(rhs))
+        data["rh_min"].append(min(rhs))
+        data["rh_max"].append(max(rhs))
         data["ghi"].append(sum(values(subset, "ghi")) / 1000)
         data["dni"].append(sum(values(subset, "dni")) / 1000)
         data["dhi"].append(sum(values(subset, "dhi")) / 1000)
-        data["wind"].append(mean(values(subset, "wind_speed")))
+        data["wind_mean"].append(mean(winds))
+        data["wind_max"].append(max(winds))
         data["sky"].append(mean(values(subset, "total_sky_cover")))
         data["precip"].append(sum(values(subset, "liquid_precip_depth")))
     return data
+
+
+def wind_direction_bins(rows: list[dict[str, float | str]]) -> list[float]:
+    bins = [0.0] * 16
+    total = 0
+    for row in rows:
+        direction = row.get("wind_dir")
+        speed = row.get("wind_speed")
+        if not isinstance(direction, float) or not isinstance(speed, float):
+            continue
+        if not valid(direction, "wind_dir") or not valid(speed, "wind_speed") or speed <= 0:
+            continue
+        index = int(((direction + 11.25) % 360) // 22.5)
+        bins[index] += 1
+        total += 1
+    return [(value / total * 100) if total else 0 for value in bins]
 
 
 def hourly_grid(rows: list[dict[str, float | str]]) -> list[list[float]]:
@@ -220,22 +244,39 @@ def draw_bars(c: canvas.Canvas, x: float, y: float, w: float, h: float, data: li
         c.rect(x + i * step + (step - bar_w) / 2, y, bar_w, bh, fill=1, stroke=0)
 
 
-def draw_temp_humidity(data: dict[str, list[float]]) -> None:
+def draw_temperature(data: dict[str, list[float]]) -> None:
     c = setup(
-        FIG_DIR / "epw-uniforme-temperatura-humedad.pdf",
-        "Temperatura y humedad relativa mensual",
-        "Promedios mensuales del archivo EPW de San Cristobal.",
+        FIG_DIR / "epw-uniforme-temperatura-mensual.pdf",
+        "Temperatura del aire mensual",
+        "Valores minimo, medio y maximo por mes del archivo EPW de San Cristobal.",
     )
     x, y, w, h = chart_area(c)
-    y_labels(c, x, y, h, 20, 30, " C")
-    y_labels_right(c, x + w, y, h, 70, 90, "%")
-    c.setStrokeColor(AXIS)
-    c.setLineWidth(0.7)
-    c.line(x + w, y, x + w, y + h)
+    low = math.floor(min(data["temp_min"]) - 1)
+    high = math.ceil(max(data["temp_max"]) + 1)
+    y_labels(c, x, y, h, low, high, " C")
     month_labels(c, x, y, w)
-    draw_line(c, x, y, w, h, data["temp_mean"], 20, 30, TEMP)
-    draw_line(c, x, y, w, h, data["rh"], 70, 90, RH)
-    legend(c, [("Temperatura media (C)", TEMP), ("Humedad relativa media (%)", RH)], 82, 60)
+    draw_line(c, x, y, w, h, data["temp_min"], low, high, TEMP_MIN)
+    draw_line(c, x, y, w, h, data["temp_mean"], low, high, TEMP)
+    draw_line(c, x, y, w, h, data["temp_max"], low, high, TEMP_MAX)
+    legend(c, [("Minima", TEMP_MIN), ("Media", TEMP), ("Maxima", TEMP_MAX)], 82, 60)
+    finish(c)
+
+
+def draw_humidity(data: dict[str, list[float]]) -> None:
+    c = setup(
+        FIG_DIR / "epw-uniforme-humedad-relativa.pdf",
+        "Humedad relativa mensual",
+        "Valores minimo, medio y maximo por mes del archivo EPW de San Cristobal.",
+    )
+    x, y, w, h = chart_area(c)
+    low = max(0, math.floor(min(data["rh_min"]) / 5) * 5)
+    high = min(100, math.ceil(max(data["rh_max"]) / 5) * 5)
+    y_labels(c, x, y, h, low, high, "%")
+    month_labels(c, x, y, w)
+    draw_line(c, x, y, w, h, data["rh_min"], low, high, colors.HexColor("#8ecae6"))
+    draw_line(c, x, y, w, h, data["rh_mean"], low, high, RH)
+    draw_line(c, x, y, w, h, data["rh_max"], low, high, colors.HexColor("#023e8a"))
+    legend(c, [("Minima", colors.HexColor("#8ecae6")), ("Media", RH), ("Maxima", colors.HexColor("#023e8a"))], 82, 60)
     finish(c)
 
 
@@ -254,22 +295,64 @@ def draw_radiation(data: dict[str, list[float]]) -> None:
     finish(c)
 
 
-def draw_wind_sky_precip(data: dict[str, list[float]]) -> None:
+def draw_wind(data: dict[str, list[float]]) -> None:
     c = setup(
-        FIG_DIR / "epw-uniforme-viento-cielo-precipitacion.pdf",
-        "Viento, cielo y precipitacion mensual",
-        "Velocidad media del viento, cobertura de cielo y lluvia registrada en el EPW.",
+        FIG_DIR / "epw-uniforme-viento-mensual.pdf",
+        "Velocidad del viento mensual",
+        "Velocidad media y maxima mensual registrada en el archivo EPW.",
     )
     x, y, w, h = chart_area(c)
-    y_labels(c, x, y, h, 0, 10)
+    high = math.ceil(max(data["wind_max"]) + 1)
+    y_labels(c, x, y, h, 0, high, " m/s")
     month_labels(c, x, y, w)
-    draw_bars(c, x, y, w, h, data["precip"], max(data["precip"]) * 1.25, PRECIP)
-    draw_line(c, x, y, w, h, data["wind"], 0, 10, WIND)
-    draw_line(c, x, y, w, h, data["sky"], 0, 10, SKY)
+    draw_bars(c, x, y, w, h, data["wind_max"], high, colors.HexColor("#a7d8d0"))
+    draw_line(c, x, y, w, h, data["wind_mean"], 0, high, WIND)
+    legend(c, [("Velocidad maxima", colors.HexColor("#a7d8d0")), ("Velocidad media", WIND)], 82, 60)
+    finish(c)
+
+
+def draw_wind_rose(direction_data: list[float]) -> None:
+    c = setup(
+        FIG_DIR / "epw-uniforme-rosa-vientos.pdf",
+        "Direccion predominante del viento",
+        "Distribucion porcentual de horas por direccion en el archivo EPW.",
+    )
+    cx, cy = 360, 210
+    radius = 118
+    max_value = max(direction_data) or 1
+    c.setStrokeColor(GRID)
     c.setFillColor(MUTED)
     c.setFont("Helvetica", 7)
-    c.drawString(654, 336, "Lluvia: escala relativa")
-    legend(c, [("Viento (m/s)", WIND), ("Cielo (0-10)", SKY), ("Precipitacion", PRECIP)], 82, 60)
+    for ring in range(1, 5):
+        r = radius * ring / 4
+        c.circle(cx, cy, r, stroke=1, fill=0)
+    for i, label in enumerate(DIRECTIONS):
+        angle = math.radians(90 - i * 22.5)
+        x2 = cx + math.cos(angle) * (radius + 22)
+        y2 = cy + math.sin(angle) * (radius + 22)
+        c.drawCentredString(x2, y2 - 3, label)
+        c.setStrokeColor(GRID)
+        c.line(cx, cy, cx + math.cos(angle) * radius, cy + math.sin(angle) * radius)
+    c.setFillColor(WIND)
+    c.setStrokeColor(colors.HexColor("#1f7a70"))
+    for i, value in enumerate(direction_data):
+        angle = math.radians(90 - i * 22.5)
+        length = radius * value / max_value
+        width = math.radians(8)
+        points = [
+            (cx, cy),
+            (cx + math.cos(angle - width) * length, cy + math.sin(angle - width) * length),
+            (cx + math.cos(angle + width) * length, cy + math.sin(angle + width) * length),
+        ]
+        path = c.beginPath()
+        path.moveTo(*points[0])
+        path.lineTo(*points[1])
+        path.lineTo(*points[2])
+        path.close()
+        c.drawPath(path, stroke=1, fill=1)
+    c.setFillColor(MUTED)
+    c.setFont("Helvetica", 8)
+    c.drawString(78, 73, f"Anillo exterior: {max_value:.1f}% de horas")
     finish(c)
 
 
@@ -327,9 +410,11 @@ def main() -> None:
     FIG_DIR.mkdir(exist_ok=True)
     rows = parse_epw()
     data = monthly(rows)
-    draw_temp_humidity(data)
+    draw_temperature(data)
+    draw_humidity(data)
     draw_radiation(data)
-    draw_wind_sky_precip(data)
+    draw_wind(data)
+    draw_wind_rose(wind_direction_bins(rows))
     draw_temperature_heatmap(hourly_grid(rows))
 
 
