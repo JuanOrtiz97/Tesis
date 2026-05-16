@@ -545,7 +545,9 @@ La desagregación por zonas permite reconocer qué espacios concentran mayor ár
 
 \subsection{Propiedades de la envolvente}
 
-El reporte \textit{Summary} de EnergyPlus complementa la lectura anterior porque resume los parámetros verificados durante la simulación. A partir de este archivo se extraen dos cuadros: el primero registra la geometría y la envolvente de cada espacio; el segundo documenta las cargas internas asignadas en iluminación, ocupación y equipos. Estos valores permiten revisar la coherencia del caso base antes de comparar escenarios de optimización.
+El archivo IDF exportado desde DesignBuilder permite documentar las propiedades termicas de los materiales y las configuraciones constructivas usadas en el caso base. Esta informacion complementa el reporte \textit{Summary} de EnergyPlus, porque permite revisar la coherencia entre geometria, envolvente, cargas internas y parametros fisicos antes de comparar escenarios de optimizacion.
+
+\input{insumos/materiales-caso-base-tabla.tex}
 
 \input{insumos/envolvente-caso-base-tabla.tex}
 

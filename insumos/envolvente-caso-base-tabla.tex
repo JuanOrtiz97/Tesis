@@ -1,24 +1,32 @@
 {\fontsize{8}{10}\selectfont
-\begin{longtable}{p{2.6cm}p{3.2cm}p{2.1cm}p{2.1cm}p{3.1cm}}
-  \caption{Caracteristicas preliminares de la envolvente del caso base} \\
+\begin{longtable}{p{3.2cm}p{2.1cm}p{4.6cm}p{1.4cm}p{1.4cm}p{1.4cm}}
+  \caption{Configuracion constructiva de la envolvente del caso base} \\
   \toprule
-  Elemento & Configuracion constructiva & Espesor total & Valor termico & Observaciones para completar \\
+  Construccion IDF & Uso en modelo & Capas principales & Espesor (m) & R total & U aprox. \\
   \midrule
   \endfirsthead
-  \caption[]{Caracteristicas preliminares de la envolvente del caso base (continuacion)} \\
+  \caption[]{Configuracion constructiva de la envolvente del caso base (continuacion)} \\
   \toprule
-  Elemento & Configuracion constructiva & Espesor total & Valor termico & Observaciones para completar \\
+  Construccion IDF & Uso en modelo & Capas principales & Espesor (m) & R total & U aprox. \\
   \midrule
   \endhead
   \bottomrule
   \endfoot
-  Cubierta & Por completar con capas registradas en DesignBuilder. & Por completar & Por completar & Registrar material exterior, camara de aire si existe, cielo raso, aislamiento y valor U. \\
-  Muros exteriores & Por completar con capas registradas en DesignBuilder. & Por completar & Por completar & Identificar acabado exterior, mamposteria o panel principal, acabado interior y valor U. \\
-  Muros interiores & Por completar con capas registradas en DesignBuilder. & Por completar & Por completar & Diferenciar particiones livianas, mamposteria interior y muros entre zonas termicas. \\
-  Entrepiso & Por completar con capas registradas en DesignBuilder. & Por completar & Por completar & Registrar losa, contrapiso, acabado de piso y cielo raso inferior si aplica. \\
-  Contrapiso & Por completar con capas registradas en DesignBuilder. & Por completar & Por completar & Documentar contacto con terreno, capas de base, losa, acabado y resistencia termica. \\
-  Ventanas & Por completar con tipo de acristalamiento y marco. & Por completar & Por completar & Registrar vidrio, marco, transmitancia, SHGC, transmitancia visible y factor de sombra si aparece. \\
-  Puertas & Por completar con tipo de hoja y marco. & Por completar & Por completar & Separar puertas opacas exteriores, puertas interiores y puertas acristaladas si existen. \\
+  01. Gypsum/1.5cm-Bloque/15cm-Gysum/1.5cm & Wall: 84 & Gypsum Plasterboard + Bloque Hormigon + Gypsum Plasterboard & 0,1800 & 0,272 & 3,68 \\
+  01. Porcelanato/2cm-Hormigon/15cm & Ceiling: 5; Floor: 19 & Cast Concrete + Ceramic/porcelain & 0,1700 & 0,148 & 6,75 \\
+  01.Cubierta-OSB-Gres-Madera/CB & Roof: 15 & Gres Vidriado 20cm + Cement/plaster/mortar - cement + Asphalt Mastic Roofing + Oriented strand board (OSB) + Pine (20\% Moist) & 0,2580 & 1,608 & 0,62 \\
+  01.Ladrillo/14cm-Aislante/2cm-Panel Gypsum/2cm & Wall: 10 & Ladrillo + Glass Fibre Quilt + Gypsum Plasterboard & 0,1800 & 0,774 & 1,29 \\
+  01.Madera/MDF/2cm & Door: 26 & Pine (20\% Moist) & 0,0350 & 0,250 & 4,00 \\
+  01.Vidrio Claro 6mm - 1002 & Window: 17 & Generic CLEAR 6MM & 0,0060 & -- & -- \\
+  01.WA.ENL1.5-BLO15-EMP1.5 & Wall: 59 & Cement/plaster/mortar - cement plaster + Bloque Hormigon + Cement/plaster/mortar - gypsum plaster & 0,1800 & 0,202 & 4,96 \\
+  02.Porcelanato/2cm-Aire/15cm-Gypsum/1.5cm & Ceiling: 47; Floor: 51 & Ceramic/porcelain + 3\_RVAL\_2 + Oriented strand board (OSB) + Gypsum Plasterboard & 0,0530 & 0,394 & 2,54 \\
+  Gypsum/1.5cm-Bloque/15cm-Porcelanto 1.5 cm & Wall: 6 & Gypsum Plasterboard + Bloque Hormigon + Ceramic/porcelain & 0,1800 & 0,223 & 4,48 \\
+  Link body & Wall: 2 & Link body & 0,1000 & 1,000 & 1,00 \\
+  Project external door & Door: 1 & Painted Oak & 0,0350 & 0,184 & 5,43 \\
+  Project internal glazing - 1001 & Window: 26 & Generic CLEAR 3MM + AIR 6MM + Generic CLEAR 3MM + AIR 6MM + Generic CLEAR 3MM & 0,0210 & -- & -- \\
+  Project semi-exposed ceiling & Ceiling: 4; Floor: 4 & Plywood (Heavyweight) + MW Glass Wool (rolls) + Cast Concrete (Lightweight) + 11\_RVAL\_4 + Plasterboard & 0,2549 & 3,859 & 0,26 \\
+  Sgl Clr 6mm - 1003 & Window: 7 & Generic CLEAR 6MM & 0,0060 & -- & -- \\
+  Vidrio 8mm & Wall: 14 & Glass mosaic & 0,0080 & 0,007 & -- \\
 \end{longtable}
 }
-\fuente{Estructura preliminar basada en los elementos de envolvente del caso base modelado en DesignBuilder. Los valores se completaran con las capturas de pantalla y reportes del programa.}
+\fuente{Elaboracion propia a partir del archivo IDF \texttt{Caso Base-5.idf}. El valor U se calcula como aproximacion capa a capa sin resistencias superficiales; los sistemas de acristalamiento se mantienen como configuracion de EnergyPlus cuando incluyen camaras de gas.}
