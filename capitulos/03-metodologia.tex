@@ -4,19 +4,19 @@ La metodología define el procedimiento para responder a la pregunta de investig
 
 El planteamiento metodológico toma como referencia la lógica desarrollada por \textcite{torres-barriusoSustainableBuildingStandards2025} para la definición, simulación e implementación de estándares sostenibles en Galápagos. En el artículo de referencia, el proceso parte de la caracterización de casos representativos, establece una línea base, simula estrategias sostenibles y traduce los resultados en criterios replicables. En esta tesis, dicha lógica se adapta al proyecto de la Defensoría del Pueblo como caso de estudio, sin intervención física directa.
 
-\section{Diseño de investigación}
+\section{Diseño y enfoque de la investigación}
 
 La investigación es no experimental, cuantitativa, prospectiva y comparativa. Es no experimental porque no modifica físicamente el edificio; cuantitativa porque analiza indicadores medibles de desempeño energético y confort; prospectiva porque evalúa escenarios de mejora antes de su implementación; y comparativa porque contrasta el escenario base con escenarios optimizados.
 
 El enfoque se basa en la evaluación de escenarios mediante herramientas BIM y simulación energética. La investigación no busca medir un edificio en operación, sino estimar el comportamiento energético y ambiental de un proyecto arquitectónico a partir de información técnica disponible, datos climáticos y modelos de simulación.
 
-\section{Unidad de análisis}
+\section{Caso de estudio y unidad de análisis}
 
 La unidad de análisis corresponde al proyecto arquitectónico de la Defensoría del Pueblo en la isla San Cristóbal, Galápagos. El caso se considera representativo de una edificación pública ubicada en un contexto insular de alta fragilidad ambiental, donde las decisiones de diseño deben responder a condiciones climáticas, logísticas y ecológicas particulares.
 
 El modelo base corresponde al diseño actual del edificio, incluyendo su geometría, orientación, sistema constructivo, materiales, envolvente, aperturas, condiciones de ventilación, ocupación y sistemas previstos.
 
-\section{Estructura metodológica}
+\section{Fases metodológicas}
 
 La metodología se organiza en seis fases consecutivas. Cada fase genera información necesaria para la siguiente, desde el levantamiento de datos hasta la formulación de recomendaciones de optimización.
 
@@ -40,11 +40,11 @@ La metodología se organiza en seis fases consecutivas. Cada fase genera informa
   \fuente{Basado en el esquema metodológico de la investigación.}
 \end{table}
 
-\section{Materiales e información de entrada}
+\section{Fuentes de información y datos de entrada}
 
 La investigación utilizará información técnica del proyecto y del contexto climático. Los datos de entrada se agrupan en tres categorías: documentación del edificio, datos climáticos y parámetros de operación.
 
-\subsection{Datos del edificio actual}
+\subsection{Documentación del edificio}
 
 La documentación del edificio incluirá la revisión de planos arquitectónicos, planos estructurales, planos de instalaciones cuando estén disponibles, topografía, especificaciones de materiales y sistemas constructivos actuales. Esta información permitirá reconstruir el proyecto en un modelo digital y definir las propiedades físicas de la envolvente.
 
@@ -74,17 +74,17 @@ La lectura preliminar del EPW muestra una temperatura media anual de $24,28\,^{\
   \fuente{Basado en el archivo climático EPW de San Cristóbal.}
 \end{table}
 
-\subsection{Condiciones de uso}
+\subsection{Condiciones de uso y ocupación}
 
 Las condiciones de uso incluirán ocupación, horarios de funcionamiento, cargas internas, iluminación artificial, ventilación natural o mecánica y sistemas HVAC cuando correspondan. Si existe información operativa de edificios similares o datos reales de consumo, se utilizará como referencia para ajustar los supuestos del modelo.
 
-\section{Herramientas de trabajo}
+\section{Herramientas de simulación y análisis}
 
 El trabajo combinará software BIM, simulación energética y matrices de análisis. El modelado y coordinación podrán realizarse en Revit o Archicad, según la disponibilidad de información del proyecto. La simulación energética se desarrollará principalmente en DesignBuilder, basado en el motor EnergyPlus, y podrá contrastarse con herramientas complementarias como Revit Insight o Archicad EnergyPlus cuando sea pertinente.
 
 Para el análisis de materiales sostenibles, huella de carbono e indicadores comparativos se emplearán matrices en hojas de cálculo. Estas matrices permitirán organizar datos, comparar escenarios y registrar resultados de forma trazable.
 
-\section{Modelado del edificio base}
+\paragraph{Construcción del caso base.}
 
 El modelado del edificio base consiste en construir una representación digital del diseño actual del proyecto. Este modelo permitirá definir la geometría, orientación, envolvente, aperturas, sombras, materiales y condiciones operativas del edificio.
 
@@ -104,7 +104,7 @@ En esta fase se configurarán los principales parámetros térmicos:
   \item Ocupación y horarios de uso del edificio.
 \end{itemize}
 
-\section{Definición de escenarios}
+\section{Escenarios de simulación (CB, C1, C2, C3)}
 
 La evaluación se organizará en cuatro escenarios. El objetivo es comparar el diseño actual con alternativas de mejora y determinar qué tipo de estrategia produce mayor incidencia sobre el desempeño energético y el confort térmico.
 
@@ -117,25 +117,27 @@ La evaluación se organizará en cuatro escenarios. El objetivo es comparar el d
 
 Cada escenario será modelado de forma independiente y bajo criterios comparables. Esto permitirá que las diferencias de resultado se asocien a las estrategias evaluadas y no a cambios metodológicos entre modelos.
 
-\section{Simulación energética}
+\paragraph{Ejecución de simulaciones energéticas.}
 
 La simulación energética evaluará pérdidas y ganancias térmicas, demanda energética, consumo estimado, confort térmico, luminosidad y comportamiento de la envolvente. Para cada escenario se ejecutarán simulaciones con condiciones climáticas y supuestos operativos equivalentes.
 
 El escenario base permitirá establecer la línea de comparación. Los escenarios optimizados permitirán medir el impacto de estrategias pasivas, materiales sostenibles y combinación de ambas. Esta comparación permitirá pasar de una valoración cualitativa de las estrategias a una evaluación cuantitativa de su incidencia.
 
-\section{Análisis de resultados}
+\section{Matriz de indicadores de sostenibilidad}
+
+\subsection{Dimensiones e indicadores}
 
 Los resultados se organizarán mediante tablas comparativas, gráficos y matrices de evaluación. Se comparará el modelo base con los modelos optimizados para identificar variaciones en carga térmica, demanda energética, consumo, confort térmico y luminosidad.
 
 El análisis cuantitativo considerará promedios, desviaciones cuando correspondan, porcentajes de mejora y diferencias entre escenarios. También se evaluará la combinación de estrategias pasivas y materiales sostenibles para determinar si el escenario integrado ofrece un beneficio mayor que las estrategias aplicadas de forma separada.
 
-\section{Validación técnica}
+\subsection{Estándares de referencia}
 
 La validación se realizará mediante revisión de consistencia del modelo, comparación con datos reales cuando estén disponibles y contraste con literatura técnica. Si existen datos de consumo o condiciones térmicas de edificios cercanos o comparables, estos podrán utilizarse como referencia para ajustar parámetros y mejorar la confiabilidad del modelo.
 
 Además, se revisarán los supuestos de modelado, las propiedades de materiales, las condiciones climáticas, los horarios de uso y los criterios de ventilación. Las limitaciones del modelo serán documentadas para evitar interpretar los resultados como mediciones absolutas de desempeño.
 
-\section{Procedimiento}
+\section{Procedimiento y validación del modelo}
 
 El procedimiento operativo se desarrollará en las siguientes etapas:
 
@@ -156,6 +158,6 @@ El procedimiento operativo se desarrollará en las siguientes etapas:
   \item Formulación de recomendaciones de optimización según impacto y factibilidad.
 \end{enumerate}
 
-\section{Producto final de la metodología}
+\paragraph{Producto final de la metodología.}
 
 El producto final de la metodología será una propuesta de optimización del diseño arquitectónico mediante estrategias pasivas y materiales sostenibles. Esta propuesta se apoyará en evidencia cuantitativa derivada de simulaciones, comparación de escenarios e identificación de prioridades de implementación.
