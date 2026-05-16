@@ -1,15 +1,15 @@
 % !TeX root = ../main.tex
-\chapter{Caso de estudio}
+\chapter{Caso de estudio y evaluación del caso base}
 
-Este capítulo aplica la metodología al proyecto de la Defensoría del Pueblo en San Cristóbal. Su función es mostrar cómo se construye la línea base, cómo se organizan los indicadores y cómo se comparan los escenarios de simulación. De esta forma, el capítulo funciona como el puente entre el método y la propuesta de optimización.
+Este capítulo aplica la metodología al proyecto de la Defensoría del Pueblo en San Cristóbal. Su función es describir el caso de estudio, caracterizar el contexto climático, documentar la construcción del modelo energético y presentar la evaluación del caso base. De esta forma, el capítulo establece el diagnóstico que servirá como punto de partida para los escenarios de optimización del capítulo siguiente.
 
-\section{Caracterización del edificio}
+\section{Descripción del caso de estudio}
 
 La caracterización describe las condiciones arquitectónicas, climáticas y constructivas del caso de estudio. Esta sección deberá incluir implantación, orientación, programa arquitectónico, sistema constructivo, materiales predominantes, configuración de envolvente, relación lleno-vacío, protecciones solares existentes y criterios de ventilación natural.
 
 El objetivo de esta sección es reconocer las condiciones iniciales que inciden en el desempeño ambiental del proyecto. En el contexto de Galápagos, la lectura del edificio debe considerar no solo el consumo energético, sino también las restricciones de transporte, mantenimiento, disponibilidad material y fragilidad ambiental.
 
-\section{Caracterización climática de San Cristóbal}
+\section{Análisis del contexto climático de San Cristóbal}
 
 La caracterización climática se construye a partir del archivo EPW de San Cristóbal incorporado en la carpeta de datos de la tesis. El registro corresponde al año meteorológico típico TMYx 2011--2025 de la estación San Cristóbal International Airport y contiene 8760 datos horarios de temperatura exterior, punto de rocío, humedad relativa, radiación solar global, directa y difusa, velocidad y dirección del viento, presión atmosférica, cobertura de cielo y precipitación.
 
@@ -101,57 +101,7 @@ La lectura gráfica del EPW se concentra en las variables más relevantes para e
 
 Esta lectura climática orienta la construcción de la línea base. Antes de simular escenarios de optimización, el modelo debe representar correctamente la exposición solar, la ventilación disponible, la sensibilidad de la envolvente a la radiación y el comportamiento higrotérmico de los materiales. En consecuencia, las estrategias a comparar no deben limitarse al cambio de materiales, sino incluir control solar, ventilación natural, sombreamiento, reducción de cargas térmicas y selección de envolventes compatibles con un ambiente húmedo.
 
-\section{Matriz de indicadores}
-
-La matriz de indicadores organiza los criterios con los que se evaluará el edificio. A diferencia de una certificación completa, esta matriz funciona como una herramienta de comparación entre escenarios. Los indicadores se agrupan en cinco dimensiones: energía, confort térmico, iluminación natural, materiales y adaptación al contexto insular.
-
-\begin{table}[H]
-  \centering
-  \caption{Dimensiones de evaluación del proyecto}
-  {\fontsize{9}{11}\selectfont
-  \begin{tabular}{p{3.2cm}p{8.8cm}}
-    \toprule
-    Dimensión & Indicadores de análisis \\
-    \midrule
-    Energía & Demanda energética, cargas térmicas, consumo estimado y reducción porcentual frente a línea base. \\
-    Confort térmico & Temperatura operativa, horas de confort, ventilación natural y riesgo de sobrecalentamiento. \\
-    Iluminación natural & Aprovechamiento de luz natural, necesidad de iluminación artificial y control de deslumbramiento. \\
-    Materiales & Huella ambiental, disponibilidad local o regional, durabilidad y comportamiento térmico. \\
-    Contexto insular & Factibilidad logística, mantenimiento, impacto visual y pertinencia ecológica. \\
-    \bottomrule
-  \end{tabular}
-  }
-  \fuente{Basado en los indicadores energéticos, ambientales y contextuales definidos para la investigación.}
-\end{table}
-
-\section{Construcción de la línea base}
-
-La línea base corresponde al estado actual del proyecto antes de aplicar estrategias de optimización. Esta línea base debe documentar los parámetros usados en el modelo: geometría, orientación, materiales, valores térmicos, infiltración, ventilación, horarios de uso, cargas internas, sombreamiento y datos climáticos.
-
-El modelo base fue exportado desde DesignBuilder como archivo IDF de EnergyPlus. La revisión del archivo permite identificar 28 zonas térmicas, 320 superficies constructivas detalladas, 102 superficies de fenestración, 204 superficies de sombreado y 19 sistemas \texttt{Ideal Loads Air System}. Esto indica que el modelo es adecuado para estimar demanda térmica y comparar escenarios, aunque no representa todavía el consumo real de equipos HVAC específicos.
-
-\begin{table}[H]
-  \centering
-  \caption{Síntesis del modelo IDF del caso base}
-  {\fontsize{9}{11}\selectfont
-  \begin{tabular}{p{5cm}p{6.5cm}}
-    \toprule
-    Parámetro revisado & Valor identificado \\
-    \midrule
-    Software de origen & DesignBuilder 7.3.1.003 / EnergyPlus 9.4.0.002 \\
-    Zonas térmicas totales & 28 zonas \\
-    Zonas con cargas y HVAC ideal & 19 zonas \\
-    Área de pisos modelada & $378,17\,\mathrm{m}^{2}$ \\
-    Área de cubierta & $136,48\,\mathrm{m}^{2}$ \\
-    Área de superficies exteriores & $650,15\,\mathrm{m}^{2}$ \\
-    Área de fenestración exterior & $108,75\,\mathrm{m}^{2}$ \\
-    Relación ventana-muro exterior aproximada & $17,77\%$ \\
-    Sistema de aire & AirflowNetwork multizona e Ideal Loads Air System \\
-    \bottomrule
-  \end{tabular}
-  }
-  \fuente{Basado en el archivo IDF del caso base exportado desde DesignBuilder.}
-\end{table}
+\section{Descripción arquitectónica y espacial del edificio}
 
 La vista axonométrica del modelo en DesignBuilder permite verificar la composición volumétrica del caso base sin alterar la geometría exportada por el programa. En esta lectura se observan los cuerpos principales del edificio, los bordes perimetrales, los voladizos y los elementos verticales de protección solar. Estos componentes son relevantes porque condicionan el sombreado propio, la exposición de la envolvente y la relación entre superficies opacas, transparentes y espacios exteriores.
 
@@ -508,32 +458,38 @@ La cubierta se modela como un espacio vacío independiente. Aunque no correspond
   \fuente{Basado en el esquema de zonificación del modelo energético del caso base desarrollado en DesignBuilder.}
 \end{figure}
 
-Los mapas de iluminancia exportados desde DesignBuilder permiten revisar la distribución espacial de luz natural por nivel. La escala gráfica está expresada en lux y conserva la salida original del programa, por lo que las figuras se incorporan sin edición para mantener la lectura cromática y numérica generada por la simulación.
+\section{Modelo de simulación energética}
 
-\begin{figure}[H]
+\subsection{Software y archivo climático}
+
+La línea base corresponde al estado actual del proyecto antes de aplicar estrategias de optimización. Esta línea base debe documentar los parámetros usados en el modelo: geometría, orientación, materiales, valores térmicos, infiltración, ventilación, horarios de uso, cargas internas, sombreamiento y datos climáticos.
+
+El modelo base fue exportado desde DesignBuilder como archivo IDF de EnergyPlus. La revisión del archivo permite identificar 28 zonas térmicas, 320 superficies constructivas detalladas, 102 superficies de fenestración, 204 superficies de sombreado y 19 sistemas \texttt{Ideal Loads Air System}. Esto indica que el modelo es adecuado para estimar demanda térmica y comparar escenarios, aunque no representa todavía el consumo real de equipos HVAC específicos.
+
+\begin{table}[H]
   \centering
-  \includegraphics[width=\textwidth]{figuras/iluminancia-planta-baja.png}
-  \caption{Mapa de iluminancia de la planta baja del caso base}
-  \fuente{Basado en la simulación de iluminancia exportada desde DesignBuilder.}
-\end{figure}
+  \caption{Síntesis del modelo IDF del caso base}
+  {\fontsize{9}{11}\selectfont
+  \begin{tabular}{p{5cm}p{6.5cm}}
+    \toprule
+    Parámetro revisado & Valor identificado \\
+    \midrule
+    Software de origen & DesignBuilder 7.3.1.003 / EnergyPlus 9.4.0.002 \\
+    Zonas térmicas totales & 28 zonas \\
+    Zonas con cargas y HVAC ideal & 19 zonas \\
+    Área de pisos modelada & $378,17\,\mathrm{m}^{2}$ \\
+    Área de cubierta & $136,48\,\mathrm{m}^{2}$ \\
+    Área de superficies exteriores & $650,15\,\mathrm{m}^{2}$ \\
+    Área de fenestración exterior & $108,75\,\mathrm{m}^{2}$ \\
+    Relación ventana-muro exterior aproximada & $17,77\%$ \\
+    Sistema de aire & AirflowNetwork multizona e Ideal Loads Air System \\
+    \bottomrule
+  \end{tabular}
+  }
+  \fuente{Basado en el archivo IDF del caso base exportado desde DesignBuilder.}
+\end{table}
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth]{figuras/iluminancia-primera-planta-alta.png}
-  \caption{Mapa de iluminancia de la primera planta alta del caso base}
-  \fuente{Basado en la simulación de iluminancia exportada desde DesignBuilder.}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth]{figuras/iluminancia-segunda-planta-alta.png}
-  \caption{Mapa de iluminancia de la segunda planta alta del caso base}
-  \fuente{Basado en la simulación de iluminancia exportada desde DesignBuilder.}
-\end{figure}
-
-La tabla siguiente resume los valores numéricos asociados a los mapas de iluminancia. El área sobre umbral indica la proporción de superficie que cumple el criterio definido en la simulación; el factor de luz día promedio permite comparar el acceso relativo a luz natural entre espacios; y los valores mínimo y máximo de iluminancia muestran el rango de variación interna registrado en lux.
-
-\input{insumos/iluminancia-resumen-tabla.tex}
+\subsection{Zonas térmicas}
 
 La desagregación por zonas permite reconocer qué espacios concentran mayor área útil, mayor exposición de envolvente y mayor presencia de fenestración exterior. Esta lectura es necesaria para interpretar posteriormente las cargas térmicas y para priorizar estrategias pasivas por orientación, cubierta y relación lleno-vacío. Para facilitar la lectura, los códigos exportados por el IDF con la letra \texttt{X} como separador se presentan con guion.
 
@@ -587,52 +543,80 @@ La desagregación por zonas permite reconocer qué espacios concentran mayor ár
 }
 \fuente{Basado en el archivo IDF del caso base exportado desde DesignBuilder.}
 
+\subsection{Propiedades de la envolvente}
+
 El reporte \textit{Summary} de EnergyPlus complementa la lectura anterior porque resume los parámetros verificados durante la simulación. A partir de este archivo se extraen dos cuadros: el primero registra la geometría y la envolvente de cada espacio; el segundo documenta las cargas internas asignadas en iluminación, ocupación y equipos. Estos valores permiten revisar la coherencia del caso base antes de comparar escenarios de optimización.
 
 \input{insumos/summary-espacios-tablas.tex}
+
+\subsection{Sistemas, supuestos y limitaciones}
+
+La lectura del IDF también permite identificar aspectos que deben revisarse antes de consolidar los resultados finales. El archivo referencia el clima EPW TMYx 2011--2025 de San Cristóbal, pero el periodo de simulación aparece rotulado con el año 2002. Además, el \texttt{Site:Location} del IDF usa zona horaria y elevación que no coinciden exactamente con el encabezado del EPW. Estas diferencias deben corregirse o documentarse para asegurar coherencia entre clima, localización y simulación.
+
+\section{Resultados del caso base}
+
+\subsection{Desempeño energético}
 
 El archivo de día de diseño de enfriamiento permite identificar los momentos críticos de extracción de calor y los componentes que inciden en la carga térmica. En esta salida los valores de enfriamiento se reportan con signo negativo porque representan remoción de calor del espacio; por tanto, la mayor demanda de enfriamiento corresponde al valor de mayor magnitud absoluta.
 
 \input{insumos/cooling-design-resumen-tabla.tex}
 
-La lectura del IDF también permite identificar aspectos que deben revisarse antes de consolidar los resultados finales. El archivo referencia el clima EPW TMYx 2011--2025 de San Cristóbal, pero el periodo de simulación aparece rotulado con el año 2002. Además, el \texttt{Site:Location} del IDF usa zona horaria y elevación que no coinciden exactamente con el encabezado del EPW. Estas diferencias deben corregirse o documentarse para asegurar coherencia entre clima, localización y simulación.
+\subsection{Confort térmico}
 
-El resultado esperado de esta sección es una lectura clara de los puntos críticos del edificio. Entre ellos pueden aparecer ganancias solares excesivas, baja protección de la envolvente, ventilación insuficiente, alta demanda de enfriamiento o dependencia de sistemas activos.
+El confort térmico del caso base se interpreta a partir de la relación entre el clima cálido-húmedo de San Cristóbal, la exposición de la envolvente, las cargas internas y la capacidad de ventilación representada en el modelo. La revisión del archivo climático y del IDF permite anticipar riesgo de sobrecalentamiento en espacios con mayor exposición solar, cubierta o cargas internas elevadas, especialmente cuando la ventilación disponible no compensa las ganancias térmicas.
 
-\section{Escenarios de simulación}
+\subsection{Iluminancia natural}
 
-Los escenarios de simulación se organizan para aislar el efecto de cada tipo de estrategia y luego evaluar su interacción. Esta estructura permite identificar si la mejora principal proviene del diseño pasivo, de la materialidad o de la combinación de ambos.
+Los mapas de iluminancia exportados desde DesignBuilder permiten revisar la distribución espacial de luz natural por nivel. La escala gráfica está expresada en lux y conserva la salida original del programa, por lo que las figuras se incorporan sin edición para mantener la lectura cromática y numérica generada por la simulación.
 
-\begin{enumerate}
-  \item Escenario base: reproduce las condiciones actuales del proyecto.
-  \item Escenario pasivo: modifica variables de diseño pasivo, como control solar, ventilación natural, sombreamiento e inercia térmica.
-  \item Escenario material: evalúa alternativas de materiales sostenibles y mejoras de envolvente.
-  \item Escenario combinado: integra las mejores medidas pasivas y materiales para estimar el máximo potencial de optimización.
-\end{enumerate}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figuras/iluminancia-planta-baja.png}
+  \caption{Mapa de iluminancia de la planta baja del caso base}
+  \fuente{Basado en la simulación de iluminancia exportada desde DesignBuilder.}
+\end{figure}
 
-\section{Análisis comparativo}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figuras/iluminancia-primera-planta-alta.png}
+  \caption{Mapa de iluminancia de la primera planta alta del caso base}
+  \fuente{Basado en la simulación de iluminancia exportada desde DesignBuilder.}
+\end{figure}
 
-El análisis comparativo deberá presentar los resultados por indicador y por escenario. Para evitar una lectura dispersa, cada resultado deberá responder tres preguntas: qué cambia respecto a la línea base, cuánto cambia y qué implicación tiene para el proyecto.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figuras/iluminancia-segunda-planta-alta.png}
+  \caption{Mapa de iluminancia de la segunda planta alta del caso base}
+  \fuente{Basado en la simulación de iluminancia exportada desde DesignBuilder.}
+\end{figure}
+
+La tabla siguiente resume los valores numéricos asociados a los mapas de iluminancia. El área sobre umbral indica la proporción de superficie que cumple el criterio definido en la simulación; el factor de luz día promedio permite comparar el acceso relativo a luz natural entre espacios; y los valores mínimo y máximo de iluminancia muestran el rango de variación interna registrado en lux.
+
+\input{insumos/iluminancia-resumen-tabla.tex}
+
+\subsection{Puntuación del CB por estándar de sostenibilidad}
+
+La puntuación del caso base se plantea como una lectura preliminar frente a los criterios de sostenibilidad definidos para la investigación. En esta etapa no se busca declarar una certificación completa, sino reconocer el nivel inicial del edificio y establecer una referencia para comparar los escenarios de optimización. La matriz de indicadores organiza los criterios en cinco dimensiones: energía, confort térmico, iluminación natural, materiales y adaptación al contexto insular.
 
 \begin{table}[H]
   \centering
-  \caption{Estructura de comparación entre escenarios}
+  \caption{Dimensiones de evaluación del proyecto}
   {\fontsize{9}{11}\selectfont
-  \begin{tabular}{p{3cm}p{2.5cm}p{2.5cm}p{2.5cm}p{2.5cm}}
+  \begin{tabular}{p{3.2cm}p{8.8cm}}
     \toprule
-    Indicador & Base & Pasivo & Material & Combinado \\
+    Dimensión & Indicadores de análisis \\
     \midrule
-    Demanda energética & Completar & Completar & Completar & Completar \\
-    Horas de confort & Completar & Completar & Completar & Completar \\
-    Ganancias térmicas & Completar & Completar & Completar & Completar \\
-    Desempeño lumínico & Completar & Completar & Completar & Completar \\
-    Emisiones asociadas & Completar & Completar & Completar & Completar \\
+    Energía & Demanda energética, cargas térmicas, consumo estimado y reducción porcentual frente a línea base. \\
+    Confort térmico & Temperatura operativa, horas de confort, ventilación natural y riesgo de sobrecalentamiento. \\
+    Iluminación natural & Aprovechamiento de luz natural, necesidad de iluminación artificial y control de deslumbramiento. \\
+    Materiales & Huella ambiental, disponibilidad local o regional, durabilidad y comportamiento térmico. \\
+    Contexto insular & Factibilidad logística, mantenimiento, impacto visual y pertinencia ecológica. \\
     \bottomrule
   \end{tabular}
   }
-  \fuente{Basado en la estructura comparativa de escenarios propuesta para la investigación.}
+  \fuente{Basado en los indicadores energéticos, ambientales y contextuales definidos para la investigación.}
 \end{table}
 
-\section{Hallazgos para la optimización}
+\section{Discusión diagnóstica del caso base}
 
-El cierre del capítulo sintetizará los hallazgos que deben pasar al capítulo siguiente. No se trata todavía de recomendar soluciones, sino de identificar evidencia: qué variable tuvo mayor incidencia, qué estrategia produjo mejor respuesta, qué medida resultó poco efectiva y qué restricciones condicionan la implementación.
+El resultado esperado de esta sección es una lectura clara de los puntos críticos del edificio. Entre ellos pueden aparecer ganancias solares excesivas, baja protección de la envolvente, ventilación insuficiente, alta demanda de enfriamiento o dependencia de sistemas activos.
