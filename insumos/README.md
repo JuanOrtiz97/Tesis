@@ -16,7 +16,10 @@ Regla de uso:
 - `datos-climaticos-san-cristobal-resumen.md`: sintesis del archivo climatico diario de San Cristobal para integrar a la metodologia y al caso de estudio.
 - `epw-san-cristobal-tmyx-2011-2025-resumen.md`: sintesis del archivo EPW horario TMYx 2011-2025 de San Cristobal, fuente climatica principal para simulacion.
 - `graficos-epw-san-cristobal.md`: resumen de los graficos generados desde el EPW y tabla mensual usada para las figuras.
-- `../figuras/epw-sintesis-climatica.pdf`: lamina unificada de variables climaticas principales del EPW con estilo grafico homogeneo.
+- `../figuras/epw-uniforme-temperatura-humedad.pdf`: grafico separado de temperatura y humedad del EPW con estilo grafico homogeneo.
+- `../figuras/epw-uniforme-radiacion-solar.pdf`: grafico separado de radiacion solar del EPW con estilo grafico homogeneo.
+- `../figuras/epw-uniforme-viento-cielo-precipitacion.pdf`: grafico separado de viento, cielo y precipitacion del EPW con estilo grafico homogeneo.
+- `../figuras/epw-uniforme-mapa-horario-temperatura.pdf`: grafico separado de temperatura horaria del EPW con estilo grafico homogeneo.
 - `idf-caso-base-1-3-resumen.md`: interpretacion tecnica del archivo IDF exportado desde DesignBuilder para el escenario base.
 - `idf-zonas-caso-base.md` y `idf-zonas-caso-base.csv`: tabla de zonas termicas extraida del IDF del caso base.
 - `marco-teorico-borrador-extraido.md`: extraccion del documento Word de marco teorico usado para reconstruir el capitulo 2 con citas BibLaTeX.
