@@ -29,7 +29,6 @@ INK = colors.HexColor("#17212b")
 MUTED = colors.HexColor("#5b6773")
 GRID = colors.HexColor("#d9e0e6")
 AXIS = colors.HexColor("#8d99a6")
-PANEL = colors.HexColor("#f8fafc")
 TEMP = colors.HexColor("#d95f02")
 TEMP_MIN = colors.HexColor("#74a9cf")
 TEMP_MAX = colors.HexColor("#ef476f")
@@ -139,10 +138,6 @@ def finish(c: canvas.Canvas) -> None:
 
 def chart_area(c: canvas.Canvas) -> tuple[float, float, float, float]:
     x, y, w, h = 78, 82, 570, 260
-    c.setFillColor(PANEL)
-    c.setStrokeColor(colors.HexColor("#c9d3dc"))
-    c.setLineWidth(0.7)
-    c.roundRect(48, 54, 624, 305, 6, fill=1, stroke=1)
     c.setStrokeColor(GRID)
     c.setLineWidth(0.45)
     for i in range(1, 5):
