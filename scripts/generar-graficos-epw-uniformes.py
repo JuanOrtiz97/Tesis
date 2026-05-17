@@ -43,6 +43,9 @@ PRECIP = colors.HexColor("#4dabf7")
 DIRECTIONS = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSO", "SO", "OSO", "O", "ONO", "NO", "NNO"]
 FONT = "Times-Roman"
 FONT_BOLD = "Times-Bold"
+AXIS_FONT_SIZE = 9
+MONTH_FONT_SIZE = 10
+LEGEND_FONT_SIZE = 9
 
 
 def parse_epw() -> list[dict[str, float | str]]:
@@ -156,14 +159,11 @@ def setup(path: Path, title: str, subtitle: str) -> canvas.Canvas:
 
 
 def finish(c: canvas.Canvas) -> None:
-    c.setFont(FONT, 7)
-    c.setFillColor(MUTED)
-    c.drawRightString(676, 28, "Fuente: archivo EPW San Cristobal TMYx 2011-2025.")
     c.save()
 
 
 def chart_area(c: canvas.Canvas) -> tuple[float, float, float, float]:
-    x, y, w, h = 78, 82, 570, 260
+    x, y, w, h = 78, 100, 570, 240
     c.setStrokeColor(GRID)
     c.setLineWidth(0.45)
     for i in range(1, 5):
@@ -177,7 +177,7 @@ def chart_area(c: canvas.Canvas) -> tuple[float, float, float, float]:
 
 
 def month_labels(c: canvas.Canvas, x: float, y: float, w: float) -> None:
-    c.setFont(FONT, 8)
+    c.setFont(FONT, MONTH_FONT_SIZE)
     c.setFillColor(MUTED)
     step = w / 12
     for i, month in enumerate(MONTHS):
@@ -185,7 +185,7 @@ def month_labels(c: canvas.Canvas, x: float, y: float, w: float) -> None:
 
 
 def y_labels(c: canvas.Canvas, x: float, y: float, h: float, low: float, high: float, suffix: str = "") -> None:
-    c.setFont(FONT, 7)
+    c.setFont(FONT, AXIS_FONT_SIZE)
     c.setFillColor(MUTED)
     for i in range(6):
         value = low + (high - low) * i / 5
@@ -194,7 +194,7 @@ def y_labels(c: canvas.Canvas, x: float, y: float, h: float, low: float, high: f
 
 
 def y_labels_right(c: canvas.Canvas, x: float, y: float, h: float, low: float, high: float, suffix: str = "") -> None:
-    c.setFont(FONT, 7)
+    c.setFont(FONT, AXIS_FONT_SIZE)
     c.setFillColor(MUTED)
     for i in range(6):
         value = low + (high - low) * i / 5
@@ -203,7 +203,7 @@ def y_labels_right(c: canvas.Canvas, x: float, y: float, h: float, low: float, h
 
 
 def legend(c: canvas.Canvas, items: list[tuple[str, object]], x: float, y: float) -> None:
-    c.setFont(FONT, 8)
+    c.setFont(FONT, LEGEND_FONT_SIZE)
     for label, color in items:
         c.setFillColor(color)
         c.rect(x, y - 6, 10, 10, fill=1, stroke=0)
@@ -260,7 +260,7 @@ def draw_temperature(data: dict[str, list[float]]) -> None:
     draw_line(c, x, y, w, h, data["temp_min"], low, high, TEMP_MIN)
     draw_line(c, x, y, w, h, data["temp_mean"], low, high, TEMP)
     draw_line(c, x, y, w, h, data["temp_max"], low, high, TEMP_MAX)
-    legend(c, [("Minima", TEMP_MIN), ("Media", TEMP), ("Maxima", TEMP_MAX)], 82, 60)
+    legend(c, [("Minima", TEMP_MIN), ("Media", TEMP), ("Maxima", TEMP_MAX)], 82, 48)
     finish(c)
 
 
@@ -278,7 +278,7 @@ def draw_humidity(data: dict[str, list[float]]) -> None:
     draw_line(c, x, y, w, h, data["rh_min"], low, high, colors.HexColor("#8ecae6"))
     draw_line(c, x, y, w, h, data["rh_mean"], low, high, RH)
     draw_line(c, x, y, w, h, data["rh_max"], low, high, colors.HexColor("#023e8a"))
-    legend(c, [("Minima", colors.HexColor("#8ecae6")), ("Media", RH), ("Maxima", colors.HexColor("#023e8a"))], 82, 60)
+    legend(c, [("Minima", colors.HexColor("#8ecae6")), ("Media", RH), ("Maxima", colors.HexColor("#023e8a"))], 82, 48)
     finish(c)
 
 
@@ -293,7 +293,7 @@ def draw_radiation(data: dict[str, list[float]]) -> None:
     y_labels(c, x, y, h, 0, high, " kWh/m2")
     month_labels(c, x, y, w)
     draw_grouped_bars(c, x, y, w, h, [(data["ghi"], GHI), (data["dni"], DNI), (data["dhi"], DHI)], high)
-    legend(c, [("GHI", GHI), ("DNI", DNI), ("DHI", DHI)], 82, 60)
+    legend(c, [("GHI", GHI), ("DNI", DNI), ("DHI", DHI)], 82, 48)
     finish(c)
 
 
@@ -309,7 +309,7 @@ def draw_wind(data: dict[str, list[float]]) -> None:
     month_labels(c, x, y, w)
     draw_bars(c, x, y, w, h, data["wind_max"], high, colors.HexColor("#a7d8d0"))
     draw_line(c, x, y, w, h, data["wind_mean"], 0, high, WIND)
-    legend(c, [("Velocidad maxima", colors.HexColor("#a7d8d0")), ("Velocidad media", WIND)], 82, 60)
+    legend(c, [("Velocidad maxima", colors.HexColor("#a7d8d0")), ("Velocidad media", WIND)], 82, 48)
     finish(c)
 
 
