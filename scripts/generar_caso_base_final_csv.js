@@ -132,8 +132,8 @@ function map(value, inMin, inMax, outMin, outMax) {
 async function setupChart(title, subtitle) {
   const pdf = await PDFDocument.create();
   const page = pdf.addPage([720, 430]);
-  const font = await pdf.embedFont(StandardFonts.Helvetica);
-  const bold = await pdf.embedFont(StandardFonts.HelveticaBold);
+  const font = await pdf.embedFont(StandardFonts.TimesRoman);
+  const bold = await pdf.embedFont(StandardFonts.TimesRomanBold);
   drawText(page, bold, title, 44, 392, 17, COLORS.ink);
   drawText(page, font, subtitle, 44, 376, 9, COLORS.muted);
   return { pdf, page, font, bold };

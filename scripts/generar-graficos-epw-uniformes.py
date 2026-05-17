@@ -41,6 +41,8 @@ WIND = colors.HexColor("#2a9d8f")
 SKY = colors.HexColor("#6c757d")
 PRECIP = colors.HexColor("#4dabf7")
 DIRECTIONS = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSO", "SO", "OSO", "O", "ONO", "NO", "NNO"]
+FONT = "Times-Roman"
+FONT_BOLD = "Times-Bold"
 
 
 def parse_epw() -> list[dict[str, float | str]]:
@@ -145,16 +147,16 @@ def setup(path: Path, title: str, subtitle: str) -> canvas.Canvas:
     c = canvas.Canvas(str(path), pagesize=landscape((720, 430)))
     c.setTitle(title)
     c.setFillColor(INK)
-    c.setFont("Helvetica-Bold", 17)
+    c.setFont(FONT_BOLD, 17)
     c.drawString(44, 392, title)
-    c.setFont("Helvetica", 9)
+    c.setFont(FONT, 9)
     c.setFillColor(MUTED)
     c.drawString(44, 376, subtitle)
     return c
 
 
 def finish(c: canvas.Canvas) -> None:
-    c.setFont("Helvetica", 7)
+    c.setFont(FONT, 7)
     c.setFillColor(MUTED)
     c.drawRightString(676, 28, "Fuente: archivo EPW San Cristobal TMYx 2011-2025.")
     c.save()
@@ -175,7 +177,7 @@ def chart_area(c: canvas.Canvas) -> tuple[float, float, float, float]:
 
 
 def month_labels(c: canvas.Canvas, x: float, y: float, w: float) -> None:
-    c.setFont("Helvetica", 8)
+    c.setFont(FONT, 8)
     c.setFillColor(MUTED)
     step = w / 12
     for i, month in enumerate(MONTHS):
@@ -183,7 +185,7 @@ def month_labels(c: canvas.Canvas, x: float, y: float, w: float) -> None:
 
 
 def y_labels(c: canvas.Canvas, x: float, y: float, h: float, low: float, high: float, suffix: str = "") -> None:
-    c.setFont("Helvetica", 7)
+    c.setFont(FONT, 7)
     c.setFillColor(MUTED)
     for i in range(6):
         value = low + (high - low) * i / 5
@@ -192,7 +194,7 @@ def y_labels(c: canvas.Canvas, x: float, y: float, h: float, low: float, high: f
 
 
 def y_labels_right(c: canvas.Canvas, x: float, y: float, h: float, low: float, high: float, suffix: str = "") -> None:
-    c.setFont("Helvetica", 7)
+    c.setFont(FONT, 7)
     c.setFillColor(MUTED)
     for i in range(6):
         value = low + (high - low) * i / 5
@@ -201,7 +203,7 @@ def y_labels_right(c: canvas.Canvas, x: float, y: float, h: float, low: float, h
 
 
 def legend(c: canvas.Canvas, items: list[tuple[str, object]], x: float, y: float) -> None:
-    c.setFont("Helvetica", 8)
+    c.setFont(FONT, 8)
     for label, color in items:
         c.setFillColor(color)
         c.rect(x, y - 6, 10, 10, fill=1, stroke=0)
@@ -322,7 +324,7 @@ def draw_wind_rose(direction_data: list[float]) -> None:
     max_value = max(direction_data) or 1
     c.setStrokeColor(GRID)
     c.setFillColor(MUTED)
-    c.setFont("Helvetica", 7)
+    c.setFont(FONT, 7)
     for ring in range(1, 5):
         r = radius * ring / 4
         c.circle(cx, cy, r, stroke=1, fill=0)
@@ -351,7 +353,7 @@ def draw_wind_rose(direction_data: list[float]) -> None:
         path.close()
         c.drawPath(path, stroke=1, fill=1)
     c.setFillColor(MUTED)
-    c.setFont("Helvetica", 8)
+    c.setFont(FONT, 8)
     c.drawString(78, 73, f"Anillo exterior: {max_value:.1f}% de horas")
     finish(c)
 
@@ -392,7 +394,7 @@ def draw_temperature_heatmap(grid: list[list[float]]) -> None:
             c.rect(x + hour * cell_w, y + (11 - month) * cell_h, cell_w + 0.2, cell_h + 0.2, stroke=0, fill=1)
     c.setStrokeColor(AXIS)
     c.rect(x, y, w, h, stroke=1, fill=0)
-    c.setFont("Helvetica", 7)
+    c.setFont(FONT, 7)
     c.setFillColor(MUTED)
     for hour in [1, 6, 12, 18, 24]:
         c.drawCentredString(x + (hour - 0.5) * cell_w, y - 15, str(hour))
