@@ -68,6 +68,7 @@ def parse_epw() -> list[dict[str, float | str]]:
 def valid(value: float, field: str) -> bool:
     ranges = {
         "dry_bulb": (-70, 70),
+        "dew_point": (-70, 70),
         "rh": (0, 100),
         "ghi": (0, 1500),
         "dni": (0, 1500),
@@ -94,11 +95,23 @@ def monthly(rows: list[dict[str, float | str]]) -> dict[str, list[float]]:
     for month in range(1, 13):
         subset = [r for r in rows if int(float(r["month"])) == month]
         temps = values(subset, "dry_bulb")
+        dew_points = values(subset, "dew_point")
         rhs = values(subset, "rh")
         winds = values(subset, "wind_speed")
+        daily_temps: dict[int, list[float]] = defaultdict(list)
+        for row in subset:
+            temp = row.get("dry_bulb")
+            if isinstance(temp, float) and valid(temp, "dry_bulb"):
+                daily_temps[int(float(row["day"]))].append(temp)
+        amplitudes = [max(day_values) - min(day_values) for day_values in daily_temps.values() if day_values]
         data["temp_mean"].append(mean(temps))
         data["temp_min"].append(min(temps))
         data["temp_max"].append(max(temps))
+        data["dew_mean"].append(mean(dew_points))
+        data["dew_min"].append(min(dew_points))
+        data["dew_max"].append(max(dew_points))
+        data["amp_mean"].append(mean(amplitudes))
+        data["amp_max"].append(max(amplitudes))
         data["rh_mean"].append(mean(rhs))
         data["rh_min"].append(min(rhs))
         data["rh_max"].append(max(rhs))
@@ -282,6 +295,24 @@ def draw_humidity(data: dict[str, list[float]]) -> None:
     finish(c)
 
 
+def draw_dew_point(data: dict[str, list[float]]) -> None:
+    c = setup(
+        FIG_DIR / "epw-uniforme-punto-rocio.pdf",
+        "Punto de rocio mensual",
+        "Valores minimo, medio y maximo por mes del archivo EPW de San Cristobal.",
+    )
+    x, y, w, h = chart_area(c)
+    low = math.floor(min(data["dew_min"]) - 1)
+    high = math.ceil(max(data["dew_max"]) + 1)
+    y_labels(c, x, y, h, low, high, " C")
+    month_labels(c, x, y, w)
+    draw_line(c, x, y, w, h, data["dew_min"], low, high, colors.HexColor("#8ecae6"))
+    draw_line(c, x, y, w, h, data["dew_mean"], low, high, colors.HexColor("#2a9d8f"))
+    draw_line(c, x, y, w, h, data["dew_max"], low, high, colors.HexColor("#d95f02"))
+    legend(c, [("Minima", colors.HexColor("#8ecae6")), ("Media", colors.HexColor("#2a9d8f")), ("Maxima", colors.HexColor("#d95f02"))], 82, 48)
+    finish(c)
+
+
 def draw_radiation(data: dict[str, list[float]]) -> None:
     c = setup(
         FIG_DIR / "epw-uniforme-radiacion-solar.pdf",
@@ -294,6 +325,39 @@ def draw_radiation(data: dict[str, list[float]]) -> None:
     month_labels(c, x, y, w)
     draw_grouped_bars(c, x, y, w, h, [(data["ghi"], GHI), (data["dni"], DNI), (data["dhi"], DHI)], high)
     legend(c, [("GHI", GHI), ("DNI", DNI), ("DHI", DHI)], 82, 48)
+    finish(c)
+
+
+def draw_sky_precipitation(data: dict[str, list[float]]) -> None:
+    c = setup(
+        FIG_DIR / "epw-uniforme-cielo-precipitacion.pdf",
+        "Cielo y precipitacion mensual",
+        "Cobertura media de cielo y precipitacion acumulada por mes del archivo EPW.",
+    )
+    x, y, w, h = chart_area(c)
+    precip_high = max(data["precip"]) * 1.2
+    y_labels(c, x, y, h, 0, precip_high, " mm")
+    y_labels_right(c, x + w, y, h, 0, 10, "/10")
+    month_labels(c, x, y, w)
+    draw_bars(c, x, y, w, h, data["precip"], precip_high, PRECIP)
+    draw_line(c, x, y, w, h, data["sky"], 0, 10, SKY)
+    legend(c, [("Precipitacion", PRECIP), ("Cobertura de cielo", SKY)], 82, 48)
+    finish(c)
+
+
+def draw_daily_amplitude(data: dict[str, list[float]]) -> None:
+    c = setup(
+        FIG_DIR / "epw-uniforme-amplitud-termica.pdf",
+        "Amplitud termica diaria mensual",
+        "Oscilacion diaria media y maxima de temperatura exterior por mes.",
+    )
+    x, y, w, h = chart_area(c)
+    high = math.ceil(max(data["amp_max"]) + 1)
+    y_labels(c, x, y, h, 0, high, " C")
+    month_labels(c, x, y, w)
+    draw_bars(c, x, y, w, h, data["amp_max"], high, colors.HexColor("#f4d35e"))
+    draw_line(c, x, y, w, h, data["amp_mean"], 0, high, TEMP)
+    legend(c, [("Maxima diaria", colors.HexColor("#f4d35e")), ("Media diaria", TEMP)], 82, 48)
     finish(c)
 
 
@@ -414,8 +478,11 @@ def main() -> None:
     data = monthly(rows)
     draw_temperature(data)
     draw_humidity(data)
+    draw_dew_point(data)
     draw_radiation(data)
+    draw_sky_precipitation(data)
     draw_wind(data)
+    draw_daily_amplitude(data)
     draw_wind_rose(wind_direction_bins(rows))
     draw_temperature_heatmap(hourly_grid(rows))
 
