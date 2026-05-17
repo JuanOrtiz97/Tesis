@@ -101,7 +101,7 @@ La lectura gráfica del EPW se concentra en las variables más relevantes para e
 
 Esta lectura climática orienta la construcción de la línea base. Antes de simular escenarios de optimización, el modelo debe representar correctamente la exposición solar, la ventilación disponible, la sensibilidad de la envolvente a la radiación y el comportamiento higrotérmico de los materiales. En consecuencia, las estrategias a comparar no deben limitarse al cambio de materiales, sino incluir control solar, ventilación natural, sombreamiento, reducción de cargas térmicas y selección de envolventes compatibles con un ambiente húmedo.
 
-\section{Descripción arquitectónica y espacial del edificio}
+\section{Modelo arquitectónico y zonificación térmica}
 
 La vista axonométrica del modelo en DesignBuilder permite verificar la composición volumétrica del caso base sin alterar la geometría exportada por el programa. En esta lectura se observan los cuerpos principales del edificio, los bordes perimetrales, los voladizos y los elementos verticales de protección solar. Estos componentes son relevantes porque condicionan el sombreado propio, la exposición de la envolvente y la relación entre superficies opacas, transparentes y espacios exteriores.
 
@@ -458,9 +458,9 @@ La cubierta se modela como un espacio vacío independiente. Aunque no correspond
   \fuente{Basado en el esquema de zonificación del modelo energético del caso base desarrollado en DesignBuilder.}
 \end{figure}
 
-\section{Modelo de simulación energética}
+\section{Construcción del modelo energético}
 
-\subsection{Software y archivo climático}
+\subsection{Software, archivo climático y alcance del modelo}
 
 La línea base corresponde al estado actual del proyecto antes de aplicar estrategias de optimización. Esta línea base debe documentar los parámetros usados en el modelo: geometría, orientación, materiales, valores térmicos, infiltración, ventilación, horarios de uso, cargas internas, sombreamiento y datos climáticos.
 
@@ -543,11 +543,11 @@ La desagregación por zonas permite reconocer qué espacios concentran mayor ár
 }
 \fuente{Basado en el archivo IDF del caso base exportado desde DesignBuilder.}
 
-\subsection{Sintesis del caso base}
+\subsection{Sistemas, supuestos y limitaciones}
 
-El caso base final se resume a partir de la serie diaria exportada desde DesignBuilder. Para mantener una lectura directa, las tablas siguientes agrupan la informacion esencial del modelo: demanda de enfriamiento, consumos electricos principales, temperaturas, ventilacion, balance anual por componentes y resultados mensuales.
+La lectura del reporte \textit{Summary} y de la serie horaria permite identificar aspectos que deben revisarse antes de consolidar los resultados finales. El modelo usa el clima EPW TMYx 2011--2025 de San Cristobal y exporta resultados horarios para 2025; por ello, la interpretacion debe mantener coherencia entre clima, periodo de simulacion, horarios de uso y supuestos de ventilacion.
 
-\input{insumos/caso-base-final-tablas.tex}
+\section{Materiales y envolvente del caso base}
 
 \subsection{Comportamiento dinamico del muro exterior}
 
@@ -557,11 +557,13 @@ La proteccion termica de un recinto no depende de un solo componente. En el caso
 
 La lectura del componente muestra tres puntos criticos. Primero, la transmitancia termica de $2,587\,\mathrm{W/(m^2K)}$ evidencia una resistencia limitada frente al flujo de calor. Segundo, bajo las condiciones higrotermicas evaluadas, la temperatura superficial interior queda por debajo del punto de rocio, por lo que aparece riesgo de condensacion y moho si no se controla la humedad interior o se mejora el aislamiento. Tercero, aunque el muro presenta un desfase de $5,2$ horas y cierta capacidad de almacenamiento, esta condicion debe complementarse con control solar en ventanas, sombreamiento exterior y ventilacion, porque la radiacion directa sobre superficies transparentes puede dominar las ganancias termicas del recinto.
 
-\subsection{Sistemas, supuestos y limitaciones}
-
-La lectura del reporte \textit{Summary} y de la serie horaria permite identificar aspectos que deben revisarse antes de consolidar los resultados finales. El modelo usa el clima EPW TMYx 2011--2025 de San Cristobal y exporta resultados horarios para 2025; por ello, la interpretacion debe mantener coherencia entre clima, periodo de simulacion, horarios de uso y supuestos de ventilacion.
-
 \section{Resultados del caso base}
+
+\subsection{Sintesis del caso base}
+
+El caso base final se resume a partir de la serie diaria exportada desde DesignBuilder. Para mantener una lectura directa, las tablas siguientes agrupan la informacion esencial del modelo: demanda de enfriamiento, consumos electricos principales, temperaturas, ventilacion, balance anual por componentes y resultados mensuales.
+
+\input{insumos/caso-base-final-tablas.tex}
 
 \subsection{Desempeño energético}
 
