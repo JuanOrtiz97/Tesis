@@ -549,6 +549,28 @@ El caso base se resume a partir del reporte \textit{Summary} de EnergyPlus y de 
 
 \input{insumos/caso-base-sintesis-tablas.tex}
 
+\subsection{Comportamiento dinamico del muro exterior}
+
+La proteccion termica de un recinto no depende de un solo componente. En el caso base influyen de manera simultanea la radiacion solar directa a traves de ventanas, la ventilacion, las cargas internas y la capacidad de almacenamiento de calor de pisos, muros interiores y mobiliario. Por ello, los parametros siguientes deben leerse como propiedades del muro exterior evaluado de forma aislada, no como una conclusion directa sobre la proteccion termica completa de cada espacio.
+
+\input{insumos/inercia-muro-exterior-tabla.tex}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.95\textwidth]{figuras/perfil-temperatura-muro-exterior.pdf}
+  \caption{Perfil de temperatura a traves del muro exterior base}
+\end{figure}
+\fuente{Elaboracion propia a partir de los parametros dinamicos del componente.}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.95\textwidth]{figuras/temperatura-superficial-muro-exterior.pdf}
+  \caption{Desfase entre temperatura superficial exterior e interior del muro exterior base}
+\end{figure}
+\fuente{Elaboracion propia a partir de los parametros dinamicos del componente.}
+
+La lectura del componente muestra un desfase de $5,2$ horas y una reduccion parcial de la amplitud termica. Sin embargo, en un clima calido-humedo como San Cristobal, esta capacidad debe complementarse con control solar en ventanas, sombreamiento exterior y estrategias de ventilacion, porque la radiacion directa sobre superficies transparentes puede dominar las ganancias termicas del recinto.
+
 \subsection{Sistemas, supuestos y limitaciones}
 
 La lectura del reporte \textit{Summary} y de la serie horaria permite identificar aspectos que deben revisarse antes de consolidar los resultados finales. El modelo usa el clima EPW TMYx 2011--2025 de San Cristobal y exporta resultados horarios para 2025; por ello, la interpretacion debe mantener coherencia entre clima, periodo de simulacion, horarios de uso y supuestos de ventilacion.
