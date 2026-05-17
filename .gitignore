@@ -13,6 +13,7 @@
 *.lot
 *.pdf
 !figuras/*.pdf
+figuras/*ubakus*.pdf
 _minted-*/
 *.docx
 insumos/pdfs-marco-teorico/*.pdf
