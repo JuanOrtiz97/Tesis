@@ -9,6 +9,19 @@ const OUT_FIG = path.join(process.cwd(), "figuras");
 fs.mkdirSync(path.dirname(OUT_TEX), { recursive: true });
 fs.mkdirSync(OUT_FIG, { recursive: true });
 
+const COLORS = {
+  ink: rgb(0x17 / 255, 0x21 / 255, 0x2b / 255),
+  muted: rgb(0x5b / 255, 0x67 / 255, 0x73 / 255),
+  grid: rgb(0xd9 / 255, 0xe0 / 255, 0xe6 / 255),
+  axis: rgb(0x8d / 255, 0x99 / 255, 0xa6 / 255),
+  orange: rgb(0xd9 / 255, 0x5f / 255, 0x02 / 255),
+  blue: rgb(0x1f / 255, 0x78 / 255, 0xb4 / 255),
+  lightBlue: rgb(0x74 / 255, 0xa9 / 255, 0xcf / 255),
+  red: rgb(0xef / 255, 0x47 / 255, 0x6f / 255),
+  yellow: rgb(0xf5 / 255, 0x9f / 255, 0x00 / 255),
+  green: rgb(0x2a / 255, 0x9d / 255, 0x8f / 255),
+};
+
 function parseNumber(value) {
   if (value === undefined || value === null) return null;
   const clean = String(value).replace(",", ".").trim();
@@ -116,84 +129,128 @@ function map(value, inMin, inMax, outMin, outMax) {
   return outMin + ((value - inMin) / (inMax - inMin)) * (outMax - outMin);
 }
 
-async function chartMonthlyCooling(data) {
+async function setupChart(title, subtitle) {
   const pdf = await PDFDocument.create();
-  const page = pdf.addPage([650, 360]);
+  const page = pdf.addPage([720, 430]);
   const font = await pdf.embedFont(StandardFonts.Helvetica);
   const bold = await pdf.embedFont(StandardFonts.HelveticaBold);
-  const plot = { x: 58, y: 62, w: 500, h: 230 };
-  const maxCooling = Math.max(...data.map((d) => d.coolingElectricity)) * 1.12;
-  drawText(page, bold, "Enfriamiento electrico mensual del caso base", 165, 322, 12);
-  drawText(page, font, "kWh/mes", 18, 180, 9);
-  for (let i = 0; i <= 5; i += 1) {
-    const value = (maxCooling / 5) * i;
-    const y = map(value, 0, maxCooling, plot.y, plot.y + plot.h);
-    page.drawLine({ start: { x: plot.x, y }, end: { x: plot.x + plot.w, y }, thickness: 0.3, color: rgb(0.82, 0.82, 0.82) });
-    drawText(page, font, formatNumber(value, 0), plot.x - 45, y - 3, 8);
+  drawText(page, bold, title, 44, 392, 17, COLORS.ink);
+  drawText(page, font, subtitle, 44, 376, 9, COLORS.muted);
+  return { pdf, page, font, bold };
+}
+
+async function saveChart(pdf, page, font, filename) {
+  drawText(page, font, "Fuente: Datos Caso Base3.csv, exportado desde DesignBuilder.", 440, 28, 7, COLORS.muted);
+  fs.writeFileSync(path.join(OUT_FIG, filename), await pdf.save());
+}
+
+function chartArea(page) {
+  const plot = { x: 78, y: 82, w: 570, h: 260 };
+  for (let i = 1; i < 5; i += 1) {
+    const y = plot.y + (plot.h * i) / 5;
+    page.drawLine({ start: { x: plot.x, y }, end: { x: plot.x + plot.w, y }, thickness: 0.45, color: COLORS.grid });
   }
-  const barW = plot.w / data.length * 0.62;
+  page.drawLine({ start: { x: plot.x, y: plot.y }, end: { x: plot.x + plot.w, y: plot.y }, thickness: 0.7, color: COLORS.axis });
+  page.drawLine({ start: { x: plot.x, y: plot.y }, end: { x: plot.x, y: plot.y + plot.h }, thickness: 0.7, color: COLORS.axis });
+  return plot;
+}
+
+function monthLabels(page, font, plot) {
+  const step = plot.w / 12;
+  for (let i = 0; i < 12; i += 1) {
+    drawText(page, font, monthName(i + 1), plot.x + i * step + step / 2 - 8, plot.y - 16, 8, COLORS.muted);
+  }
+}
+
+function yLabels(page, font, plot, low, high, suffix = "") {
+  for (let i = 0; i <= 5; i += 1) {
+    const value = low + ((high - low) * i) / 5;
+    const y = plot.y + (plot.h * i) / 5;
+    drawText(page, font, `${formatNumber(value, 0)}${suffix}`, plot.x - 42, y - 2, 7, COLORS.muted);
+  }
+}
+
+function legend(page, font, items, x, y) {
+  let cursor = x;
+  items.forEach(([label, color]) => {
+    page.drawRectangle({ x: cursor, y: y - 6, width: 10, height: 10, color });
+    drawText(page, font, label, cursor + 15, y - 4, 8, COLORS.muted);
+    cursor += 132;
+  });
+}
+
+function drawLine(page, data, low, high, plot, color) {
+  const points = data.map((value, i) => ({
+    x: plot.x + (i / (data.length - 1)) * plot.w,
+    y: map(value, low, high, plot.y, plot.y + plot.h),
+  }));
+  for (let i = 1; i < points.length; i += 1) {
+    page.drawLine({ start: points[i - 1], end: points[i], thickness: 2.0, color });
+  }
+  points.forEach((point) => page.drawCircle({ x: point.x, y: point.y, size: 2.2, color }));
+}
+
+async function chartMonthlyCooling(data) {
+  const { pdf, page, font } = await setupChart(
+    "Enfriamiento mensual del caso base",
+    "Consumo electrico de enfriamiento por mes en la serie final de simulacion.",
+  );
+  const plot = chartArea(page);
+  const maxCooling = Math.ceil(Math.max(...data.map((d) => d.coolingElectricity)) / 1000) * 1000;
+  yLabels(page, font, plot, 0, maxCooling, "");
+  monthLabels(page, font, plot);
+  drawText(page, font, "kWh/mes", 26, 214, 8, COLORS.muted);
+  const barW = (plot.w / data.length) * 0.54;
   data.forEach((d, i) => {
     const cx = plot.x + (i + 0.5) * (plot.w / data.length);
     const h = map(d.coolingElectricity, 0, maxCooling, 0, plot.h);
-    page.drawRectangle({ x: cx - barW / 2, y: plot.y, width: barW, height: h, color: rgb(0.27, 0.49, 0.76) });
-    drawText(page, font, d.label, cx - 9, plot.y - 18, 8);
+    page.drawRectangle({ x: cx - barW / 2, y: plot.y, width: barW, height: h, color: COLORS.blue });
   });
-  page.drawRectangle({ x: plot.x, y: plot.y, width: plot.w, height: plot.h, borderColor: rgb(0, 0, 0), borderWidth: 0.8 });
-  fs.writeFileSync(path.join(OUT_FIG, "caso-base-final-enfriamiento-mensual.pdf"), await pdf.save());
+  legend(page, font, [["Electricidad enfriamiento", COLORS.blue]], 78, 354);
+  await saveChart(pdf, page, font, "caso-base-final-enfriamiento-mensual.pdf");
 }
 
 async function chartMonthlyTemperature(data) {
-  const pdf = await PDFDocument.create();
-  const page = pdf.addPage([650, 360]);
-  const font = await pdf.embedFont(StandardFonts.Helvetica);
-  const bold = await pdf.embedFont(StandardFonts.HelveticaBold);
-  const plot = { x: 58, y: 62, w: 500, h: 230 };
-  drawText(page, bold, "Temperatura mensual del caso base", 215, 322, 12);
-  drawText(page, font, "Temperatura [C]", 12, 180, 9);
-  for (let t = 20; t <= 32; t += 2) {
-    const y = map(t, 20, 32, plot.y, plot.y + plot.h);
-    page.drawLine({ start: { x: plot.x, y }, end: { x: plot.x + plot.w, y }, thickness: 0.3, color: rgb(0.82, 0.82, 0.82) });
-    drawText(page, font, String(t), plot.x - 22, y - 3, 8);
-  }
-  const line = (key, color) => {
-    const pts = data.map((d, i) => [
-      plot.x + (i + 0.5) * (plot.w / data.length),
-      map(d[key], 20, 32, plot.y, plot.y + plot.h),
-    ]);
-    for (let i = 1; i < pts.length; i += 1) {
-      page.drawLine({ start: { x: pts[i - 1][0], y: pts[i - 1][1] }, end: { x: pts[i][0], y: pts[i][1] }, thickness: 1.5, color });
-    }
-    pts.forEach(([x, y]) => page.drawCircle({ x, y, size: 2.3, color }));
-  };
-  line("operativeAvg", rgb(0.76, 0.20, 0.20));
-  line("outsideAvg", rgb(0.16, 0.39, 0.67));
-  data.forEach((d, i) => drawText(page, font, d.label, plot.x + (i + 0.5) * (plot.w / data.length) - 9, plot.y - 18, 8));
-  drawText(page, font, "Operativa interior", 495, 285, 8, rgb(0.76, 0.20, 0.20));
-  drawText(page, font, "Exterior", 495, 270, 8, rgb(0.16, 0.39, 0.67));
-  page.drawRectangle({ x: plot.x, y: plot.y, width: plot.w, height: plot.h, borderColor: rgb(0, 0, 0), borderWidth: 0.8 });
-  fs.writeFileSync(path.join(OUT_FIG, "caso-base-final-temperatura-mensual.pdf"), await pdf.save());
+  const { pdf, page, font } = await setupChart(
+    "Temperatura mensual del caso base",
+    "Comparacion entre temperatura operativa interior y temperatura exterior media.",
+  );
+  const plot = chartArea(page);
+  const all = data.flatMap((d) => [d.operativeAvg, d.outsideAvg]);
+  const low = Math.floor(Math.min(...all) - 1);
+  const high = Math.ceil(Math.max(...all) + 1);
+  yLabels(page, font, plot, low, high, " C");
+  monthLabels(page, font, plot);
+  drawLine(page, data.map((d) => d.outsideAvg), low, high, plot, COLORS.lightBlue);
+  drawLine(page, data.map((d) => d.operativeAvg), low, high, plot, COLORS.orange);
+  legend(page, font, [["Exterior", COLORS.lightBlue], ["Operativa interior", COLORS.orange]], 78, 354);
+  await saveChart(pdf, page, font, "caso-base-final-temperatura-mensual.pdf");
 }
 
 async function chartHeatBalance(balance) {
-  const pdf = await PDFDocument.create();
-  const page = pdf.addPage([650, 390]);
-  const font = await pdf.embedFont(StandardFonts.Helvetica);
-  const bold = await pdf.embedFont(StandardFonts.HelveticaBold);
-  const plot = { x: 200, y: 58, w: 360, h: 260 };
+  const { pdf, page, font } = await setupChart(
+    "Balance anual por componentes",
+    "Perdidas y ganancias termicas principales de la serie final del caso base.",
+  );
+  const plot = { x: 224, y: 74, w: 390, h: 250 };
   const maxAbs = Math.max(...balance.map((d) => Math.abs(d.value))) * 1.15;
-  drawText(page, bold, "Balance anual por componentes del caso base", 180, 352, 12);
   const zeroX = map(0, -maxAbs, maxAbs, plot.x, plot.x + plot.w);
-  page.drawLine({ start: { x: zeroX, y: plot.y }, end: { x: zeroX, y: plot.y + plot.h }, thickness: 0.8, color: rgb(0.2, 0.2, 0.2) });
+  for (let i = 0; i <= 4; i += 1) {
+    const x = plot.x + (plot.w * i) / 4;
+    page.drawLine({ start: { x, y: plot.y }, end: { x, y: plot.y + plot.h }, thickness: 0.45, color: COLORS.grid });
+  }
+  page.drawLine({ start: { x: zeroX, y: plot.y }, end: { x: zeroX, y: plot.y + plot.h }, thickness: 0.8, color: COLORS.axis });
   balance.forEach((d, i) => {
     const y = plot.y + plot.h - (i + 1) * (plot.h / balance.length) + 5;
     const x = map(Math.min(0, d.value), -maxAbs, maxAbs, plot.x, plot.x + plot.w);
     const x2 = map(Math.max(0, d.value), -maxAbs, maxAbs, plot.x, plot.x + plot.w);
-    page.drawRectangle({ x, y, width: Math.max(1, x2 - x), height: 12, color: d.value < 0 ? rgb(0.30, 0.53, 0.78) : rgb(0.80, 0.34, 0.25) });
-    drawText(page, font, d.label, 30, y + 2, 8);
-    drawText(page, font, formatNumber(d.value, 0), x2 + 5, y + 2, 8);
+    page.drawRectangle({ x, y, width: Math.max(1, x2 - x), height: 12, color: d.value < 0 ? COLORS.lightBlue : COLORS.orange });
+    drawText(page, font, d.label, 44, y + 2, 8, COLORS.muted);
+    drawText(page, font, formatNumber(d.value, 0), x2 + 5, y + 2, 8, COLORS.muted);
   });
-  drawText(page, font, "Perdidas (-) y ganancias (+) [kWh/ano]", 245, 32, 9);
-  fs.writeFileSync(path.join(OUT_FIG, "caso-base-final-balance-componentes.pdf"), await pdf.save());
+  legend(page, font, [["Ganancias", COLORS.orange], ["Perdidas", COLORS.lightBlue]], 78, 354);
+  drawText(page, font, "kWh/ano", 392, 46, 8, COLORS.muted);
+  await saveChart(pdf, page, font, "caso-base-final-balance-componentes.pdf");
 }
 
 function writeTex(rows, monthData, balance) {
