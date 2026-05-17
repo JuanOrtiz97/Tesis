@@ -543,31 +543,21 @@ La desagregación por zonas permite reconocer qué espacios concentran mayor ár
 }
 \fuente{Basado en el archivo IDF del caso base exportado desde DesignBuilder.}
 
-\subsection{Propiedades de la envolvente}
+\subsection{Sintesis del caso base}
 
-El archivo IDF exportado desde DesignBuilder permite documentar las propiedades termicas de los materiales y las configuraciones constructivas usadas en el caso base. Esta informacion complementa el reporte \textit{Summary} de EnergyPlus, porque permite revisar la coherencia entre geometria, envolvente, cargas internas y parametros fisicos antes de comparar escenarios de optimizacion.
+El caso base se resume a partir del reporte \textit{Summary} de EnergyPlus y de la serie horaria exportada desde DesignBuilder. Para mantener una lectura directa, las tablas siguientes agrupan la informacion esencial del modelo: area, zonas, envolvente, cargas de enfriamiento, confort adaptativo, sistemas principales de fachada y resultados horarios.
 
-\input{insumos/materiales-caso-base-tabla.tex}
-
-\input{insumos/envolvente-caso-base-tabla.tex}
-
-La tabla siguiente desagrega esas configuraciones por planta y por espacio. De esta manera se identifica que materiales y sistemas constructivos inciden en cada zona termica del modelo, diferenciando muros, piso-cielo, cubierta y aberturas.
-
-\input{insumos/envolvente-por-espacio-tabla.tex}
-
-\input{insumos/summary-espacios-tablas.tex}
+\input{insumos/caso-base-sintesis-tablas.tex}
 
 \subsection{Sistemas, supuestos y limitaciones}
 
-La lectura del IDF también permite identificar aspectos que deben revisarse antes de consolidar los resultados finales. El archivo referencia el clima EPW TMYx 2011--2025 de San Cristóbal, pero el periodo de simulación aparece rotulado con el año 2002. Además, el \texttt{Site:Location} del IDF usa zona horaria y elevación que no coinciden exactamente con el encabezado del EPW. Estas diferencias deben corregirse o documentarse para asegurar coherencia entre clima, localización y simulación.
+La lectura del reporte \textit{Summary} y de la serie horaria permite identificar aspectos que deben revisarse antes de consolidar los resultados finales. El modelo usa el clima EPW TMYx 2011--2025 de San Cristobal y exporta resultados horarios para 2025; por ello, la interpretacion debe mantener coherencia entre clima, periodo de simulacion, horarios de uso y supuestos de ventilacion.
 
 \section{Resultados del caso base}
 
 \subsection{Desempeño energético}
 
-El archivo de día de diseño de enfriamiento permite identificar los momentos críticos de extracción de calor y los componentes que inciden en la carga térmica. En esta salida los valores de enfriamiento se reportan con signo negativo porque representan remoción de calor del espacio; por tanto, la mayor demanda de enfriamiento corresponde al valor de mayor magnitud absoluta.
-
-\input{insumos/cooling-design-resumen-tabla.tex}
+El desempeno energetico del caso base se interpreta con la serie horaria de simulacion. Los valores de enfriamiento se reportan con signo negativo porque representan remocion de calor; por tanto, la demanda acumulada se calcula como la suma absoluta de esos valores horarios. La sintesis anterior registra el enfriamiento anual, el pico horario, las ganancias solares y los consumos principales de iluminacion y equipos.
 
 \subsection{Confort térmico}
 

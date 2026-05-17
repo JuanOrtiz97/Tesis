@@ -1,0 +1,150 @@
+{\fontsize{9}{11}\selectfont
+\begin{longtable}{p{5.2cm}p{3cm}p{5.2cm}}
+  \caption{Sintesis general del caso base} \\
+  \toprule
+  Indicador & Valor & Lectura para el caso base \\
+  \midrule
+  \endfirsthead
+  \caption[]{Sintesis general del caso base (continuacion)} \\
+  \toprule
+  Indicador & Valor & Lectura para el caso base \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  Area total modelada & $263,92\,m^2$ & Area usada como base para intensidades y comparaciones. \\
+  Area condicionada & $263,92\,m^2$ & Todo el modelo se reporta como condicionado en el Summary. \\
+  Zonas termicas & 28 & Espacios exportados desde DesignBuilder/EnergyPlus. \\
+  Muros exteriores & $503,20\,m^2$ & Superficie opaca vertical expuesta. \\
+  Ventanas & $126,71\,m^2$ & Superficie transparente reportada por EnergyPlus. \\
+  Relacion ventana-muro & $25,18\%$ & Indicador de exposicion solar y ganancias por vidrio. \\
+  Enfriamiento anual horario & $21758,75\,kWh$ & Suma absoluta del enfriamiento horario del CSV. \\
+  Pico de enfriamiento & $23,23\,kW$ & Mayor demanda horaria: 27/2/2025 16:00:00. \\
+  Temperatura operativa media & $26,33\,^\circ C$ & Promedio anual horario interior. \\
+  Temperatura operativa maxima & $31,33\,^\circ C$ & Valor horario maximo interior. \\
+\end{longtable}
+}
+\fuente{Elaboracion propia a partir de \texttt{Sumarry 2.htm} y \texttt{datos simulacion 1.csv}.}
+
+{\fontsize{9}{11}\selectfont
+\begin{longtable}{p{3.1cm}p{1.3cm}p{1.6cm}p{1.7cm}p{1.8cm}p{1.6cm}p{1.8cm}}
+  \caption{Resumen geometrico y de envolvente por planta} \\
+  \toprule
+  Planta & Zonas & Area & Volumen & Muro ext. & Vidrio & Aberturas \\
+  & & $m^2$ & $m^3$ & $m^2$ & $m^2$ & $m^2$ \\
+  \midrule
+  \endfirsthead
+  \caption[]{Resumen geometrico y de envolvente por planta (continuacion)} \\
+  \toprule
+  Planta & Zonas & Area & Volumen & Muro ext. & Vidrio & Aberturas \\
+  & & $m^2$ & $m^3$ & $m^2$ & $m^2$ & $m^2$ \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  Planta baja & 9 & $114,07$ & $393,53$ & $158,71$ & $29,43$ & $31,13$ \\
+  Primera planta alta & 11 & $107,19$ & $357,16$ & $177,41$ & $48,86$ & $52,15$ \\
+  Segunda planta alta & 7 & $65,19$ & $228,65$ & $131,65$ & $35,92$ & $38,77$ \\
+  Cubierta & 1 & $6,22$ & $29,38$ & $35,44$ & $4,09$ & $4,68$ \\
+\end{longtable}
+}
+\fuente{Basado en la tabla \textit{Zone Summary} de EnergyPlus.}
+
+{\fontsize{8}{10}\selectfont
+\begin{longtable}{p{2.5cm}p{1.8cm}p{1.3cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.6cm}p{1.6cm}}
+  \caption{Espacios del caso base y variables principales de envolvente} \\
+  \toprule
+  Planta & Espacio & Area & Muro ext. & Vidrio & Aberturas & Carga enfr. & No confort 80\% \\
+  & & $m^2$ & $m^2$ & $m^2$ & $m^2$ & $W/m^2$ & h \\
+  \midrule
+  \endfirsthead
+  \caption[]{Espacios del caso base y variables principales de envolvente (continuacion)} \\
+  \toprule
+  Planta & Espacio & Area & Muro ext. & Vidrio & Aberturas & Carga enfr. & No confort 80\% \\
+  & & $m^2$ & $m^2$ & $m^2$ & $m^2$ & $W/m^2$ & h \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  Planta baja & ASCENSOR & $2,57$ & $0,00$ & $0,00$ & $0,00$ & $0,00$ & $--$ \\
+  Planta baja & PB-BA-01 & $4,58$ & $5,83$ & $0,00$ & $0,00$ & $0,00$ & $5,50$ \\
+  Planta baja & PB-BO-01 & $2,08$ & $4,71$ & $0,00$ & $0,00$ & $0,00$ & $--$ \\
+  Planta baja & PB-ES-01 & $5,36$ & $10,21$ & $0,00$ & $0,00$ & $0,00$ & $--$ \\
+  Planta baja & PB-OF-01 & $12,72$ & $26,51$ & $4,08$ & $4,41$ & $137,65$ & $2,00$ \\
+  Planta baja & PB-OF-02 & $9,87$ & $10,02$ & $4,08$ & $4,41$ & $153,06$ & $93,25$ \\
+  Planta baja & PB-OF-03 & $13,46$ & $27,17$ & $4,08$ & $4,41$ & $144,54$ & $16,75$ \\
+  Planta baja & PB-RE-01 & $9,33$ & $22,63$ & $0,00$ & $0,00$ & $0,00$ & $0,00$ \\
+  Planta baja & PB-SE-01 & $54,10$ & $51,63$ & $17,19$ & $17,90$ & $96,49$ & $0,25$ \\
+  Primera planta alta & 1PA-BA-01 & $3,99$ & $5,64$ & $3,98$ & $4,33$ & $0,00$ & $1256,00$ \\
+  Primera planta alta & 1PA-BA-02 & $4,85$ & $17,84$ & $1,92$ & $2,15$ & $0,00$ & $896,25$ \\
+  Primera planta alta & 1PA-DC & $7,85$ & $9,56$ & $0,00$ & $0,00$ & $713,75$ & $--$ \\
+  Primera planta alta & 1PA-ES & $9,12$ & $15,32$ & $0,00$ & $0,00$ & $0,00$ & $--$ \\
+  Primera planta alta & 1PA-OF-01 & $15,20$ & $32,52$ & $10,99$ & $11,77$ & $197,33$ & $84,25$ \\
+  Primera planta alta & 1PA-OF-02 & $10,53$ & $11,64$ & $9,03$ & $9,51$ & $115,67$ & $7,50$ \\
+  Primera planta alta & 1PA-OF-03 & $18,66$ & $37,84$ & $6,93$ & $7,60$ & $129,06$ & $0,25$ \\
+  Primera planta alta & 1PA-PAS & $21,85$ & $4,73$ & $3,21$ & $3,54$ & $0,00$ & $938,00$ \\
+  Primera planta alta & 1PA-SR & $12,69$ & $27,32$ & $7,47$ & $7,92$ & $113,36$ & $2,50$ \\
+  Primera planta alta & ASCENSOR & $0,57$ & $0,00$ & $0,00$ & $0,00$ & $0,00$ & $--$ \\
+  Primera planta alta & VACIO & $1,88$ & $15,00$ & $5,33$ & $5,33$ & $584,31$ & $--$ \\
+  Segunda planta alta & 2PA-BA-01 & $4,36$ & $16,39$ & $2,16$ & $2,40$ & $0,00$ & $1227,75$ \\
+  Segunda planta alta & 2PA-CAF & $5,85$ & $8,78$ & $0,00$ & $0,00$ & $200,22$ & $7,75$ \\
+  Segunda planta alta & 2PA-ES & $8,85$ & $26,00$ & $0,00$ & $0,00$ & $0,00$ & $--$ \\
+  Segunda planta alta & 2PA-PAS & $10,08$ & $7,83$ & $0,00$ & $0,00$ & $0,00$ & $1198,00$ \\
+  Segunda planta alta & 2PA-SUM & $31,45$ & $45,11$ & $18,82$ & $19,82$ & $136,71$ & $70,75$ \\
+  Segunda planta alta & ASCENSOR & $2,26$ & $0,00$ & $0,00$ & $0,00$ & $0,00$ & $--$ \\
+  Segunda planta alta & VACIO & $2,34$ & $27,54$ & $14,94$ & $16,55$ & $574,35$ & $--$ \\
+  Cubierta & VACIO & $6,22$ & $35,44$ & $4,09$ & $4,68$ & $151,94$ & $--$ \\
+\end{longtable}
+}
+\fuente{Basado en \textit{Zone Summary}, \textit{HVAC Sizing Summary} y \textit{Adaptive Comfort Summary} del reporte EnergyPlus.}
+
+{\fontsize{8}{10}\selectfont
+\begin{longtable}{p{4.2cm}p{2.2cm}p{2.2cm}p{2.2cm}p{3.2cm}}
+  \caption{Envolvente exterior principal del caso base} \\
+  \toprule
+  Sistema & Tipo & Area & U prom. & Observacion \\
+  \midrule
+  \endfirsthead
+  \caption[]{Envolvente exterior principal del caso base (continuacion)} \\
+  \toprule
+  Sistema & Tipo & Area & U prom. & Observacion \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  01.WA.ENL1.5-BLO15-EMP1.5 & Opaco exterior & $503,19\,m^2$ & $2,85$ & Muros, cubiertas o superficies exteriores. \\
+  01.CUBIERTA-OSB-GRES-MADERA/CB & Opaco exterior & $136,46\,m^2$ & $0,57$ & Muros, cubiertas o superficies exteriores. \\
+  01. PORCELANATO/2CM-HORMIGON/15CM & Opaco exterior & $126,02\,m^2$ & $3,22$ & Muros, cubiertas o superficies exteriores. \\
+  02.PORCELANATO/2CM-AIRE/15CM-GYPSUM/1.5CM & Opaco exterior & $10,47\,m^2$ & $1,71$ & Muros, cubiertas o superficies exteriores. \\
+  01.VIDRIO CLARO 6MM - 1002 & Ventana & $100,71\,m^2$ & $5,78$ & SHGC promedio: 0,82. \\
+\end{longtable}
+}
+\fuente{Basado en el \textit{Envelope Summary} de EnergyPlus.}
+
+{\fontsize{9}{11}\selectfont
+\begin{longtable}{p{4.5cm}p{2.5cm}p{6cm}}
+  \caption{Resultados horarios principales del caso base} \\
+  \toprule
+  Variable & Valor & Interpretacion \\
+  \midrule
+  \endfirsthead
+  \caption[]{Resultados horarios principales del caso base (continuacion)} \\
+  \toprule
+  Variable & Valor & Interpretacion \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  Enfriamiento total horario & $21758,75\,kWh$ & Demanda anual acumulada de enfriamiento reportada en el CSV. \\
+  Pico horario de enfriamiento & $23,23\,kW$ & Ocurre el 27/2/2025 16:00:00. \\
+  Temperatura exterior media & $24,28\,^\circ C$ & Condicion climatica promedio del archivo horario. \\
+  Temperatura operativa media & $26,33\,^\circ C$ & Promedio interior del caso base. \\
+  Horas con $T_{op}>28\,^\circ C$ & 1150 h & Periodos de mayor riesgo de disconfort termico. \\
+  Horas con $T_{op}>30\,^\circ C$ & 48 h & Horas criticas de sobrecalentamiento. \\
+  Ventilacion/infiltracion media & $2,09\,ACH$ & Renovacion de aire promedio reportada por el modelo. \\
+  Ganancia solar exterior maxima & $8,25\,kW$ & Ganancia horaria maxima por ventanas exteriores. \\
+  Iluminacion anual & $13895,39\,kWh$ & Consumo electrico anual de iluminacion interior del Summary. \\
+  Equipos interiores anuales & $39307,57\,kWh$ & Consumo electrico anual de equipos interiores del Summary. \\
+\end{longtable}
+}
+\fuente{Elaboracion propia a partir de la serie horaria \texttt{datos simulacion 1.csv} y del \textit{Annual Building Utility Performance Summary}.}
