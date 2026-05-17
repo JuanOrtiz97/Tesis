@@ -1,11 +1,11 @@
 {\fontsize{9}{11}\selectfont
-\begin{longtable}{p{4.6cm}p{2.6cm}p{6.1cm}}
-  \caption{Parametros dinamicos del muro exterior base} \\
+\begin{longtable}{p{4.4cm}p{2.8cm}p{6.1cm}}
+  \caption{Parametros higrotermicos y ambientales del muro exterior base} \\
   \toprule
   Indicador & Valor & Interpretacion \\
   \midrule
   \endfirsthead
-  \caption[]{Parametros dinamicos del muro exterior base (continuacion)} \\
+  \caption[]{Parametros higrotermicos y ambientales del muro exterior base (continuacion)} \\
   \toprule
   Indicador & Valor & Interpretacion \\
   \midrule
@@ -13,11 +13,73 @@
   \bottomrule
   \endfoot
   Componente evaluado & Enlucido de yeso 15 mm + bloque de hormigon 150 mm + enlucido de cemento 15 mm & Corresponde al muro exterior base equivalente a la construccion \texttt{01.WA.ENL1.5-BLO15-EMP1.5}. \\
+  Metodo de calculo & Ubakus 2D finite elements & Evaluacion del componente aislado bajo condiciones de borde definidas. \\
+  Condiciones interiores/exteriores & $20\,^\circ C$ y $50\%$ HR / $-5\,^\circ C$ y $80\%$ HR & Escenario higrotermico usado para revisar temperatura superficial, condensacion y riesgo de moho. \\
+  Transmitancia termica & $U=2,587\,\mathrm{W/(m^2K)}$ & Valor alto para un muro exterior; indica baja resistencia termica frente a criterios actuales de mejora energetica. \\
+  Resistencia termica total & $R=0,387\,\mathrm{m^2K/W}$ & Resistencia del componente completo, sin que esto implique buen desempeno del recinto completo. \\
+  Temperatura superficial interior/exterior & $7,7\,^\circ C$ / $-3,0\,^\circ C$ & La cara interior queda por debajo del punto de rocio indicado por el reporte. \\
+  Punto de rocio interior & $9,3\,^\circ C$ & Al ser mayor que la temperatura superficial interior, existe riesgo de condensacion superficial. \\
+  Condensacion calculada & $1,4\,\mathrm{kg/m^2}$ & El reporte identifica condensacion en el enlucido de yeso y el bloque de hormigon. \\
+  Riesgo de moho & Presente a largo plazo & La humedad relativa superficial alcanza condiciones favorables para crecimiento de moho si no se corrige ventilacion, humedad o aislamiento. \\
+  Medida correctiva indicada & HR interior $\leq31\%$ o aumentar superficie a $14,7\,^\circ C$ & Ubakus estima que elevar la temperatura superficial requeriria alrededor de $24$ mm de aislamiento adicional WLG 035. \\
+  Valor sd del componente & $5,18$ m & Resistencia equivalente a la difusion de vapor de agua del conjunto. \\
+  Peso superficial & $315\,\mathrm{kg/m^2}$ & Masa por unidad de area del muro. \\
   Desfase termico & $5,2$ h & Retraso aproximado entre el maximo de temperatura exterior y el maximo en la cara interior del componente. \\
   Amortiguamiento de amplitud & $1,8$ & Relacion entre la oscilacion exterior y la oscilacion interior; un valor mayor indica mejor reduccion de la onda termica. \\
-  TAD & $0,544$ & Indicador adimensional de reduccion dinamica de la amplitud termica. \\
+  TAV/TAD & $0,544$ & Relacion entre amplitud interior y exterior; corresponde al inverso del amortiguamiento. \\
   Capacidad de almacenamiento del componente & $289\,\mathrm{kJ/m^2K}$ & Capacidad termica total asociada al conjunto de capas del muro. \\
   Capacidad termica de capas interiores & $77\,\mathrm{kJ/m^2K}$ & Porcion de capacidad termica mas cercana al ambiente interior. \\
+  Perdida de calor estacional & $201\,\mathrm{kWh/m^2}$ & Energia que escapa por metro cuadrado del componente durante la estacion de calefaccion definida por el calculo. \\
+  Energia primaria no renovable & $60\,\mathrm{kWh/m^2}$ & Energia incorporada no renovable para la produccion de materiales del componente. \\
+  Potencial de calentamiento global & $41\,\mathrm{kg\,CO_2eq/m^2}$ & Emisiones asociadas a la produccion de materiales del muro. \\
 \end{longtable}
 }
-\fuente{Elaboracion propia a partir de los resultados de comportamiento dinamico del componente de muro exterior.}
+\fuente{Elaboracion propia a partir del reporte Ubakus del componente \texttt{01.WA.ENL1.5-BLO15-EMP1.5}.}
+
+{\fontsize{8}{10}\selectfont
+\begin{longtable}{p{3.2cm}p{1.2cm}p{1.3cm}p{1.2cm}p{1.4cm}p{1.6cm}p{1.5cm}p{1.5cm}}
+  \caption{Capas del muro exterior base segun reporte Ubakus} \\
+  \toprule
+  Capa & Espesor & $\lambda$ & $R$ & $sd$ & Condensado & Peso & Calor esp. \\
+  & cm & W/mK & m\textsuperscript{2}K/W & m & kg/m\textsuperscript{2} & kg/m\textsuperscript{2} & J/kgK \\
+  \midrule
+  \endfirsthead
+  \caption[]{Capas del muro exterior base segun reporte Ubakus (continuacion)} \\
+  \toprule
+  Capa & Espesor & $\lambda$ & $R$ & $sd$ & Condensado & Peso & Calor esp. \\
+  & cm & W/mK & m\textsuperscript{2}K/W & m & kg/m\textsuperscript{2} & kg/m\textsuperscript{2} & J/kgK \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  Enlucido de yeso & $1,5$ & $0,350$ & $0,043$ & $0,15$ & $1,4$ & $15,0$ & $1090$ \\
+  Bloque hueco de hormigon & $15,0$ & $0,920$ & $0,163$ & $4,50$ & $1,2$ & $270,0$ & $900$ \\
+  Enlucido de cemento & $1,5$ & $1,400$ & $0,011$ & $0,53$ & -- & $30,0$ & $1000$ \\
+  Componente completo & $18,0$ & -- & $0,387$ & $5,18$ & $1,4$ & $315,0$ & -- \\
+\end{longtable}
+}
+\fuente{Elaboracion propia a partir del reporte Ubakus. Para el calculo de transmitancia se consideran resistencias superficiales; para humedad, el reporte usa $R_{si}=0,25$ y $R_{se}=0,04$.}
+
+{\fontsize{8}{10}\selectfont
+\begin{longtable}{p{4.8cm}p{3cm}p{5.5cm}}
+  \caption{Indicadores ambientales de produccion del muro exterior base} \\
+  \toprule
+  Indicador & Valor & Composicion principal \\
+  \midrule
+  \endfirsthead
+  \caption[]{Indicadores ambientales de produccion del muro exterior base (continuacion)} \\
+  \toprule
+  Indicador & Valor & Composicion principal \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  Energia primaria no renovable & $60\,\mathrm{kWh/m^2}$ & Bloque hueco de hormigon $78\%$, enlucido de yeso $14\%$, enlucido de cemento $8\%$. \\
+  Potencial de calentamiento global & $41\,\mathrm{kg\,CO_2eq/m^2}$ & Bloque hueco de hormigon $33\,\mathrm{kg}$, enlucido de cemento $5\,\mathrm{kg}$, enlucido de yeso $2\,\mathrm{kg}$. \\
+  Smog fotoquimico & 0,0023 kg Ethen-Aqv./kg & Indicador ambiental asociado a la fabricacion del componente. \\
+  Acidificacion & 0,087 kg SO$_2$-Aqv./kg & Indicador ambiental asociado a la fabricacion del componente. \\
+  Eutrofizacion & 0,011 kg Phosphat-Aqv./kg & Indicador ambiental asociado a la fabricacion del componente. \\
+  Agotamiento de ozono & 0,00000000029 kg R11-Aqv./kg & Indicador ambiental asociado a la fabricacion del componente. \\
+\end{longtable}
+}
+\fuente{Elaboracion propia a partir de los datos ambientales del reporte Ubakus del muro exterior.}
