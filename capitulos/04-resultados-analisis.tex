@@ -11,7 +11,7 @@ El objetivo de esta sección es reconocer las condiciones iniciales que inciden 
 
 \section{Análisis del contexto climático de San Cristóbal}
 
-La caracterización climática se construye a partir del archivo EPW de San Cristóbal incorporado en la carpeta de datos de la tesis. El registro corresponde al año meteorológico típico TMYx 2011--2025 de la estación San Cristóbal International Airport y contiene 8760 datos horarios de temperatura exterior, punto de rocío, humedad relativa, radiación solar global, directa y difusa, velocidad y dirección del viento, presión atmosférica, cobertura de cielo y precipitación.
+La caracterización climática se construye a partir del archivo EPW de San Cristóbal incorporado en la carpeta de datos de la tesis. EPW significa \textit{EnergyPlus Weather} y corresponde a un formato climático horario utilizado por EnergyPlus, DesignBuilder y otros programas de simulación energética. El registro corresponde al año meteorológico típico TMYx 2011--2025 de la estación San Cristóbal International Airport y contiene 8760 datos horarios de temperatura exterior, punto de rocío, humedad relativa, radiación solar global, directa y difusa, velocidad y dirección del viento, presión atmosférica, cobertura de cielo y precipitación.
 
 Los datos describen una condición cálido-húmeda, con temperatura media anual de $24,28\,^{\circ}\mathrm{C}$, humedad relativa media de $81,37\%$ y radiación global horizontal media diaria de $5,89\,\mathrm{kWh}/\mathrm{m}^{2}$ por día. La temperatura media mensual más alta se registra en marzo, con $27,10\,^{\circ}\mathrm{C}$, mientras que septiembre presenta la media mensual más baja, con $21,73\,^{\circ}\mathrm{C}$. La velocidad media anual del viento es de $4,90\,\mathrm{m/s}$, con dirección media circular cercana a $155,53^{\circ}$, lo que sugiere la necesidad de analizar la ventilación natural según orientación, permeabilidad de fachada y recorrido interior del aire.
 
@@ -19,14 +19,18 @@ Los datos describen una condición cálido-húmeda, con temperatura media anual 
   \centering
   \caption{Indicadores climáticos base para el caso de estudio}
   {\fontsize{9}{11}\selectfont
-  \begin{tabular}{p{4.2cm}p{3cm}p{5.2cm}}
+  \begin{tabular}{p{3.8cm}p{3.4cm}p{5.2cm}}
     \toprule
     Indicador & Valor & Implicación para el proyecto \\
     \midrule
     Temperatura media anual & $24,28\,^{\circ}\mathrm{C}$ & Priorizar estrategias de enfriamiento pasivo y control de cargas internas. \\
     Rango horario anual & $15,70\,^{\circ}\mathrm{C}$ a $32,90\,^{\circ}\mathrm{C}$ & Evaluar oscilación térmica y capacidad de disipación nocturna. \\
+    Amplitud térmica diaria media & $5,17\,^{\circ}\mathrm{C}$ & Indica una oscilación moderada, útil para valorar ventilación nocturna y disipación de calor acumulado. \\
     Humedad relativa media & $81,37\%$ & Controlar ventilación, condensación y selección de materiales. \\
+    Punto de rocío medio & $20,80\,^{\circ}\mathrm{C}$ & Refuerza la necesidad de controlar condensación, puentes térmicos y ventilación en espacios interiores. \\
     Radiación global horizontal media diaria & $5,89\,\mathrm{kWh}/\mathrm{m}^{2}$ por día & Diseñar protecciones solares y reducir ganancias por cubierta y fachada. \\
+    Cobertura de cielo media & $7,27/10$ & Sugiere presencia frecuente de nubosidad, relevante para radiación difusa e iluminación natural. \\
+    Precipitación anual acumulada & $126,20\,\mathrm{mm}$; 142 días con precipitación & Considerar protección de envolvente, durabilidad de materiales y mantenimiento frente a humedad exterior. \\
     Velocidad media del viento & $4,90\,\mathrm{m/s}$ & Evaluar ventilación cruzada y extracción natural. \\
     Dirección media circular del viento & $155,53^{\circ}$ & Relacionar orientación de aberturas con vientos predominantes. \\
     \bottomrule
@@ -45,10 +49,11 @@ Como complemento a los indicadores generales, se registran los valores estadíst
     \toprule
     Variable & Síntesis estadística & Lectura para el caso de estudio \\
     \midrule
-    Temperatura & Máxima promedio diaria: $27,20\,^{\circ}\mathrm{C}$; media anual: $24,28\,^{\circ}\mathrm{C}$; mínima promedio diaria: $22,03\,^{\circ}\mathrm{C}$; extremos: $32,90\,^{\circ}\mathrm{C}$ y $15,70\,^{\circ}\mathrm{C}$. & Define una condición cálida estable, con amplitud diaria promedio de $5,17\,^{\circ}\mathrm{C}$, que exige control solar, ventilación y reducción de cargas térmicas. \\
-    Humedad relativa & Máxima promedio diaria: $92,61\%$; media anual: $81,37\%$; mínima promedio diaria: $69,50\%$; extremos: $100,00\%$ y $57,00\%$. & Confirma un ambiente húmedo persistente, relevante para confort, condensación, ventilación y durabilidad de materiales. \\
+    Temperatura y amplitud diaria & Máxima promedio diaria: $27,20\,^{\circ}\mathrm{C}$; media anual: $24,28\,^{\circ}\mathrm{C}$; mínima promedio diaria: $22,03\,^{\circ}\mathrm{C}$; extremos: $32,90\,^{\circ}\mathrm{C}$ y $15,70\,^{\circ}\mathrm{C}$; amplitud diaria media: $5,17\,^{\circ}\mathrm{C}$. & Define una condición cálida estable, con oscilación moderada, que exige control solar, ventilación y reducción de cargas térmicas. \\
+    Humedad relativa y punto de rocío & Humedad media anual: $81,37\%$; extremos: $100,00\%$ y $57,00\%$; punto de rocío medio: $20,80\,^{\circ}\mathrm{C}$; extremos de punto de rocío: $29,00\,^{\circ}\mathrm{C}$ y $10,90\,^{\circ}\mathrm{C}$. & Confirma un ambiente húmedo persistente, relevante para confort, condensación, ventilación y durabilidad de materiales. \\
     Viento & Velocidad media anual: $4,90\,\mathrm{m/s}$; máxima horaria: $14,40\,\mathrm{m/s}$; dirección predominante: SSE, con $39,70\%$ de horas. & Permite orientar aberturas y recorridos de ventilación cruzada, considerando también protección frente a ráfagas. \\
     Radiación solar & Radiación global horizontal media: $245,49\,\mathrm{W/m}^{2}$; energía solar diaria promedio: $5,89\,\mathrm{kWh}/\mathrm{m}^{2}$ por día. & Evidencia una carga solar significativa, por lo que cubierta, fachadas y protecciones solares son variables críticas del caso base. \\
+    Cielo y precipitación & Cobertura de cielo media: $7,27/10$; precipitación anual acumulada: $126,20\,\mathrm{mm}$; 142 días con precipitación; máximo diario: $5,90\,\mathrm{mm}$. & Complementa la lectura de radiación e iluminación natural y confirma la necesidad de proteger la envolvente frente a humedad exterior. \\
     \bottomrule
   \end{tabular}
   }
