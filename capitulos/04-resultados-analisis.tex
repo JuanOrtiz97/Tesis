@@ -1,17 +1,17 @@
 % !TeX root = ../main.tex
 \chapter{Análisis del caso de estudio y resultados del caso base}
 
-Este capítulo aplica la metodología al proyecto de la Defensoría del Pueblo en San Cristóbal. Su función es describir el caso de estudio, caracterizar el contexto climático, documentar la construcción del modelo energético y presentar la evaluación del caso base. De esta forma, el capítulo establece el diagnóstico que servirá como punto de partida para los escenarios de optimización del capítulo siguiente.
+Este capítulo aplica la metodología al proyecto de la Defensoría del Pueblo en San Cristóbal. Su función es describir el caso de estudio, analizar el contexto climático, documentar la construcción del modelo energético y presentar la evaluación del caso base. De esta forma, el capítulo establece el diagnóstico que servirá como punto de partida para los escenarios de optimización del capítulo siguiente.
 
 \section{Descripción del caso de estudio}
 
-La caracterización describe las condiciones arquitectónicas, climáticas y constructivas del caso de estudio. Esta sección deberá incluir implantación, orientación, programa arquitectónico, sistema constructivo, materiales predominantes, configuración de envolvente, relación lleno-vacío, protecciones solares existentes y criterios de ventilación natural.
+El análisis inicial describe las condiciones arquitectónicas, climáticas y constructivas del caso de estudio. Esta sección deberá incluir implantación, orientación, programa arquitectónico, sistema constructivo, materiales predominantes, configuración de envolvente, relación lleno-vacío, protecciones solares existentes y criterios de ventilación natural.
 
 El objetivo de esta sección es reconocer las condiciones iniciales que inciden en el desempeño ambiental del proyecto. En el contexto de Galápagos, la lectura del edificio debe considerar no solo el consumo energético, sino también las restricciones de transporte, mantenimiento, disponibilidad material y fragilidad ambiental.
 
 \section{Análisis del contexto climático de San Cristóbal}
 
-La caracterización climática se construye a partir del archivo EPW de San Cristóbal incorporado en la carpeta de datos de la tesis. EPW significa \textit{EnergyPlus Weather} y corresponde a un formato climático horario utilizado por EnergyPlus, DesignBuilder y otros programas de simulación energética. El registro corresponde al año meteorológico típico TMYx 2011--2025 de la estación San Cristóbal International Airport y contiene 8760 datos horarios de temperatura exterior, punto de rocío, humedad relativa, radiación solar global, directa y difusa, velocidad y dirección del viento, presión atmosférica, cobertura de cielo y precipitación.
+El análisis climático se construye a partir del archivo EPW de San Cristóbal incorporado en la carpeta de datos de la tesis. EPW significa \textit{EnergyPlus Weather} y corresponde a un formato climático horario utilizado por EnergyPlus, DesignBuilder y otros programas de simulación energética. El registro corresponde al año meteorológico típico TMYx 2011--2025 de la estación San Cristóbal International Airport y contiene 8760 datos horarios de temperatura exterior, punto de rocío, humedad relativa, radiación solar global, directa y difusa, velocidad y dirección del viento, presión atmosférica, cobertura de cielo y precipitación.
 
 Los datos describen una condición cálido-húmeda, con temperatura media anual de $24,28\,^{\circ}\mathrm{C}$, humedad relativa media de $81,37\%$ y radiación global horizontal media diaria de $5,89\,\mathrm{kWh}/\mathrm{m}^{2}$ por día. La temperatura media mensual más alta se registra en marzo, con $27,10\,^{\circ}\mathrm{C}$, mientras que septiembre presenta la media mensual más baja, con $21,73\,^{\circ}\mathrm{C}$. La velocidad media anual del viento es de $4,90\,\mathrm{m/s}$, con dirección predominante desde el sur-sureste, lo que sugiere la necesidad de analizar la ventilación natural según orientación, permeabilidad de fachada y recorrido interior del aire.
 
