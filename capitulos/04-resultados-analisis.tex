@@ -39,8 +39,6 @@ Los datos describen una condición cálido-húmeda, con temperatura media anual 
   \fuente{Basado en el archivo climático EPW de San Cristóbal.}
 \end{table}
 
-Los valores complementarios permiten precisar la lectura de la tabla sin recargarla. Marzo registra la temperatura media mensual más alta, con $27,10\,^{\circ}\mathrm{C}$, mientras que septiembre presenta la media mensual más baja, con $21,73\,^{\circ}\mathrm{C}$. El punto de rocío varía entre $10,90$ y $29,00\,^{\circ}\mathrm{C}$; la radiación global horizontal media anual es de $245,49\,\mathrm{W/m}^{2}$; la precipitación se distribuye en 142 días con lluvia, con un máximo diario de $5,90\,\mathrm{mm}$; y el viento predominante desde el sur-sureste concentra el $39,70\%$ de las horas.
-
 La lectura gráfica del EPW se concentra en las variables más relevantes para el caso de estudio: temperatura, humedad, punto de rocío, radiación solar, cobertura de cielo, precipitación, viento, amplitud térmica diaria y variación horaria de la temperatura exterior. Estos gráficos no sustituyen la simulación energética del edificio, pero permiten justificar las variables climáticas que deben controlarse en el modelo base y en los escenarios de optimización.
 
 \begin{figure}[H]
@@ -49,6 +47,8 @@ La lectura gráfica del EPW se concentra en las variables más relevantes para e
   \caption{Temperatura del aire mensual de San Cristóbal}
   \fuente{Basado en el archivo EPW TMYx 2011--2025 de San Cristóbal.}
 \end{figure}
+
+La temperatura media mensual más alta se registra en marzo, con $27,10\,^{\circ}\mathrm{C}$, mientras que septiembre presenta la media mensual más baja, con $21,73\,^{\circ}\mathrm{C}$. Esta diferencia confirma una estacionalidad térmica moderada, sin cambios extremos entre meses.
 
 \begin{figure}[H]
   \centering
@@ -64,12 +64,16 @@ La lectura gráfica del EPW se concentra en las variables más relevantes para e
   \fuente{Basado en el archivo EPW TMYx 2011--2025 de San Cristóbal.}
 \end{figure}
 
+El punto de rocío varía entre $10,90$ y $29,00\,^{\circ}\mathrm{C}$. Esta condición, combinada con humedad relativa elevada, refuerza la necesidad de controlar condensación, ventilación y selección de materiales en la envolvente.
+
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{figuras/epw-uniforme-radiacion-solar.pdf}
   \caption{Radiación solar mensual: GHI, DNI y DHI}
   \fuente{Basado en el archivo EPW TMYx 2011--2025 de San Cristóbal.}
 \end{figure}
+
+La radiación global horizontal media anual es de $245,49\,\mathrm{W/m}^{2}$. Por ello, la lectura de radiación mensual debe relacionarse con control solar, cubierta, fachadas expuestas y reducción de ganancias térmicas.
 
 \begin{figure}[H]
   \centering
@@ -78,12 +82,16 @@ La lectura gráfica del EPW se concentra en las variables más relevantes para e
   \fuente{Basado en el archivo EPW TMYx 2011--2025 de San Cristóbal.}
 \end{figure}
 
+La precipitación anual se distribuye en 142 días con lluvia, con un máximo diario de $5,90\,\mathrm{mm}$. Aunque el acumulado anual no es extremo, la frecuencia de días húmedos exige atención a durabilidad, mantenimiento y protección de la envolvente.
+
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{figuras/epw-uniforme-viento-mensual.pdf}
   \caption{Velocidad del viento mensual de San Cristóbal}
   \fuente{Basado en el archivo EPW TMYx 2011--2025 de San Cristóbal.}
 \end{figure}
+
+El viento predominante proviene del sur-sureste y concentra el $39,70\%$ de las horas. Esta dirección debe considerarse al evaluar ventilación cruzada, ubicación de aberturas y recorridos interiores de aire.
 
 \begin{figure}[H]
   \centering
