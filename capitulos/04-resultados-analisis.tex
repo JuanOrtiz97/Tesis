@@ -173,7 +173,7 @@ La cubierta se modela como un espacio vacío independiente. Aunque no correspond
 
 La línea base corresponde al estado actual del proyecto antes de aplicar estrategias de optimización. Esta línea base debe documentar los parámetros usados en el modelo: geometría, orientación, materiales, valores térmicos, infiltración, ventilación, horarios de uso, cargas internas, sombreamiento y datos climáticos.
 
-El modelo base fue exportado desde DesignBuilder como archivo IDF de EnergyPlus. La revisión del archivo permite identificar 28 zonas térmicas, 320 superficies constructivas detalladas, 102 superficies acristaladas, 204 superficies de sombreado y 19 sistemas \texttt{Ideal Loads Air System}. Esto indica que el modelo es adecuado para estimar demanda térmica y comparar escenarios, aunque no representa todavía el consumo real de equipos HVAC específicos.
+El modelo base fue exportado desde DesignBuilder como archivo IDF de EnergyPlus. La revisión del archivo permite identificar 28 zonas térmicas, 320 superficies constructivas detalladas, 102 superficies acristaladas, 204 superficies de sombreado y 19 sistemas ideales de climatización para estimar demanda térmica. Esto indica que el modelo es adecuado para estimar demanda térmica y comparar escenarios, aunque no representa todavía el consumo real de equipos HVAC específicos.
 
 \begin{table}[H]
   \centering
@@ -191,7 +191,7 @@ El modelo base fue exportado desde DesignBuilder como archivo IDF de EnergyPlus.
     Área de superficies exteriores & $650,15\,\mathrm{m}^{2}$ \\
     Área de superficies acristaladas exteriores & $108,75\,\mathrm{m}^{2}$ \\
     Relación ventana-muro exterior aproximada & $17,77\%$ \\
-    Sistema de aire & AirflowNetwork multizona e Ideal Loads Air System \\
+    Sistema de aire & AirflowNetwork multizona y sistemas ideales de climatización \\
     \bottomrule
   \end{tabular}
   }
