@@ -119,9 +119,13 @@
   \markboth{#1}{#1}%
   \vspace*{2.0cm}
   \noindent
-  \begin{minipage}[t]{0.45\textwidth}
-    {\fontsize{22}{25}\selectfont\bfseries\color{udaGreen}#1\par}
-  \end{minipage}\hfill
+  {\fontsize{22}{25}\selectfont\bfseries\color{udaGreen}#1\par}
+  \vfill
+  \clearpage
+  \thispagestyle{plain}
+  \markboth{#1}{#1}%
+  \vspace*{2.0cm}
+  \hfill
   \begin{minipage}[t]{0.30\textwidth}
     \singlespacing
     \fontsize{8}{10}\selectfont
