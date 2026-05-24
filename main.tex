@@ -141,43 +141,41 @@
 \begin{document}
 
 \begin{titlepage}
-  \pagecolor{udaLime}
-  \color{udaBlue}
-  \begin{tikzpicture}[remember picture,overlay]
-    \draw[udaBlue,line width=7pt] ([xshift=10.2cm,yshift=-8.6cm]current page.north west) -- ([xshift=-0.5cm,yshift=-8.6cm]current page.north east);
-    \draw[udaBlue,line width=1.2pt,dashed] ([xshift=-2.0cm,yshift=1.0cm]current page.north east) -- ([xshift=-8.3cm,yshift=-13.0cm]current page.north east);
-    \draw[udaBlue,line width=1.2pt,dashed] ([xshift=-11.4cm,yshift=1.0cm]current page.north east) -- ([xshift=-1.2cm,yshift=-12.7cm]current page.north east);
-    \draw[udaBlue,line width=1.2pt] ([xshift=-5.2cm,yshift=-6.2cm]current page.north east) arc (180:0:2.2cm);
-    \fill[udaBlue] ([xshift=-5.2cm,yshift=-6.2cm]current page.north east) circle (0.13cm);
-    \fill[udaBlue] ([xshift=-3.0cm,yshift=-5.1cm]current page.north east) circle (0.13cm);
-    \fill[udaBlue] ([xshift=-0.8cm,yshift=-6.2cm]current page.north east) circle (0.13cm);
-    \draw[udaBlue,line width=4pt] ([xshift=-3.6cm,yshift=-7.0cm]current page.north east) rectangle ([xshift=-2.0cm,yshift=-5.8cm]current page.north east);
-  \end{tikzpicture}
-
-  \centering
-  \vspace*{0.8cm}
-  \includegraphics[width=1.9cm,height=1.9cm,keepaspectratio]{logo_uda.png}
-
-  \vspace{2.6cm}
-
-  \begin{minipage}{0.66\textwidth}
-    {\bfseries\fontsize{34}{37}\selectfont TRABAJO DE TITULACIÓN\par}
-    \vspace{8pt}
-    {\fontsize{18}{21}\selectfont EVALUACIÓN DE ESTRATEGIAS PASIVAS Y MATERIALES SOSTENIBLES\par}
-    \vspace{20pt}
-    {\bfseries\fontsize{24}{27}\selectfont MAESTRÍA EN ARQUITECTURA CON MENCIÓN EN CONSTRUCCIÓN SOSTENIBLE\par}
-    \vspace{18pt}
-    {\fontsize{14}{17}\selectfont Proyecto arquitectónico de la Defensoría del Pueblo en la isla San Cristóbal, Galápagos\par}
-    \vspace{28pt}
-    {\bfseries AUTOR:} Juan Daniel Ortiz Pacheco\par
-    {\bfseries DIRECTOR:} Pablo Esteban Ochoa Pesantez\par
-  \end{minipage}
-
-  \vfill
-  \begin{minipage}{0.9\textwidth}
-    {\bfseries Cuenca -- Ecuador\hfill 2026\par}
-  \end{minipage}
+  \thispagestyle{empty}
   \nopagecolor
+  \color{black}
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=north west] at ([xshift=1.7cm,yshift=-1.0cm]current page.north west)
+      {\includegraphics[width=1.55cm,height=1.55cm,keepaspectratio]{logo_uda.png}};
+    \node[anchor=north west,align=left,text=black,font=\bfseries\fontsize{8}{9}\selectfont,text width=4.3cm]
+      at ([xshift=3.45cm,yshift=-1.05cm]current page.north west)
+      {UNIVERSIDAD\\DEL AZUAY\\[4pt]\normalfont\fontsize{7}{8}\selectfont Maestría en Arquitectura\\Construcción Sostenible};
+
+    \node[anchor=north east,align=right,text=udaGreen,font=\bfseries\fontsize{18}{20}\selectfont,text width=9.8cm]
+      at ([xshift=-2.1cm,yshift=-1.35cm]current page.north east)
+      {Evaluación de estrategias pasivas y materiales sostenibles};
+    \node[anchor=north east,align=right,text=black,font=\fontsize{9}{11}\selectfont,text width=9.8cm]
+      at ([xshift=-2.1cm,yshift=-2.55cm]current page.north east)
+      {Proyecto arquitectónico de la Defensoría del Pueblo\\en la isla San Cristóbal, Galápagos};
+
+    \node[anchor=center] at ([yshift=-0.65cm]current page.center)
+      {\includegraphics[width=22.2cm,height=9.0cm,keepaspectratio]{figuras/axonometria-designbuilder.png}};
+    \fill[white,opacity=0.84] ([yshift=3.2cm]current page.south west) rectangle (current page.south east);
+
+    \draw[udaGreen,line width=1.1pt] ([xshift=9.6cm,yshift=2.0cm]current page.south west) -- ([xshift=9.6cm,yshift=0.35cm]current page.south west);
+    \draw[udaGreen,line width=1.1pt] ([xshift=16.6cm,yshift=2.0cm]current page.south west) -- ([xshift=16.6cm,yshift=0.35cm]current page.south west);
+
+    \node[anchor=south west,align=left,text=black,font=\fontsize{7.5}{9}\selectfont,text width=7.2cm]
+      at ([xshift=1.7cm,yshift=0.45cm]current page.south west)
+      {Trabajo de titulación previo a la obtención del título de Magíster en Arquitectura con mención en Construcción Sostenible\\[6pt]\textbf{Cuenca--Ecuador 2026}};
+    \node[anchor=south west,align=left,text=black,font=\fontsize{7.5}{9}\selectfont,text width=5.6cm]
+      at ([xshift=10.1cm,yshift=0.45cm]current page.south west)
+      {\textbf{Autor:}\\Juan Daniel Ortiz Pacheco};
+    \node[anchor=south west,align=left,text=black,font=\fontsize{7.5}{9}\selectfont,text width=5.6cm]
+      at ([xshift=17.1cm,yshift=0.45cm]current page.south west)
+      {\textbf{Director:}\\Pablo Esteban Ochoa Pesantez};
+  \end{tikzpicture}
+  \null
 \end{titlepage}
 
 \pagenumbering{roman}
