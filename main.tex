@@ -111,6 +111,32 @@
   \vspace{3pt}%
 }
 
+\newcommand{\tercioTextoImagen}[4]{%
+  \noindent
+  \begin{minipage}[t]{0.31\textwidth}
+    #1
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.64\textwidth}
+    \centering
+    \includegraphics[width=\textwidth,height=0.58\textheight,keepaspectratio]{#2}
+    \captionof{figure}{#3}
+    \fuente{#4}
+  \end{minipage}
+}
+
+\newcommand{\dosTerciosTextoGrafico}[4]{%
+  \noindent
+  \begin{minipage}[t]{0.64\textwidth}
+    #1
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.31\textwidth}
+    \centering
+    \includegraphics[width=\textwidth,height=0.58\textheight,keepaspectratio]{#2}
+    \captionof{figure}{#3}
+    \fuente{#4}
+  \end{minipage}
+}
+
 \newcommand{\preliminarSpread}[2]{%
   \clearpage
   \thispagestyle{plain}
