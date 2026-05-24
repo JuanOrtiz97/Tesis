@@ -111,6 +111,25 @@
   \vspace{3pt}%
 }
 
+\newcommand{\preliminarSpread}[2]{%
+  \clearpage
+  \thispagestyle{plain}
+  \phantomsection
+  \addcontentsline{toc}{chapter}{#1}
+  \markboth{#1}{#1}%
+  \vspace*{2.0cm}
+  \noindent
+  \begin{minipage}[t]{0.45\textwidth}
+    {\fontsize{22}{25}\selectfont\bfseries\color{udaGreen}#1\par}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.30\textwidth}
+    \singlespacing
+    \fontsize{8}{10}\selectfont
+    #2
+  \end{minipage}
+  \vfill
+}
+
 \newcommand{\capituloUDA}[3]{%
   \clearpage
   \thispagestyle{empty}
@@ -228,24 +247,11 @@
 
 \pagenumbering{roman}
 
-\clearpage
-\thispagestyle{plain}
-\chapter*{\raggedleft\fontsize{22}{25}\selectfont\bfseries\color{udaBlue}DEDICATORIA}
-\addcontentsline{toc}{chapter}{Dedicatoria}
-\begin{flushright}
-\begin{minipage}{0.5\textwidth}
-\singlespacing
+\preliminarSpread{Dedicatoria}{%
 Texto de dedicatoria.
-\end{minipage}
-\end{flushright}
+}
 
-\clearpage
-\thispagestyle{plain}
-\chapter*{\raggedleft\fontsize{22}{25}\selectfont\bfseries\color{udaBlue}AGRADECIMIENTO}
-\addcontentsline{toc}{chapter}{Agradecimiento}
-\begin{flushright}
-\begin{minipage}{0.5\textwidth}
-\singlespacing
+\preliminarSpread{Agradecimiento}{%
 Agradezco a Dios por sostenerme con fortaleza, claridad y perseverancia durante este proceso academico.
 
 A mi familia, por su amor, paciencia y apoyo constante. Su presencia fue una fuente de motivacion y confianza en cada etapa de este camino.
@@ -253,8 +259,7 @@ A mi familia, por su amor, paciencia y apoyo constante. Su presencia fue una fue
 A mi director y a mis docentes, por su orientacion, exigencia academica y valiosos aportes al desarrollo de esta investigacion.
 
 Finalmente, expreso mi gratitud a la Universidad del Azuay y a todas las personas que, de una u otra manera, contribuyeron a la culminacion de este trabajo de titulacion.
-\end{minipage}
-\end{flushright}
+}
 
 \preliminar{Resumen}
 \singlespacing
