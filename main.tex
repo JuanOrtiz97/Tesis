@@ -1,11 +1,11 @@
 % !TeX program = pdflatex
-\documentclass[11pt,a4paper,landscape,oneside]{report}
+\documentclass[11pt,a4paper,landscape,twoside]{report}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[spanish,es-tabla]{babel}
 \usepackage[none]{hyphenat}
-\usepackage[scaled]{helvet}
+\usepackage[scaled=0.95]{tgheros}
 \renewcommand{\familydefault}{\sfdefault}
 \usepackage{setspace}
 \usepackage{geometry}
@@ -39,8 +39,8 @@
 \definecolor{UDAGREEN}{HTML}{1B4643}
 
 \geometry{
-  left=2.0cm,
-  right=2.0cm,
+  inner=2.2cm,
+  outer=1.8cm,
   top=1.7cm,
   bottom=1.8cm,
   headheight=20pt,
@@ -54,15 +54,17 @@
 
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[R]{\fontsize{6.5}{8}\selectfont\color{udaGreen}\nouppercase{\leftmark}}
-\fancyfoot[R]{\fontsize{8}{10}\selectfont\color{udaGreen}\thepage}
+\fancyhead[LE]{\fontsize{6.5}{8}\selectfont\color{udaGreen}TESIS}
+\fancyhead[RO]{\fontsize{6.5}{8}\selectfont\color{udaGreen}\nouppercase{\leftmark}}
+\fancyfoot[LE,RO]{\fontsize{8}{10}\selectfont\bfseries\color{udaGreen}\thepage}
 \renewcommand{\headrulewidth}{1.1pt}
 \renewcommand{\headrule}{\hbox to\headwidth{\color{udaGreen}\leaders\hrule height \headrulewidth\hfill}}
 \renewcommand{\footrulewidth}{0pt}
 \fancypagestyle{plain}{%
   \fancyhf{}%
-  \fancyhead[R]{\fontsize{6.5}{8}\selectfont\color{udaGreen}\nouppercase{\leftmark}}%
-  \fancyfoot[R]{\fontsize{8}{10}\selectfont\color{udaGreen}\thepage}%
+  \fancyhead[LE]{\fontsize{6.5}{8}\selectfont\color{udaGreen}TESIS}%
+  \fancyhead[RO]{\fontsize{6.5}{8}\selectfont\color{udaGreen}\nouppercase{\leftmark}}%
+  \fancyfoot[LE,RO]{\fontsize{8}{10}\selectfont\bfseries\color{udaGreen}\thepage}%
   \renewcommand{\headrulewidth}{1.1pt}%
   \renewcommand{\headrule}{\hbox to\headwidth{\color{udaGreen}\leaders\hrule height \headrulewidth\hfill}}%
   \renewcommand{\footrulewidth}{0pt}%
