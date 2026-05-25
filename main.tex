@@ -13,6 +13,7 @@
 \usepackage{float}
 \usepackage{booktabs}
 \usepackage{longtable}
+\usepackage{multicol}
 \usepackage{tikz}
 \usetikzlibrary{babel}
 \usepackage{caption}
@@ -51,6 +52,7 @@
 \sloppy
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{7pt}
+\setlength{\columnsep}{0.9cm}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -139,6 +141,14 @@
     \captionof{figure}{#3}
     \fuente{#4}
   \end{minipage}
+}
+
+\newenvironment{textoTresTercios}{%
+  \begin{multicols}{3}
+  \raggedcolumns
+  \fontsize{8.5}{11}\selectfont
+}{%
+  \end{multicols}
 }
 
 \newcommand{\preliminarSpread}[2]{%
