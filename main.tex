@@ -195,16 +195,20 @@
   \pagecolor{udaLime}%
   \color{udaBlue}%
   \begin{tikzpicture}[remember picture,overlay]
-    \fill[udaLime] (current page.south west) rectangle (current page.north east);
-    \fill[white] ([xshift=-3.2cm]current page.south east) rectangle (current page.north east);
-    \node[anchor=north east,align=center,text=white,font=\bfseries\fontsize{58}{60}\selectfont]
-      at ([xshift=-4.9cm,yshift=-4.3cm]current page.north east) {\ifnum\value{chapter}<10 0\fi\thechapter};
-    \node[anchor=north east,align=center,text=white,font=\bfseries\fontsize{17}{20}\selectfont,text width=6.5cm]
-      at ([xshift=-3.9cm,yshift=-7.0cm]current page.north east) {\MakeUppercase{#1}};
-    \node[anchor=north east,align=center,text=udaBlue,font=\fontsize{10}{11}\selectfont,text width=6.0cm]
-      at ([xshift=-4.2cm,yshift=-9.1cm]current page.north east) {#2};
-    \node[anchor=north east,align=right,text=udaBlue,font=\bfseries\fontsize{9}{11}\selectfont,text width=8.1cm]
-      at ([xshift=-7.1cm,yshift=-13.9cm]current page.north east) {#3};
+    \fill[udaLime] (current page.south west) rectangle ([xshift=-9.9cm]current page.north east);
+    \fill[white] ([xshift=-9.9cm]current page.south east) rectangle (current page.north east);
+    \node[anchor=center,align=center,text=white,font=\bfseries\fontsize{58}{60}\selectfont]
+      at ([xshift=-4.95cm,yshift=3.15cm]current page.center) {\ifnum\value{chapter}<10 0\fi\thechapter};
+    \node[anchor=north,align=center,text=white,font=\bfseries\fontsize{17}{20}\selectfont,text width=6.8cm]
+      at ([xshift=-4.95cm,yshift=1.30cm]current page.center) {\MakeUppercase{#1}};
+    \node[anchor=north,align=center,text=udaBlue,font=\fontsize{10}{11}\selectfont,text width=6.2cm]
+      at ([xshift=-4.95cm,yshift=-0.10cm]current page.center) {#2};
+    \node[anchor=east,align=right,text=udaBlue,font=\bfseries\fontsize{9}{11}\selectfont,text width=8.2cm]
+      at ([xshift=-7.35cm,yshift=-3.70cm]current page.center) {#3};
+    \foreach \n/\yy in {1/-3.70,2/-5.20,3/-6.70}{
+      \node[circle,fill=white,minimum size=1.05cm,inner sep=0pt,text=udaLime,font=\bfseries\fontsize{15}{17}\selectfont]
+        at ([xshift=-5.65cm,yshift=\yy cm]current page.center) {\thechapter.\n};
+    }
   \end{tikzpicture}
   \null
   \clearpage
