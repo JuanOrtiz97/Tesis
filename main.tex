@@ -207,6 +207,25 @@
   \vfill
 }
 
+\newcommand{\preliminarUnaPagina}[2]{%
+  \clearpage
+  \thispagestyle{plain}
+  \phantomsection
+  \addcontentsline{toc}{chapter}{#1}
+  \markboth{#1}{#1}%
+  \vspace*{2.0cm}
+  \noindent
+  \begin{minipage}[t]{0.31\textwidth}
+    {\fontsize{22}{25}\selectfont\bfseries\color{udaGreen}#1\par}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.31\textwidth}
+    \singlespacing
+    \fontsize{8}{10}\selectfont
+    #2
+  \end{minipage}
+  \vfill
+}
+
 \newcommand{\capituloUDA}[3]{%
   \clearpage
   \thispagestyle{empty}
@@ -333,7 +352,7 @@
 Texto de dedicatoria.
 }
 
-\preliminarSpread{Agradecimiento}{%
+\preliminarUnaPagina{Agradecimiento}{%
 Agradezco a Dios por sostenerme con fortaleza, claridad y perseverancia durante este proceso academico.
 
 A mi familia, por su amor, paciencia y apoyo constante. Su presencia fue una fuente de motivacion y confianza en cada etapa de este camino.
