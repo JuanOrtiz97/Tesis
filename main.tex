@@ -89,10 +89,15 @@
   \end{tikzpicture}%
 }
 
+\newcommand{\tituloSeccionConBajada}[1]{%
+  \vspace*{1.15cm}%
+  \tituloSeccionDiseno{\thesection}{#1}%
+}
+
 \titleformat{\section}
   {\normalfont\bfseries}
-  {}{0pt}{\tituloSeccionDiseno{\thesection}}
-\titlespacing*{\section}{0pt}{72pt}{40pt}
+  {}{0pt}{\tituloSeccionConBajada}
+\titlespacing*{\section}{0pt}{0pt}{40pt}
 
 \titleformat{\subsection}
   {\normalfont\bfseries\fontsize{13}{15}\selectfont\color{udaGreen}}
