@@ -56,16 +56,15 @@
 
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[LE]{\fontsize{6.5}{8}\selectfont\color{udaGreen}TESIS}
-\fancyhead[RO]{\fontsize{6.5}{8}\selectfont\color{udaGreen}\nouppercase{\leftmark}}
+\newcommand{\encabezadoUDA}{\fontsize{8}{10}\selectfont\bfseries\textcolor{udaLime}{MAESTRÍA EN ARQUITECTURA}\textcolor{udaGreen}{\normalfont\space CON MENCIÓN EN CONSTRUCCIÓN SOSTENIBLE}}
+\fancyhead[LE,RO]{\encabezadoUDA}
 \fancyfoot[LE,RO]{\fontsize{8}{10}\selectfont\bfseries\color{udaGreen}\thepage}
 \renewcommand{\headrulewidth}{1.1pt}
 \renewcommand{\headrule}{\hbox to\headwidth{\color{udaGreen}\leaders\hrule height \headrulewidth\hfill}}
 \renewcommand{\footrulewidth}{0pt}
 \fancypagestyle{plain}{%
   \fancyhf{}%
-  \fancyhead[LE]{\fontsize{6.5}{8}\selectfont\color{udaGreen}TESIS}%
-  \fancyhead[RO]{\fontsize{6.5}{8}\selectfont\color{udaGreen}\nouppercase{\leftmark}}%
+  \fancyhead[LE,RO]{\encabezadoUDA}%
   \fancyfoot[LE,RO]{\fontsize{8}{10}\selectfont\bfseries\color{udaGreen}\thepage}%
   \renewcommand{\headrulewidth}{1.1pt}%
   \renewcommand{\headrule}{\hbox to\headwidth{\color{udaGreen}\leaders\hrule height \headrulewidth\hfill}}%
