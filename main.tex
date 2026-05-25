@@ -192,6 +192,11 @@
   \end{tikzpicture}\par\vspace{0.34cm}
 }
 
+\newcommand{\itemCapituloUDA}[2]{%
+  \node[anchor=east,align=right,text=udaBlue,font=\bfseries\fontsize{7.6}{8.8}\selectfont,text width=5.4cm]
+    at ([xshift=-6.55cm,yshift=#1cm]current page.center) {#2};
+}
+
 \newcommand{\preliminarSpread}[2]{%
   \clearpage
   \thispagestyle{plain}
@@ -253,8 +258,7 @@
       at ([xshift=-4.95cm,yshift=2.85cm]current page.center) {\MakeUppercase{#1}};
     \node[anchor=north,align=center,text=udaBlue,font=\fontsize{10}{11}\selectfont,text width=6.6cm]
       at ([xshift=-4.95cm,yshift=1.45cm]current page.center) {#2};
-    \node[anchor=east,align=right,text=udaBlue,font=\bfseries\fontsize{7.4}{8.8}\selectfont,text width=8.8cm]
-      at ([xshift=-7.80cm,yshift=-2.25cm]current page.center) {#3};
+    #3
     \foreach \n/\yy in {1/-2.25,2/-3.03,3/-3.81,4/-4.59,5/-5.37,6/-6.15,7/-6.93}{
       \node[circle,fill=white,minimum size=0.92cm,inner sep=0pt,text=udaLime,font=\bfseries\fontsize{12.5}{14}\selectfont]
         at ([xshift=-5.95cm,yshift=\yy cm]current page.center) {\thechapter.\n};
