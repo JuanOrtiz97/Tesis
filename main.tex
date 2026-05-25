@@ -42,10 +42,10 @@
 \geometry{
   inner=2.2cm,
   outer=1.8cm,
-  top=1.7cm,
+  top=2.25cm,
   bottom=1.8cm,
-  headheight=34pt,
-  headsep=34pt
+  headheight=1pt,
+  headsep=40pt
 }
 
 \setstretch{1.18}
@@ -57,15 +57,11 @@
 \pagestyle{fancy}
 \fancyhf{}
 \newcommand{\encabezadoUDA}{%
-  \makebox[0pt][l]{%
-    \hspace*{-3cm}%
-    \begin{minipage}{\dimexpr\paperwidth+6cm\relax}
-      \fontsize{8}{10}\selectfont\bfseries
-      \textcolor{udaLime}{MAESTRÍA EN ARQUITECTURA}%
-      \textcolor{udaGreen}{\normalfont\space CON MENCIÓN EN CONSTRUCCIÓN SOSTENIBLE}\\[9pt]
-      {\color{udaGreen}\rule{\linewidth}{1.1pt}}
-    \end{minipage}%
-  }%
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=north west,inner sep=0pt] at ([xshift=1.8cm,yshift=-0.78cm]current page.north west)
+      {\fontsize{8}{10}\selectfont\bfseries\textcolor{udaLime}{MAESTRÍA EN ARQUITECTURA}\textcolor{udaGreen}{\normalfont\space CON MENCIÓN EN CONSTRUCCIÓN SOSTENIBLE}};
+    \draw[udaGreen,line width=1.1pt] ([yshift=-1.65cm]current page.north west) -- ([yshift=-1.65cm]current page.north east);
+  \end{tikzpicture}%
 }
 \fancyhead[L]{\encabezadoUDA}
 \fancyfoot[LE,RO]{\fontsize{8}{10}\selectfont\bfseries\color{udaGreen}\thepage}
