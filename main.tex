@@ -114,11 +114,13 @@
 \newcommand{\tercioTextoImagen}[4]{%
   \noindent
   \begin{minipage}[t]{0.31\textwidth}
+    \vspace{0pt}
     #1
   \end{minipage}\hfill
   \begin{minipage}[t]{0.64\textwidth}
     \centering
-    \includegraphics[width=\textwidth,height=0.58\textheight,keepaspectratio]{#2}
+    \vspace{1.55cm}
+    \includegraphics[width=0.88\textwidth,height=0.50\textheight,keepaspectratio]{#2}
     \captionof{figure}{#3}
     \fuente{#4}
   \end{minipage}
@@ -127,11 +129,13 @@
 \newcommand{\dosTerciosTextoGrafico}[4]{%
   \noindent
   \begin{minipage}[t]{0.64\textwidth}
+    \vspace{0pt}
     #1
   \end{minipage}\hfill
   \begin{minipage}[t]{0.31\textwidth}
     \centering
-    \includegraphics[width=\textwidth,height=0.58\textheight,keepaspectratio]{#2}
+    \vspace{1.55cm}
+    \includegraphics[width=0.88\textwidth,height=0.50\textheight,keepaspectratio]{#2}
     \captionof{figure}{#3}
     \fuente{#4}
   \end{minipage}
