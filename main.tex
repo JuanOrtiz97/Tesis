@@ -213,7 +213,7 @@
 
 \newcommand{\itemCapituloUDA}[2]{%
   \node[anchor=east,align=right,text=white,font=\bfseries\fontsize{7.8}{9.1}\selectfont,text width=5.7cm]
-    at ([xshift=-3.05cm,yshift=#1cm]current page.center) {#2};
+    at ([xshift=-1.55cm,yshift=#1cm]current page.center) {#2};
 }
 
 \newcommand{\preliminarSpread}[2]{%
@@ -278,9 +278,9 @@
     \node[anchor=north east,align=right,text=white,font=\fontsize{10}{11}\selectfont,text width=6.6cm]
       at ([xshift=-2.45cm,yshift=1.45cm]current page.center) {#2};
     #3
-    \foreach \n/\yy in {1/-2.25,2/-3.13,3/-4.01,4/-4.89,5/-5.77,6/-6.65,7/-7.53}{
+    \foreach \n/\yy in {1/-2.15,2/-3.18,3/-4.21,4/-5.24,5/-6.27,6/-7.30,7/-8.33}{
       \node[circle,fill=white,minimum size=0.92cm,inner sep=0pt,text=udaLime,font=\bfseries\fontsize{12.5}{14}\selectfont]
-        at ([xshift=-2.45cm,yshift=\yy cm]current page.center) {\thechapter.\n};
+        at ([xshift=-0.95cm,yshift=\yy cm]current page.center) {\thechapter.\n};
     }
   \end{tikzpicture}
   \null
