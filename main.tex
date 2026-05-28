@@ -16,6 +16,7 @@
 \usepackage{multicol}
 \usepackage{tikz}
 \usetikzlibrary{babel}
+\usetikzlibrary{arrows.meta,positioning}
 \usepackage{caption}
 \usepackage{xcolor}
 \usepackage{titlesec}
@@ -141,6 +142,80 @@
     \captionof{figure}{#3}
     \fuente{#4}
   \end{minipage}
+}
+
+\newcommand{\tercioTextoTikz}[4]{%
+  \noindent
+  \begin{minipage}[t]{0.31\textwidth}
+    \vspace{0pt}
+    \fontsize{8.5}{11}\selectfont
+    #1
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.64\textwidth}
+    \centering
+    \vspace{1.05cm}
+    #2
+    \captionof{figure}{#3}
+    \fuente{#4}
+  \end{minipage}
+}
+
+\newcommand{\nodoIntro}[3]{%
+  \node[draw=udaLime,line width=0.9pt,rounded corners=2pt,align=center,text=udaGreen,font=\bfseries\fontsize{8}{9}\selectfont,minimum width=3.3cm,minimum height=0.82cm] (#1) {#3};
+}
+
+\newcommand{\graficoProblemaIntro}{%
+  \begin{tikzpicture}[>=Latex,scale=0.92,every node/.style={transform shape}]
+    \nodoIntro{a}{0}{Clima\\cálido-húmedo}
+    \node[draw=udaLime,line width=0.9pt,rounded corners=2pt,align=center,text=udaGreen,font=\bfseries\fontsize{8}{9}\selectfont,minimum width=3.3cm,minimum height=0.82cm] (b) at (0,-1.35) {Recursos\\limitados};
+    \node[draw=udaLime,line width=0.9pt,rounded corners=2pt,align=center,text=udaGreen,font=\bfseries\fontsize{8}{9}\selectfont,minimum width=3.3cm,minimum height=0.82cm] (c) at (0,-2.70) {Fragilidad\\ambiental};
+    \node[circle,fill=udaLime,text=white,font=\bfseries\fontsize{10}{12}\selectfont,minimum size=2.5cm,align=center] (d) at (5.0,-1.35) {Necesidad de\\optimización};
+    \draw[->,line width=0.8pt,color=udaGreen] (a.east) -- (d.west);
+    \draw[->,line width=0.8pt,color=udaGreen] (b.east) -- (d.west);
+    \draw[->,line width=0.8pt,color=udaGreen] (c.east) -- (d.west);
+  \end{tikzpicture}%
+}
+
+\newcommand{\graficoJustificacionIntro}{%
+  \begin{tikzpicture}[>=Latex,scale=0.92,every node/.style={transform shape}]
+    \foreach \txt/\x in {Estrategias\\pasivas/0,Materiales\\sostenibles/3.4,Simulación\\BIM-BES/6.8}{
+      \node[circle,draw=udaLime,line width=1pt,text=udaGreen,font=\bfseries\fontsize{8}{9}\selectfont,align=center,minimum size=2.15cm] at (\x,0) {\txt};
+    }
+    \draw[->,line width=0.9pt,color=udaGreen] (1.15,0) -- (2.25,0);
+    \draw[->,line width=0.9pt,color=udaGreen] (4.55,0) -- (5.65,0);
+    \node[fill=udaLime,text=white,font=\bfseries\fontsize{8}{9}\selectfont,rounded corners=2pt,align=center,minimum width=4.7cm,minimum height=0.86cm] at (3.4,-1.95) {Criterios aplicables a edificios públicos};
+  \end{tikzpicture}%
+}
+
+\newcommand{\graficoPreguntaIntro}{%
+  \begin{tikzpicture}[>=Latex,scale=0.92,every node/.style={transform shape}]
+    \node[draw=udaLime,line width=1pt,text=udaGreen,font=\bfseries\fontsize{8}{9}\selectfont,align=center,minimum width=2.9cm,minimum height=1.0cm] (a) at (0,0) {Caso base};
+    \node[draw=udaLime,line width=1pt,text=udaGreen,font=\bfseries\fontsize{8}{9}\selectfont,align=center,minimum width=3.4cm,minimum height=1.0cm] (b) at (4.0,0) {Estrategias pasivas\\y materiales};
+    \node[draw=udaLime,line width=1pt,text=udaGreen,font=\bfseries\fontsize{8}{9}\selectfont,align=center,minimum width=3.2cm,minimum height=1.0cm] (c) at (8.1,0) {Desempeño\\y confort};
+    \draw[->,line width=0.9pt,color=udaGreen] (a.east) -- (b.west);
+    \draw[->,line width=0.9pt,color=udaGreen] (b.east) -- (c.west);
+    \node[text=udaGray,font=\fontsize{7}{8}\selectfont,align=center] at (4,-1.05) {Pregunta de investigación};
+  \end{tikzpicture}%
+}
+
+\newcommand{\graficoHipotesisIntro}{%
+  \begin{tikzpicture}[>=Latex,scale=0.92,every node/.style={transform shape}]
+    \node[circle,fill=udaLime,text=white,font=\bfseries\fontsize{9}{10}\selectfont,align=center,minimum size=2.45cm] (a) at (0,0) {Estrategias\\aplicadas};
+    \node[draw=udaLime,line width=1pt,text=udaGreen,font=\bfseries\fontsize{8}{9}\selectfont,align=center,minimum width=3.4cm,minimum height=0.9cm] (b) at (4.4,0.75) {Menor demanda\\energética};
+    \node[draw=udaLime,line width=1pt,text=udaGreen,font=\bfseries\fontsize{8}{9}\selectfont,align=center,minimum width=3.4cm,minimum height=0.9cm] (c) at (4.4,-0.75) {Mayor confort\\térmico};
+    \draw[->,line width=0.9pt,color=udaGreen] (a.east) -- (b.west);
+    \draw[->,line width=0.9pt,color=udaGreen] (a.east) -- (c.west);
+  \end{tikzpicture}%
+}
+
+\newcommand{\graficoAlcanceIntro}{%
+  \begin{tikzpicture}[scale=0.92,every node/.style={transform shape}]
+    \node[draw=udaLime,line width=1pt,rounded corners=3pt,text=udaGreen,font=\bfseries\fontsize{8}{9}\selectfont,align=center,minimum width=3.2cm,minimum height=1.0cm] at (0,0) {Incluye\\modelo y simulación};
+    \node[draw=udaLime,line width=1pt,rounded corners=3pt,text=udaGreen,font=\bfseries\fontsize{8}{9}\selectfont,align=center,minimum width=3.2cm,minimum height=1.0cm] at (3.8,0) {Compara\\escenarios};
+    \node[draw=udaGray,line width=0.9pt,rounded corners=3pt,text=udaGray,font=\bfseries\fontsize{8}{9}\selectfont,align=center,minimum width=3.2cm,minimum height=1.0cm] at (7.6,0) {No ejecuta\\obra física};
+    \draw[color=udaLime,line width=1.1pt] (-1.6,-1.05) -- (5.4,-1.05);
+    \draw[color=udaGray,line width=1.1pt] (6.0,-1.05) -- (9.2,-1.05);
+  \end{tikzpicture}%
 }
 
 \newcommand{\dosTerciosTextoGrafico}[4]{%
