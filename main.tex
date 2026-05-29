@@ -287,21 +287,14 @@
 
 \newenvironment{textoDosTercios}{%
   \noindent
-  \begin{list}{}{%
-    \setlength{\leftmargin}{0pt}%
-    \setlength{\rightmargin}{0.34\textwidth}%
-    \setlength{\listparindent}{0pt}%
-    \setlength{\itemindent}{0pt}%
-    \setlength{\parsep}{\parskip}%
-    \setlength{\topsep}{0pt}%
-  }%
-  \item\relax
+  \begin{minipage}[t]{0.64\textwidth}
+  \vspace{0pt}
   \begin{multicols}{2}
   \raggedcolumns
   \sffamily\fontsize{9}{11}\selectfont
 }{%
   \end{multicols}
-  \end{list}
+  \end{minipage}
 }
 
 \newcommand{\numeroSeccionDiseno}[2]{%
