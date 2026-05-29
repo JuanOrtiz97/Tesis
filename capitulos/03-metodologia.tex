@@ -1,24 +1,46 @@
-\capituloUDA{Metodología}{Proceso de modelación, simulación y evaluación}{Diseño y enfoque de la investigación\par Fases metodológicas\par Escenarios de simulación}
+\capituloUDA{Metodología}{Proceso de modelación, simulación y evaluación}{%
+  \itemCapituloUDA{-2.15}{Diseño y enfoque de la investigación}
+  \itemCapituloUDA{-3.18}{Caso de estudio y unidad de análisis}
+  \itemCapituloUDA{-4.21}{Fases metodológicas}
+  \itemCapituloUDA{-5.24}{Fuentes de información y datos de entrada}
+  \itemCapituloUDA{-6.27}{Herramientas de simulación y análisis}
+  \itemCapituloUDA{-7.30}{Escenarios de simulación e indicadores}
+  \itemCapituloUDA{-8.33}{Procedimiento y validación del modelo}
+}
 
+\begin{textoDosTercios}
 La metodología define el procedimiento para responder a la pregunta de investigación: ¿qué impacto tienen las estrategias pasivas y el uso de materiales sostenibles frente al diseño actual en el desempeño energético del edificio de la Defensoría del Pueblo en Galápagos? Para ello, se compara el escenario actual del proyecto con escenarios optimizados mediante modelado digital, simulación energética y análisis cuantitativo de indicadores.
 
 El planteamiento metodológico toma como referencia la lógica desarrollada por \textcite{torres-barriusoSustainableBuildingStandards2025} para la definición, simulación e implementación de estándares sostenibles en Galápagos. En el artículo de referencia, el proceso parte de la caracterización de casos representativos, establece una línea base, simula estrategias sostenibles y traduce los resultados en criterios replicables. En esta tesis, dicho enfoque se aplica al proyecto de la Defensoría del Pueblo como caso de estudio en etapa de diseño, con el fin de evaluar su desempeño antes de su construcción.
+\end{textoDosTercios}
 
+\clearpage
+\vspace*{1.15cm}
 \section{Diseño y enfoque de la investigación}
 
+\begin{textoDosTercios}
 La investigación es no experimental, cuantitativa, prospectiva y comparativa. Es no experimental porque no modifica físicamente el edificio; cuantitativa porque analiza indicadores medibles de desempeño energético y confort; prospectiva porque evalúa escenarios de mejora antes de su implementación; y comparativa porque contrasta el escenario base con escenarios optimizados.
 
 El enfoque se basa en la evaluación de escenarios mediante herramientas BIM y simulación energética. La investigación no busca medir un edificio en operación, sino estimar el comportamiento energético de un proyecto arquitectónico a partir de información técnica disponible, datos climáticos y modelos de simulación.
+\end{textoDosTercios}
 
+\clearpage
+\vspace*{1.15cm}
 \section{Caso de estudio y unidad de análisis}
 
+\begin{textoDosTercios}
 La unidad de análisis corresponde al proyecto arquitectónico de la Defensoría del Pueblo en la isla San Cristóbal, Galápagos. El caso se considera representativo de una edificación pública ubicada en un contexto insular de alta fragilidad ambiental, donde las decisiones de diseño deben responder a condiciones climáticas, logísticas y ecológicas particulares.
 
 El modelo base corresponde al diseño actual del edificio, incluyendo su geometría, orientación, sistema constructivo, materiales, envolvente, aperturas, condiciones de ventilación, ocupación y sistemas previstos.
+\end{textoDosTercios}
 
+\clearpage
+\vspace*{1.15cm}
 \section{Fases metodológicas}
 
+\begin{textoDosTercios}
 La metodología se organiza en seis fases consecutivas. Cada fase genera información necesaria para la siguiente, desde el levantamiento de datos hasta la formulación de recomendaciones de optimización.
+\end{textoDosTercios}
 
 \begin{table}[H]
   \centering
@@ -40,8 +62,11 @@ La metodología se organiza en seis fases consecutivas. Cada fase genera informa
   \fuente{Basado en el esquema metodológico de la investigación.}
 \end{table}
 
+\clearpage
+\vspace*{1.15cm}
 \section{Fuentes de información y datos de entrada}
 
+\begin{textoDosTercios}
 La investigación utilizará información técnica del proyecto y del contexto climático. Los datos de entrada se agrupan en tres categorías: documentación del edificio, datos climáticos y parámetros de operación.
 
 \subsection{Documentación del edificio}
@@ -53,6 +78,7 @@ La documentación del edificio incluirá la revisión de planos arquitectónicos
 Se recopilarán datos climáticos históricos y actuales de San Cristóbal, Galápagos, considerando temperatura, humedad, radiación solar, viento, presión atmosférica y geometría solar. Como insumo principal se incorpora el archivo climático horario EPW de San Cristóbal, correspondiente a la estación San Cristóbal International Airport y construido como año meteorológico típico a partir del periodo 2011--2025. Este archivo contiene 8760 registros horarios y permite configurar las condiciones exteriores del modelo en DesignBuilder/EnergyPlus.
 
 La lectura preliminar del EPW muestra una temperatura media anual de $24,28\,^{\circ}\mathrm{C}$, con valores horarios entre $15,70\,^{\circ}\mathrm{C}$ y $32,90\,^{\circ}\mathrm{C}$. La humedad relativa media es de $81,37\,$\%, la radiación global horizontal anual alcanza $2150,50\,\mathrm{kWh}/\mathrm{m}^{2}$, equivalente a $5,89\,\mathrm{kWh}/\mathrm{m}^{2}$ por día, y la velocidad media del viento es de $4,90\,\mathrm{m/s}$. Estos valores confirman que el caso de estudio debe evaluarse como una edificación ubicada en un clima cálido-húmedo, con alta incidencia solar y potencial de ventilación natural.
+\end{textoDosTercios}
 
 \begin{table}[H]
   \centering
@@ -74,12 +100,17 @@ La lectura preliminar del EPW muestra una temperatura media anual de $24,28\,^{\
   \fuente{Basado en el archivo climático EPW de San Cristóbal.}
 \end{table}
 
+\begin{textoDosTercios}
 \subsection{Condiciones de uso y ocupación}
 
 Las condiciones de uso incluirán ocupación, horarios de funcionamiento, cargas internas, iluminación artificial, ventilación natural o mecánica y sistemas HVAC cuando correspondan. Si existe información operativa de edificios similares o datos reales de consumo, se utilizará como referencia para ajustar los supuestos del modelo.
+\end{textoDosTercios}
 
+\clearpage
+\vspace*{1.15cm}
 \section{Herramientas de simulación y análisis}
 
+\begin{textoDosTercios}
 El trabajo combinará software BIM, simulación energética y matrices de análisis. El modelado y coordinación podrán realizarse en Revit o Archicad, según la disponibilidad de información del proyecto. La simulación energética se desarrollará principalmente en DesignBuilder, basado en el motor EnergyPlus, y podrá contrastarse con herramientas complementarias como Revit Insight o Archicad EnergyPlus cuando sea pertinente.
 
 Para el análisis de materiales sostenibles, huella de carbono e indicadores comparativos se emplearán matrices en hojas de cálculo. Estas matrices permitirán organizar datos, comparar escenarios y registrar resultados de forma trazable.
@@ -89,6 +120,7 @@ Para el análisis de materiales sostenibles, huella de carbono e indicadores com
 El modelado del edificio base consiste en construir una representación digital del diseño actual del proyecto. Este modelo permitirá definir la geometría, orientación, envolvente, aperturas, sombras, materiales y condiciones operativas del edificio.
 
 En esta fase se configurarán los principales parámetros térmicos:
+\end{textoDosTercios}
 
 \begin{itemize}
   \item Coeficiente de transmisión térmica de muros, techos, pisos y ventanas.
@@ -104,9 +136,13 @@ En esta fase se configurarán los principales parámetros térmicos:
   \item Ocupación y horarios de uso del edificio.
 \end{itemize}
 
+\clearpage
+\vspace*{1.15cm}
 \section{Escenarios de simulación (CB, C1, C2, C3)}
 
+\begin{textoDosTercios}
 La evaluación se organizará en cuatro escenarios. El objetivo es comparar el diseño actual con alternativas de mejora y determinar qué tipo de estrategia produce mayor incidencia sobre el desempeño energético y el confort térmico.
+\end{textoDosTercios}
 
 \begin{enumerate}
   \item Escenario base: diseño y materiales actuales del proyecto.
@@ -115,6 +151,7 @@ La evaluación se organizará en cuatro escenarios. El objetivo es comparar el d
   \item Escenario optimizado 3: combinación de estrategias pasivas y materiales sostenibles.
 \end{enumerate}
 
+\begin{textoDosTercios}
 Cada escenario será modelado de forma independiente y bajo criterios comparables. Esto permitirá que las diferencias de resultado se asocien a las estrategias evaluadas y no a cambios metodológicos entre modelos.
 
 \paragraph{Ejecución de simulaciones energéticas.}
@@ -122,9 +159,13 @@ Cada escenario será modelado de forma independiente y bajo criterios comparable
 La simulación energética evaluará pérdidas y ganancias térmicas, demanda energética, consumo estimado, confort térmico, luminosidad y comportamiento de la envolvente. Para cada escenario se ejecutarán simulaciones con condiciones climáticas y supuestos operativos equivalentes.
 
 El escenario base permitirá establecer la línea de comparación. Los escenarios optimizados permitirán medir el impacto de estrategias pasivas, materiales sostenibles y combinación de ambas. Esta comparación permitirá pasar de una valoración cualitativa de las estrategias a una evaluación cuantitativa de su incidencia.
+\end{textoDosTercios}
 
+\clearpage
+\vspace*{1.15cm}
 \section{Matriz de indicadores de sostenibilidad}
 
+\begin{textoDosTercios}
 \subsection{Dimensiones e indicadores}
 
 Los resultados se organizarán mediante tablas comparativas, gráficos y matrices de evaluación. Se comparará el modelo base con los modelos optimizados para identificar variaciones en carga térmica, demanda energética, consumo, confort térmico y luminosidad.
@@ -136,10 +177,15 @@ El análisis cuantitativo considerará promedios, desviaciones cuando correspond
 La validación se realizará mediante revisión de consistencia del modelo, comparación con datos reales cuando estén disponibles y contraste con literatura técnica. Si existen datos de consumo o condiciones térmicas de edificios cercanos o comparables, estos podrán utilizarse como referencia para ajustar parámetros y mejorar la confiabilidad del modelo.
 
 Además, se revisarán los supuestos de modelado, las propiedades de materiales, las condiciones climáticas, los horarios de uso y los criterios de ventilación. Las limitaciones del modelo serán documentadas para evitar interpretar los resultados como mediciones absolutas de desempeño.
+\end{textoDosTercios}
 
+\clearpage
+\vspace*{1.15cm}
 \section{Procedimiento y validación del modelo}
 
+\begin{textoDosTercios}
 El procedimiento operativo se desarrollará en las siguientes etapas:
+\end{textoDosTercios}
 
 \begin{enumerate}
   \item Obtención de planos arquitectónicos, estructurales y de instalaciones.
@@ -158,6 +204,8 @@ El procedimiento operativo se desarrollará en las siguientes etapas:
   \item Formulación de recomendaciones de optimización según impacto y factibilidad.
 \end{enumerate}
 
+\begin{textoDosTercios}
 \paragraph{Producto final de la metodología.}
 
 El producto final de la metodología será una propuesta de optimización del diseño arquitectónico mediante estrategias pasivas y materiales sostenibles. Esta propuesta se apoyará en evidencia cuantitativa derivada de simulaciones, comparación de escenarios e identificación de prioridades de implementación.
+\end{textoDosTercios}
