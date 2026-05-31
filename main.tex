@@ -375,6 +375,28 @@
   \end{minipage}
 }
 
+\newenvironment{textoDosTerciosImagen}[3]{%
+  \def\imagenTercioArchivo{#1}%
+  \def\imagenTercioCaption{#2}%
+  \def\imagenTercioFuente{#3}%
+  \noindent
+  \begin{minipage}[t]{0.64\textwidth}
+  \vspace{0pt}
+  \begin{multicols}{2}
+  \raggedcolumns
+  \sffamily\fontsize{9}{11}\selectfont
+}{%
+  \end{multicols}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.31\textwidth}
+    \vspace{0pt}
+    \centering
+    \includegraphics[width=\linewidth,height=0.58\textheight,keepaspectratio]{\imagenTercioArchivo}
+    \captionof{figure}{\imagenTercioCaption}
+    \fuente{\imagenTercioFuente}
+  \end{minipage}
+}
+
 \newcommand{\numeroSeccionDiseno}[2]{%
   \noindent
   \begin{tikzpicture}[baseline=(n.base)]
