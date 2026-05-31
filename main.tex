@@ -252,6 +252,84 @@
   \end{tikzpicture}%
 }
 
+\newcommand{\figuraMarcoTikz}[3]{%
+  \begin{center}
+    #1
+  \end{center}
+  \captionof{figure}{#2}
+  \fuente{#3}
+}
+
+\newcommand{\graficoMarcoDesempeno}{%
+  \begin{tikzpicture}[>=Latex,scale=0.92,every node/.style={transform shape}]
+    \node[fill=introDark,text=white,rounded corners=3pt,align=center,font=\bfseries\fontsize{9}{10}\selectfont,minimum width=3.0cm,minimum height=1.05cm] (ed) at (4,0) {Edificio};
+    \node[draw=introOrange,fill=introSoft,line width=0.9pt,align=center,text=introDark,font=\bfseries\fontsize{7.5}{8.5}\selectfont,minimum width=2.25cm] (sol) at (0.6,1.35) {Radiacion\\solar};
+    \node[draw=introBlue,fill=introSoft,line width=0.9pt,align=center,text=introDark,font=\bfseries\fontsize{7.5}{8.5}\selectfont,minimum width=2.25cm] (clima) at (0.6,-1.35) {Clima\\exterior};
+    \node[draw=udaLime,fill=introSoft,line width=0.9pt,align=center,text=introDark,font=\bfseries\fontsize{7.5}{8.5}\selectfont,minimum width=2.25cm] (uso) at (7.4,1.35) {Uso y\\ocupacion};
+    \node[draw=udaGray,fill=introSoft,line width=0.9pt,align=center,text=introDark,font=\bfseries\fontsize{7.5}{8.5}\selectfont,minimum width=2.25cm] (sis) at (7.4,-1.35) {Sistemas\\activos};
+    \node[draw=udaSky,fill=white,line width=0.9pt,align=center,text=introDark,font=\bfseries\fontsize{7.5}{8.5}\selectfont,minimum width=2.55cm] (env) at (4,2.15) {Envolvente};
+    \node[draw=udaSky,fill=white,line width=0.9pt,align=center,text=introDark,font=\bfseries\fontsize{7.5}{8.5}\selectfont,minimum width=2.55cm] (mat) at (4,-2.15) {Materialidad};
+    \foreach \a in {sol,clima,uso,sis,env,mat}{\draw[->,line width=0.8pt,color=udaGreen] (\a) -- (ed);}
+    \node[anchor=west,text=udaGray,font=\fontsize{7}{8}\selectfont,align=left,text width=3.0cm] at (8.75,0.2) {Consumo energetico\\Confort termico\\Emisiones};
+  \end{tikzpicture}%
+}
+
+\newcommand{\graficoMarcoPasivas}{%
+  \begin{tikzpicture}[>=Latex,scale=0.92,every node/.style={transform shape}]
+    \draw[fill=introSoft,draw=udaSky,line width=0.9pt] (2.5,-1.0) rectangle (5.5,1.0);
+    \draw[fill=white,draw=udaBlue,line width=0.9pt] (2.85,-0.65) rectangle (3.55,0.55);
+    \draw[fill=white,draw=udaBlue,line width=0.9pt] (4.45,-0.65) rectangle (5.15,0.55);
+    \draw[introOrange,line width=1pt] (0.65,1.75) circle (0.35);
+    \foreach \a in {-25,-10,5,20}{\draw[introOrange,line width=0.8pt] (0.65,1.75) -- ++(\a:0.8);}
+    \draw[->,introOrange,line width=1.0pt] (1.2,1.35) -- (2.85,0.75);
+    \draw[->,introBlue,line width=1.0pt] (0.5,-0.2) -- (2.45,-0.2);
+    \draw[->,introBlue,line width=1.0pt] (5.55,-0.2) -- (7.55,-0.2);
+    \draw[udaLime,line width=1.2pt] (2.35,1.1) -- (5.65,1.1);
+    \node[text=udaGreen,font=\bfseries\fontsize{7.5}{8.5}\selectfont,align=center] at (4,-1.55) {Ventilacion cruzada + control solar + masa termica};
+    \node[text=introOrange,font=\bfseries\fontsize{7}{8}\selectfont] at (1.15,2.55) {Sol};
+    \node[text=introBlue,font=\bfseries\fontsize{7}{8}\selectfont] at (0.75,-0.55) {Viento};
+    \node[text=udaLime,font=\bfseries\fontsize{7}{8}\selectfont] at (4,1.55) {Sombra};
+  \end{tikzpicture}%
+}
+
+\newcommand{\graficoMarcoCicloVida}{%
+  \begin{tikzpicture}[>=Latex,scale=0.9,every node/.style={transform shape}]
+    \node[circle,draw=introOrange,fill=introSoft,line width=1pt,text=introDark,font=\bfseries\fontsize{7.3}{8.2}\selectfont,align=center,minimum size=1.65cm] (ex) at (90:2.35) {Extraccion};
+    \node[circle,draw=udaBlue,fill=introSoft,line width=1pt,text=introDark,font=\bfseries\fontsize{7.3}{8.2}\selectfont,align=center,minimum size=1.65cm] (fa) at (18:2.35) {Fabricacion};
+    \node[circle,draw=introBlue,fill=introSoft,line width=1pt,text=introDark,font=\bfseries\fontsize{7.3}{8.2}\selectfont,align=center,minimum size=1.65cm] (tr) at (-54:2.35) {Transporte};
+    \node[circle,draw=udaLime,fill=introSoft,line width=1pt,text=introDark,font=\bfseries\fontsize{7.3}{8.2}\selectfont,align=center,minimum size=1.65cm] (us) at (-126:2.35) {Uso y\\mantenimiento};
+    \node[circle,draw=udaGray,fill=introSoft,line width=1pt,text=introDark,font=\bfseries\fontsize{7.3}{8.2}\selectfont,align=center,minimum size=1.65cm] (fi) at (162:2.35) {Fin de\\vida};
+    \foreach \a/\b in {ex/fa,fa/tr,tr/us,us/fi,fi/ex}{\draw[->,line width=0.8pt,color=udaGreen] (\a) to[bend left=12] (\b);}
+    \node[fill=introDark,text=white,rounded corners=3pt,font=\bfseries\fontsize{8}{9}\selectfont,align=center,minimum width=2.35cm,minimum height=0.85cm] at (0,0) {Impacto\\ambiental};
+  \end{tikzpicture}%
+}
+
+\newcommand{\graficoMarcoSimulacion}{%
+  \begin{tikzpicture}[>=Latex,scale=0.9,every node/.style={transform shape}]
+    \node[draw=udaBlue,fill=introSoft,line width=0.9pt,rounded corners=2pt,text=introDark,font=\bfseries\fontsize{7.5}{8.5}\selectfont,align=center,minimum width=2.05cm,minimum height=0.95cm] (bim) at (0,0) {Modelo BIM};
+    \node[draw=introOrange,fill=introSoft,line width=0.9pt,rounded corners=2pt,text=introDark,font=\bfseries\fontsize{7.5}{8.5}\selectfont,align=center,minimum width=2.05cm,minimum height=0.95cm] (idf) at (2.75,0) {IDF +\\materiales};
+    \node[draw=introBlue,fill=introSoft,line width=0.9pt,rounded corners=2pt,text=introDark,font=\bfseries\fontsize{7.5}{8.5}\selectfont,align=center,minimum width=2.05cm,minimum height=0.95cm] (epw) at (5.5,0) {EPW\\clima};
+    \node[draw=udaLime,fill=introSoft,line width=0.9pt,rounded corners=2pt,text=introDark,font=\bfseries\fontsize{7.5}{8.5}\selectfont,align=center,minimum width=2.05cm,minimum height=0.95cm] (eng) at (8.25,0) {EnergyPlus};
+    \node[draw=introDark,fill=introSoft,line width=0.9pt,rounded corners=2pt,text=introDark,font=\bfseries\fontsize{7.5}{8.5}\selectfont,align=center,minimum width=2.05cm,minimum height=0.95cm] (res) at (11,0) {Resultados};
+    \draw[->,line width=0.9pt,color=udaGreen] (bim) -- (idf);
+    \draw[->,line width=0.9pt,color=udaGreen] (idf) -- (epw);
+    \draw[->,line width=0.9pt,color=udaGreen] (epw) -- (eng);
+    \draw[->,line width=0.9pt,color=udaGreen] (eng) -- (res);
+    \node[anchor=north,text=udaGray,font=\fontsize{7}{8}\selectfont,align=center,text width=10cm] at (5.5,-0.75) {Flujo de modelacion energetica para comparar caso base y escenarios de optimizacion.};
+  \end{tikzpicture}%
+}
+
+\newcommand{\graficoMarcoEstandares}{%
+  \begin{tikzpicture}[scale=0.9,every node/.style={transform shape}]
+    \node[fill=introDark,text=white,rounded corners=2pt,font=\bfseries\fontsize{8}{9}\selectfont,align=center,minimum width=2.2cm,minimum height=0.8cm] at (0,0) {Matriz\\adaptada};
+    \foreach \txt/\x/\y/\col in {Minergie/3/1.2/udaBlue,WELL/5.7/1.2/introBlue,CEE-LA/8.4/1.2/udaLime,EDGE/4.35/-1.05/introOrange,LEED/7.05/-1.05/udaGray}{
+      \node[draw=\col,fill=introSoft,line width=0.9pt,rounded corners=2pt,text=introDark,font=\bfseries\fontsize{7.5}{8.5}\selectfont,align=center,minimum width=1.8cm,minimum height=0.7cm] at (\x,\y) {\txt};
+      \draw[-,line width=0.8pt,color=udaGreen] (0.95,0) -- (\x,\y);
+    }
+    \node[anchor=north west,text=udaGray,font=\fontsize{7}{8}\selectfont,align=left,text width=8.2cm] at (2.8,-1.75) {Energia, confort, salud, agua, materiales e impacto ambiental se integran como criterios de evaluacion, no como certificaciones aisladas.};
+  \end{tikzpicture}%
+}
+
 \newcommand{\dosTerciosTextoGrafico}[4]{%
   \noindent
   \begin{minipage}[t]{0.64\textwidth}
