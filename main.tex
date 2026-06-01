@@ -16,9 +16,10 @@
 \usepackage{multicol}
 \usepackage{tikz}
 \usetikzlibrary{babel}
-\usetikzlibrary{arrows.meta,positioning}
+\usetikzlibrary{arrows.meta,positioning,calc}
 \usepackage{caption}
 \usepackage{xcolor}
+\usepackage{eso-pic}
 \usepackage{titlesec}
 \usepackage{csquotes}
 \usepackage{fancyhdr}
@@ -43,6 +44,9 @@
 \definecolor{introBlue}{HTML}{2D7F9D}
 \definecolor{introDark}{HTML}{1D3445}
 \definecolor{introSoft}{HTML}{F3F5F7}
+\definecolor{guiaTercio}{HTML}{D23B3B}
+\definecolor{guiaCaja}{HTML}{2D7F9D}
+\definecolor{guiaCentro}{HTML}{C97728}
 
 \geometry{
   inner=2.2cm,
@@ -58,6 +62,36 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{7pt}
 \setlength{\columnsep}{0.9cm}
+
+% Guias visuales temporales para revisar reticula, tercios y alineaciones.
+% Cambiar a \mostrarGuiasUDAfalse para generar el PDF final sin lineas.
+\newif\ifmostrarGuiasUDA
+\mostrarGuiasUDAtrue
+\newcommand{\guiasUDA}{%
+  \ifmostrarGuiasUDA
+  \begin{tikzpicture}[remember picture,overlay]
+    \ifodd\value{page}
+      \coordinate (udaTextNW) at ([xshift=2.2cm,yshift=-2.25cm]current page.north west);
+    \else
+      \coordinate (udaTextNW) at ([xshift=1.8cm,yshift=-2.25cm]current page.north west);
+    \fi
+    \coordinate (udaTextSE) at ([xshift=\textwidth,yshift=-\textheight]udaTextNW);
+    \coordinate (udaTextNE) at ([xshift=\textwidth]udaTextNW);
+    \coordinate (udaTextSW) at ([yshift=-\textheight]udaTextNW);
+    \draw[guiaCaja,line width=0.35pt,opacity=0.45] (udaTextNW) rectangle (udaTextSE);
+    \draw[guiaTercio,line width=0.55pt,opacity=0.55]
+      ([xshift=.333333\textwidth]udaTextNW) -- ([xshift=.333333\textwidth]udaTextSW)
+      ([xshift=.666667\textwidth]udaTextNW) -- ([xshift=.666667\textwidth]udaTextSW);
+    \draw[guiaCentro,line width=0.35pt,densely dashed,opacity=0.45]
+      ([xshift=.5\textwidth]udaTextNW) -- ([xshift=.5\textwidth]udaTextSW);
+    \draw[guiaCaja,line width=0.35pt,densely dashed,opacity=0.35]
+      ([yshift=-1.65cm]current page.north west) -- ([yshift=-1.65cm]current page.north east)
+      (udaTextNW) -- (udaTextNE)
+      (udaTextSW) -- (udaTextSE);
+  \end{tikzpicture}%
+  \fi
+}
+\AddToShipoutPictureBG{\guiasUDA}
 
 \pagestyle{fancy}
 \fancyhf{}
