@@ -1,19 +1,25 @@
 % !TeX root = ../main.tex
 \capituloUDA{Análisis del caso de estudio y resultados del caso base}{Descripción del proyecto, clima y desempeño inicial}{Descripción del caso de estudio\par Análisis climático de San Cristóbal\par Resultados del caso base}
 
+\begin{textoDosTercios}
 Este capítulo aplica la metodología al proyecto de la Defensoría del Pueblo en San Cristóbal. Su función es describir el caso de estudio, analizar el contexto climático, documentar la construcción del modelo energético y presentar la evaluación del caso base. De esta forma, el capítulo establece el diagnóstico que servirá como punto de partida para los escenarios de optimización del capítulo siguiente.
+\end{textoDosTercios}
 
 \section{Descripción del caso de estudio}
 
+\begin{textoDosTercios}
 El análisis inicial describe las condiciones arquitectónicas, climáticas y constructivas del caso de estudio. Esta sección deberá incluir implantación, orientación, programa arquitectónico, sistema constructivo, materiales predominantes, configuración de envolvente, relación lleno-vacío, protecciones solares existentes y criterios de ventilación natural.
 
 El objetivo de esta sección es reconocer las condiciones iniciales que inciden en el desempeño ambiental del proyecto. En el contexto de Galápagos, la lectura del edificio debe considerar no solo el consumo energético, sino también las restricciones de transporte, mantenimiento, disponibilidad material y fragilidad ambiental.
+\end{textoDosTercios}
 
 \section{Análisis del contexto climático de San Cristóbal}
 
+\begin{textoDosTercios}
 El análisis climático se construye a partir del archivo EPW (\textit{EnergyPlus Weather}) de San Cristóbal incorporado en la carpeta de datos de la tesis. Este formato climático horario es utilizado por EnergyPlus, DesignBuilder y otros programas de simulación energética. El registro corresponde al año meteorológico típico TMYx 2011--2025 de la estación San Cristóbal International Airport y contiene 8760 datos horarios de temperatura exterior, punto de rocío, humedad relativa, radiación solar global, directa y difusa, velocidad y dirección del viento, presión atmosférica, cobertura de cielo y precipitación.
 
 Los datos describen una condición cálido-húmeda, con temperatura media anual de $24,28\,^{\circ}\mathrm{C}$, humedad relativa media de $81,37\%$ y radiación global horizontal media diaria de $5,89\,\mathrm{kWh}/\mathrm{m}^{2}$ por día. La temperatura media mensual más alta se registra en marzo, con $27,10\,^{\circ}\mathrm{C}$, mientras que septiembre presenta la media mensual más baja, con $21,73\,^{\circ}\mathrm{C}$. La velocidad media anual del viento es de $4,90\,\mathrm{m/s}$, con dirección predominante desde el sur-sureste, lo que sugiere la necesidad de analizar la ventilación natural según orientación, permeabilidad de fachada y recorrido interior del aire.
+\end{textoDosTercios}
 
 \begin{table}[H]
   \centering
@@ -39,7 +45,9 @@ Los datos describen una condición cálido-húmeda, con temperatura media anual 
   \fuente{Basado en el archivo climático EPW de San Cristóbal.}
 \end{table}
 
+\begin{textoDosTercios}
 La lectura gráfica del EPW se concentra en las variables más relevantes para el caso de estudio: temperatura, humedad, punto de rocío, radiación solar, cobertura de cielo, precipitación, viento, amplitud térmica diaria y variación horaria de la temperatura exterior. Estos gráficos no sustituyen la simulación energética del edificio, pero permiten justificar las variables climáticas que deben controlarse en el modelo base y en los escenarios de optimización.
+\end{textoDosTercios}
 
 \begin{figure}[!htbp]
   \centering
@@ -48,7 +56,9 @@ La lectura gráfica del EPW se concentra en las variables más relevantes para e
   \fuente{Basado en el archivo EPW TMYx 2011--2025 de San Cristóbal.}
 \end{figure}
 
+\begin{textoDosTercios}
 La temperatura media mensual más alta se registra en marzo, con $27,10\,^{\circ}\mathrm{C}$, mientras que septiembre presenta la media mensual más baja, con $21,73\,^{\circ}\mathrm{C}$. Esta diferencia confirma una estacionalidad térmica moderada, sin cambios extremos entre meses.
+\end{textoDosTercios}
 
 \begin{figure}[!htbp]
   \centering
@@ -57,7 +67,9 @@ La temperatura media mensual más alta se registra en marzo, con $27,10\,^{\circ
   \fuente{Basado en el archivo EPW TMYx 2011--2025 de San Cristóbal.}
 \end{figure}
 
+\begin{textoDosTercios}
 La humedad relativa media anual es de $81,37\%$, con valores horarios entre $57,00\%$ y $100,00\%$. Esta condición confirma un ambiente húmedo persistente, relevante para confort térmico, ventilación, condensación y durabilidad de materiales.
+\end{textoDosTercios}
 
 \begin{figure}[!htbp]
   \centering
@@ -66,7 +78,9 @@ La humedad relativa media anual es de $81,37\%$, con valores horarios entre $57,
   \fuente{Basado en el archivo EPW TMYx 2011--2025 de San Cristóbal.}
 \end{figure}
 
+\begin{textoDosTercios}
 El punto de rocío varía entre $10,90$ y $29,00\,^{\circ}\mathrm{C}$. Esta condición, combinada con humedad relativa elevada, refuerza la necesidad de controlar condensación, ventilación y selección de materiales en la envolvente.
+\end{textoDosTercios}
 
 \begin{figure}[!htbp]
   \centering
@@ -75,7 +89,9 @@ El punto de rocío varía entre $10,90$ y $29,00\,^{\circ}\mathrm{C}$. Esta cond
   \fuente{Basado en el archivo EPW TMYx 2011--2025 de San Cristóbal.}
 \end{figure}
 
+\begin{textoDosTercios}
 La radiación global horizontal media anual es de $245,49\,\mathrm{W/m}^{2}$. Por ello, la lectura de radiación mensual debe relacionarse con control solar, cubierta, fachadas expuestas y reducción de ganancias térmicas.
+\end{textoDosTercios}
 
 \begin{figure}[!htbp]
   \centering
@@ -84,7 +100,9 @@ La radiación global horizontal media anual es de $245,49\,\mathrm{W/m}^{2}$. Po
   \fuente{Basado en el archivo EPW TMYx 2011--2025 de San Cristóbal.}
 \end{figure}
 
+\begin{textoDosTercios}
 La precipitación anual se distribuye en 142 días con lluvia, con un máximo diario de $5,90\,\mathrm{mm}$. Aunque el acumulado anual no es extremo, la frecuencia de días húmedos exige atención a durabilidad, mantenimiento y protección de la envolvente.
+\end{textoDosTercios}
 
 \begin{figure}[!htbp]
   \centering
@@ -93,7 +111,9 @@ La precipitación anual se distribuye en 142 días con lluvia, con un máximo di
   \fuente{Basado en el archivo EPW TMYx 2011--2025 de San Cristóbal.}
 \end{figure}
 
+\begin{textoDosTercios}
 El viento predominante proviene del sur-sureste y concentra el $39,70\%$ de las horas. Esta dirección debe considerarse al evaluar ventilación cruzada, ubicación de aberturas y recorridos interiores de aire.
+\end{textoDosTercios}
 
 \begin{figure}[!htbp]
   \centering
@@ -116,11 +136,15 @@ El viento predominante proviene del sur-sureste y concentra el $39,70\%$ de las 
   \fuente{Basado en el archivo EPW TMYx 2011--2025 de San Cristóbal.}
 \end{figure}
 
+\begin{textoDosTercios}
 Esta lectura climática orienta la construcción de la línea base. Antes de simular escenarios de optimización, el modelo debe representar correctamente la exposición solar, la ventilación disponible, la sensibilidad de la envolvente a la radiación y el comportamiento higrotérmico de los materiales. En consecuencia, las estrategias a comparar no deben limitarse al cambio de materiales, sino incluir control solar, ventilación natural, sombreamiento, reducción de cargas térmicas y selección de envolventes compatibles con un ambiente húmedo.
+\end{textoDosTercios}
 
 \section{Modelo arquitectónico y zonificación térmica}
 
+\begin{textoDosTercios}
 La vista axonométrica del modelo en DesignBuilder permite verificar la composición volumétrica del caso base sin alterar la geometría exportada por el programa. En esta lectura se observan los cuerpos principales del edificio, los bordes perimetrales, los voladizos y los elementos verticales de protección solar. Estos componentes son relevantes porque condicionan el sombreado propio, la exposición de la envolvente y la relación entre superficies opacas, transparentes y espacios exteriores.
+\end{textoDosTercios}
 
 \IfFileExists{figuras/axonometria-designbuilder.png}{%
 \begin{figure}[H]
@@ -131,7 +155,9 @@ La vista axonométrica del modelo en DesignBuilder permite verificar la composic
 \end{figure}
 }{}
 
+\begin{textoDosTercios}
 La zonificación de la planta baja permite relacionar la codificación del modelo IDF con la distribución arquitectónica observada en DesignBuilder. En esta planta se concentran oficinas hacia el borde occidental, áreas de recepción y servicio hacia el costado oriental, y un espacio de espera de mayor superficie que organiza la circulación interior.
+\end{textoDosTercios}
 
 \begin{figure}[H]
   \centering
@@ -140,7 +166,9 @@ La zonificación de la planta baja permite relacionar la codificación del model
   \fuente{Basado en el esquema de zonificación del modelo energético del caso base desarrollado en DesignBuilder.}
 \end{figure}
 
+\begin{textoDosTercios}
 En la primera planta alta se mantiene la organización por oficinas y circulación central, pero aparece una mayor diversidad de zonas: baños, datacenter, sala de reuniones, pasillo, vacío interior y núcleo de ascensor. Esta configuración permite diferenciar espacios de permanencia, apoyo técnico y circulación, lo cual es relevante para la asignación de cargas internas y horarios de uso en la simulación energética.
+\end{textoDosTercios}
 
 \begin{figure}[H]
   \centering
@@ -149,7 +177,9 @@ En la primera planta alta se mantiene la organización por oficinas y circulaci�
   \fuente{Basado en el esquema de zonificación del modelo energético del caso base desarrollado en DesignBuilder.}
 \end{figure}
 
+\begin{textoDosTercios}
 La segunda planta alta concentra espacios de apoyo y reunión. En este nivel aparecen el baño, la cafetería, el salón de uso múltiple, la circulación, el núcleo de ascensor y el vacío interior. La lectura de esta planta es importante porque el salón de uso múltiple y las áreas bajo cubierta pueden presentar una mayor sensibilidad térmica por exposición solar directa y por acumulación de cargas internas durante eventos o reuniones.
+\end{textoDosTercios}
 
 \begin{figure}[H]
   \centering
@@ -158,7 +188,9 @@ La segunda planta alta concentra espacios de apoyo y reunión. En este nivel apa
   \fuente{Basado en el esquema de zonificación del modelo energético del caso base desarrollado en DesignBuilder.}
 \end{figure}
 
+\begin{textoDosTercios}
 La cubierta se modela como un espacio vacío independiente. Aunque no corresponde a un área principal de ocupación, su inclusión en el modelo permite representar la exposición superior del edificio, la transmisión térmica por cubierta y la relación con las superficies de envolvente que inciden en el desempeño del caso base.
+\end{textoDosTercios}
 
 \begin{figure}[H]
   \centering
@@ -171,9 +203,11 @@ La cubierta se modela como un espacio vacío independiente. Aunque no correspond
 
 \subsection{Software, archivo climático y alcance del modelo}
 
+\begin{textoDosTercios}
 La línea base corresponde al estado actual del proyecto antes de aplicar estrategias de optimización. Esta línea base debe documentar los parámetros usados en el modelo: geometría, orientación, materiales, valores térmicos, infiltración, ventilación, horarios de uso, cargas internas, sombreamiento y datos climáticos.
 
 El modelo base fue exportado desde DesignBuilder como archivo IDF (\textit{Input Data File}) de EnergyPlus. Este formato contiene la información de entrada del modelo energético, incluyendo geometría, zonas, materiales, cargas, ventilación y sistemas. La revisión del archivo permite identificar 28 zonas térmicas, 320 superficies constructivas detalladas, 102 superficies acristaladas, 204 superficies de sombreado y 19 sistemas ideales de climatización para estimar demanda térmica. Esto indica que el modelo es adecuado para estimar demanda térmica y comparar escenarios, aunque no representa todavía el consumo real de equipos HVAC específicos.
+\end{textoDosTercios}
 
 \begin{table}[H]
   \centering
@@ -200,7 +234,9 @@ El modelo base fue exportado desde DesignBuilder como archivo IDF (\textit{Input
 
 \subsection{Zonas térmicas}
 
+\begin{textoDosTercios}
 La desagregación por zonas permite reconocer qué espacios concentran mayor área útil, mayor exposición de envolvente y mayor presencia de superficies acristaladas exteriores. Esta lectura es necesaria para interpretar posteriormente las cargas térmicas y para priorizar estrategias pasivas por orientación, cubierta y relación lleno-vacío. Para facilitar la lectura, los códigos exportados por el IDF con la letra \texttt{X} como separador se presentan con guion.
+\end{textoDosTercios}
 
 {\fontsize{9}{11}\selectfont
 \begin{longtable}{p{2.8cm}p{2.2cm}p{1.7cm}p{1.9cm}p{1.7cm}p{1.9cm}}
@@ -254,37 +290,51 @@ La desagregación por zonas permite reconocer qué espacios concentran mayor ár
 
 \subsection{Sistemas, supuestos y limitaciones}
 
+\begin{textoDosTercios}
 La lectura del reporte \textit{Summary} y de la serie horaria permite identificar aspectos que deben revisarse antes de consolidar los resultados finales. El modelo usa el clima EPW TMYx 2011--2025 de San Cristobal y exporta resultados horarios para 2025; por ello, la interpretacion debe mantener coherencia entre clima, periodo de simulacion, horarios de uso y supuestos de ventilacion.
+\end{textoDosTercios}
 
 \section{Materiales y envolvente del caso base}
 
 \subsection{Comportamiento dinamico del muro exterior}
 
+\begin{textoDosTercios}
 La proteccion termica de un recinto no depende de un solo componente. En el caso base influyen de manera simultanea la radiacion solar directa a traves de ventanas, la ventilacion, las cargas internas y la capacidad de almacenamiento de calor de pisos, muros interiores y mobiliario. Por ello, los parametros siguientes deben leerse como propiedades del muro exterior evaluado de forma aislada, no como una conclusion directa sobre la proteccion termica completa de cada espacio.
+\end{textoDosTercios}
 
 \input{insumos/inercia-muro-exterior-tabla.tex}
 
+\begin{textoDosTercios}
 La lectura del componente muestra tres puntos criticos. Primero, la transmitancia termica de $2,587\,\mathrm{W/(m^2K)}$ evidencia una resistencia limitada frente al flujo de calor. Segundo, bajo las condiciones higrotermicas evaluadas, la temperatura superficial interior queda por debajo del punto de rocio, por lo que aparece riesgo de condensacion y moho si no se controla la humedad interior o se mejora el aislamiento. Tercero, aunque el muro presenta un desfase de $5,2$ horas y cierta capacidad de almacenamiento, esta condicion debe complementarse con control solar en ventanas, sombreamiento exterior y ventilacion, porque la radiacion directa sobre superficies transparentes puede dominar las ganancias termicas del recinto.
+\end{textoDosTercios}
 
 \section{Resultados del caso base}
 
 \subsection{Sintesis del caso base}
 
+\begin{textoDosTercios}
 El caso base final se resume a partir de la serie diaria exportada desde DesignBuilder. Para mantener una lectura directa, las tablas siguientes agrupan la informacion esencial del modelo: demanda de enfriamiento, consumos electricos principales, temperaturas, ventilacion, balance anual por componentes y resultados mensuales.
+\end{textoDosTercios}
 
 \input{insumos/caso-base-final-tablas.tex}
 
 \subsection{Desempeño energético}
 
+\begin{textoDosTercios}
 El desempeno energetico del caso base se interpreta con la serie horaria de simulacion. Los valores de enfriamiento se reportan con signo negativo porque representan remocion de calor; por tanto, la demanda acumulada se calcula como la suma absoluta de esos valores horarios. La sintesis anterior registra el enfriamiento anual, el pico horario, las ganancias solares y los consumos principales de iluminacion y equipos.
+\end{textoDosTercios}
 
 \subsection{Confort térmico}
 
+\begin{textoDosTercios}
 El confort térmico del caso base se interpreta a partir de la relación entre el clima cálido-húmedo de San Cristóbal, la exposición de la envolvente, las cargas internas y la capacidad de ventilación representada en el modelo. La revisión del archivo climático y del IDF permite anticipar riesgo de sobrecalentamiento en espacios con mayor exposición solar, cubierta o cargas internas elevadas, especialmente cuando la ventilación disponible no compensa las ganancias térmicas.
+\end{textoDosTercios}
 
 \subsection{Iluminancia natural}
 
+\begin{textoDosTercios}
 Los mapas de iluminancia exportados desde DesignBuilder permiten revisar la distribución espacial de luz natural por nivel. La escala gráfica está expresada en lux y conserva la salida original del programa, por lo que las figuras se incorporan sin edición para mantener la lectura cromática y numérica generada por la simulación.
+\end{textoDosTercios}
 
 \begin{figure}[H]
   \centering
@@ -307,13 +357,17 @@ Los mapas de iluminancia exportados desde DesignBuilder permiten revisar la dist
   \fuente{Basado en la simulación de iluminancia exportada desde DesignBuilder.}
 \end{figure}
 
+\begin{textoDosTercios}
 La tabla siguiente resume los valores numéricos asociados a los mapas de iluminancia. El área sobre umbral indica la proporción de superficie que cumple el criterio definido en la simulación; el factor de luz día promedio permite comparar el acceso relativo a luz natural entre espacios; y los valores mínimo y máximo de iluminancia muestran el rango de variación interna registrado en lux.
+\end{textoDosTercios}
 
 \input{insumos/iluminancia-resumen-tabla.tex}
 
 \subsection{Puntuación del CB por estándar de sostenibilidad}
 
+\begin{textoDosTercios}
 La puntuación del caso base se plantea como una lectura preliminar frente a los criterios de sostenibilidad definidos para la investigación. En esta etapa no se busca declarar una certificación completa, sino reconocer el nivel inicial del edificio y establecer una referencia para comparar los escenarios de optimización. La matriz de indicadores organiza los criterios en cinco dimensiones: energía, confort térmico, iluminación natural, materiales y adaptación al contexto insular.
+\end{textoDosTercios}
 
 \begin{table}[H]
   \centering
@@ -336,4 +390,6 @@ La puntuación del caso base se plantea como una lectura preliminar frente a los
 
 \section{Discusión diagnóstica del caso base}
 
+\begin{textoDosTercios}
 El resultado esperado de esta sección es una lectura clara de los puntos críticos del edificio. Entre ellos pueden aparecer ganancias solares excesivas, baja protección de la envolvente, ventilación insuficiente, alta demanda de enfriamiento o dependencia de sistemas activos.
+\end{textoDosTercios}
