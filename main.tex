@@ -168,12 +168,12 @@
 
 \newcommand{\tercioTextoImagen}[4]{%
   \noindent
-  \begin{minipage}[t]{0.31\textwidth}
+  \begin{minipage}[t]{\udaTercioAncho}
     \vspace{0pt}
     \fontsize{8.5}{11}\selectfont
     #1
   \end{minipage}\hfill
-  \begin{minipage}[t]{0.64\textwidth}
+  \begin{minipage}[t]{\udaDosTerciosAncho}
     \centering
     \vspace{1.55cm}
     \includegraphics[width=0.88\textwidth,height=0.50\textheight,keepaspectratio]{#2}
@@ -184,12 +184,12 @@
 
 \newcommand{\tercioTextoTikz}[4]{%
   \noindent
-  \begin{minipage}[t]{0.31\textwidth}
+  \begin{minipage}[t]{\udaTercioAncho}
     \vspace{0pt}
     \fontsize{8.5}{11}\selectfont
     #1
   \end{minipage}\hfill
-  \begin{minipage}[t]{0.64\textwidth}
+  \begin{minipage}[t]{\udaDosTerciosAncho}
     \centering
     \vspace{1.05cm}
     #2
@@ -364,14 +364,21 @@
   \end{tikzpicture}%
 }
 
+\newlength{\udaTercioAncho}
+\setlength{\udaTercioAncho}{0.31\textwidth}
+\newlength{\udaDosTerciosAncho}
+\setlength{\udaDosTerciosAncho}{0.64\textwidth}
+\newlength{\udaTercioSeparacion}
+\setlength{\udaTercioSeparacion}{0.035\textwidth}
+
 \newcommand{\dosTerciosTextoGrafico}[4]{%
   \noindent
-  \begin{minipage}[t]{0.64\textwidth}
+  \begin{minipage}[t]{\udaDosTerciosAncho}
     \vspace{0pt}
     \fontsize{8.5}{11}\selectfont
     #1
   \end{minipage}\hfill
-  \begin{minipage}[t]{0.31\textwidth}
+  \begin{minipage}[t]{\udaTercioAncho}
     \centering
     \vspace{1.55cm}
     \includegraphics[width=0.88\textwidth,height=0.50\textheight,keepaspectratio]{#2}
@@ -390,7 +397,7 @@
 
 \newenvironment{textoUnTercio}{%
   \noindent
-  \begin{minipage}[t]{0.31\textwidth}
+  \begin{minipage}[t]{\udaTercioAncho}
   \vspace{0pt}
   \fontsize{8.5}{11}\selectfont
 }{%
@@ -399,7 +406,7 @@
 
 \newenvironment{textoDosTercios}{%
   \noindent
-  \begin{minipage}[t]{0.64\textwidth}
+  \begin{minipage}[t]{\udaDosTerciosAncho}
   \vspace{0pt}
   \begin{multicols}{2}
   \raggedcolumns
@@ -414,7 +421,7 @@
   \def\imagenTercioCaption{#2}%
   \def\imagenTercioFuente{#3}%
   \noindent
-  \begin{minipage}[t]{0.64\textwidth}
+  \begin{minipage}[t]{\udaDosTerciosAncho}
   \vspace{0pt}
   \begin{multicols}{2}
   \raggedcolumns
@@ -422,7 +429,7 @@
 }{%
   \end{multicols}
   \end{minipage}\hfill
-  \begin{minipage}[t]{0.31\textwidth}
+  \begin{minipage}[t]{\udaTercioAncho}
     \vspace{0pt}
     \centering
     \includegraphics[width=\linewidth,height=0.58\textheight,keepaspectratio]{\imagenTercioArchivo}
@@ -430,11 +437,6 @@
     \fuente{\imagenTercioFuente}
   \end{minipage}
 }
-
-\newlength{\udaTercioAncho}
-\setlength{\udaTercioAncho}{0.28\textwidth}
-\newlength{\udaTercioSeparacion}
-\setlength{\udaTercioSeparacion}{0.055\textwidth}
 
 \newcommand{\udaTercioTexto}[2][9/11]{%
   \begin{minipage}[t]{\udaTercioAncho}
