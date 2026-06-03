@@ -77,8 +77,14 @@ La investigación utilizará información técnica del proyecto y del contexto c
 \subsection{Documentación del edificio}
 
 La documentación del edificio incluirá la revisión de planos arquitectónicos, planos estructurales, planos de instalaciones cuando estén disponibles, topografía, especificaciones de materiales y sistemas constructivos actuales. Esta información permitirá reconstruir el proyecto en un modelo digital y definir las propiedades físicas de la envolvente.
+\end{textoDosTercios}
 
-Además de la documentación del edificio, se recopilarán datos climáticos históricos y actuales de San Cristóbal, Galápagos, considerando temperatura, humedad, radiación solar, viento, presión atmosférica y geometría solar. Como insumo principal se incorpora el archivo climático horario EPW de San Cristóbal, correspondiente a la estación San Cristóbal International Airport y construido como año meteorológico típico a partir del periodo 2011--2025. Este archivo contiene 8760 registros horarios y permite configurar las condiciones exteriores del modelo en DesignBuilder/EnergyPlus.
+\clearpage
+\vspace*{1.15cm}
+\subsection{Datos climáticos}
+
+\begin{textoDosTercios}
+Se recopilarán datos climáticos históricos y actuales de San Cristóbal, Galápagos, considerando temperatura, humedad, radiación solar, viento, presión atmosférica y geometría solar. Como insumo principal se incorpora el archivo climático horario EPW de San Cristóbal, correspondiente a la estación San Cristóbal International Airport y construido como año meteorológico típico a partir del periodo 2011--2025. Este archivo contiene 8760 registros horarios y permite configurar las condiciones exteriores del modelo en DesignBuilder/EnergyPlus.
 
 La lectura preliminar del EPW muestra una temperatura media anual de $24,28\,^{\circ}\mathrm{C}$, con valores horarios entre $15,70\,^{\circ}\mathrm{C}$ y $32,90\,^{\circ}\mathrm{C}$. La humedad relativa media es de $81,37\,$\%, la radiación global horizontal anual alcanza $2150,50\,\mathrm{kWh}/\mathrm{m}^{2}$, equivalente a $5,89\,\mathrm{kWh}/\mathrm{m}^{2}$ por día, y la velocidad media del viento es de $4,90\,\mathrm{m/s}$. Estos valores confirman que el caso de estudio debe evaluarse como una edificación ubicada en un clima cálido-húmedo, con alta incidencia solar y potencial de ventilación natural.
 \end{textoDosTercios}
@@ -109,9 +115,34 @@ La lectura preliminar del EPW muestra una temperatura media anual de $24,28\,^{\
   \fuente{Basado en el archivo climático EPW de San Cristóbal.}
 \end{minipage}
 
-\begin{textoDosTercios}
+\clearpage
+\vspace*{1.15cm}
+\subsection{Condiciones de uso y ocupación}
+
+\noindent
+\begin{minipage}[t]{\udaTercioAncho}
+\vspace{0pt}
+\sffamily\fontsize{9}{11}\selectfont
 Las condiciones de uso incluirán ocupación, horarios de funcionamiento, cargas internas, iluminación artificial, ventilación natural o mecánica y sistemas HVAC cuando correspondan. Si existe información operativa de edificios similares o datos reales de consumo, se utilizará como referencia para ajustar los supuestos del modelo.
-\end{textoDosTercios}
+\end{minipage}\hfill
+\begin{minipage}[t]{\udaDosTerciosAncho}
+\vspace{0pt}
+  \captionof{table}{Parámetros operativos considerados en el modelo}
+  {\fontsize{8.4}{10.2}\selectfont
+  \begin{tabular}{p{0.28\linewidth}p{0.32\linewidth}p{0.30\linewidth}}
+    \toprule
+    Parámetro & Información requerida & Aplicación en la simulación \\
+    \midrule
+    Ocupación & Número de usuarios y horarios de permanencia. & Definir ganancias internas y patrones de uso. \\
+    Iluminación artificial & Potencia instalada y horario de encendido. & Estimar cargas internas y consumo eléctrico. \\
+    Equipos & Potencia de equipos de oficina y operación diaria. & Incorporar ganancias térmicas internas. \\
+    Ventilación & Tipo de ventilación y disponibilidad de aperturas. & Evaluar renovación de aire y enfriamiento pasivo. \\
+    Climatización & Presencia o ausencia de sistemas activos. & Comparar demanda energética y confort térmico. \\
+    \bottomrule
+  \end{tabular}
+  }
+  \fuente{Elaboración propia.}
+\end{minipage}
 
 \clearpage
 \vspace*{1.15cm}
