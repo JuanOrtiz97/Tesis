@@ -31,6 +31,8 @@ El enfoque se basa en la evaluación de escenarios mediante herramientas BIM y s
 La unidad de análisis corresponde al proyecto arquitectónico de la Defensoría del Pueblo en la isla San Cristóbal, Galápagos. El caso se considera representativo de una edificación pública ubicada en un contexto insular de alta fragilidad ambiental, donde las decisiones de diseño deben responder a condiciones climáticas, logísticas y ecológicas particulares.
 
 El modelo base corresponde al diseño actual del edificio, incluyendo su geometría, orientación, sistema constructivo, materiales, envolvente, aperturas, condiciones de ventilación, ocupación y sistemas previstos.
+
+\textcolor{red}{La unidad de análisis se delimita al desempeño ambiental y energético del proyecto, por lo que no se evalúa la operación real de un edificio construido. Esta decisión permite trabajar con información de diseño y comparar alternativas bajo condiciones equivalentes de simulación.}
 \end{textoDosTercios}
 
 \clearpage
@@ -42,6 +44,8 @@ El modelo base corresponde al diseño actual del edificio, incluyendo su geometr
 \vspace{0pt}
 \sffamily\fontsize{9}{11}\selectfont
 La metodología se organiza en seis fases consecutivas. Cada fase genera información necesaria para la siguiente, desde el levantamiento de datos hasta la formulación de recomendaciones de optimización.
+
+\textcolor{red}{La secuencia metodológica busca mantener trazabilidad entre los datos de entrada, la construcción del modelo, la simulación de escenarios y la interpretación final de resultados.}
 \end{minipage}\hfill
 \begin{minipage}[t]{\udaDosTerciosAncho}
 \vspace{0pt}
@@ -81,11 +85,17 @@ Se recopilarán datos climáticos históricos y actuales de San Cristóbal, Gal�
 La lectura preliminar del EPW muestra una temperatura media anual de $24,28\,^{\circ}\mathrm{C}$, con valores horarios entre $15,70\,^{\circ}\mathrm{C}$ y $32,90\,^{\circ}\mathrm{C}$. La humedad relativa media es de $81,37\,$\%, la radiación global horizontal anual alcanza $2150,50\,\mathrm{kWh}/\mathrm{m}^{2}$, equivalente a $5,89\,\mathrm{kWh}/\mathrm{m}^{2}$ por día, y la velocidad media del viento es de $4,90\,\mathrm{m/s}$. Estos valores confirman que el caso de estudio debe evaluarse como una edificación ubicada en un clima cálido-húmedo, con alta incidencia solar y potencial de ventilación natural.
 \end{textoDosTercios}
 
-\begin{table}[H]
-  \centering
-  \caption{Variables climáticas consideradas para el modelo}
-  {\fontsize{9}{11}\selectfont
-  \begin{tabular}{p{4cm}p{3cm}p{5.5cm}}
+\noindent
+\begin{minipage}[t]{\udaTercioAncho}
+\vspace{0pt}
+\sffamily\fontsize{9}{11}\selectfont
+\textcolor{red}{La selección de variables climáticas se orienta a construir un modelo sensible a las condiciones reales del lugar. En un clima cálido-húmedo, temperatura, humedad, radiación y viento no actúan de forma aislada, sino que condicionan simultáneamente el confort interior, la ventilación natural y las ganancias térmicas del edificio.}
+\end{minipage}\hfill
+\begin{minipage}[t]{\udaDosTerciosAncho}
+\vspace{0pt}
+  \captionof{table}{Variables climáticas consideradas para el modelo}
+  {\fontsize{8.4}{10.2}\selectfont
+  \begin{tabular}{p{0.31\linewidth}p{0.16\linewidth}p{0.41\linewidth}}
     \toprule
     Variable & Unidad & Uso metodológico \\
     \midrule
@@ -99,7 +109,7 @@ La lectura preliminar del EPW muestra una temperatura media anual de $24,28\,^{\
   \end{tabular}
   }
   \fuente{Basado en el archivo climático EPW de San Cristóbal.}
-\end{table}
+\end{minipage}
 
 \begin{textoDosTercios}
 \subsection{Condiciones de uso y ocupación}
@@ -145,6 +155,8 @@ En esta fase se configurarán los principales parámetros térmicos:
 
 \begin{textoDosTercios}
 La evaluación se organizará en cuatro escenarios. El objetivo es comparar el diseño actual con alternativas de mejora y determinar qué tipo de estrategia produce mayor incidencia sobre el desempeño energético y el confort térmico.
+
+\textcolor{red}{La comparación por escenarios permite aislar el efecto de cada grupo de decisiones y reconocer si la mejora proviene principalmente del diseño pasivo, de la materialidad o de la combinación de ambas estrategias.}
 \end{textoDosTercios}
 
 \begin{textoDosTercios}
@@ -190,6 +202,8 @@ Además, se revisarán los supuestos de modelado, las propiedades de materiales,
 
 \begin{textoDosTercios}
 El procedimiento operativo se desarrollará en las siguientes etapas:
+
+\textcolor{red}{Estas etapas ordenan el proceso de trabajo para evitar que los resultados dependan de decisiones aisladas o de cambios no controlados entre modelos.}
 \end{textoDosTercios}
 
 \begin{textoDosTercios}
