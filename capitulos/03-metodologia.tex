@@ -44,18 +44,28 @@ La metodología se organiza en seis fases consecutivas. Cada fase genera informa
 \begin{table}[H]
   \centering
   \caption{Fases metodológicas de la investigación}
-  {\fontsize{9}{11}\selectfont
-  \begin{tabular}{p{1.4cm}p{4cm}p{6.8cm}}
-    \toprule
-    Fase & Propósito & Producto esperado \\
-    \midrule
-    1 & Recolección de información & Planos, especificaciones técnicas, datos climáticos y condiciones de uso. \\
-    2 & Modelado del caso base & Modelo digital del edificio actual y parámetros térmicos iniciales. \\
-    3 & Definición de escenarios & Escenario base y tres escenarios optimizados comparables. \\
-    4 & Simulación energética & Resultados de demanda, cargas, confort, luminosidad y desempeño térmico. \\
-    5 & Análisis comparativo & Tablas, gráficos y porcentajes de mejora entre escenarios. \\
-    6 & Recomendaciones & Propuesta de optimización y prioridades de implementación. \\
-    \bottomrule
+  {\setlength{\fboxsep}{7pt}
+  \setlength{\fboxrule}{0.5pt}
+  \fontsize{8.4}{10.2}\selectfont
+  \newcommand{\faseMetodologica}[4]{%
+    \fcolorbox{#1}{introSoft}{%
+      \begin{minipage}[t][3.35cm][t]{0.275\textwidth}
+        {\sffamily\bfseries\fontsize{8}{9}\selectfont\textcolor{#1}{FASE #2}\par}
+        \vspace{0.12cm}
+        {\sffamily\bfseries\fontsize{9.5}{11}\selectfont #3\par}
+        \vspace{0.18cm}
+        {\fontsize{7.8}{9.4}\selectfont #4\par}
+      \end{minipage}%
+    }%
+  }
+  \begin{tabular}{@{}p{0.31\textwidth}p{0.31\textwidth}p{0.31\textwidth}@{}}
+    \faseMetodologica{introOrange}{1}{Recolección de información}{Planos, especificaciones técnicas, datos climáticos, condiciones de uso y criterios iniciales del proyecto.} &
+    \faseMetodologica{udaBlue}{2}{Modelado del caso base}{Modelo digital del edificio actual con geometría, orientación, materiales y parámetros térmicos iniciales.} &
+    \faseMetodologica{introBlue}{3}{Definición de escenarios}{Escenario base y tres escenarios optimizados comparables: estrategias pasivas, materiales sostenibles y propuesta combinada.} \\
+    \\[-0.05cm]
+    \faseMetodologica{udaGreen}{4}{Simulación energética}{Resultados de demanda, cargas térmicas, confort, iluminación natural y desempeño de la envolvente.} &
+    \faseMetodologica{introOrange}{5}{Análisis comparativo}{Tablas, gráficos y porcentajes de mejora para contrastar el caso base con los escenarios de optimización.} &
+    \faseMetodologica{udaBlue}{6}{Recomendaciones}{Propuesta de optimización, prioridades de implementación y lineamientos aplicables al contexto insular.}
   \end{tabular}
   }
   \fuente{Basado en el esquema metodológico de la investigación.}
