@@ -61,7 +61,6 @@
 \sloppy
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{7pt}
-\setlength{\columnsep}{0.9cm}
 
 % Guias visuales temporales para revisar reticula, tercios y alineaciones.
 % Cambiar a \mostrarGuiasUDAfalse para generar el PDF final sin lineas.
@@ -79,11 +78,15 @@
     \coordinate (udaTextNE) at ([xshift=\textwidth]udaTextNW);
     \coordinate (udaTextSW) at ([yshift=-\textheight]udaTextNW);
     \draw[guiaCaja,line width=0.35pt,opacity=0.45] (udaTextNW) rectangle (udaTextSE);
-    \draw[guiaTercio,line width=0.55pt,opacity=0.55]
-      ([xshift=.333333\textwidth]udaTextNW) -- ([xshift=.333333\textwidth]udaTextSW)
-      ([xshift=.666667\textwidth]udaTextNW) -- ([xshift=.666667\textwidth]udaTextSW);
-    \draw[guiaCentro,line width=0.35pt,densely dashed,opacity=0.45]
-      ([xshift=.5\textwidth]udaTextNW) -- ([xshift=.5\textwidth]udaTextSW);
+    % Las guias marcan los bordes reales de las tres columnas y sus calles.
+    % Asi nunca atraviesan el contenido, como ocurria con la linea central.
+    \draw[guiaTercio,line width=0.45pt,opacity=0.50]
+      ([xshift=\udaTercioAncho]udaTextNW) -- ([xshift=\udaTercioAncho]udaTextSW)
+      ([xshift=\dimexpr\udaTercioAncho+\udaTercioSeparacion\relax]udaTextNW) --
+        ([xshift=\dimexpr\udaTercioAncho+\udaTercioSeparacion\relax]udaTextSW)
+      ([xshift=\udaDosTerciosAncho]udaTextNW) -- ([xshift=\udaDosTerciosAncho]udaTextSW)
+      ([xshift=\dimexpr\udaDosTerciosAncho+\udaTercioSeparacion\relax]udaTextNW) --
+        ([xshift=\dimexpr\udaDosTerciosAncho+\udaTercioSeparacion\relax]udaTextSW);
     \draw[guiaCaja,line width=0.35pt,densely dashed,opacity=0.35]
       ([yshift=-1.65cm]current page.north west) -- ([yshift=-1.65cm]current page.north east)
       (udaTextNW) -- (udaTextNE)
@@ -139,6 +142,12 @@
   {}{0pt}{\tituloSeccionConBajada}
 \titlespacing*{\section}{0pt}{0pt}{56pt}
 
+% Ritmo vertical unico para paginas de seccion.
+\newlength{\udaInicioSeccion}
+\setlength{\udaInicioSeccion}{1.15cm}
+\newcommand{\inicioPrimeraSeccionUDA}{\vspace*{\udaInicioSeccion}}
+\newcommand{\inicioSeccionUDA}{\clearpage\vspace*{\udaInicioSeccion}}
+
 \titleformat{\subsection}
   {\normalfont\bfseries\fontsize{13}{15}\selectfont\color{udaGreen}}
   {\thesubsection}{0.8em}{}
@@ -174,7 +183,7 @@
     \vspace{0pt}
     \fontsize{8.5}{11}\selectfont
     #1
-  \end{minipage}\hfill
+  \end{minipage}\hspace{\udaTercioSeparacion}%
   \begin{minipage}[t]{\udaDosTerciosAncho}
     \centering
     \vspace{1.55cm}
@@ -190,7 +199,7 @@
     \vspace{0pt}
     \fontsize{8.5}{11}\selectfont
     #1
-  \end{minipage}\hfill
+  \end{minipage}\hspace{\udaTercioSeparacion}%
   \begin{minipage}[t]{\udaDosTerciosAncho}
     \centering
     \vspace{1.05cm}
@@ -366,12 +375,14 @@
   \end{tikzpicture}%
 }
 
-\newlength{\udaTercioAncho}
-\setlength{\udaTercioAncho}{0.31\textwidth}
-\newlength{\udaDosTerciosAncho}
-\setlength{\udaDosTerciosAncho}{0.64\textwidth}
 \newlength{\udaTercioSeparacion}
 \setlength{\udaTercioSeparacion}{0.035\textwidth}
+\newlength{\udaTercioAncho}
+\setlength{\udaTercioAncho}{\dimexpr\textwidth-2\udaTercioSeparacion\relax}
+\divide\udaTercioAncho by 3
+\newlength{\udaDosTerciosAncho}
+\setlength{\udaDosTerciosAncho}{\dimexpr2\udaTercioAncho+\udaTercioSeparacion\relax}
+\setlength{\columnsep}{\udaTercioSeparacion}
 
 \newcommand{\dosTerciosTextoGrafico}[4]{%
   \noindent
@@ -379,7 +390,7 @@
     \vspace{0pt}
     \fontsize{8.5}{11}\selectfont
     #1
-  \end{minipage}\hfill
+  \end{minipage}\hspace{\udaTercioSeparacion}%
   \begin{minipage}[t]{\udaTercioAncho}
     \centering
     \vspace{1.55cm}
@@ -430,7 +441,7 @@
   \sffamily\fontsize{9}{11}\selectfont
 }{%
   \end{multicols}
-  \end{minipage}\hfill
+  \end{minipage}\hspace{\udaTercioSeparacion}%
   \begin{minipage}[t]{\udaTercioAncho}
     \vspace{0pt}
     \centering
