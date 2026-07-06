@@ -65,8 +65,11 @@
 % Cambiar a \mostrarGuiasUDAfalse para generar el PDF final sin lineas.
 \newif\ifmostrarGuiasUDA
 \mostrarGuiasUDAtrue
+\newif\ifocultarGuiasPaginaUDA
+\ocultarGuiasPaginaUDAfalse
 \newcommand{\guiasUDA}{%
   \ifmostrarGuiasUDA
+  \ifocultarGuiasPaginaUDA\else
   \begin{tikzpicture}[remember picture,overlay]
     \coordinate (udaTextNW) at ([xshift=2.0cm,yshift=-2.25cm]current page.north west);
     \coordinate (udaTextSE) at ([xshift=\textwidth,yshift=-\textheight]udaTextNW);
@@ -87,6 +90,7 @@
       (udaTextNW) -- (udaTextNE)
       (udaTextSW) -- (udaTextSE);
   \end{tikzpicture}%
+  \fi
   \fi
 }
 \AddToShipoutPictureBG{\guiasUDA}
@@ -589,14 +593,18 @@
 \begin{document}
 
 \begin{titlepage}
+  \ocultarGuiasPaginaUDAtrue
   \thispagestyle{empty}
   \nopagecolor
   \color{black}
   \begin{tikzpicture}[remember picture,overlay]
-    \node[anchor=center] at (current page.center)
-      {\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{figuras/portada-fachada-conceptual.png}};
-    \fill[white,opacity=0.88] (current page.north west) rectangle ([yshift=-5.20cm]current page.north east);
-    \fill[white,opacity=0.94] ([yshift=4.25cm]current page.south west) rectangle (current page.south east);
+    % Ventana grafica contenida dentro de los margenes de la portada.
+    \begin{scope}
+      \clip ([xshift=2.0cm,yshift=-5.20cm]current page.north west) rectangle
+        ([xshift=-2.0cm,yshift=4.25cm]current page.south east);
+      \node[anchor=center] at (current page.center)
+        {\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{figuras/portada-fachada-conceptual.png}};
+    \end{scope}
 
     % Franja institucional: un tercio para la UDA y dos tercios para el titulo.
     \node[anchor=north west,inner sep=0pt] at ([xshift=2.0cm,yshift=-2.55cm]current page.north west)
@@ -616,6 +624,9 @@
       font=\bfseries\fontsize{8}{9.5}\selectfont,text width=\udaDosTerciosAncho]
       at ([xshift=-2.0cm,yshift=-4.62cm]current page.north east)
       {ISLA SAN CRISTÓBAL · GALÁPAGOS};
+    \draw[udaLime,line width=1.2pt]
+      ([xshift=-4.6cm,yshift=-5.05cm]current page.north east) --
+      ([xshift=-2.0cm,yshift=-5.05cm]current page.north east);
 
     % Franja inferior alineada con las tres columnas de la reticula.
     \draw[udaSky,line width=0.7pt]
