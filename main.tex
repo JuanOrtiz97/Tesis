@@ -227,71 +227,90 @@
 }
 
 \newcommand{\graficoProblemaIntro}{%
-  \begin{tikzpicture}[>=Latex,scale=0.92,every node/.style={transform shape}]
-    \node[fill=introDark,text=white,font=\bfseries\fontsize{8.5}{10}\selectfont,align=center,rounded corners=2pt,minimum width=2.9cm,minimum height=1.6cm] (p) at (4,0) {Problema\\central};
-    \foreach \txt/\y in {Estrategias no optimizadas/1.8,Contexto insular/0,Demanda energética/-1.8}{
-      \node[fill=introSoft,draw=white,text=introDark,font=\fontsize{7.4}{8.6}\selectfont,align=left,text width=3.1cm,minimum height=0.8cm] at (0,\y) {\textbf{\txt}};
-      \draw[->,line width=0.8pt,color=introOrange] (1.8,\y) -- (p.west);
-    }
-    \foreach \txt/\y in {Consumo operativo/1.8,Impacto ambiental/0,Exigencia normativa/-1.8}{
-      \node[fill=introSoft,draw=white,text=introDark,font=\fontsize{7.4}{8.6}\selectfont,align=left,text width=3.1cm,minimum height=0.8cm] at (8,\y) {\textbf{\txt}};
-      \draw[->,line width=0.8pt,color=introBlue] (p.east) -- (6.2,\y);
-    }
+  \begin{tikzpicture}[>=Latex]
+    \node[draw=introOrange,fill=introSoft,line width=0.9pt,rounded corners=2pt,
+      text=introDark,font=\fontsize{7.5}{8.8}\selectfont,align=center,text width=5.7cm,minimum height=1.05cm] (a) at (0,2.05)
+      {\textbf{Condiciones iniciales}\\Clima cálido-húmedo, logística insular y envolvente por evaluar};
+    \node[fill=introDark,text=white,rounded corners=2pt,
+      font=\bfseries\fontsize{8.2}{9.5}\selectfont,align=center,text width=5.7cm,minimum height=1.15cm] (b) at (0,0)
+      {Desempeño del escenario base\\sin verificación comparativa};
+    \node[draw=introBlue,fill=introSoft,line width=0.9pt,rounded corners=2pt,
+      text=introDark,font=\fontsize{7.5}{8.8}\selectfont,align=center,text width=5.7cm,minimum height=1.05cm] (c) at (0,-2.05)
+      {\textbf{Necesidad de evaluación}\\Demanda energética, confort térmico y sostenibilidad};
+    \draw[->,line width=0.9pt,color=introOrange] (a) -- (b);
+    \draw[->,line width=0.9pt,color=introBlue] (b) -- (c);
   \end{tikzpicture}%
 }
 
 \newcommand{\graficoJustificacionIntro}{%
-  \begin{tikzpicture}[>=Latex,scale=0.92,every node/.style={transform shape}]
-    \foreach \num/\ttl/\sub/\x/\col in {01/Estrategias pasivas/Control solar y ventilación/0/introDark,02/Materiales sostenibles/Ciclo de vida y durabilidad/3.6/introOrange,03/Metodología BIM-BES/Simulación y evaluación/7.2/introBlue}{
-      \draw[\col,line width=1.1pt] (\x-1.25,1.2) -- (\x+1.25,1.2);
-      \node[anchor=west,text=udaSky,font=\bfseries\fontsize{18}{20}\selectfont] at (\x-1.25,0.55) {\num};
-      \node[anchor=west,text=introDark,font=\bfseries\fontsize{8.5}{9.5}\selectfont] at (\x-1.25,-0.05) {\ttl};
-      \node[anchor=west,text=udaGray,font=\fontsize{7}{8}\selectfont,align=left,text width=2.5cm] at (\x-1.25,-0.55) {\sub};
+  \begin{tikzpicture}
+    \foreach \num/\ttl/\sub/\y/\col in {01/Fundamento técnico/Control solar y ventilación/2.15/introDark,02/Pertinencia ambiental/Materiales y durabilidad/0/introOrange,03/Valor metodológico/Comparación mediante BIM--BES/-2.15/introBlue}{
+      \node[draw=\col,fill=introSoft,line width=0.9pt,rounded corners=2pt,
+        text=introDark,font=\fontsize{7.4}{8.7}\selectfont,align=left,text width=5.6cm,minimum height=1.15cm] at (0,\y)
+        {\textcolor{\col}{\bfseries\fontsize{11}{12}\selectfont \num}\quad
+         \textbf{\ttl}\\[-1pt]\hspace*{1.10cm}\sub};
     }
   \end{tikzpicture}%
 }
 
 \newcommand{\graficoPreguntaIntro}{%
-  \begin{tikzpicture}[>=Latex,scale=0.92,every node/.style={transform shape}]
-    \node[fill=introDark,text=white,font=\bfseries\fontsize{8.5}{10}\selectfont,align=left,text width=8.2cm,minimum height=1.1cm] at (3.8,1.2) {Incidencia de estrategias pasivas y materiales sostenibles en el desempeño energético y confort térmico};
-    \foreach \txt/\x/\col in {Intervención/0/introOrange,Proceso/3.9/introBlue,Resultado/7.8/udaGreen}{
-      \node[draw=\col,line width=0.9pt,fill=white,text=introDark,font=\bfseries\fontsize{8}{9}\selectfont,align=center,minimum width=2.6cm,minimum height=0.9cm] at (\x,-0.55) {\txt};
-    }
-    \draw[->,line width=0.9pt,color=introOrange] (1.3,-0.55) -- (2.55,-0.55);
-    \draw[->,line width=0.9pt,color=introBlue] (5.2,-0.55) -- (6.45,-0.55);
+  \begin{tikzpicture}[>=Latex]
+    \node[draw=introOrange,fill=introSoft,line width=0.9pt,rounded corners=2pt,
+      text=introDark,font=\bfseries\fontsize{8}{9.3}\selectfont,align=center,text width=5.6cm,minimum height=0.95cm] (a) at (0,2.0)
+      {Estrategias pasivas y materiales sostenibles};
+    \node[draw=introBlue,fill=white,line width=0.9pt,rounded corners=2pt,
+      text=introDark,font=\bfseries\fontsize{8}{9.3}\selectfont,align=center,text width=5.6cm,minimum height=0.95cm] (b) at (0,0)
+      {Comparación con el escenario base};
+    \node[fill=introDark,text=white,rounded corners=2pt,
+      font=\bfseries\fontsize{8}{9.3}\selectfont,align=center,text width=5.6cm,minimum height=0.95cm] (c) at (0,-2.0)
+      {Incidencia en energía y confort térmico};
+    \draw[->,line width=0.9pt,color=introOrange] (a) -- (b);
+    \draw[->,line width=0.9pt,color=introBlue] (b) -- (c);
   \end{tikzpicture}%
 }
 
 \newcommand{\graficoHipotesisIntro}{%
-  \begin{tikzpicture}[>=Latex,scale=0.92,every node/.style={transform shape}]
-    \node[draw=introOrange,fill=white,line width=0.9pt,text=introDark,font=\bfseries\fontsize{8.2}{9.4}\selectfont,align=left,text width=3.7cm,minimum height=1.6cm] (a) at (1.3,0) {Estrategias pasivas\\y materiales sostenibles};
-    \node[fill=introDark,text=white,font=\bfseries\fontsize{7}{8}\selectfont,rotate=90,minimum width=1.4cm,minimum height=0.35cm] at (4.1,0) {GENERA};
-    \node[draw=introBlue,fill=introSoft,line width=0.9pt,text=introDark,font=\bfseries\fontsize{8.2}{9.4}\selectfont,align=left,text width=3.8cm,minimum height=1.6cm] (b) at (6.9,0) {Mejora cuantificable\\en desempeño y confort};
-    \draw[->,line width=0.9pt,color=introDark] (a.east) -- (3.75,0);
-    \draw[->,line width=0.9pt,color=introDark] (4.45,0) -- (b.west);
+  \begin{tikzpicture}[>=Latex]
+    \node[draw=introOrange,fill=white,line width=0.9pt,rounded corners=2pt,
+      text=introDark,font=\bfseries\fontsize{8.2}{9.5}\selectfont,align=center,text width=5.7cm,minimum height=1.25cm] (a) at (0,1.35)
+      {Estrategias pasivas\\y materiales sostenibles};
+    \node[fill=introDark,text=white,font=\bfseries\fontsize{7}{8}\selectfont,
+      rounded corners=2pt,minimum width=2.1cm,minimum height=0.48cm] at (0,0) {SE ESPERA};
+    \node[draw=introBlue,fill=introSoft,line width=0.9pt,rounded corners=2pt,
+      text=introDark,font=\bfseries\fontsize{8.2}{9.5}\selectfont,align=center,text width=5.7cm,minimum height=1.25cm] (b) at (0,-1.35)
+      {Menor demanda energética\\y mejores indicadores de confort};
+    \draw[->,line width=0.9pt,color=introDark] (a) -- (b);
   \end{tikzpicture}%
 }
 
 \newcommand{\graficoAlcanceIntro}{%
-  \begin{tikzpicture}[scale=0.92,every node/.style={transform shape}]
-    \node[anchor=west,text=udaGreen,font=\bfseries\fontsize{8}{9}\selectfont] at (0,1.1) {Incluido en el estudio};
-    \node[anchor=west,text=red!55!black,font=\bfseries\fontsize{8}{9}\selectfont] at (4.7,1.1) {Fuera del alcance};
-    \foreach \txt/\y in {Proyecto arquitectónico/0.45,Escenario base y optimización/-0.25,Matriz de sostenibilidad/-0.95}{
-      \node[anchor=west,text=introDark,font=\fontsize{7.5}{8.5}\selectfont] at (0,\y) {\txt};
-      \draw[udaSky] (0,\y-0.22) -- (3.7,\y-0.22);
-    }
-    \foreach \txt/\y in {Intervención física/0.45,Sistemas activos/-0.25,Costo detallado/-0.95}{
-      \node[anchor=west,text=introDark,font=\fontsize{7.5}{8.5}\selectfont] at (4.7,\y) {\txt};
-      \draw[udaSky] (4.7,\y-0.22) -- (8.3,\y-0.22);
-    }
+  \begin{tikzpicture}
+    \node[fill=introSoft,draw=udaGreen,line width=0.9pt,rounded corners=2pt,
+      text=introDark,font=\fontsize{7.4}{8.7}\selectfont,align=left,text width=3.0cm,minimum height=4.4cm] at (-1.75,0)
+      {\textcolor{udaGreen}{\bfseries INCLUYE}\\[5pt]
+       Proyecto arquitectónico\\[4pt]
+       Escenario base\\[4pt]
+       Escenarios optimizados\\[4pt]
+       Matriz de indicadores};
+    \node[fill=white,draw=red!55!black,line width=0.9pt,rounded corners=2pt,
+      text=introDark,font=\fontsize{7.4}{8.7}\selectfont,align=left,text width=3.0cm,minimum height=4.4cm] at (1.75,0)
+      {\textcolor{red!55!black}{\bfseries NO INCLUYE}\\[5pt]
+       Intervención física\\[4pt]
+       Monitoreo en operación\\[4pt]
+       Diseño detallado de climatización\\[4pt]
+       Presupuesto definitivo};
   \end{tikzpicture}%
 }
 
 \newcommand{\graficoObjetivosIntro}{%
-  \begin{tikzpicture}[>=Latex,scale=0.88,every node/.style={transform shape}]
-    \node[fill=introDark,text=white,font=\bfseries\fontsize{7.6}{8.8}\selectfont,align=left,text width=9.0cm,minimum height=1.15cm] at (3.8,1.55) {Objetivo general: optimizar el confort térmico y el desempeño energético mediante estrategias pasivas y materiales sostenibles.};
-    \foreach \n/\txt/\x in {1/Matriz de indicadores/0,2/Evaluar caso base/2.6,3/Propuesta de optimización/5.2,4/Validar comparación/7.8}{
-      \node[draw=introOrange,fill=introSoft,line width=0.8pt,text=introDark,font=\bfseries\fontsize{7.5}{8.4}\selectfont,align=center,text width=2.0cm,minimum height=1.25cm] at (\x,-0.45) {OE\n\\\txt};
+  \begin{tikzpicture}[>=Latex]
+    \foreach \n/\txt/\y in {1/Definir indicadores/2.55,2/Evaluar el caso base/0.85,3/Simular escenarios optimizados/-0.85,4/Comparar y priorizar/-2.55}{
+      \node[circle,fill=introOrange,minimum size=0.68cm,inner sep=0pt,text=white,
+        font=\bfseries\fontsize{8}{9}\selectfont] (n\n) at (-2.65,\y) {\n};
+      \node[anchor=west,draw=udaSky,fill=introSoft,line width=0.8pt,rounded corners=2pt,
+        text=introDark,font=\bfseries\fontsize{7.7}{9}\selectfont,align=left,
+        text width=4.7cm,minimum height=0.78cm] at (-2.15,\y) {\txt};
+      \ifnum\n<4\draw[->,line width=0.75pt,color=udaSky] (n\n.south) -- ++(0,-0.82);\fi
     }
   \end{tikzpicture}%
 }
@@ -447,6 +466,28 @@
     \includegraphics[width=\linewidth,height=0.58\textheight,keepaspectratio]{\imagenTercioArchivo}
     \captionof{figure}{\imagenTercioCaption}
     \fuente{\imagenTercioFuente}
+  \end{minipage}
+}
+
+\newenvironment{textoDosTerciosGrafico}[3]{%
+  \def\graficoTercioContenido{#1}%
+  \def\graficoTercioCaption{#2}%
+  \def\graficoTercioFuente{#3}%
+  \noindent
+  \begin{minipage}[t]{\udaDosTerciosAncho}
+  \vspace{0pt}
+  \begin{multicols}{2}
+  \raggedcolumns
+  \sffamily\fontsize{9}{11}\selectfont
+}{%
+  \end{multicols}
+  \end{minipage}\hspace{\udaTercioSeparacion}%
+  \begin{minipage}[t]{\udaTercioAncho}
+    \vspace{0pt}
+    \centering
+    \resizebox{\linewidth}{!}{\graficoTercioContenido}
+    \captionof{figure}{\graficoTercioCaption}
+    \fuente{\graficoTercioFuente}
   \end{minipage}
 }
 
