@@ -595,47 +595,47 @@
   \begin{tikzpicture}[remember picture,overlay]
     \node[anchor=center] at (current page.center)
       {\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{figuras/portada-fachada-conceptual.png}};
-    \fill[white,opacity=0.88] (current page.north west) rectangle ([yshift=-3.65cm]current page.north east);
-    \fill[white,opacity=0.94] ([yshift=2.85cm]current page.south west) rectangle (current page.south east);
+    \fill[white,opacity=0.88] (current page.north west) rectangle ([yshift=-5.20cm]current page.north east);
+    \fill[white,opacity=0.94] ([yshift=4.25cm]current page.south west) rectangle (current page.south east);
 
     % Franja institucional: un tercio para la UDA y dos tercios para el titulo.
-    \node[anchor=north west,inner sep=0pt] at ([xshift=2.0cm,yshift=-0.85cm]current page.north west)
+    \node[anchor=north west,inner sep=0pt] at ([xshift=2.0cm,yshift=-2.55cm]current page.north west)
       {\includegraphics[width=1.35cm,height=1.35cm,keepaspectratio]{logo_uda.png}};
     \node[anchor=north west,inner sep=0pt,align=left,text=udaGreen,
       font=\bfseries\fontsize{8.3}{9.5}\selectfont,text width=5.9cm]
-      at ([xshift=3.70cm,yshift=-0.82cm]current page.north west)
+      at ([xshift=3.70cm,yshift=-2.52cm]current page.north west)
       {UNIVERSIDAD DEL AZUAY\\[3pt]
        \normalfont\fontsize{7.2}{8.5}\selectfont
        Maestría en Arquitectura\\con mención en Construcción Sostenible};
 
     \node[anchor=north east,inner sep=0pt,align=right,text=udaGreen,
       font=\bfseries\fontsize{14}{17}\selectfont,text width=\udaDosTerciosAncho]
-      at ([xshift=-2.0cm,yshift=-0.82cm]current page.north east)
+      at ([xshift=-2.0cm,yshift=-2.50cm]current page.north east)
       {Evaluación de estrategias pasivas y materiales sostenibles en el proyecto arquitectónico de la Defensoría del Pueblo};
     \node[anchor=north east,inner sep=0pt,align=right,text=udaLime,
       font=\bfseries\fontsize{8}{9.5}\selectfont,text width=\udaDosTerciosAncho]
-      at ([xshift=-2.0cm,yshift=-3.10cm]current page.north east)
+      at ([xshift=-2.0cm,yshift=-4.62cm]current page.north east)
       {ISLA SAN CRISTÓBAL · GALÁPAGOS};
 
     % Franja inferior alineada con las tres columnas de la reticula.
     \draw[udaSky,line width=0.7pt]
-      ([xshift=2.0cm,yshift=2.85cm]current page.south west) --
-      ([xshift=-2.0cm,yshift=2.85cm]current page.south east);
+      ([xshift=2.0cm,yshift=4.25cm]current page.south west) --
+      ([xshift=-2.0cm,yshift=4.25cm]current page.south east);
 
     \node[anchor=north west,inner sep=0pt,align=left,text=black,
       font=\fontsize{7.2}{8.6}\selectfont,text width=\udaTercioAncho]
-      at ([xshift=2.0cm,yshift=2.48cm]current page.south west)
+      at ([xshift=2.0cm,yshift=3.88cm]current page.south west)
       {\textcolor{udaLime}{\bfseries TRABAJO DE TITULACIÓN}\\[4pt]
        Previo a la obtención del título de Magíster en Arquitectura con mención en Construcción Sostenible\\[5pt]
        \textbf{Cuenca, Ecuador · 2026}};
     \node[anchor=north west,inner sep=0pt,align=left,text=black,
       font=\fontsize{8}{9.6}\selectfont,text width=\udaTercioAncho]
-      at ([xshift=\dimexpr2cm+\udaTercioAncho+\udaTercioSeparacion\relax,yshift=2.48cm]current page.south west)
+      at ([xshift=\dimexpr2cm+\udaTercioAncho+\udaTercioSeparacion\relax,yshift=3.88cm]current page.south west)
       {\textcolor{udaLime}{\bfseries AUTOR}\\[4pt]
        Juan Daniel Ortiz Pacheco};
     \node[anchor=north west,inner sep=0pt,align=left,text=black,
       font=\fontsize{8}{9.6}\selectfont,text width=\udaTercioAncho]
-      at ([xshift=\dimexpr2cm+\udaDosTerciosAncho+\udaTercioSeparacion\relax,yshift=2.48cm]current page.south west)
+      at ([xshift=\dimexpr2cm+\udaDosTerciosAncho+\udaTercioSeparacion\relax,yshift=3.88cm]current page.south west)
       {\textcolor{udaLime}{\bfseries DIRECTOR}\\[4pt]
        Pablo Esteban Ochoa Pesantez};
   \end{tikzpicture}
