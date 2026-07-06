@@ -315,6 +315,33 @@
   \end{tikzpicture}%
 }
 
+\newcommand{\graficoDisenoEnfoqueMetodologia}{%
+  \begin{tikzpicture}[>=Latex]
+    \node[fill=introDark,text=white,rounded corners=2pt,
+      font=\bfseries\fontsize{8.2}{9.5}\selectfont,align=center,
+      text width=5.7cm,minimum height=0.95cm] (a) at (0,2.55)
+      {Proyecto arquitectónico\\en etapa de diseño};
+    \node[draw=introOrange,fill=introSoft,line width=0.9pt,rounded corners=2pt,
+      text=introDark,font=\bfseries\fontsize{8}{9.2}\selectfont,align=center,
+      text width=5.7cm,minimum height=0.95cm] (b) at (0,0.85)
+      {Modelado BIM y simulación energética};
+    \node[draw=introBlue,fill=white,line width=0.9pt,rounded corners=2pt,
+      text=introDark,font=\bfseries\fontsize{8}{9.2}\selectfont,align=center,
+      text width=5.7cm,minimum height=0.95cm] (c) at (0,-0.85)
+      {Escenario base y escenarios optimizados};
+    \node[fill=udaLime,text=white,rounded corners=2pt,
+      font=\bfseries\fontsize{8}{9.2}\selectfont,align=center,
+      text width=5.7cm,minimum height=0.95cm] (d) at (0,-2.55)
+      {Comparación cuantitativa de indicadores};
+    \draw[->,line width=0.85pt,color=introOrange] (a) -- (b);
+    \draw[->,line width=0.85pt,color=introBlue] (b) -- (c);
+    \draw[->,line width=0.85pt,color=udaLime] (c) -- (d);
+    \node[anchor=north,text=udaGray,font=\fontsize{6.9}{8}\selectfont,
+      align=center,text width=5.8cm] at (0,-3.35)
+      {Enfoque no experimental, cuantitativo, prospectivo y comparativo};
+  \end{tikzpicture}%
+}
+
 \newcommand{\figuraMarcoTikz}[3]{%
   \begin{center}
     #1
