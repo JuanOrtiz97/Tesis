@@ -46,11 +46,10 @@
 \definecolor{introSoft}{HTML}{F3F5F7}
 \definecolor{guiaTercio}{HTML}{D23B3B}
 \definecolor{guiaCaja}{HTML}{2D7F9D}
-\definecolor{guiaCentro}{HTML}{C97728}
 
 \geometry{
-  inner=2.2cm,
-  outer=1.8cm,
+  inner=2.0cm,
+  outer=2.0cm,
   top=2.25cm,
   bottom=1.8cm,
   headheight=14pt,
@@ -69,11 +68,7 @@
 \newcommand{\guiasUDA}{%
   \ifmostrarGuiasUDA
   \begin{tikzpicture}[remember picture,overlay]
-    \ifodd\value{page}
-      \coordinate (udaTextNW) at ([xshift=2.2cm,yshift=-2.25cm]current page.north west);
-    \else
-      \coordinate (udaTextNW) at ([xshift=1.8cm,yshift=-2.25cm]current page.north west);
-    \fi
+    \coordinate (udaTextNW) at ([xshift=2.0cm,yshift=-2.25cm]current page.north west);
     \coordinate (udaTextSE) at ([xshift=\textwidth,yshift=-\textheight]udaTextNW);
     \coordinate (udaTextNE) at ([xshift=\textwidth]udaTextNW);
     \coordinate (udaTextSW) at ([yshift=-\textheight]udaTextNW);
@@ -100,7 +95,7 @@
 \fancyhf{}
 \newcommand{\encabezadoUDA}{%
   \begin{tikzpicture}[remember picture,overlay]
-    \node[anchor=north west,inner sep=0pt] at ([xshift=1.8cm,yshift=-0.78cm]current page.north west)
+    \node[anchor=north west,inner sep=0pt] at ([xshift=2.0cm,yshift=-0.78cm]current page.north west)
       {\fontsize{8}{10}\selectfont\bfseries\textcolor{udaLime}{MAESTRÍA EN ARQUITECTURA}\textcolor{udaGreen}{\normalfont\space CON MENCIÓN EN CONSTRUCCIÓN SOSTENIBLE}};
     \draw[udaGreen,line width=1.1pt] ([yshift=-1.65cm]current page.north west) -- ([yshift=-1.65cm]current page.north east);
   \end{tikzpicture}%
