@@ -342,6 +342,61 @@
   \end{tikzpicture}%
 }
 
+\newcommand{\graficoFasesMetodologicas}{%
+  \begin{tikzpicture}[>=Latex]
+    % Capas circulares para expresar continuidad y trazabilidad.
+    \draw[udaSky,line width=0.45pt] (0,0) circle (1.62cm);
+    \draw[udaSky,line width=0.35pt,densely dotted] (0,0) circle (2.65cm);
+    \draw[->,udaGreen,line width=0.85pt] (105:1.82) arc[start angle=105,end angle=-235,radius=1.82cm];
+
+    \foreach \inicio/\fin/\col in {98/142/introOrange,38/82/introBlue,-22/22/udaLime,-82/-38/udaGreen,-142/-98/udaSky,158/202/udaGray}{
+      \draw[\col,line width=5.5pt,line cap=round] (\inicio:2.18) arc[start angle=\inicio,end angle=\fin,radius=2.18cm];
+    }
+
+    \node[circle,fill=introDark,minimum size=2.35cm,inner sep=0pt,
+      text=white,font=\bfseries\fontsize{8.2}{9.4}\selectfont,align=center]
+      at (0,0) {TRAZABILIDAD\\METODOLÓGICA};
+
+    \coordinate (p1) at (120:2.65);
+    \coordinate (p2) at (60:2.65);
+    \coordinate (p3) at (0:2.65);
+    \coordinate (p4) at (-60:2.65);
+    \coordinate (p5) at (-120:2.65);
+    \coordinate (p6) at (180:2.65);
+
+    \node[circle,fill=introOrange,minimum size=0.78cm,inner sep=0pt,text=white,font=\bfseries] at (p1) {1};
+    \node[circle,fill=introBlue,minimum size=0.78cm,inner sep=0pt,text=white,font=\bfseries] at (p2) {2};
+    \node[circle,fill=udaLime,minimum size=0.78cm,inner sep=0pt,text=white,font=\bfseries] at (p3) {3};
+    \node[circle,fill=udaGreen,minimum size=0.78cm,inner sep=0pt,text=white,font=\bfseries] at (p4) {4};
+    \node[circle,fill=udaSky,minimum size=0.78cm,inner sep=0pt,text=introDark,font=\bfseries] at (p5) {5};
+    \node[circle,fill=udaGray,minimum size=0.78cm,inner sep=0pt,text=white,font=\bfseries] at (p6) {6};
+
+    \draw[udaSky,line width=0.7pt] (p1) -- (-2.25,3.18) -- (-2.25,3.48);
+    \node[anchor=south,align=center,text=introDark,font=\fontsize{7.4}{8.6}\selectfont,text width=3.4cm] at (-2.25,3.52)
+      {\textbf{Recolección}\\\textcolor{udaGray}{Insumos técnicos}};
+
+    \draw[udaSky,line width=0.7pt] (p2) -- (2.65,2.45) -- (3.18,2.45);
+    \node[anchor=west,align=left,text=introDark,font=\fontsize{7.4}{8.6}\selectfont,text width=3.4cm] at (3.28,2.45)
+      {\textbf{Caso base}\\\textcolor{udaGray}{Modelo energético}};
+
+    \draw[udaSky,line width=0.7pt] (p3) -- (3.18,0);
+    \node[anchor=west,align=left,text=introDark,font=\fontsize{7.4}{8.6}\selectfont,text width=3.4cm] at (3.28,0)
+      {\textbf{Escenarios}\\\textcolor{udaGray}{CB · C1 · C2 · C3}};
+
+    \draw[udaSky,line width=0.7pt] (p4) -- (2.65,-2.45) -- (3.18,-2.45);
+    \node[anchor=west,align=left,text=introDark,font=\fontsize{7.4}{8.6}\selectfont,text width=3.4cm] at (3.28,-2.45)
+      {\textbf{Simulación}\\\textcolor{udaGray}{Energía y confort}};
+
+    \draw[udaSky,line width=0.7pt] (p5) -- (-2.25,-3.18) -- (-2.25,-3.48);
+    \node[anchor=north,align=center,text=introDark,font=\fontsize{7.4}{8.6}\selectfont,text width=3.4cm] at (-2.25,-3.52)
+      {\textbf{Comparación}\\\textcolor{udaGray}{Variación y mejora}};
+
+    \draw[udaSky,line width=0.7pt] (p6) -- (-3.18,0);
+    \node[anchor=east,align=right,text=introDark,font=\fontsize{7.4}{8.6}\selectfont,text width=3.4cm] at (-3.28,0)
+      {\textbf{Recomendaciones}\\\textcolor{udaGray}{Propuesta final}};
+  \end{tikzpicture}%
+}
+
 \newcommand{\figuraMarcoTikz}[3]{%
   \begin{center}
     #1
