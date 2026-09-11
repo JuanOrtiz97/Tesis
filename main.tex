@@ -60,39 +60,14 @@
 \setlength{\parindent}{1cm}
 \setlength{\parskip}{6pt}
 
-% Guias visuales temporales para revisar reticula, tercios y alineaciones.
-% Cambiar a \mostrarGuiasUDAfalse para generar el PDF final sin lineas.
+% Guías visuales de revisión. El PDF final no incluye retículas ni líneas.
 \newif\ifmostrarGuiasUDA
 % Las guias se usan solo durante la revision de reticula; no aparecen en el PDF final.
 \mostrarGuiasUDAfalse
 \newif\ifocultarGuiasPaginaUDA
 \ocultarGuiasPaginaUDAfalse
-\newcommand{\guiasUDA}{%
-  \ifmostrarGuiasUDA
-  \ifocultarGuiasPaginaUDA\else
-  \begin{tikzpicture}[remember picture,overlay]
-    \coordinate (udaTextNW) at ([xshift=3.0cm,yshift=-2.5cm]current page.north west);
-    \coordinate (udaTextSE) at ([xshift=\textwidth,yshift=-\textheight]udaTextNW);
-    \coordinate (udaTextNE) at ([xshift=\textwidth]udaTextNW);
-    \coordinate (udaTextSW) at ([yshift=-\textheight]udaTextNW);
-    \draw[guiaCaja,line width=0.35pt,opacity=0.45] (udaTextNW) rectangle (udaTextSE);
-    % Las guias marcan los bordes reales de las tres columnas y sus calles.
-    % Asi nunca atraviesan el contenido, como ocurria con la linea central.
-    \draw[guiaTercio,line width=0.45pt,opacity=0.50]
-      ([xshift=\udaTercioAncho]udaTextNW) -- ([xshift=\udaTercioAncho]udaTextSW)
-      ([xshift=\dimexpr\udaTercioAncho+\udaTercioSeparacion\relax]udaTextNW) --
-        ([xshift=\dimexpr\udaTercioAncho+\udaTercioSeparacion\relax]udaTextSW)
-      ([xshift=\udaDosTerciosAncho]udaTextNW) -- ([xshift=\udaDosTerciosAncho]udaTextSW)
-      ([xshift=\dimexpr\udaDosTerciosAncho+\udaTercioSeparacion\relax]udaTextNW) --
-        ([xshift=\dimexpr\udaDosTerciosAncho+\udaTercioSeparacion\relax]udaTextSW);
-    \draw[guiaCaja,line width=0.35pt,densely dashed,opacity=0.35]
-      ([yshift=-1.65cm]current page.north west) -- ([yshift=-1.65cm]current page.north east)
-      (udaTextNW) -- (udaTextNE)
-      (udaTextSW) -- (udaTextSE);
-  \end{tikzpicture}%
-  \fi
-  \fi
-}
+% Se conserva el interruptor por compatibilidad, pero no se dibuja ninguna guía.
+\newcommand{\guiasUDA}{}
 \AddToShipoutPictureBG{\guiasUDA}
 
 \pagestyle{fancy}
@@ -173,36 +148,35 @@
   \vspace{3pt}%
 }
 
+% Bloques de contenido a ancho completo. Se mantienen los nombres históricos
+% de las macros para que los capítulos existentes sigan siendo compatibles,
+% pero ya no se aplica la retícula de tercios ni la composición en columnas.
 \newcommand{\tercioTextoImagen}[4]{%
   \noindent
-  \begin{minipage}[t]{\udaTercioAncho}
+  \begin{minipage}[t]{\textwidth}
     \vspace{0pt}
-    \fontsize{8.5}{11}\selectfont
+    \rmfamily\fontsize{12}{18}\selectfont
     #1
-  \end{minipage}\hspace{\udaTercioSeparacion}%
-  \begin{minipage}[t]{\udaDosTerciosAncho}
-    \centering
-    \vspace{1.55cm}
-    \includegraphics[width=0.88\textwidth,height=0.50\textheight,keepaspectratio]{#2}
+  \end{minipage}\par\medskip
+  \begin{center}
+    \includegraphics[width=0.90\textwidth,height=0.46\textheight,keepaspectratio]{#2}
     \captionof{figure}{#3}
     \fuente{#4}
-  \end{minipage}
+  \end{center}
 }
 
 \newcommand{\tercioTextoTikz}[4]{%
   \noindent
-  \begin{minipage}[t]{\udaTercioAncho}
+  \begin{minipage}[t]{\textwidth}
     \vspace{0pt}
-    \fontsize{8.5}{11}\selectfont
+    \rmfamily\fontsize{12}{18}\selectfont
     #1
-  \end{minipage}\hspace{\udaTercioSeparacion}%
-  \begin{minipage}[t]{\udaDosTerciosAncho}
-    \centering
-    \vspace{1.05cm}
-    \resizebox{\linewidth}{!}{#2}
+  \end{minipage}\par\medskip
+  \begin{center}
+    \resizebox{0.94\textwidth}{!}{#2}
     \captionof{figure}{#3}
     \fuente{#4}
-  \end{minipage}
+  \end{center}
 }
 
 \newcommand{\nodoIntro}[3]{%
@@ -447,57 +421,51 @@
   \end{tikzpicture}%
 }
 
+% Longitudes heredadas, conservadas únicamente para no romper capítulos
+% antiguos que las mencionen directamente. Ya no forman columnas.
 \newlength{\udaTercioSeparacion}
-\setlength{\udaTercioSeparacion}{0.035\textwidth}
+\setlength{\udaTercioSeparacion}{0pt}
 \newlength{\udaTercioAncho}
-\setlength{\udaTercioAncho}{\dimexpr\textwidth-2\udaTercioSeparacion\relax}
-\divide\udaTercioAncho by 3
+\setlength{\udaTercioAncho}{\textwidth}
 \newlength{\udaDosTerciosAncho}
-\setlength{\udaDosTerciosAncho}{\dimexpr2\udaTercioAncho+\udaTercioSeparacion\relax}
-\setlength{\columnsep}{\udaTercioSeparacion}
+\setlength{\udaDosTerciosAncho}{\textwidth}
 
 \newcommand{\dosTerciosTextoGrafico}[4]{%
   \noindent
-  \begin{minipage}[t]{\udaDosTerciosAncho}
+  \begin{minipage}[t]{\textwidth}
     \vspace{0pt}
-    \fontsize{8.5}{11}\selectfont
+    \rmfamily\fontsize{12}{18}\selectfont
     #1
-  \end{minipage}\hspace{\udaTercioSeparacion}%
-  \begin{minipage}[t]{\udaTercioAncho}
-    \centering
-    \vspace{1.55cm}
-    \includegraphics[width=0.88\textwidth,height=0.50\textheight,keepaspectratio]{#2}
+  \end{minipage}\par\medskip
+  \begin{center}
+    \includegraphics[width=0.90\textwidth,height=0.46\textheight,keepaspectratio]{#2}
     \captionof{figure}{#3}
     \fuente{#4}
-  \end{minipage}
+  \end{center}
 }
 
 \newenvironment{textoTresTercios}{%
-  \begin{multicols}{3}
-  \raggedcolumns
-  \fontsize{8.5}{11}\selectfont
+  \begin{minipage}[t]{\textwidth}
+  \rmfamily\fontsize{12}{18}\selectfont
 }{%
-  \end{multicols}
+  \end{minipage}
 }
 
 \newenvironment{textoUnTercio}{%
   \noindent
-  \begin{minipage}[t]{\udaTercioAncho}
+  \begin{minipage}[t]{\textwidth}
   \vspace{0pt}
-  \fontsize{8.5}{11}\selectfont
+  \rmfamily\fontsize{12}{18}\selectfont
 }{%
   \end{minipage}
 }
 
 \newenvironment{textoDosTercios}{%
   \noindent
-  \begin{minipage}[t]{\udaDosTerciosAncho}
+  \begin{minipage}[t]{\textwidth}
   \vspace{0pt}
-  \begin{multicols}{2}
-  \raggedcolumns
-  \rmfamily\fontsize{9}{11}\selectfont
+  \rmfamily\fontsize{12}{18}\selectfont
 }{%
-  \end{multicols}
   \end{minipage}
 }
 
@@ -506,21 +474,16 @@
   \def\imagenTercioCaption{#2}%
   \def\imagenTercioFuente{#3}%
   \noindent
-  \begin{minipage}[t]{\udaDosTerciosAncho}
+  \begin{minipage}[t]{\textwidth}
   \vspace{0pt}
-  \begin{multicols}{2}
-  \raggedcolumns
-  \rmfamily\fontsize{9}{11}\selectfont
+  \rmfamily\fontsize{12}{18}\selectfont
 }{%
-  \end{multicols}
-  \end{minipage}\hspace{\udaTercioSeparacion}%
-  \begin{minipage}[t]{\udaTercioAncho}
-    \vspace{0pt}
-    \centering
-    \includegraphics[width=\linewidth,height=0.58\textheight,keepaspectratio]{\imagenTercioArchivo}
+  \end{minipage}\par\medskip
+  \begin{center}
+    \includegraphics[width=0.90\textwidth,height=0.46\textheight,keepaspectratio]{\imagenTercioArchivo}
     \captionof{figure}{\imagenTercioCaption}
     \fuente{\imagenTercioFuente}
-  \end{minipage}
+  \end{center}
 }
 
 \newenvironment{textoDosTerciosGrafico}[3]{%
@@ -528,25 +491,20 @@
   \def\graficoTercioCaption{#2}%
   \def\graficoTercioFuente{#3}%
   \noindent
-  \begin{minipage}[t]{\udaDosTerciosAncho}
+  \begin{minipage}[t]{\textwidth}
   \vspace{0pt}
-  \begin{multicols}{2}
-  \raggedcolumns
-  \rmfamily\fontsize{9}{11}\selectfont
+  \rmfamily\fontsize{12}{18}\selectfont
 }{%
-  \end{multicols}
-  \end{minipage}\hspace{\udaTercioSeparacion}%
-  \begin{minipage}[t]{\udaTercioAncho}
-    \vspace{0pt}
-    \centering
-    \resizebox{\linewidth}{!}{\graficoTercioContenido}
+  \end{minipage}\par\medskip
+  \begin{center}
+    \resizebox{0.94\textwidth}{!}{\graficoTercioContenido}
     \captionof{figure}{\graficoTercioCaption}
     \fuente{\graficoTercioFuente}
-  \end{minipage}
+  \end{center}
 }
 
-\newcommand{\udaTercioTexto}[2][9/11]{%
-  \begin{minipage}[t]{\udaTercioAncho}
+\newcommand{\udaTercioTexto}[2][12/18]{%
+  \begin{minipage}[t]{\textwidth}
   \vspace{0pt}
   \rmfamily
   \expandafter\udaAplicarTamanoFuente#1\relax
@@ -559,32 +517,31 @@
 }
 
 \newcommand{\udaTercioVacio}{%
-  \begin{minipage}[t]{\udaTercioAncho}
+  \begin{minipage}[t]{\textwidth}
   \vspace{0pt}
   \end{minipage}%
 }
 
 \newcommand{\udaTercioImagen}[4][0.50\textheight]{%
-  \begin{minipage}[t]{\udaTercioAncho}
+  \begin{minipage}[t]{\textwidth}
   \vspace{0pt}
   \centering
-  \includegraphics[width=\linewidth,height=#1,keepaspectratio]{#2}
+  \includegraphics[width=0.90\textwidth,height=#1,keepaspectratio]{#2}
   \captionof{figure}{#3}
   \fuente{#4}
   \end{minipage}%
 }
 
-\newcommand{\udaDosTextosVacio}[3][9/11]{%
+\newcommand{\udaDosTextosVacio}[3][12/18]{%
   \noindent
-  \udaTercioTexto[#1]{#2}\hspace{\udaTercioSeparacion}%
-  \udaTercioTexto[#1]{#3}\hspace{\udaTercioSeparacion}%
-  \udaTercioVacio%
+  \udaTercioTexto[#1]{#2}\par\medskip
+  \udaTercioTexto[#1]{#3}%
 }
 
-\newcommand{\udaDosTextosImagen}[6][9/11]{%
+\newcommand{\udaDosTextosImagen}[6][12/18]{%
   \noindent
-  \udaTercioTexto[#1]{#2}\hspace{\udaTercioSeparacion}%
-  \udaTercioTexto[#1]{#3}\hspace{\udaTercioSeparacion}%
+  \udaTercioTexto[#1]{#2}\par\medskip
+  \udaTercioTexto[#1]{#3}\par\medskip
   \udaTercioImagen{#4}{#5}{#6}%
 }
 
