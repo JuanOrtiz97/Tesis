@@ -63,7 +63,8 @@
 % Guias visuales temporales para revisar reticula, tercios y alineaciones.
 % Cambiar a \mostrarGuiasUDAfalse para generar el PDF final sin lineas.
 \newif\ifmostrarGuiasUDA
-\mostrarGuiasUDAtrue
+% Las guias se usan solo durante la revision de reticula; no aparecen en el PDF final.
+\mostrarGuiasUDAfalse
 \newif\ifocultarGuiasPaginaUDA
 \ocultarGuiasPaginaUDAfalse
 \newcommand{\guiasUDA}{%
@@ -116,11 +117,9 @@
 }
 
 \titleformat{\chapter}[display]
-  {\normalfont\bfseries\color{udaGreen}}
-  {\fontsize{28}{30}\selectfont\thechapter.}
-  {4pt}
-  {\fontsize{24}{28}\selectfont\MakeUppercase}
-\titlespacing*{\chapter}{0pt}{0pt}{18pt}
+  {\normalfont\bfseries\fontsize{16}{18}\selectfont}
+  {\thechapter.}{1em}{\MakeUppercase}
+\titlespacing*{\chapter}{0pt}{0pt}{12pt}
 
 \newcommand{\tituloSeccionDiseno}[2]{%
   \begin{tikzpicture}[baseline=(t.base)]
@@ -136,9 +135,9 @@
 }
 
 \titleformat{\section}
-  {\normalfont\bfseries}
-  {}{0pt}{\tituloSeccionConBajada}
-\titlespacing*{\section}{0pt}{0pt}{56pt}
+  {\normalfont\bfseries\fontsize{14}{16}\selectfont}
+  {\thesection.}{1em}{}
+\titlespacing*{\section}{0pt}{12pt}{12pt}
 
 % Ritmo vertical unico para paginas de seccion.
 \newlength{\udaInicioSeccion}
@@ -147,14 +146,13 @@
 \newcommand{\inicioSeccionUDA}{\clearpage\vspace*{\udaInicioSeccion}}
 
 \titleformat{\subsection}
-  {\normalfont\bfseries\fontsize{13}{15}\selectfont\color{udaGreen}}
-  {\thesubsection}{0.8em}{}
-\titlespacing*{\subsection}{0pt}{10pt}{6pt}
+  {\normalfont\bfseries\fontsize{12}{14}\selectfont}
+  {\thesubsection}{1em}{}
+\titlespacing*{\subsection}{0pt}{12pt}{12pt}
 
 \captionsetup{
-  font={footnotesize,color=udaGray},
-  labelfont={bf,color=udaGreen},
-  labelsep=quad,
+  font=normalsize,
+  labelfont=bf,
   justification=raggedright,
   singlelinecheck=false
 }
@@ -164,14 +162,14 @@
 \newcommand{\preliminar}[1]{%
   \clearpage
   \thispagestyle{plain}
-  \chapter*{\fontsize{22}{25}\selectfont\bfseries\color{udaBlue}\MakeUppercase{#1}}
+  \chapter*{\centering\fontsize{12}{14}\selectfont\bfseries\MakeUppercase{#1}}
   \addcontentsline{toc}{chapter}{#1}
 }
 
 \newcommand{\fuente}[1]{%
   \par
   \vspace{4pt}%
-  {\raggedright\noindent\fontsize{7}{9}\selectfont\color{udaGray}\textbf{Fuente:} #1\par}
+  {\raggedright\noindent\fontsize{8}{10}\selectfont\color{udaGray}Fuente: #1\par}
   \vspace{3pt}%
 }
 
@@ -645,14 +643,12 @@
   \phantomsection
   \addcontentsline{toc}{chapter}{#1}
   \markboth{#1}{#1}%
-  \vspace*{2.0cm}
-  \noindent
-  \begin{minipage}[t]{0.28\textwidth}
-    {\fontsize{18}{22}\selectfont\bfseries\color{udaGreen}#1\par}
-  \end{minipage}\hfill
-  \begin{minipage}[t]{0.64\textwidth}
+  \vspace*{1.5cm}
+  {\centering\fontsize{12}{14}\selectfont\bfseries\MakeUppercase{#1}\par}
+  \vspace{1.0cm}
+  \begin{minipage}{0.86\textwidth}
     \singlespacing
-    \fontsize{11}{16}\selectfont
+    \fontsize{12}{18}\selectfont
     #2
   \end{minipage}
   \vfill
@@ -724,51 +720,38 @@
   {\bfseries\fontsize{11}{13}\selectfont\mbox{Cuenca -- Ecuador, 2026}\par}
 \end{titlepage}
 
-\clearpage
-\thispagestyle{empty}
-\null
-\clearpage
-
 \begin{titlepage}
   \thispagestyle{empty}
   \ocultarGuiasPaginaUDAtrue
   \nopagecolor
   \color{black}
   \centering
-  \vspace*{0.35cm}
-  \includegraphics[width=1.45cm,height=1.45cm,keepaspectratio]{logo_uda.png}
+  \vspace*{0.45cm}
+  \includegraphics[width=2cm,height=2cm,keepaspectratio]{logo_uda.png}\par
 
-  \vspace{0.25cm}
-  {\bfseries\fontsize{13}{15}\selectfont UNIVERSIDAD DEL AZUAY\par}
-  \vspace{0.22cm}
-  {\fontsize{8}{10}\selectfont Universidad del Azuay\par}
-  \vspace{0.12cm}
-  {\fontsize{8}{10}\selectfont Facultad de Diseño, Arquitectura y Arte\par}
-  \vspace{0.12cm}
-  {\fontsize{8}{10}\selectfont Maestría en Arquitectura con mención en Construcción Sostenible\par}
+  \vspace{0.45cm}
+  {\bfseries\fontsize{22}{24}\selectfont Universidad del Azuay\par}
+  \vspace{22pt}
+  {\bfseries\fontsize{22}{24}\selectfont Facultad de Diseño, Arquitectura y Arte\par}
+  \vspace{22pt}
+  {\fontsize{22}{24}\selectfont Maestría en Arquitectura con mención en\\ Construcción Sostenible\par}
 
-  \vspace{0.85cm}
-  \begin{minipage}{0.56\textwidth}
+  \vspace{26pt}
+  \begin{minipage}{0.88\textwidth}
     \centering
-    {\bfseries\fontsize{15}{18}\selectfont Evaluación de estrategias pasivas y materiales sostenibles en el proyecto arquitectónico de la Defensoría del Pueblo en la isla San Cristóbal, Galápagos.\par}
-    \vspace{0.38cm}
-    {\fontsize{12}{14}\selectfont Caso de estudio prospectivo\par}
+    {\bfseries\fontsize{20}{22}\selectfont\MakeUppercase{Evaluación de estrategias pasivas y materiales sostenibles en el proyecto arquitectónico de la Defensoría del Pueblo en la isla San Cristóbal, Galápagos}\par}
   \end{minipage}
 
-  \vspace{0.72cm}
-  \begin{minipage}{0.68\textwidth}
-  \centering
-  {\fontsize{8}{10}\selectfont Trabajo de titulación previo a la obtención del título de Magíster en Arquitectura con mención en Construcción Sostenible\par}
-  \end{minipage}\par
-  \vspace{0.3cm}
-  {\fontsize{8}{10}\selectfont Autor: Juan Daniel Ortiz Pacheco\par}
-  \vspace{0.16cm}
-  {\fontsize{8}{10}\selectfont Director: Pablo Esteban Ochoa Pesantez\par}
+  \vspace{0.85cm}
+  {\bfseries\fontsize{16}{18}\selectfont Autor:\par}
+  {\bfseries\fontsize{16}{18}\selectfont Juan Daniel Ortiz Pacheco\par}
+  \vspace{16pt}
+  {\bfseries\fontsize{16}{18}\selectfont Director:\par}
+  {\bfseries\fontsize{16}{18}\selectfont Pablo Esteban Ochoa Pesantez\par}
   \vfill
-  {\fontsize{8}{10}\selectfont Cuenca--Ecuador\par}
-  \vspace{0.12cm}
-  {\fontsize{8}{10}\selectfont 2026\par}
-  \vspace*{0.35cm}
+  {\bfseries\fontsize{16}{18}\selectfont Cuenca -- Ecuador\par}
+  {\bfseries\fontsize{16}{18}\selectfont 2026\par}
+  \vspace*{0.45cm}
 \end{titlepage}
 
 \ocultarGuiasPaginaUDAfalse
@@ -776,10 +759,12 @@
 \pagenumbering{roman}
 
 \preliminarUnaPagina{Dedicatoria}{%
+\raggedleft
 Texto de dedicatoria.
 }
 
 \preliminarUnaPagina{Agradecimiento}{%
+\raggedleft
 Agradezco a Dios por sostenerme con fortaleza, claridad y perseverancia durante este proceso academico.
 
 A mi familia, por su amor, paciencia y apoyo constante. Su presencia fue una fuente de motivacion y confianza en cada etapa de este camino.
