@@ -1,12 +1,11 @@
 % !TeX program = pdflatex
-\documentclass[11pt,a4paper,landscape,twoside]{report}
+\documentclass[12pt,a4paper,oneside]{report}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[spanish,es-tabla]{babel}
 \usepackage[none]{hyphenat}
-\usepackage[default]{sourcesanspro}
-\renewcommand{\familydefault}{\sfdefault}
+\usepackage{mathptmx}
 \usepackage{setspace}
 \usepackage{geometry}
 \usepackage{graphicx}
@@ -48,18 +47,18 @@
 \definecolor{guiaCaja}{HTML}{2D7F9D}
 
 \geometry{
-  inner=2.0cm,
-  outer=2.0cm,
-  top=2.25cm,
-  bottom=1.8cm,
+  left=3.0cm,
+  right=2.5cm,
+  top=2.5cm,
+  bottom=2.5cm,
   headheight=14pt,
-  headsep=40pt
+  headsep=24pt
 }
 
-\setstretch{1.18}
+\onehalfspacing
 \sloppy
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{7pt}
+\setlength{\parindent}{1cm}
+\setlength{\parskip}{6pt}
 
 % Guias visuales temporales para revisar reticula, tercios y alineaciones.
 % Cambiar a \mostrarGuiasUDAfalse para generar el PDF final sin lineas.
@@ -71,7 +70,7 @@
   \ifmostrarGuiasUDA
   \ifocultarGuiasPaginaUDA\else
   \begin{tikzpicture}[remember picture,overlay]
-    \coordinate (udaTextNW) at ([xshift=2.0cm,yshift=-2.25cm]current page.north west);
+    \coordinate (udaTextNW) at ([xshift=3.0cm,yshift=-2.5cm]current page.north west);
     \coordinate (udaTextSE) at ([xshift=\textwidth,yshift=-\textheight]udaTextNW);
     \coordinate (udaTextNE) at ([xshift=\textwidth]udaTextNW);
     \coordinate (udaTextSW) at ([yshift=-\textheight]udaTextNW);
@@ -99,7 +98,7 @@
 \fancyhf{}
 \newcommand{\encabezadoUDA}{%
   \begin{tikzpicture}[remember picture,overlay]
-    \node[anchor=north west,inner sep=0pt] at ([xshift=2.0cm,yshift=-0.78cm]current page.north west)
+    \node[anchor=north west,inner sep=0pt] at ([xshift=3.0cm,yshift=-0.78cm]current page.north west)
       {\fontsize{8}{10}\selectfont\bfseries\textcolor{udaLime}{MAESTRÍA EN ARQUITECTURA}\textcolor{udaGreen}{\normalfont\space CON MENCIÓN EN CONSTRUCCIÓN SOSTENIBLE}};
     \draw[udaGreen,line width=1.1pt] ([yshift=-1.65cm]current page.north west) -- ([yshift=-1.65cm]current page.north east);
   \end{tikzpicture}%
@@ -498,7 +497,7 @@
   \vspace{0pt}
   \begin{multicols}{2}
   \raggedcolumns
-  \sffamily\fontsize{9}{11}\selectfont
+  \rmfamily\fontsize{9}{11}\selectfont
 }{%
   \end{multicols}
   \end{minipage}
@@ -513,7 +512,7 @@
   \vspace{0pt}
   \begin{multicols}{2}
   \raggedcolumns
-  \sffamily\fontsize{9}{11}\selectfont
+  \rmfamily\fontsize{9}{11}\selectfont
 }{%
   \end{multicols}
   \end{minipage}\hspace{\udaTercioSeparacion}%
@@ -535,7 +534,7 @@
   \vspace{0pt}
   \begin{multicols}{2}
   \raggedcolumns
-  \sffamily\fontsize{9}{11}\selectfont
+  \rmfamily\fontsize{9}{11}\selectfont
 }{%
   \end{multicols}
   \end{minipage}\hspace{\udaTercioSeparacion}%
@@ -551,7 +550,7 @@
 \newcommand{\udaTercioTexto}[2][9/11]{%
   \begin{minipage}[t]{\udaTercioAncho}
   \vspace{0pt}
-  \sffamily
+  \rmfamily
   \expandafter\udaAplicarTamanoFuente#1\relax
   #2
   \end{minipage}%
@@ -632,9 +631,9 @@
   \markboth{#1}{#1}%
   \vspace*{2.0cm}
   \hfill
-  \begin{minipage}[t]{0.30\textwidth}
+  \begin{minipage}[t]{0.64\textwidth}
     \singlespacing
-    \fontsize{8}{10}\selectfont
+    \fontsize{11}{16}\selectfont
     #2
   \end{minipage}
   \vfill
@@ -648,12 +647,12 @@
   \markboth{#1}{#1}%
   \vspace*{2.0cm}
   \noindent
-  \begin{minipage}[t]{0.31\textwidth}
+  \begin{minipage}[t]{0.25\textwidth}
     {\fontsize{22}{25}\selectfont\bfseries\color{udaGreen}#1\par}
   \end{minipage}\hfill
-  \begin{minipage}[t]{0.31\textwidth}
+  \begin{minipage}[t]{0.64\textwidth}
     \singlespacing
-    \fontsize{8}{10}\selectfont
+    \fontsize{11}{16}\selectfont
     #2
   \end{minipage}
   \vfill
@@ -695,60 +694,34 @@
   \thispagestyle{empty}
   \nopagecolor
   \color{black}
-  \begin{tikzpicture}[remember picture,overlay]
-    % Ventana grafica contenida dentro de los margenes de la portada.
-    \begin{scope}
-      \clip ([xshift=2.0cm,yshift=-5.20cm]current page.north west) rectangle
-        ([xshift=-2.0cm,yshift=4.25cm]current page.south east);
-      \node[anchor=center] at (current page.center)
-        {\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{figuras/portada-fachada-conceptual.png}};
-    \end{scope}
-
-    % Franja institucional: un tercio para la UDA y dos tercios para el titulo.
-    \node[anchor=north west,inner sep=0pt] at ([xshift=2.0cm,yshift=-2.55cm]current page.north west)
-      {\includegraphics[width=1.35cm,height=1.35cm,keepaspectratio]{logo_uda.png}};
-    \node[anchor=north west,inner sep=0pt,align=left,text=udaGreen,
-      font=\bfseries\fontsize{8.3}{9.5}\selectfont,text width=5.9cm]
-      at ([xshift=3.70cm,yshift=-2.52cm]current page.north west)
-      {UNIVERSIDAD DEL AZUAY\\[3pt]
-       \normalfont\fontsize{7.2}{8.5}\selectfont
-       Maestría en Arquitectura\\con mención en Construcción Sostenible};
-
-    \node[anchor=north east,inner sep=0pt,align=right,text=udaGreen,
-      font=\bfseries\fontsize{14}{17}\selectfont,text width=\udaDosTerciosAncho]
-      at ([xshift=-2.0cm,yshift=-2.50cm]current page.north east)
-      {Evaluación de estrategias pasivas y materiales sostenibles en el proyecto arquitectónico de la Defensoría del Pueblo};
-    \node[anchor=north east,inner sep=0pt,align=right,text=udaLime,
-      font=\bfseries\fontsize{8}{9.5}\selectfont,text width=\udaDosTerciosAncho]
-      at ([xshift=-2.0cm,yshift=-4.62cm]current page.north east)
-      {ISLA SAN CRISTÓBAL · GALÁPAGOS};
-    \draw[udaLime,line width=1.2pt]
-      ([xshift=-4.6cm,yshift=-5.05cm]current page.north east) --
-      ([xshift=-2.0cm,yshift=-5.05cm]current page.north east);
-
-    % Franja inferior alineada con las tres columnas de la reticula.
-    \draw[udaSky,line width=0.7pt]
-      ([xshift=2.0cm,yshift=4.25cm]current page.south west) --
-      ([xshift=-2.0cm,yshift=4.25cm]current page.south east);
-
-    \node[anchor=north west,inner sep=0pt,align=left,text=black,
-      font=\fontsize{7.2}{8.6}\selectfont,text width=\udaTercioAncho]
-      at ([xshift=2.0cm,yshift=3.88cm]current page.south west)
-      {\textcolor{udaLime}{\bfseries TRABAJO DE TITULACIÓN}\\[4pt]
-       Previo a la obtención del título de Magíster en Arquitectura con mención en Construcción Sostenible\\[5pt]
-       \textbf{Cuenca, Ecuador · 2026}};
-    \node[anchor=north west,inner sep=0pt,align=left,text=black,
-      font=\fontsize{8}{9.6}\selectfont,text width=\udaTercioAncho]
-      at ([xshift=\dimexpr2cm+\udaTercioAncho+\udaTercioSeparacion\relax,yshift=3.88cm]current page.south west)
-      {\textcolor{udaLime}{\bfseries AUTOR}\\[4pt]
-       Juan Daniel Ortiz Pacheco};
-    \node[anchor=north west,inner sep=0pt,align=left,text=black,
-      font=\fontsize{8}{9.6}\selectfont,text width=\udaTercioAncho]
-      at ([xshift=\dimexpr2cm+\udaDosTerciosAncho+\udaTercioSeparacion\relax,yshift=3.88cm]current page.south west)
-      {\textcolor{udaLime}{\bfseries DIRECTOR}\\[4pt]
-       Pablo Esteban Ochoa Pesantez};
-  \end{tikzpicture}
-  \null
+  \centering
+  \vspace*{0.35cm}
+  \includegraphics[width=1.7cm,height=1.7cm,keepaspectratio]{logo_uda.png}\par
+  \vspace{0.22cm}
+  {\bfseries\fontsize{16}{19}\selectfont UNIVERSIDAD DEL AZUAY\par}
+  \vspace{0.12cm}
+  {\fontsize{10}{12}\selectfont Facultad de Diseño, Arquitectura y Arte\par}
+  {\fontsize{10}{12}\selectfont Maestría en Arquitectura con mención en Construcción Sostenible\par}
+  \vspace{0.65cm}
+  \begin{minipage}{0.88\textwidth}
+    \centering
+    {\bfseries\fontsize{16}{19}\selectfont
+    Evaluación de estrategias pasivas y materiales sostenibles en el proyecto arquitectónico de la Defensoría del Pueblo en la isla San Cristóbal, Galápagos\par}
+  \end{minipage}
+  \vspace{0.45cm}
+  \includegraphics[width=0.88\textwidth,height=0.30\textheight,keepaspectratio]{figuras/portada-fachada-conceptual.png}\par
+  \vspace{0.28cm}
+  {\fontsize{10}{12}\selectfont Isla San Cristóbal, Galápagos\par}
+  \vfill
+  \begin{minipage}{0.88\textwidth}
+    \centering
+    {\fontsize{10}{12}\selectfont Trabajo de titulación previo a la obtención del título de Magíster en Arquitectura con mención en Construcción Sostenible\par}
+    \vspace{0.25cm}
+    {\bfseries\fontsize{11}{13}\selectfont Autor:} Juan Daniel Ortiz Pacheco\par
+    {\bfseries\fontsize{11}{13}\selectfont Director:} Pablo Esteban Ochoa Pesantez\par
+  \end{minipage}
+  \vspace{0.32cm}
+  {\bfseries\fontsize{11}{13}\selectfont Cuenca -- Ecuador, 2026\par}
 \end{titlepage}
 
 \clearpage
@@ -758,6 +731,7 @@
 
 \begin{titlepage}
   \thispagestyle{empty}
+  \ocultarGuiasPaginaUDAtrue
   \nopagecolor
   \color{black}
   \centering
@@ -796,6 +770,8 @@
   {\fontsize{8}{10}\selectfont 2026\par}
   \vspace*{0.35cm}
 \end{titlepage}
+
+\ocultarGuiasPaginaUDAfalse
 
 \pagenumbering{roman}
 
