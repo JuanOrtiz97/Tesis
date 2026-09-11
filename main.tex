@@ -51,7 +51,7 @@
   right=2.5cm,
   top=2.5cm,
   bottom=2.5cm,
-  headheight=14pt,
+  headheight=15pt,
   headsep=24pt
 }
 
@@ -104,13 +104,13 @@
   \end{tikzpicture}%
 }
 \fancyhead[L]{\encabezadoUDA}
-\fancyfoot[LE,RO]{\fontsize{8}{10}\selectfont\bfseries\color{udaGreen}\thepage}
+\fancyfoot[R]{\fontsize{8}{10}\selectfont\bfseries\color{udaGreen}\thepage}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyhead[L]{\encabezadoUDA}%
-  \fancyfoot[LE,RO]{\fontsize{8}{10}\selectfont\bfseries\color{udaGreen}\thepage}%
+  \fancyfoot[R]{\fontsize{8}{10}\selectfont\bfseries\color{udaGreen}\thepage}%
   \renewcommand{\headrulewidth}{0pt}%
   \renewcommand{\footrulewidth}{0pt}%
 }
@@ -201,7 +201,7 @@
   \begin{minipage}[t]{\udaDosTerciosAncho}
     \centering
     \vspace{1.05cm}
-    #2
+    \resizebox{\linewidth}{!}{#2}
     \captionof{figure}{#3}
     \fuente{#4}
   \end{minipage}
@@ -647,8 +647,8 @@
   \markboth{#1}{#1}%
   \vspace*{2.0cm}
   \noindent
-  \begin{minipage}[t]{0.25\textwidth}
-    {\fontsize{22}{25}\selectfont\bfseries\color{udaGreen}#1\par}
+  \begin{minipage}[t]{0.28\textwidth}
+    {\fontsize{18}{22}\selectfont\bfseries\color{udaGreen}#1\par}
   \end{minipage}\hfill
   \begin{minipage}[t]{0.64\textwidth}
     \singlespacing
@@ -719,9 +719,9 @@
     \vspace{0.25cm}
     {\bfseries\fontsize{11}{13}\selectfont Autor:} Juan Daniel Ortiz Pacheco\par
     {\bfseries\fontsize{11}{13}\selectfont Director:} Pablo Esteban Ochoa Pesantez\par
-  \end{minipage}
-  \vspace{0.32cm}
-  {\bfseries\fontsize{11}{13}\selectfont Cuenca -- Ecuador, 2026\par}
+  \end{minipage}\par
+  \vspace{0.42cm}
+  {\bfseries\fontsize{11}{13}\selectfont\mbox{Cuenca -- Ecuador, 2026}\par}
 \end{titlepage}
 
 \clearpage
