@@ -21,7 +21,7 @@
 \usepackage{titlesec}
 \usepackage{csquotes}
 \usepackage{fancyhdr}
-\usepackage[hidelinks]{hyperref}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
 \usepackage[style=apa,backend=biber]{biblatex}
 
 \graphicspath{{Imagenes/}{figuras/}}
@@ -44,6 +44,14 @@
 \definecolor{introSoft}{HTML}{F3F5F7}
 \definecolor{guiaTercio}{HTML}{D23B3B}
 \definecolor{guiaCaja}{HTML}{2D7F9D}
+
+% Los enlaces de citas quedan visibles para facilitar la navegación en el PDF.
+\hypersetup{
+  colorlinks=true,
+  linkcolor=udaBlue,
+  citecolor=introBlue,
+  urlcolor=introBlue
+}
 
 \geometry{
   left=3.0cm,
