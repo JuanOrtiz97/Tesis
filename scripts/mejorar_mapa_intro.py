@@ -20,6 +20,12 @@ font_path = next((path for path in font_candidates if path.exists()), None)
 font = ImageFont.truetype(str(font_path), 27) if font_path else ImageFont.load_default()
 small_font = ImageFont.truetype(str(font_path), 21) if font_path else ImageFont.load_default()
 
+# Flecha norte: la fuente cartográfica está orientada con el norte hacia arriba.
+arrow_x, arrow_y = 82, 150
+draw.line((arrow_x, arrow_y + 62, arrow_x, arrow_y), fill=(32, 42, 51, 255), width=4)
+draw.polygon([(arrow_x, arrow_y - 2), (arrow_x - 11, arrow_y + 18), (arrow_x + 11, arrow_y + 18)], fill=(32, 42, 51, 255))
+draw.text((arrow_x - 9, arrow_y + 68), "N", fill=(32, 42, 51, 255), font=small_font)
+
 # San Cristóbal queda resaltada en rojo en el mapa original; se añade un llamado
 # limpio para que la ubicación no dependa únicamente del color.
 target_point = (785, 822)
