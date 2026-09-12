@@ -38,9 +38,9 @@ tex+=fig('caso-base-temperatura-diaria','Evolución de las medias diarias de tem
 tex+=fig('caso-base-ventilacion-mensual','Ventilación e infiltración: media mensual del edificio')
 tex+=fig('caso-base-consumos-electricos','Distribución de la electricidad anual estimada')
 (R/'insumos/caso-base-final-tablas.tex').write_text(tex,encoding='utf-8')
-plt.rcParams.update({'font.family':'DejaVu Sans','font.size':10,'axes.spines.top':False,'axes.spines.right':False,'axes.labelcolor':'#202A33','xtick.color':'#202A33','ytick.color':'#202A33','pdf.fonttype':42})
-def save(name):
- plt.tight_layout();plt.savefig(R/'figuras'/f'{name}.pdf',bbox_inches='tight');plt.savefig(R/'figuras'/f'{name}.png',dpi=220,bbox_inches='tight');plt.close()
+from estilo_graficos_uda import aplicar,guardar
+aplicar()
+def save(name):guardar(R,name)
 x=np.arange(12)
 figg,axs=plt.subplots(2,1,figsize=(8,5.7),sharex=True)
 axs[0].bar(x,monthly('Cooling (Electricity)'),color='#2D7F9D');axs[0].set_ylabel('Electricidad estimada (kWh)')
@@ -53,7 +53,7 @@ for k,l,c in [('Operative Temperature','Operativa','#1D3445'),('Air Temperature'
 plt.xticks(x,names);plt.ylabel('Temperatura media (°C)');plt.legend(frameon=False,ncol=3);plt.grid(alpha=.15);save('caso-base-final-temperatura-mensual')
 plt.figure(figsize=(8,3.7))
 for k,l,c in [('Operative Temperature','Operativa','#1D3445'),('Outside Dry-Bulb Temperature','Exterior','#C97728')]:plt.plot(dates,D[k],label=l,color=c,lw=1)
-plt.ylabel('Media diaria (°C)');plt.legend(frameon=False);plt.grid(alpha=.15);save('caso-base-temperatura-diaria')
+plt.xticks([datetime.datetime(2025,m,1) for m in range(1,13)],names);plt.xlim(dates[0],dates[-1]);plt.ylabel('Media diaria (°C)');plt.legend(frameon=False);plt.grid(alpha=.15);save('caso-base-temperatura-diaria')
 plt.figure(figsize=(8,3.5));plt.bar(x,monthly('Mech Vent + Nat Vent + Infiltration'),color='#2D7F9D');plt.xticks(x,names);plt.ylabel('Renovaciones por hora (ACH)');plt.grid(axis='y',alpha=.15);save('caso-base-ventilacion-mensual')
 plt.figure(figsize=(8,3.4));plt.barh(['Enfriamiento estimado','Equipos','Iluminación'],[total(k)/1000 for k in ['Cooling (Electricity)','Room Electricity','Lighting']],color=['#2D7F9D','#1D3445','#7080A0']);plt.xlabel('Electricidad anual (MWh)');plt.grid(axis='x',alpha=.15);save('caso-base-consumos-electricos')
 summary={'annual':{k:total(k) for k in D if units[k]=='kWh'},'means':{k:mean(k) for k in D if units[k]!='kWh'},'op_daily_max':float(max(D['Operative Temperature'])),'days_op_gt28':int((D['Operative Temperature']>28).sum()),'peak_sensible_daily':float(max(-D['Sensible Cooling'])),'peak_date':datepeak('Sensible Cooling')}

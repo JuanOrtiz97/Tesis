@@ -473,19 +473,9 @@ def draw_temperature_heatmap(grid: list[list[float]]) -> None:
 
 
 def main() -> None:
-    FIG_DIR.mkdir(exist_ok=True)
-    rows = parse_epw()
-    data = monthly(rows)
-    draw_temperature(data)
-    draw_humidity(data)
-    draw_dew_point(data)
-    draw_radiation(data)
-    draw_sky_precipitation(data)
-    draw_wind(data)
-    draw_daily_amplitude(data)
-    draw_wind_rose(wind_direction_bins(rows))
-    draw_temperature_heatmap(hourly_grid(rows))
+    # Mantener el punto de entrada antiguo con el estilo común vigente.
+    import runpy
+    runpy.run_path(str(ROOT / 'scripts' / 'graficos_climaticos_estilo_uda.py'), run_name='__main__')
 
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
