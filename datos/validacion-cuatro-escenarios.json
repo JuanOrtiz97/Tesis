@@ -1,0 +1,21 @@
+{
+  "integraciones": {
+    "C1": {
+      "integracion_horaria_kWh": 83103.75885807339,
+      "periodo_anual_kWh": 83103.75885807346,
+      "error_kWh": 7.275957614183426e-11
+    },
+    "C2": {
+      "integracion_horaria_kWh": 84328.84872259307,
+      "periodo_anual_kWh": 84328.8487225931,
+      "error_kWh": 2.9103830456733704e-11
+    },
+    "C3": {
+      "integracion_horaria_kWh": 82748.95991303356,
+      "periodo_anual_kWh": 82748.95991303372,
+      "error_kWh": 1.6007106751203537e-10
+    }
+  },
+  "interaccion_ahorro_kWh": -75.7631855194486,
+  "estado": "Preliminar: material hipotetico, confort ocupado e iluminacion pendientes"
+}

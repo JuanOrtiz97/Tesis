@@ -38,7 +38,7 @@ tex+=fig('caso-base-temperatura-diaria','Evolución de las medias diarias de tem
 tex+=fig('caso-base-ventilacion-mensual','Ventilación e infiltración: media mensual del edificio')
 tex+=fig('caso-base-consumos-electricos','Distribución de la electricidad anual estimada')
 (R/'insumos/caso-base-final-tablas.tex').write_text(tex,encoding='utf-8')
-from estilo_graficos_uda import aplicar,guardar
+from estilo_graficos_uda import aplicar,guardar,TEAL
 aplicar()
 def save(name):guardar(R,name)
 x=np.arange(12)
@@ -47,14 +47,14 @@ axs[0].bar(x,monthly('Cooling (Electricity)'),color='#2D7F9D');axs[0].set_ylabel
 axs[1].bar(x-.18,-monthly('Sensible Cooling'),width=.36,label='Sensible',color='#1D3445');axs[1].bar(x+.18,-monthly('Total Cooling'),width=.36,label='Total',color='#7080A0');axs[1].set_ylabel('Energía térmica (kWh)');axs[1].legend(frameon=False,ncol=2);axs[1].set_xticks(x,names)
 for ax in axs:ax.grid(axis='y',alpha=.16);ax.set_axisbelow(True)
 save('caso-base-final-enfriamiento-mensual')
-plt.figure(figsize=(8,6.4));vals=np.array([total(k)/1000 for k in bs]);plt.barh([labels[k] for k in bs],vals,color=['#C97728' if v>0 else '#2D7F9D' for v in vals]);plt.gca().invert_yaxis();plt.axvline(0,color='#606A73',lw=.8);plt.xlabel('Balance anual (MWh térmicos)');plt.grid(axis='x',alpha=.15);save('caso-base-final-balance-componentes')
+plt.figure(figsize=(8,7.2));vals=np.array([total(k)/1000 for k in bs]);plt.barh([labels[k] for k in bs],vals,color=['#C97728' if v>0 else TEAL for v in vals]);plt.gca().invert_yaxis();plt.axvline(0,color='#606A73',lw=.8);plt.xlabel('Balance anual (MWh térmicos)');plt.grid(axis='x',alpha=.15);save('caso-base-final-balance-componentes')
 plt.figure(figsize=(8,3.7))
 for k,l,c in [('Operative Temperature','Operativa','#1D3445'),('Air Temperature','Aire interior','#2D7F9D'),('Outside Dry-Bulb Temperature','Exterior','#C97728')]:plt.plot(x,monthly(k),marker='o',ms=4,label=l,color=c)
 plt.xticks(x,names);plt.ylabel('Temperatura media (°C)');plt.legend(frameon=False,ncol=3);plt.grid(alpha=.15);save('caso-base-final-temperatura-mensual')
 plt.figure(figsize=(8,3.7))
 for k,l,c in [('Operative Temperature','Operativa','#1D3445'),('Outside Dry-Bulb Temperature','Exterior','#C97728')]:plt.plot(dates,D[k],label=l,color=c,lw=1)
 plt.xticks([datetime.datetime(2025,m,1) for m in range(1,13)],names);plt.xlim(dates[0],dates[-1]);plt.ylabel('Media diaria (°C)');plt.legend(frameon=False);plt.grid(alpha=.15);save('caso-base-temperatura-diaria')
-plt.figure(figsize=(8,3.5));plt.bar(x,monthly('Mech Vent + Nat Vent + Infiltration'),color='#2D7F9D');plt.xticks(x,names);plt.ylabel('Renovaciones por hora (ACH)');plt.grid(axis='y',alpha=.15);save('caso-base-ventilacion-mensual')
+plt.figure(figsize=(8,3.5));plt.bar(x,monthly('Mech Vent + Nat Vent + Infiltration'),color='#2D7F9D');plt.xticks(x,names);plt.ylabel('Renovaciones de aire (h⁻¹)');plt.grid(axis='y',alpha=.15);save('caso-base-ventilacion-mensual')
 plt.figure(figsize=(8,3.4));plt.barh(['Enfriamiento estimado','Equipos','Iluminación'],[total(k)/1000 for k in ['Cooling (Electricity)','Room Electricity','Lighting']],color=['#2D7F9D','#1D3445','#7080A0']);plt.xlabel('Electricidad anual (MWh)');plt.grid(axis='x',alpha=.15);save('caso-base-consumos-electricos')
 summary={'annual':{k:total(k) for k in D if units[k]=='kWh'},'means':{k:mean(k) for k in D if units[k]!='kWh'},'op_daily_max':float(max(D['Operative Temperature'])),'days_op_gt28':int((D['Operative Temperature']>28).sum()),'peak_sensible_daily':float(max(-D['Sensible Cooling'])),'peak_date':datepeak('Sensible Cooling')}
 (R/'insumos/caso-base09-diario-resumen.json').write_text(json.dumps(summary,indent=2,ensure_ascii=False),encoding='utf-8')

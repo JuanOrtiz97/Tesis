@@ -1,7 +1,7 @@
 \documentclass[tikz,border=3mm]{standalone}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage{lmodern}
+\usepackage{mathptmx}
 \usetikzlibrary{arrows.meta,positioning,calc,shapes.geometric}
 \definecolor{ink}{HTML}{202A33}
 \definecolor{blue}{HTML}{2D7F9D}
@@ -9,11 +9,11 @@
 \definecolor{light}{HTML}{B0C0D0}
 \definecolor{soft}{HTML}{F3F5F7}
 \begin{document}
-\begin{tikzpicture}[x=1cm,y=1cm,>=Latex,line width=.9pt,every node/.style={font=\sffamily\small,text=ink},note/.style={align=left,text width=4.1cm,anchor=west},flow/.style={->,blue,line width=1.2pt}]
+\begin{tikzpicture}[x=1cm,y=1cm,>=Latex,line width=.9pt,every node/.style={font=\rmfamily\small,text=ink},note/.style={align=left,text width=4.1cm,anchor=west},flow/.style={->,blue,line width=1.2pt}]
 \path[use as bounding box] (0,0) rectangle (15,7.5);
 
-\node[anchor=west,font=\sffamily\bfseries\large] at (.2,7.1) {01 / Protección solar exterior};
-\node[anchor=west,text=orange] at (.2,6.5) {PROPUESTA C1 · Sección conceptual, sin escala};
+\node[anchor=west,font=\rmfamily\bfseries\large] at (.2,7.1) {01 / Protección solar exterior};
+\node[anchor=west,text=orange] at (.2,6.5) {CRITERIO C1 · Sección conceptual, sin escala};
 \fill[soft] (4.5,1.6) rectangle (9,5.5);
 \draw[ink] (4.5,1.6)--(9,1.6)--(9,5.5)--(4.5,5.5);
 \draw[ink,line width=3pt] (4.5,1.6)--(4.5,2.1) (4.5,4.7)--(4.5,5.5);
