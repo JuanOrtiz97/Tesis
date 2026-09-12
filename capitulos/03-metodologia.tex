@@ -40,7 +40,7 @@ La unidad de análisis se delimita al desempeño ambiental y energético del pro
 \section{Fases metodológicas}
 
 \tercioTextoTikz{%
-La metodología se organiza en seis fases relacionadas. Cada una transforma los resultados de la anterior en insumos para la siguiente, desde la recopilación de información hasta la formulación de recomendaciones.
+La metodología se organiza en seis fases relacionadas. Cada una transforma los resultados de la anterior en insumos para la siguiente, desde la recopilación de información y la configuración de la matriz hasta la formulación de recomendaciones.
 
 La lectura secuencial expresa que el proceso mantiene trazabilidad entre los datos de entrada, la construcción del modelo, la simulación de escenarios y la interpretación de resultados. También permite regresar a fases previas cuando la validación exige ajustar parámetros o supuestos.
 }{\graficoFasesMetodologicas}{Secuencia y productos de las seis fases metodológicas}{Diagrama original de la investigación.}
@@ -123,7 +123,7 @@ Las condiciones de uso incluirán ocupación, horarios de funcionamiento, cargas
 \section{Herramientas de simulación y análisis}
 
 \begin{textoDosTercios}
-El trabajo combinará software BIM, simulación energética y matrices de análisis. El modelado y coordinación podrán realizarse en Revit o Archicad, según la disponibilidad de información del proyecto. La simulación energética se desarrollará principalmente en DesignBuilder, basado en el motor EnergyPlus, y podrá contrastarse con herramientas complementarias como Revit Insight o Archicad EnergyPlus cuando sea pertinente.
+El trabajo utiliza Revit como referencia geométrica y DesignBuilder para construir y simular el modelo energético mediante EnergyPlus. Las exportaciones se procesan en tablas y gráficos reproducibles, conservando sus unidades, resolución temporal y procedencia. No se atribuye validación cruzada a otros programas cuando no existe una corrida documentada en ellos.
 
 Para el análisis de materiales sostenibles, huella de carbono e indicadores comparativos se emplearán matrices en hojas de cálculo. Estas matrices permitirán organizar datos, comparar escenarios y registrar resultados de forma trazable.
 
@@ -170,7 +170,7 @@ La comparación por escenarios permite aislar el efecto de cada grupo de decisio
 \end{textoDosTercios}
 
 \begin{textoDosTercios}
-Cada escenario será modelado de forma independiente y bajo criterios comparables. Esto permitirá que las diferencias de resultado se asocien a las estrategias evaluadas y no a cambios metodológicos entre modelos.
+Cada escenario se modela de forma independiente y bajo criterios comparables. El alcance previsto para C2 y C3 incluye materiales sostenibles; las corridas iniciales solo ensayan un acabado reflectante, por lo que su verificación ambiental permanece pendiente (sección~\ref{sec:control-metodologico}). La propuesta busca mejorar el desempeño entre alternativas técnicamente viables; las corridas disponibles no demuestran un óptimo global.
 
 \paragraph{Ejecución de simulaciones energéticas.}
 
@@ -181,24 +181,9 @@ El escenario base permitirá establecer la línea de comparación. Los escenario
 
 \clearpage
 \vspace*{1.15cm}
-\section{Matriz de indicadores de sostenibilidad}
-
-\begin{textoDosTercios}
-\subsection{Dimensiones e indicadores}
-
-Los resultados se organizarán mediante tablas comparativas, gráficos y matrices de evaluación. Se comparará el modelo base con los modelos optimizados para identificar variaciones en carga térmica, demanda energética, consumo, confort térmico y luminosidad.
-
-El análisis cuantitativo considerará promedios, desviaciones cuando correspondan, porcentajes de mejora y diferencias entre escenarios. También se evaluará la combinación de estrategias pasivas y materiales sostenibles para determinar si el escenario integrado ofrece un beneficio mayor que las estrategias aplicadas de forma separada.
-
-\subsection{Estándares de referencia}
-
-La validación se realizará mediante revisión de consistencia del modelo, comparación con datos reales cuando estén disponibles y contraste con literatura técnica. Si existen datos de consumo o condiciones térmicas de edificios cercanos o comparables, estos podrán utilizarse como referencia para ajustar parámetros y mejorar la confiabilidad del modelo.
-
-Además, se revisarán los supuestos de modelado, las propiedades de materiales, las condiciones climáticas, los horarios de uso y los criterios de ventilación. Las limitaciones del modelo serán documentadas para evitar interpretar los resultados como mediciones absolutas de desempeño.
-\end{textoDosTercios}
-
+\input{insumos/matriz-metodologia}
+\input{insumos/objetivos-metodologia-control}
 \clearpage
-\vspace*{1.15cm}
 \section{Procedimiento y validación del modelo}
 
 \begin{textoDosTercios}
@@ -209,6 +194,7 @@ Estas etapas ordenan el proceso de trabajo para evitar que los resultados depend
 
 \begin{textoDosTercios}
 \begin{enumerate}
+  \item Configuración de la matriz con fuentes, versiones, criterios y reglas de evaluación.
   \item Obtención de planos arquitectónicos, estructurales y de instalaciones.
   \item Recopilación de especificaciones técnicas de materiales y sistemas actuales.
   \item Recolección de datos climáticos de San Cristóbal, Galápagos.
@@ -216,7 +202,8 @@ Estas etapas ordenan el proceso de trabajo para evitar que los resultados depend
   \item Creación del modelo digital del edificio en software especializado.
   \item Definición de parámetros térmicos, propiedades de materiales y sistemas HVAC.
   \item Configuración de condiciones climáticas locales y horarios de ocupación.
-  \item Diseño de escenarios alternativos con estrategias pasivas y materiales sostenibles.
+  \item Aplicación de la matriz al caso base e identificación de brechas prioritarias.
+  \item Diseño de escenarios alternativos con estrategias pasivas y materiales sostenibles que respondan al diagnóstico.
   \item Ejecución de simulaciones energéticas para cada escenario.
   \item Registro sistemático de resultados para análisis comparativo.
   \item Procesamiento de resultados mediante tablas, gráficos y matrices.

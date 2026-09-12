@@ -1,0 +1,15 @@
+{
+  "idf": "datos\\db-caso-base-revision09.idf",
+  "sha256": "7c545e0f1b9b6fb2620be1e24a43c2f726dddc44d4a1df25ab13c8acf5087610",
+  "zonas_luces": 19,
+  "zonas_sobre_8_W_m2": 19,
+  "valores_W_m2": [
+    10.0,
+    15.0,
+    25.0
+  ],
+  "GDR10_K_d": 5212.529166666667,
+  "GDC18_K_d": 0.0,
+  "metodo_grados_dia": "sumatorio de diferencias positivas de temperatura media diaria EPW respecto a la base indicada; no es una asignacion oficial de zona climatica",
+  "ausencia_objetos_PV": true
+}
