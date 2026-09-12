@@ -1,0 +1,88 @@
+\section{Modelo arquitectónico y zonificación térmica}
+
+\begin{textoDosTercios}
+El modelo comprende planta baja, dos plantas altas y un volumen superior de cubierta. Oficinas, servicios, circulaciones y espacios de reunión se representan como zonas térmicas diferenciadas, con sus cerramientos y protecciones solares.
+
+El atrio cubierto comienza en la primera planta alta, sobre una losa opaca. Sus niveles se comunican entre sí y con los pasillos mediante pasos abiertos; dos rejillas laterales superiores lo conectan con el exterior. Esta configuración sustituye la interpretación previa del vacío como patio abierto al cielo.
+\end{textoDosTercios}
+
+\begin{figure}[H]
+\centering
+\includegraphics[trim=450bp 90bp 200bp 250bp,clip,width=0.95\textwidth,height=0.43\textheight,keepaspectratio]{figuras/db-modelo-atriocubierto.png}
+\caption{Modelo energético con el atrio cubierto y las protecciones solares}
+\label{fig:db-atrio-actual}
+\fuente{Elaboración propia a partir de la vista del modelo revisado en DesignBuilder.}
+\end{figure}
+
+\clearpage
+\subsection{Representación térmica del atrio}
+\begin{textoDosTercios}
+El atrio se divide en tres zonas de aire: primera planta alta, segunda planta alta y volumen superior. Esta división permite conservar las cotas y las relaciones con los recintos adyacentes. Las aberturas horizontales entre niveles se incluyen en la red de aire, mientras que la cubierta superior y la franja de cierre actúan como superficies térmicas opacas. El modelo no asigna ocupantes, iluminación, equipos ni climatización a las zonas del atrio.
+
+Las rejillas se representan mediante componentes de biblioteca con coeficiente de descarga de 0,5 y disponibilidad permanente. Este coeficiente es un supuesto de modelación que debe contrastarse con el área libre y la ficha del producto seleccionado. La disponibilidad de las aberturas no constituye una medición de caudal ni demuestra, por sí sola, que la ventilación sea suficiente.
+\end{textoDosTercios}
+
+\begin{table}[H]
+\centering
+\caption{Condiciones de modelación del atrio cubierto}
+\label{tab:db-atrio}
+{\small\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{p{4cm}p{9cm}}
+\toprule
+Elemento & Representación en el modelo \\
+\midrule
+Base del atrio & Losa opaca sobre planta baja; se elimina el vidrio ficticio. \\
+Continuidad vertical & Tres zonas conectadas por aberturas horizontales. \\
+Conexión con pasillos & Pasos abiertos conservados en la red de aire. \\
+Cierre superior & Cubierta opaca y franja adicional de $3,84\,\mathrm{m^2}$. \\
+Ventilación exterior & Dos rejillas superiores; disponibilidad constante. \\
+Coeficiente de descarga & 0,5, correspondiente al componente de biblioteca. \\
+Cargas internas y HVAC & Sin ocupación, iluminación, equipos ni climatización. \\
+\bottomrule
+\end{tabular}}
+\fuente{Elaboración propia a partir del modelo y de la comprobación del IDF exportado.}
+\end{table}
+
+\clearpage
+\section{Construcción del modelo energético}
+\subsection{Archivo climático y parámetros de cálculo}
+\begin{textoDosTercios}
+La simulación anual utiliza el EPW TMYx 2011--2025 de San Cristóbal. Se adopta el calendario 2025, desde el 1 de enero hasta el 31 de diciembre, para organizar los horarios de uso; esto no convierte el año meteorológico típico en un registro observado exclusivamente en 2025. La referencia horaria es UTC$-6$, sin horario de verano.
+
+El cálculo de sombras utiliza el método por píxeles y las ventanas se representan individualmente. Esta configuración evita el límite de superposición de polígonos detectado con las protecciones solares y permite evaluar cada abertura sin multiplicadores de agrupación. La revisión conserva la geometría del atrio y los cerramientos del edificio.
+\end{textoDosTercios}
+\input{insumos/db-configuracion-actual.tex}
+
+\clearpage
+\subsection{Visualización de las protecciones solares}
+\begin{textoDosTercios}
+La vista solar permite reconocer la relación geométrica entre cubiertas, celosías y fachadas. Se presenta como comprobación visual del modelo; no sustituye los balances anuales de radiación ni permite cuantificar ahorros energéticos. Las sombras mostradas corresponden al 21 de diciembre a las 08:00, según la configuración de visualización de DesignBuilder.
+\end{textoDosTercios}
+\begin{figure}[H]
+\centering
+\includegraphics[trim=530bp 65bp 4bp 200bp,clip,width=\textwidth,height=0.55\textheight,keepaspectratio]{figuras/db-trayectoria-solar.png}
+\caption{Vista solar del modelo con sus protecciones exteriores}
+\label{fig:db-solar-actual}
+\fuente{Elaboración propia mediante la visualización solar de DesignBuilder.}
+\end{figure}
+
+
+\clearpage
+\subsection{Inventario de zonas y cargas internas}
+\begin{textoDosTercios}
+La tabla siguiente presenta las áreas y volúmenes explícitamente introducidos en el IDF. Estos valores corresponden a la geometría interior empleada en los balances y pueden diferir de las áreas calculadas sobre los polígonos de las superficies. Las áreas asignadas a niveles del atrio se conservan como parámetros de zona; no deben sumarse como superficie útil ocupable del edificio.
+\end{textoDosTercios}
+\input{insumos/db-zonas-actual.tex}
+
+\clearpage
+\subsection{Control de calidad y alcance de los resultados}
+\begin{textoDosTercios}
+La revisión distingue los errores que impiden ejecutar el cálculo de las advertencias que requieren una comprobación física. Se verificaron el cierre superior del atrio, sus conexiones de aire, la ausencia de cargas internas en el vacío y la eliminación de superficies auxiliares degeneradas. También se corrigió el factor metabólico del salón de usos múltiples: el valor 0,1 reducía la actividad seleccionada de 120 a $12\,\mathrm{W/persona}$. Se restableció el factor 1 sin modificar la densidad de ocupación.
+
+La carga continua de $500\,\mathrm{W/m^2}$ del datacenter se conserva como dato pendiente de contraste. Las especificaciones describen un rack de 19UR, un switch de 48 puertos con consumo máximo aproximado de $49,3\,\mathrm{W}$ y un grabador de video previsto para operación continua \parencite[pp.~84--85, 101--102]{mogrovejoEspecificacionesElectricasGalapagos}. Estos antecedentes no acreditan por sí solos la potencia total introducida: se requiere el inventario definitivo de equipos.
+\end{textoDosTercios}
+\input{insumos/db-verificacion-actual.tex}
+
+\begin{textoDosTercios}
+Los sistemas ideales calculan energía térmica, no consumo eléctrico. La comparación de escenarios requiere confirmar las cargas, los horarios y las eficiencias, además de resolver o justificar las incidencias que afectan los resultados.
+\end{textoDosTercios}

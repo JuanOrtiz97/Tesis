@@ -150,175 +150,7 @@ Esta lectura climática orienta la construcción de la línea base. Antes de sim
 
 \clearpage
 \vspace*{1.15cm}
-\section{Modelo arquitectónico y zonificación térmica}
-
-\begin{textoDosTercios}
-La vista axonométrica del modelo en DesignBuilder permite verificar la composición volumétrica del caso base sin alterar la geometría exportada por el programa. En esta lectura se observan los cuerpos principales del edificio, los bordes perimetrales, los voladizos y los elementos verticales de protección solar. Estos componentes son relevantes porque condicionan el sombreado propio, la exposición de la envolvente y la relación entre superficies opacas, transparentes y espacios exteriores.
-\end{textoDosTercios}
-
-\IfFileExists{figuras/axonometria-designbuilder.png}{%
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.86\textwidth]{figuras/axonometria-designbuilder.png}
-  \caption{Axonometría del modelo energético del caso base en DesignBuilder}
-  \fuente{Basado en la vista axonométrica original exportada desde DesignBuilder.}
-\end{figure}
-}{}
-
-\begin{textoDosTercios}
-La zonificación de la planta baja permite relacionar la codificación del modelo IDF con la distribución arquitectónica observada en DesignBuilder. En esta planta se concentran oficinas hacia el borde occidental, áreas de recepción y servicio hacia el costado oriental, y un espacio de espera de mayor superficie que organiza la circulación interior.
-\end{textoDosTercios}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.86\textwidth]{figuras/zonificacion-planta-baja.png}
-  \caption{Zonificación térmica de la planta baja del caso base en DesignBuilder}
-  \fuente{Basado en el esquema de zonificación del modelo energético del caso base desarrollado en DesignBuilder.}
-\end{figure}
-
-\begin{textoDosTercios}
-En la primera planta alta se mantiene la organización por oficinas y circulación central, pero aparece una mayor diversidad de zonas: baños, datacenter, sala de reuniones, pasillo, vacío interior y núcleo de ascensor. Esta configuración permite diferenciar espacios de permanencia, apoyo técnico y circulación, lo cual es relevante para la asignación de cargas internas y horarios de uso en la simulación energética.
-\end{textoDosTercios}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.86\textwidth]{figuras/zonificacion-primera-planta-alta.png}
-  \caption{Zonificación de la primera planta alta antes de corregir el patio}
-  \fuente{Basado en el esquema de zonificación del modelo energético del caso base desarrollado en DesignBuilder.}
-\end{figure}
-
-\begin{textoDosTercios}
-La segunda planta alta concentra espacios de apoyo y reunión. En este nivel aparecen el baño, la cafetería, el salón de uso múltiple, la circulación, el núcleo de ascensor y el vacío interior. La lectura de esta planta es importante porque el salón de uso múltiple y las áreas bajo cubierta pueden presentar una mayor sensibilidad térmica por exposición solar directa y por acumulación de cargas internas durante eventos o reuniones.
-\end{textoDosTercios}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.78\textwidth]{figuras/zonificacion-segunda-planta-alta.png}
-  \caption{Zonificación de la segunda planta alta antes de corregir el patio}
-  \fuente{Basado en el esquema de zonificación del modelo energético del caso base desarrollado en DesignBuilder.}
-\end{figure}
-
-\begin{textoDosTercios}
-La versión inicial representa la cubierta mediante un volumen independiente denominado VACIO. Este volumen debe distinguirse del patio interior, que permanece abierto al cielo desde la primera planta alta. La revisión geométrica retira la parte de cubierta superpuesta al patio y conserva el volumen situado sobre el núcleo de escaleras y ascensor. La figura siguiente documenta la configuración anterior a esa corrección.
-\end{textoDosTercios}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.68\textwidth]{figuras/zonificacion-cubierta.png}
-  \caption{Volumen de cubierta anterior a la corrección del patio}
-  \fuente{Basado en el esquema de zonificación del modelo energético del caso base desarrollado en DesignBuilder.}
-\end{figure}
-
-\clearpage
-\vspace*{1.15cm}
-\section{Construcción del modelo energético}
-
-\subsection{Software, archivo climático y alcance del modelo}
-
-\begin{textoDosTercios}
-La línea base corresponde al estado actual del proyecto antes de aplicar estrategias de optimización. Esta línea base debe documentar los parámetros usados en el modelo: geometría, orientación, materiales, valores térmicos, infiltración, ventilación, horarios de uso, cargas internas, sombreamiento y datos climáticos.
-
-El modelo fue exportado desde DesignBuilder como archivo IDF (\textit{Input Data File}) de EnergyPlus. Este formato contiene geometría, zonas, materiales, cargas, ventilación y sistemas. El IDF previamente incorporado en la tesis contiene 28 zonas térmicas, 320 superficies constructivas detalladas, 102 superficies de fenestración, 204 superficies de sombreado y 19 objetos de climatización ideal. Estos conteos describen esa versión y no acreditan, por sí solos, la validez física del modelo. Los sistemas ideales permiten estimar cargas térmicas bajo las condiciones de control introducidas; la estimación de electricidad requiere además documentar las eficiencias y los servicios auxiliares considerados.
-\end{textoDosTercios}
-
-\begin{table}[H]
-  \centering
-  \caption{Síntesis del modelo IDF del caso base}
-  {\fontsize{9}{11}\selectfont
-  \begin{tabular}{p{5cm}p{6.5cm}}
-    \toprule
-    Parámetro revisado & Valor identificado \\
-    \midrule
-    Software de origen & DesignBuilder 7.3.1.003 / EnergyPlus 9.4.0.002 \\
-    Zonas térmicas totales & 28 zonas \\
-    Zonas con cargas y HVAC ideal & 19 zonas \\
-    Área de pisos modelada & $378,17\,\mathrm{m}^{2}$ \\
-    Área de cubierta & $136,48\,\mathrm{m}^{2}$ \\
-    Área de superficies exteriores & $650,15\,\mathrm{m}^{2}$ \\
-    Área de superficies acristaladas exteriores & $108,75\,\mathrm{m}^{2}$ \\
-    Relación ventana-muro exterior aproximada & $17,77\%$ \\
-    Sistema de aire & Modelo multizona de ventilación e infiltración y sistemas ideales de climatización \\
-    \bottomrule
-  \end{tabular}
-  }
-  \fuente{Basado en el archivo IDF del caso base exportado desde DesignBuilder.}
-\end{table}
-
-\subsection{Zonas térmicas}
-
-\begin{textoDosTercios}
-La desagregación por zonas permite reconocer qué espacios concentran mayor área útil, mayor exposición de envolvente y mayor presencia de superficies acristaladas exteriores. Esta lectura es necesaria para interpretar posteriormente las cargas térmicas y para priorizar estrategias pasivas por orientación, cubierta y relación lleno-vacío. Para facilitar la lectura, los códigos exportados por el IDF con la letra \texttt{X} como separador se presentan con guion.
-\end{textoDosTercios}
-
-{\fontsize{9}{11}\selectfont
-\begin{longtable}{p{2.8cm}p{2.2cm}p{1.7cm}p{1.9cm}p{1.7cm}p{1.9cm}}
-  \caption{Zonas térmicas del IDF anterior a la corrección del patio} \\
-  \toprule
-  Planta & Zona & Área piso & Muro ext. & Cubierta & Fen. ext. \\
-  & & $\mathrm{m}^{2}$ & $\mathrm{m}^{2}$ & $\mathrm{m}^{2}$ & $\mathrm{m}^{2}$ \\
-  \midrule
-  \endfirsthead
-  \caption[]{Zonas térmicas del IDF anterior a la corrección del patio (continuación)} \\
-  \toprule
-  Planta & Zona & Área piso & Muro ext. & Cubierta & Fen. ext. \\
-  & & $\mathrm{m}^{2}$ & $\mathrm{m}^{2}$ & $\mathrm{m}^{2}$ & $\mathrm{m}^{2}$ \\
-  \midrule
-  \endhead
-  \bottomrule
-  \endfoot
-  Planta baja & ASCENSOR & $3,18$ & $0,00$ & $0,00$ & $0,00$ \\
-  Planta baja & PB-BA-01 & $5,59$ & $5,83$ & $0,00$ & $0,00$ \\
-  Planta baja & PB-BO-01 & $2,76$ & $4,71$ & $0,00$ & $0,00$ \\
-  Planta baja & PB-ES-01 & $6,60$ & $10,21$ & $0,00$ & $0,00$ \\
-  Planta baja & PB-OF-01 & $14,37$ & $26,51$ & $0,00$ & $4,08$ \\
-  Planta baja & PB-OF-02 & $10,44$ & $10,02$ & $0,00$ & $4,08$ \\
-  Planta baja & PB-OF-03 & $14,88$ & $27,17$ & $0,00$ & $4,08$ \\
-  Planta baja & PB-RE-01 & $10,76$ & $22,63$ & $0,00$ & $0,00$ \\
-  Planta baja & PB-SE-01 & $57,43$ & $51,63$ & $0,00$ & $10,85$ \\
-  Primera planta alta & 1PA-BA-01 & $4,92$ & $5,64$ & $0,00$ & $3,98$ \\
-  Primera planta alta & 1PA-BA-02 & $6,17$ & $17,84$ & $0,00$ & $1,92$ \\
-  Primera planta alta & 1PA-DC & $9,14$ & $9,56$ & $0,00$ & $0,00$ \\
-  Primera planta alta & 1PA-ES & $10,91$ & $15,32$ & $0,00$ & $0,00$ \\
-  Primera planta alta & 1PA-OF-01 & $17,48$ & $32,52$ & $0,00$ & $10,99$ \\
-  Primera planta alta & 1PA-OF-02 & $12,03$ & $11,64$ & $12,03$ & $9,03$ \\
-  Primera planta alta & 1PA-OF-03 & $18,66$ & $37,84$ & $18,66$ & $6,93$ \\
-  Primera planta alta & 1PA-PAS & $23,75$ & $4,73$ & $4,57$ & $3,21$ \\
-  Primera planta alta & 1PA-SR & $14,76$ & $27,32$ & $14,76$ & $7,47$ \\
-  Primera planta alta & ASCENSOR & $2,83$ & $0,00$ & $0,00$ & $0,00$ \\
-  Primera planta alta & VACIO & $15,81$ & $15,00$ & $0,00$ & $1,78$ \\
-  Segunda planta alta & 2PA-BA-01 & $5,56$ & $16,39$ & $5,56$ & $2,16$ \\
-  Segunda planta alta & 2PA-CAF & $6,75$ & $8,78$ & $6,75$ & $0,00$ \\
-  Segunda planta alta & 2PA-ES & $10,91$ & $26,00$ & $6,33$ & $0,00$ \\
-  Segunda planta alta & 2PA-PAS & $10,08$ & $7,83$ & $0,21$ & $1,85$ \\
-  Segunda planta alta & 2PA-SUM & $34,50$ & $45,11$ & $34,50$ & $18,82$ \\
-  Segunda planta alta & ASCENSOR & $2,83$ & $0,00$ & $0,00$ & $0,00$ \\
-  Segunda planta alta & VACIO & $15,81$ & $27,54$ & $3,84$ & $13,45$ \\
-  Cubierta & VACIO & $29,25$ & $35,44$ & $29,25$ & $4,09$ \\
-  \midrule
-  Total & 28 zonas & $378,17$ & $514,60$ & $136,48$ & $108,75$ \\
-\end{longtable}
-}
-\fuente{Basado en el archivo IDF del caso base exportado desde DesignBuilder.}
-
-\subsection{Sistemas, supuestos y limitaciones}
-
-\begin{textoDosTercios}
-La revisión de trazabilidad distingue el IDF previamente documentado, la exportación diaria \texttt{Datos Caso Base3.csv} y la copia del modelo ejecutada el 12 de septiembre de 2026. La corrida de revisión abarca del 1 de enero al 31 de diciembre con calendario 2025 y cuatro pasos de cálculo por hora. El calendario organiza los horarios de uso; no convierte el TMYx 2011--2025 en un registro meteorológico observado exclusivamente en 2025. Se habilitaron salidas mensuales, diarias y horarias.
-
-La copia anterior a la corrección del patio mantiene 28 zonas y 320 superficies constructivas, pero contiene 101 superficies de fenestración, 28 objetos de climatización ideal y 33 objetos de cargas eléctricas de tipo \texttt{OtherEquipment}. La presencia de un objeto de climatización no implica que la zona esté acondicionada durante todo el año: también intervienen sus horarios de disponibilidad y consignas. Estas diferencias impiden atribuir automáticamente los resultados de la exportación anterior a la versión revisada.
-
-El EPW fija una referencia de UTC$-6$ y una elevación de estación de $18,9\,\mathrm{m}$. La entrada original del modelo indicaba UTC$-5$ y $9,8\,\mathrm{m}$; el registro del motor informa que adopta la localización del archivo meteorológico. En la copia de revisión se ajustó la zona horaria a UTC$-6$ y se desactivó el horario de verano. Se conservó la elevación del proyecto, pues la altitud de la estación no demuestra la cota del edificio.
-
-La corrida inicial de revisión terminó en 2 minutos y 42 segundos, con 214 advertencias y cuatro errores severos. Las incidencias incluyen superficies auxiliares degeneradas en la red de aire del vacío de primera planta, cinco zonas cuyo cierre geométrico requiere revisión y valores fuera de rango durante el dimensionamiento. Se identificó además una actividad de $12\,\mathrm{W/persona}$ en el salón de usos múltiples y una carga de equipos de $500\,\mathrm{W/m^2}$ con horario continuo en el datacenter. La primera requiere corregir su correspondencia con la actividad del recinto; la segunda debe contrastarse con el inventario de equipos. Por tanto, la finalización del cálculo no equivale todavía a la validación del caso base.
-
-La segunda corrida anual, con diagnóstico ampliado, concluyó en 2 minutos y 57 segundos y mantuvo cuatro errores severos. Sus 4736 advertencias incluyen el detalle adicional activado, por lo que su número no es directamente comparable con las 214 de la primera corrida. El cierre geométrico pendiente se localiza en las zonas PBXBAX01 de planta baja, 1PAXES, 1PAXPAS y VACIO de primera planta, y 2PAXSUM de segunda planta. Las dos superficies auxiliares problemáticas se denominan \texttt{EXTRA CRACK 1} y \texttt{EXTRA CRACK 2}.
-
-La tercera corrida de diagnóstico incorpora el patio como espacio exterior desde la primera planta alta y conserva el recinto de planta baja situado debajo. Se retiraron las dos zonas térmicas ficticias del patio y se recortó la cubierta superpuesta, con lo que el modelo pasó de 28 a 26 zonas. El cálculo anual terminó en 2 minutos y 34 segundos, con 4704 advertencias y ningún error severo; ya no generó las superficies auxiliares \texttt{EXTRA CRACK}. Persisten advertencias de cierre en PBXBAX01, 1PAXES, 1PAXPAS y 2PAXSUM, además de las relativas a actividad y dimensionamiento. La comprobación detectó también una asignación automática de cubierta sobre la losa bajo el patio, corregida en la siguiente revisión.
-
-La cuarta corrida conservó la composición original de esa losa, con porcelanato hacia el patio y yeso hacia el recinto inferior, y amplió de 15000 a 50000 el límite de figuras del cálculo de sombras. Concluyó en 3 minutos y 24 segundos, con 2758 advertencias y ningún error severo. Persisten 2441 avisos de saturación del cálculo de sombras y valores fuera de rango durante el dimensionamiento. Por ello, la desaparición de los errores severos acredita una mejora del modelo, pero estas corridas aún no constituyen la base definitiva para calcular ahorros.
-
-Las especificaciones eléctricas describen un rack de 19UR, un switch de 48 puertos con consumo máximo aproximado de $49,3\,\mathrm{W}$ y un grabador de video con disco diseñado para operación continua \parencite[pp.~84--85, 101--102]{mogrovejoEspecificacionesElectricasGalapagos}. Esta documentación aporta una base para reconstruir la carga del cuarto de telecomunicaciones, pero no acredita por sí sola los $500\,\mathrm{W/m^2}$ asignados: deben completarse las potencias, cantidades y horarios de los equipos efectivamente previstos.
-\end{textoDosTercios}
+\input{insumos/modelo-designbuilder-revisado.tex}
 
 \clearpage
 \vspace*{1.15cm}
@@ -340,7 +172,9 @@ La lectura del componente muestra tres puntos criticos. Primero, la transmitanci
 \vspace*{1.15cm}
 \section{Resultados del caso base}
 
-\subsection{Síntesis del caso base}
+\input{insumos/db-resultados-revisados.tex}
+
+\subsection{Antecedentes de la exportación previa}
 
 \begin{textoDosTercios}
 Las tablas siguientes resumen la exportación diaria previa \texttt{Datos Caso Base3.csv}: enfriamiento sensible, electricidad estimada, temperaturas, ventilación y balances mensuales y anuales. Se conservan como antecedente cuantitativo del diagnóstico, pendiente de sustitución por una corrida corregida y verificada. No corresponden a los resultados de la revisión ejecutada el 12 de septiembre de 2026 y no deben mezclarse con ella para calcular ahorros entre escenarios.
@@ -365,6 +199,10 @@ La serie diaria previa presenta una temperatura operativa media anual de $26,74\
 \end{textoDosTercios}
 
 \subsection{Iluminancia natural}
+\begin{textoDosTercios}
+Las imágenes de esta subsección corresponden a la configuración anterior del modelo. Se conservan como antecedente; el cierre y la ventilación del atrio requieren actualizar el cálculo lumínico antes de adoptar estas salidas como resultados definitivos.
+\end{textoDosTercios}
+
 
 \begin{textoDosTercios}
 Los mapas de iluminancia exportados desde DesignBuilder permiten revisar la distribución espacial de luz natural por nivel. La escala gráfica está expresada en lux y conserva la salida original del programa, por lo que las figuras se incorporan sin edición para mantener la lectura cromática y numérica generada por la simulación.

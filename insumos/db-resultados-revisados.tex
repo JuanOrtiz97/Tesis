@@ -1,0 +1,38 @@
+\subsection{Resultados provisionales del modelo revisado}
+\begin{textoDosTercios}
+La corrida del 12 de septiembre de 2026, posterior al cierre del atrio y a la corrección de la actividad del salón, completó 8.760 registros horarios por variable y zona. EnergyPlus informó 318 advertencias y ningún error severo. Persiste una incidencia psicrométrica durante el dimensionamiento de invierno; por ello, estas salidas documentan el avance del modelo y no constituyen todavía una base definitiva para calcular ahorros.
+\end{textoDosTercios}
+\begin{table}[H]
+\centering
+\caption{Energía térmica anual de la corrida revisada: resultados provisionales}
+\label{tab:db-energia-revisada}
+{\small\begin{tabular}{lr}
+\toprule
+Variable & Energía ($\mathrm{kWh/año}$) \\
+\midrule
+Enfriamiento sensible & 59 018,63 \\
+Enfriamiento total & 84 759,41 \\
+\bottomrule
+\end{tabular}}
+\fuente{Elaboración propia a partir de eplusout.eso de la corrida 09. Integración de tasas horarias de los sistemas ideales; el total incluye el componente sensible y no se suma a él.}
+\end{table}
+\begin{textoDosTercios}
+Las magnitudes anteriores representan energía térmica retirada por el aire de suministro de los sistemas ideales. No expresan consumo eléctrico. Las temperaturas siguientes se resumen sobre todas las horas del año, sin filtrado por ocupación; por tanto, no equivalen a porcentajes de cumplimiento de confort.
+\end{textoDosTercios}
+\begin{table}[H]
+\centering
+\caption{Temperatura operativa anual en el atrio y el salón: resultados provisionales}
+\label{tab:db-temperatura-revisada}
+{\small\begin{tabular}{lrrr}
+\toprule
+Zona & Media ($^\circ$C) & Mínima ($^\circ$C) & Máxima ($^\circ$C) \\
+\midrule
+Atrio, primera planta alta & 27,36 & 22,64 & 34,19 \\
+Atrio, segunda planta alta & 26,99 & 22,02 & 34,37 \\
+Atrio, volumen superior & 25,58 & 20,56 & 32,24 \\
+Salón de usos múltiples & 27,02 & 22,22 & 36,00 \\
+\bottomrule
+\end{tabular}}
+\fuente{Elaboración propia a partir de las 8.760 temperaturas operativas horarias de cada zona en eplusout.eso.}
+\end{table}
+\clearpage

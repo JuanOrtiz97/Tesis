@@ -1,0 +1,1037 @@
+{
+  "environments": [
+    "SAN CRISTOBAL (01-01:31-12),  -0.92, -89.62,  -6.00,  18.90"
+  ],
+  "series": [
+    {
+      "id": "4255",
+      "zone": "PLANTABAJA:PBXESX01",
+      "variable": "Zone Operative Temperature [C]",
+      "n": 8760,
+      "mean": 25.99289383744838,
+      "min": 22.536329262696807,
+      "max": 30.255190348857738,
+      "kWh": null
+    },
+    {
+      "id": "4263",
+      "zone": "PLANTABAJA:PBXBOX01",
+      "variable": "Zone Operative Temperature [C]",
+      "n": 8760,
+      "mean": 26.156915519584953,
+      "min": 22.97794938299577,
+      "max": 30.135801437712416,
+      "kWh": null
+    },
+    {
+      "id": "4271",
+      "zone": "PLANTABAJA:PBXBAX01",
+      "variable": "Zone Operative Temperature [C]",
+      "n": 8760,
+      "mean": 26.385048318698328,
+      "min": 23.130021714841757,
+      "max": 30.163167291599052,
+      "kWh": null
+    },
+    {
+      "id": "4279",
+      "zone": "PLANTABAJA:PBXREX01",
+      "variable": "Zone Operative Temperature [C]",
+      "n": 8760,
+      "mean": 25.99734261829145,
+      "min": 22.048801556177192,
+      "max": 30.457919262873187,
+      "kWh": null
+    },
+    {
+      "id": "4287",
+      "zone": "PLANTABAJA:ASCENSOR",
+      "variable": "Zone Operative Temperature [C]",
+      "n": 8760,
+      "mean": 26.070749379437125,
+      "min": 23.213105148031683,
+      "max": 29.04739692113917,
+      "kWh": null
+    },
+    {
+      "id": "4295",
+      "zone": "PLANTABAJA:PBXSEX01",
+      "variable": "Zone Operative Temperature [C]",
+      "n": 8760,
+      "mean": 26.006761976823586,
+      "min": 21.931568884597127,
+      "max": 30.50509813584863,
+      "kWh": null
+    },
+    {
+      "id": "4303",
+      "zone": "PLANTABAJA:PBXOFX03",
+      "variable": "Zone Operative Temperature [C]",
+      "n": 8760,
+      "mean": 26.346723794341223,
+      "min": 22.1082689085902,
+      "max": 33.79485480725354,
+      "kWh": null
+    },
+    {
+      "id": "4311",
+      "zone": "PLANTABAJA:PBXOFX02",
+      "variable": "Zone Operative Temperature [C]",
+      "n": 8760,
+      "mean": 26.468483431653713,
+      "min": 22.372295290757265,
+      "max": 34.335078077635934,
+      "kWh": null
+    },
+    {
+      "id": "4319",
+      "zone": "PLANTABAJA:PBXOFX01",
+      "variable": "Zone Operative Temperature [C]",
+      "n": 8760,
+      "mean": 26.622016755701623,
+      "min": 22.527410575994256,
+      "max": 33.160495193100594,
+      "kWh": null
+    },
+    {
+      "id": "4327",
+      "zone": "PRIMERAPLANTAALTA:1PAXDC",
+      "variable": "Zone Operative Temperature [C]",
+      "n": 8760,
+      "mean": 24.098433151395742,
+      "min": 23.068889843777498,
+      "max": 25.38121519303152,
+      "kWh": null
+    },
+    {
+      "id": "4335",
+      "zone": "PRIMERAPLANTAALTA:1PAXES",
+      "variable": "Zone Operative Temperature [C]",
+      "n": 8760,
+      "mean": 26.80447582971298,
+      "min": 23.047131050267712,
+      "max": 31.221461467763405,
+      "kWh": null
+    },
+    {
+      "id": "4343",
+      "zone": "PRIMERAPLANTAALTA:ASCENSOR",
+      "variable": "Zone Operative Temperature [C]",
+      "n": 8760,
+      "mean": 26.534631450852157,
+      "min": 23.40996484444806,
+      "max": 30.13209354883239,
+      "kWh": null
+    },
+    {
+      "id": "4351",
+      "zone": "PRIMERAPLANTAALTA:1PAXSR",
+      "variable": "Zone Operative Temperature [C]",
+      "n": 8760,
+      "mean": 26.722116767979365,
+      "min": 22.523708314413785,
+      "max": 32.10446393622536,
+      "kWh": null
+    },
+    {
+      "id": "4359",
+      "zone": "PRIMERAPLANTAALTA:1PAXPAS",
+      "variable": "Zone Operative Temperature [C]",
+      "n": 8760,
+      "mean": 27.161888786172224,
+      "min": 23.04687494301835,
+      "max": 31.645249759777645,
+      "kWh": null
+    },
+    {
+      "id": "4367",
+      "zone": "PRIMERAPLANTAALTA:1PAXOFX02",
+      "variable": "Zone Operative Temperature [C]",
+      "n": 8760,
+      "mean": 26.59861849140393,
+      "min": 22.547822874728585,
+      "max": 32.11753486794486,
+      "kWh": null
+    },
+    {
+      "id": "4375",
+      "zone": "PRIMERAPLANTAALTA:1PAXBAX02",
+      "variable": "Zone Operative Temperature [C]",
+      "n": 8760,
+      "mean": 27.432681061434373,
+      "min": 22.630201763911135,
+      "max": 34.82043808617781,
+      "kWh": null
+    },
+    {
+      "id": "4383",
+      "zone": "PRIMERAPLANTAALTA:1PAXBAX01",
+      "variable": "Zone Operative Temperature [C]",
+      "n": 8760,
+      "mean": 27.664900966095026,
+      "min": 23.146712569171097,
+      "max": 35.51136228826456,
+      "kWh": null
+    },
+    {
+      "id": "4391",
+      "zone": "PRIMERAPLANTAALTA:ATRIO1PA",
+      "variable": "Zone Operative Temperature [C]",
+      "n": 8760,
+      "mean": 27.36274958703605,
+      "min": 22.64461881675219,
+      "max": 34.18942508113435,
+      "kWh": null
+    },
+    {
+      "id": "4399",
+      "zone": "PRIMERAPLANTAALTA:1PAXOFX03",
+      "variable": "Zone Operative Temperature [C]",
+      "n": 8760,
+      "mean": 26.371532541878697,
+      "min": 21.813319098497605,
+      "max": 32.386041032764176,
+      "kWh": null
+    },
+    {
+      "id": "4407",
+      "zone": "PRIMERAPLANTAALTA:1PAXOFX01",
+      "variable": "Zone Operative Temperature [C]",
+      "n": 8760,
+      "mean": 26.860929655270372,
+      "min": 21.995745775394692,
+      "max": 36.429245661201925,
+      "kWh": null
+    },
+    {
+      "id": "4415",
+      "zone": "SEGUNDAPLANTAALTA:2PAXBAX01",
+      "variable": "Zone Operative Temperature [C]",
+      "n": 8760,
+      "mean": 27.945432052300227,
+      "min": 22.359030351442915,
+      "max": 36.66039168325083,
+      "kWh": null
+    },
+    {
+      "id": "4423",
+      "zone": "SEGUNDAPLANTAALTA:2PAXCAF",
+      "variable": "Zone Operative Temperature [C]",
+      "n": 8760,
+      "mean": 27.067489362393843,
+      "min": 22.669349687898144,
+      "max": 33.7730256065207,
+      "kWh": null
+    },
+    {
+      "id": "4431",
+      "zone": "SEGUNDAPLANTAALTA:2PAXES",
+      "variable": "Zone Operative Temperature [C]",
+      "n": 8760,
+      "mean": 26.61046068780441,
+      "min": 22.331548700261038,
+      "max": 31.846387987784464,
+      "kWh": null
+    },
+    {
+      "id": "4439",
+      "zone": "SEGUNDAPLANTAALTA:2PAXSUM",
+      "variable": "Zone Operative Temperature [C]",
+      "n": 8760,
+      "mean": 27.01639236449791,
+      "min": 22.21994715527539,
+      "max": 35.9972408445193,
+      "kWh": null
+    },
+    {
+      "id": "4447",
+      "zone": "SEGUNDAPLANTAALTA:ASCENSOR",
+      "variable": "Zone Operative Temperature [C]",
+      "n": 8760,
+      "mean": 26.607587879970517,
+      "min": 23.034597598448485,
+      "max": 30.770284519062518,
+      "kWh": null
+    },
+    {
+      "id": "4455",
+      "zone": "SEGUNDAPLANTAALTA:2PAXPAS",
+      "variable": "Zone Operative Temperature [C]",
+      "n": 8760,
+      "mean": 26.8769742900578,
+      "min": 22.527803084195202,
+      "max": 32.584161978816645,
+      "kWh": null
+    },
+    {
+      "id": "4463",
+      "zone": "SEGUNDAPLANTAALTA:ATRIO2PA",
+      "variable": "Zone Operative Temperature [C]",
+      "n": 8760,
+      "mean": 26.985497916350948,
+      "min": 22.019606210153253,
+      "max": 34.374817158536324,
+      "kWh": null
+    },
+    {
+      "id": "4471",
+      "zone": "CUBIERTA:ATRIOSUPERIOR",
+      "variable": "Zone Operative Temperature [C]",
+      "n": 8760,
+      "mean": 25.58415413234603,
+      "min": 20.560726624410343,
+      "max": 32.24088484155555,
+      "kWh": null
+    },
+    {
+      "id": "7836",
+      "zone": "PLANTABAJA:PBXESX01 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Heating Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "7840",
+      "zone": "PLANTABAJA:PBXESX01 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Sensible Cooling Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "7844",
+      "zone": "PLANTABAJA:PBXESX01 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Cooling Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "7866",
+      "zone": "PLANTABAJA:PBXBOX01 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Heating Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "7870",
+      "zone": "PLANTABAJA:PBXBOX01 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Sensible Cooling Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "7874",
+      "zone": "PLANTABAJA:PBXBOX01 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Cooling Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "7896",
+      "zone": "PLANTABAJA:PBXBAX01 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Heating Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "7900",
+      "zone": "PLANTABAJA:PBXBAX01 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Sensible Cooling Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "7904",
+      "zone": "PLANTABAJA:PBXBAX01 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Cooling Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "7926",
+      "zone": "PLANTABAJA:PBXREX01 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Heating Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "7930",
+      "zone": "PLANTABAJA:PBXREX01 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Sensible Cooling Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "7934",
+      "zone": "PLANTABAJA:PBXREX01 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Cooling Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "7956",
+      "zone": "PLANTABAJA:ASCENSOR IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Heating Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "7960",
+      "zone": "PLANTABAJA:ASCENSOR IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Sensible Cooling Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "7964",
+      "zone": "PLANTABAJA:ASCENSOR IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Cooling Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "7986",
+      "zone": "PLANTABAJA:PBXSEX01 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Heating Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "7990",
+      "zone": "PLANTABAJA:PBXSEX01 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Sensible Cooling Rate [W]",
+      "n": 8760,
+      "mean": 596.5996443434985,
+      "min": 0.0,
+      "max": 5488.636621767068,
+      "kWh": 5226.212884449047
+    },
+    {
+      "id": "7994",
+      "zone": "PLANTABAJA:PBXSEX01 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Cooling Rate [W]",
+      "n": 8760,
+      "mean": 1348.2641146830322,
+      "min": 0.0,
+      "max": 13117.707647291498,
+      "kWh": 11810.793644623362
+    },
+    {
+      "id": "8016",
+      "zone": "PLANTABAJA:PBXOFX03 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Heating Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "8020",
+      "zone": "PLANTABAJA:PBXOFX03 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Sensible Cooling Rate [W]",
+      "n": 8760,
+      "mean": 186.79851327022243,
+      "min": 0.0,
+      "max": 1473.3818005645064,
+      "kWh": 1636.3549762471487
+    },
+    {
+      "id": "8024",
+      "zone": "PLANTABAJA:PBXOFX03 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Cooling Rate [W]",
+      "n": 8760,
+      "mean": 349.56643678512285,
+      "min": 0.0,
+      "max": 2687.1457339520935,
+      "kWh": 3062.2019862376765
+    },
+    {
+      "id": "8046",
+      "zone": "PLANTABAJA:PBXOFX02 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Heating Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "8050",
+      "zone": "PLANTABAJA:PBXOFX02 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Sensible Cooling Rate [W]",
+      "n": 8760,
+      "mean": 147.30278907605987,
+      "min": 0.0,
+      "max": 1157.702101926571,
+      "kWh": 1290.3724323062843
+    },
+    {
+      "id": "8054",
+      "zone": "PLANTABAJA:PBXOFX02 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Cooling Rate [W]",
+      "n": 8760,
+      "mean": 270.7235554219615,
+      "min": 0.0,
+      "max": 2052.325595286755,
+      "kWh": 2371.538345496383
+    },
+    {
+      "id": "8076",
+      "zone": "PLANTABAJA:PBXOFX01 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Heating Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "8080",
+      "zone": "PLANTABAJA:PBXOFX01 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Sensible Cooling Rate [W]",
+      "n": 8760,
+      "mean": 173.4644393405861,
+      "min": 0.0,
+      "max": 1425.8288318295,
+      "kWh": 1519.548488623534
+    },
+    {
+      "id": "8084",
+      "zone": "PLANTABAJA:PBXOFX01 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Cooling Rate [W]",
+      "n": 8760,
+      "mean": 319.70299664652464,
+      "min": 0.0,
+      "max": 2423.150706594775,
+      "kWh": 2800.598250623556
+    },
+    {
+      "id": "8106",
+      "zone": "PRIMERAPLANTAALTA:1PAXDC IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Heating Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "8110",
+      "zone": "PRIMERAPLANTAALTA:1PAXDC IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Sensible Cooling Rate [W]",
+      "n": 8760,
+      "mean": 4192.16224437086,
+      "min": 3697.9583125860404,
+      "max": 4847.0040324484835,
+      "kWh": 36723.341260688736
+    },
+    {
+      "id": "8114",
+      "zone": "PRIMERAPLANTAALTA:1PAXDC IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Cooling Rate [W]",
+      "n": 8760,
+      "mean": 4588.597121198687,
+      "min": 3824.82944827461,
+      "max": 6007.961737102817,
+      "kWh": 40196.110781700496
+    },
+    {
+      "id": "8136",
+      "zone": "PRIMERAPLANTAALTA:1PAXES IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Heating Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "8140",
+      "zone": "PRIMERAPLANTAALTA:1PAXES IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Sensible Cooling Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "8144",
+      "zone": "PRIMERAPLANTAALTA:1PAXES IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Cooling Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "8166",
+      "zone": "PRIMERAPLANTAALTA:ASCENSOR IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Heating Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "8170",
+      "zone": "PRIMERAPLANTAALTA:ASCENSOR IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Sensible Cooling Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "8174",
+      "zone": "PRIMERAPLANTAALTA:ASCENSOR IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Cooling Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "8196",
+      "zone": "PRIMERAPLANTAALTA:1PAXSR IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Heating Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "8200",
+      "zone": "PRIMERAPLANTAALTA:1PAXSR IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Sensible Cooling Rate [W]",
+      "n": 8760,
+      "mean": 180.22124635863935,
+      "min": 0.0,
+      "max": 1288.3671119811004,
+      "kWh": 1578.7381181016806
+    },
+    {
+      "id": "8204",
+      "zone": "PRIMERAPLANTAALTA:1PAXSR IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Cooling Rate [W]",
+      "n": 8760,
+      "mean": 348.5508915303456,
+      "min": 0.0,
+      "max": 2545.647052004871,
+      "kWh": 3053.3058098058277
+    },
+    {
+      "id": "8226",
+      "zone": "PRIMERAPLANTAALTA:1PAXPAS IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Heating Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "8230",
+      "zone": "PRIMERAPLANTAALTA:1PAXPAS IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Sensible Cooling Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "8234",
+      "zone": "PRIMERAPLANTAALTA:1PAXPAS IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Cooling Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "8256",
+      "zone": "PRIMERAPLANTAALTA:1PAXOFX02 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Heating Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "8260",
+      "zone": "PRIMERAPLANTAALTA:1PAXOFX02 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Sensible Cooling Rate [W]",
+      "n": 8760,
+      "mean": 178.75874332303414,
+      "min": 0.0,
+      "max": 1190.817725605378,
+      "kWh": 1565.926591509779
+    },
+    {
+      "id": "8264",
+      "zone": "PRIMERAPLANTAALTA:1PAXOFX02 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Cooling Rate [W]",
+      "n": 8760,
+      "mean": 338.7690179451965,
+      "min": 0.0,
+      "max": 2305.687580996015,
+      "kWh": 2967.616597199921
+    },
+    {
+      "id": "8286",
+      "zone": "PRIMERAPLANTAALTA:1PAXBAX02 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Heating Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "8290",
+      "zone": "PRIMERAPLANTAALTA:1PAXBAX02 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Sensible Cooling Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "8294",
+      "zone": "PRIMERAPLANTAALTA:1PAXBAX02 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Cooling Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "8316",
+      "zone": "PRIMERAPLANTAALTA:1PAXBAX01 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Heating Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "8320",
+      "zone": "PRIMERAPLANTAALTA:1PAXBAX01 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Sensible Cooling Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "8324",
+      "zone": "PRIMERAPLANTAALTA:1PAXBAX01 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Cooling Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "8346",
+      "zone": "PRIMERAPLANTAALTA:1PAXOFX03 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Heating Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "8350",
+      "zone": "PRIMERAPLANTAALTA:1PAXOFX03 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Sensible Cooling Rate [W]",
+      "n": 8760,
+      "mean": 262.125019711632,
+      "min": 0.0,
+      "max": 1961.2742463130705,
+      "kWh": 2296.215172673896
+    },
+    {
+      "id": "8354",
+      "zone": "PRIMERAPLANTAALTA:1PAXOFX03 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Cooling Rate [W]",
+      "n": 8760,
+      "mean": 513.758713774894,
+      "min": 0.0,
+      "max": 4144.149877757866,
+      "kWh": 4500.5263326680715
+    },
+    {
+      "id": "8376",
+      "zone": "PRIMERAPLANTAALTA:1PAXOFX01 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Heating Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "8380",
+      "zone": "PRIMERAPLANTAALTA:1PAXOFX01 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Sensible Cooling Rate [W]",
+      "n": 8760,
+      "mean": 282.18974514379255,
+      "min": 0.0,
+      "max": 2332.7170563242735,
+      "kWh": 2471.982167459623
+    },
+    {
+      "id": "8384",
+      "zone": "PRIMERAPLANTAALTA:1PAXOFX01 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Cooling Rate [W]",
+      "n": 8760,
+      "mean": 507.7231547521575,
+      "min": 0.0,
+      "max": 4075.604148441355,
+      "kWh": 4447.6548356288995
+    },
+    {
+      "id": "8406",
+      "zone": "SEGUNDAPLANTAALTA:2PAXBAX01 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Heating Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "8410",
+      "zone": "SEGUNDAPLANTAALTA:2PAXBAX01 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Sensible Cooling Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "8414",
+      "zone": "SEGUNDAPLANTAALTA:2PAXBAX01 IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Cooling Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "8436",
+      "zone": "SEGUNDAPLANTAALTA:2PAXCAF IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Heating Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "8440",
+      "zone": "SEGUNDAPLANTAALTA:2PAXCAF IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Sensible Cooling Rate [W]",
+      "n": 8760,
+      "mean": 140.21909779925713,
+      "min": 0.0,
+      "max": 1041.4526880365881,
+      "kWh": 1228.3192967214925
+    },
+    {
+      "id": "8444",
+      "zone": "SEGUNDAPLANTAALTA:2PAXCAF IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Cooling Rate [W]",
+      "n": 8760,
+      "mean": 301.60082908547497,
+      "min": 0.0,
+      "max": 2811.8039980194862,
+      "kWh": 2642.023262788761
+    },
+    {
+      "id": "8466",
+      "zone": "SEGUNDAPLANTAALTA:2PAXES IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Heating Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "8470",
+      "zone": "SEGUNDAPLANTAALTA:2PAXES IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Sensible Cooling Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "8474",
+      "zone": "SEGUNDAPLANTAALTA:2PAXES IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Cooling Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "8496",
+      "zone": "SEGUNDAPLANTAALTA:2PAXSUM IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Heating Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "8500",
+      "zone": "SEGUNDAPLANTAALTA:2PAXSUM IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Sensible Cooling Rate [W]",
+      "n": 8760,
+      "mean": 397.44548612535766,
+      "min": 0.0,
+      "max": 3564.1707548681356,
+      "kWh": 3481.622458458133
+    },
+    {
+      "id": "8504",
+      "zone": "SEGUNDAPLANTAALTA:2PAXSUM IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Cooling Rate [W]",
+      "n": 8760,
+      "mean": 788.4750007282407,
+      "min": 0.0,
+      "max": 7087.327971069547,
+      "kWh": 6907.041006379389
+    },
+    {
+      "id": "8526",
+      "zone": "SEGUNDAPLANTAALTA:ASCENSOR IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Heating Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "8530",
+      "zone": "SEGUNDAPLANTAALTA:ASCENSOR IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Sensible Cooling Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "8534",
+      "zone": "SEGUNDAPLANTAALTA:ASCENSOR IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Cooling Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "8556",
+      "zone": "SEGUNDAPLANTAALTA:2PAXPAS IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Heating Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "8560",
+      "zone": "SEGUNDAPLANTAALTA:2PAXPAS IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Sensible Cooling Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    },
+    {
+      "id": "8564",
+      "zone": "SEGUNDAPLANTAALTA:2PAXPAS IDEAL LOADS AIR",
+      "variable": "Zone Ideal Loads Supply Air Total Cooling Rate [W]",
+      "n": 8760,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "kWh": 0.0
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+\begin{table}[H]
+\centering
+\caption{Verificaciones y datos pendientes del modelo revisado}
+\label{tab:db-verificacion}
+{\small\singlespacing\renewcommand{\arraystretch}{1.10}
+\begin{tabular}{p{3.7cm}p{9.3cm}}
+\toprule
+Comprobación & Estado y alcance \\
+\midrule
+Atrio cubierto & Cierre superior y pasos abiertos incorporados; cargas internas nulas. \\
+Protecciones solares & Método por píxeles y ventanas individuales comprobados en el IDF. \\
+Actividad del SUM & Corregida a 120 W/persona, conservando la densidad de ocupación. \\
+Resolución temporal & Seis pasos por hora; contraste de estabilidad en la nueva corrida. \\
+Cierre geométrico & Tres avisos se explican por subdivisiones de aristas; persisten encuentros de milímetros por revisar. \\
+Red de aire & Dos aberturas horizontales utilizan una relación geométrica por defecto; requiere comprobar su representación. \\
+Datacenter & 500 W/$\mathrm{m^2}$ continuos: pendiente del inventario de equipos. \\
+Dimensionamiento & Confirmar calefacción y el día de diseño de invierno antes de validar capacidades. \\
+\bottomrule
+\end{tabular}}
+\fuente{Elaboración propia a partir de la revisión del IDF y de los registros de EnergyPlus.}
+\end{table}
