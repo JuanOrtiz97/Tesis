@@ -14,7 +14,7 @@
 \begin{textoDosTercios}
 Este capítulo aplica la metodología al proyecto de la Defensoría del Pueblo en San Cristóbal. Su función es describir el caso de estudio, analizar el contexto climático, documentar la construcción del modelo energético y presentar la evaluación del caso base. De esta forma, el capítulo establece el diagnóstico que servirá como punto de partida para los escenarios de optimización del capítulo siguiente.
 
-El análisis inicial describe las condiciones arquitectónicas, climáticas y constructivas del caso de estudio. Esta sección deberá incluir implantación, orientación, programa arquitectónico, sistema constructivo, materiales predominantes, configuración de envolvente, relación lleno-vacío, protecciones solares existentes y criterios de ventilación natural.
+El edificio comprende planta baja, primera y segunda plantas altas, además de un volumen de cubierta representado en el modelo. El programa incorpora oficinas, recepción, espera, servicios higiénicos, circulaciones, sala de reuniones, datacenter, cafetería y salón de usos múltiples. La presencia de vacíos interiores, ascensores y espacios técnicos exige distinguir las zonas de permanencia de las zonas de apoyo al asignar ocupación, cargas internas y ventilación. La envolvente incorpora superficies opacas, acristalamientos, voladizos y elementos verticales de protección solar, cuya interacción determina la exposición térmica de cada recinto.
 
 El objetivo de esta sección es reconocer las condiciones iniciales que inciden en el desempeño ambiental del proyecto. En el contexto de Galápagos, la lectura del edificio debe considerar no solo el consumo energético, sino también las restricciones de transporte, mantenimiento, disponibilidad material y fragilidad ambiental.
 \end{textoDosTercios}
@@ -218,7 +218,7 @@ La cubierta se modela como un espacio vacío independiente. Aunque no correspond
 \begin{textoDosTercios}
 La línea base corresponde al estado actual del proyecto antes de aplicar estrategias de optimización. Esta línea base debe documentar los parámetros usados en el modelo: geometría, orientación, materiales, valores térmicos, infiltración, ventilación, horarios de uso, cargas internas, sombreamiento y datos climáticos.
 
-El modelo base fue exportado desde DesignBuilder como archivo IDF (\textit{Input Data File}) de EnergyPlus. Este formato contiene la información de entrada del modelo energético, incluyendo geometría, zonas, materiales, cargas, ventilación y sistemas. La revisión del archivo permite identificar 28 zonas térmicas, 320 superficies constructivas detalladas, 102 superficies acristaladas, 204 superficies de sombreado y 19 sistemas ideales de climatización para estimar demanda térmica. Esto indica que el modelo es adecuado para estimar demanda térmica y comparar escenarios, aunque no representa todavía el consumo real de equipos HVAC específicos.
+El modelo fue exportado desde DesignBuilder como archivo IDF (\textit{Input Data File}) de EnergyPlus. Este formato contiene geometría, zonas, materiales, cargas, ventilación y sistemas. El IDF previamente incorporado en la tesis contiene 28 zonas térmicas, 320 superficies constructivas detalladas, 102 superficies de fenestración, 204 superficies de sombreado y 19 objetos de climatización ideal. Estos conteos describen esa versión y no acreditan, por sí solos, la validez física del modelo. Los sistemas ideales permiten estimar cargas térmicas bajo las condiciones de control introducidas; la estimación de electricidad requiere además documentar las eficiencias y los servicios auxiliares considerados.
 \end{textoDosTercios}
 
 \begin{table}[H]
@@ -303,7 +303,17 @@ La desagregación por zonas permite reconocer qué espacios concentran mayor ár
 \subsection{Sistemas, supuestos y limitaciones}
 
 \begin{textoDosTercios}
-La lectura del reporte \textit{Summary} y de la serie horaria permite identificar aspectos que deben revisarse antes de consolidar los resultados finales. El modelo usa el clima EPW TMYx 2011--2025 de San Cristobal y exporta resultados horarios para 2025; por ello, la interpretacion debe mantener coherencia entre clima, periodo de simulacion, horarios de uso y supuestos de ventilacion.
+La revisión de trazabilidad distingue el IDF previamente documentado, la exportación diaria \texttt{Datos Caso Base3.csv} y la copia del modelo ejecutada el 12 de septiembre de 2026. La corrida de revisión abarca del 1 de enero al 31 de diciembre con calendario 2025 y cuatro pasos de cálculo por hora. El calendario organiza los horarios de uso; no convierte el TMYx 2011--2025 en un registro meteorológico observado exclusivamente en 2025. Se habilitaron salidas mensuales, diarias y horarias.
+
+La copia ejecutada mantiene 28 zonas y 320 superficies constructivas, pero contiene 101 superficies de fenestración, 28 objetos de climatización ideal y 33 objetos de cargas eléctricas de tipo \texttt{OtherEquipment}. La presencia de un objeto de climatización no implica que la zona esté acondicionada durante todo el año: también intervienen sus horarios de disponibilidad y consignas. Estas diferencias impiden atribuir automáticamente los resultados de la exportación anterior a la versión revisada.
+
+El EPW fija una referencia de UTC$-6$ y una elevación de estación de $18,9\,\mathrm{m}$. La entrada original del modelo indicaba UTC$-5$ y $9,8\,\mathrm{m}$; el registro del motor informa que adopta la localización del archivo meteorológico. En la copia de revisión se ajustó la zona horaria a UTC$-6$ y se desactivó el horario de verano. Se conservó la elevación del proyecto, pues la altitud de la estación no demuestra la cota del edificio.
+
+La corrida inicial de revisión terminó en 2 minutos y 42 segundos, con 214 advertencias y cuatro errores severos. Las incidencias incluyen superficies auxiliares degeneradas en la red de aire del vacío de primera planta, cinco zonas cuyo cierre geométrico requiere revisión y valores fuera de rango durante el dimensionamiento. Se identificó además una actividad de $12\,\mathrm{W/persona}$ en el salón de usos múltiples y una carga de equipos de $500\,\mathrm{W/m^2}$ con horario continuo en el datacenter. La primera requiere corregir su correspondencia con la actividad del recinto; la segunda debe contrastarse con el inventario de equipos. Por tanto, la finalización del cálculo no equivale todavía a la validación del caso base.
+
+La segunda corrida anual, con diagnóstico ampliado, concluyó en 2 minutos y 57 segundos y mantuvo cuatro errores severos. Sus 4736 advertencias incluyen el detalle adicional activado, por lo que su número no es directamente comparable con las 214 de la primera corrida. El cierre geométrico pendiente se localiza en las zonas PBXBAX01 de planta baja, 1PAXES, 1PAXPAS y VACIO de primera planta, y 2PAXSUM de segunda planta. Las dos superficies auxiliares problemáticas se denominan \texttt{EXTRA CRACK 1} y \texttt{EXTRA CRACK 2}.
+
+Las especificaciones eléctricas describen un rack de 19UR, un switch de 48 puertos con consumo máximo aproximado de $49,3\,\mathrm{W}$ y un grabador de video con disco diseñado para operación continua \parencite[pp.~84--85, 101--102]{mogrovejoEspecificacionesElectricasGalapagos}. Esta documentación aporta una base para reconstruir la carga del cuarto de telecomunicaciones, pero no acredita por sí sola los $500\,\mathrm{W/m^2}$ asignados: deben completarse las potencias, cantidades y horarios de los equipos efectivamente previstos.
 \end{textoDosTercios}
 
 \clearpage
@@ -326,10 +336,10 @@ La lectura del componente muestra tres puntos criticos. Primero, la transmitanci
 \vspace*{1.15cm}
 \section{Resultados del caso base}
 
-\subsection{Sintesis del caso base}
+\subsection{Síntesis del caso base}
 
 \begin{textoDosTercios}
-El caso base final se resume a partir de la serie diaria exportada desde DesignBuilder. Para mantener una lectura directa, las tablas siguientes agrupan la informacion esencial del modelo: demanda de enfriamiento, consumos electricos principales, temperaturas, ventilacion, balance anual por componentes y resultados mensuales.
+Las tablas siguientes resumen la exportación diaria previa \texttt{Datos Caso Base3.csv}: enfriamiento sensible, electricidad estimada, temperaturas, ventilación y balances mensuales y anuales. Se conservan como antecedente cuantitativo del diagnóstico, pendiente de sustitución por una corrida corregida y verificada. No corresponden a los resultados de la revisión ejecutada el 12 de septiembre de 2026 y no deben mezclarse con ella para calcular ahorros entre escenarios.
 \end{textoDosTercios}
 
 \input{insumos/caso-base-final-tablas.tex}
@@ -337,13 +347,17 @@ El caso base final se resume a partir de la serie diaria exportada desde DesignB
 \subsection{Desempeño energético}
 
 \begin{textoDosTercios}
-El desempeno energetico del caso base se interpreta con la serie horaria de simulacion. Los valores de enfriamiento se reportan con signo negativo porque representan remocion de calor; por tanto, la demanda acumulada se calcula como la suma absoluta de esos valores horarios. La sintesis anterior registra el enfriamiento anual, el pico horario, las ganancias solares y los consumos principales de iluminacion y equipos.
+La exportación diaria previa registra $85316,49\,\mathrm{kWh}$ de enfriamiento sensible anual y $45551,01\,\mathrm{kWh}$ de electricidad asociada al enfriamiento. Estas magnitudes corresponden, respectivamente, a energía térmica retirada y energía eléctrica estimada, por lo que no deben sumarse como consumos equivalentes. Equipos e iluminación aportan $39307,57$ y $13895,39\,\mathrm{kWh}$ eléctricos. El máximo diario de enfriamiento sensible es $472,80\,\mbox{kWh/día}$ y se registra el 12 de marzo; expresa energía acumulada durante un día, no potencia máxima horaria en kW.
+
+En esa exportación, marzo concentra $11187,49\,\mathrm{kWh}$ de enfriamiento sensible y septiembre $4203,15\,\mathrm{kWh}$. La coincidencia del mayor requerimiento con el mes de mayor temperatura exterior media orienta el diagnóstico estacional. Sin embargo, el peso relativo de clima, ganancias solares y cargas internas debe contrastarse con resultados por zona y horarios antes de atribuir causalidad o seleccionar una estrategia de optimización.
 \end{textoDosTercios}
 
 \subsection{Confort térmico}
 
 \begin{textoDosTercios}
 El confort térmico del caso base se interpreta a partir de la relación entre el clima cálido-húmedo de San Cristóbal, la exposición de la envolvente, las cargas internas y la capacidad de ventilación representada en el modelo. La revisión del archivo climático y del IDF permite anticipar riesgo de sobrecalentamiento en espacios con mayor exposición solar, cubierta o cargas internas elevadas, especialmente cuando la ventilación disponible no compensa las ganancias térmicas.
+
+La serie diaria previa presenta una temperatura operativa media anual de $26,74\,^{\circ}\mathrm{C}$ y un máximo de las medias diarias de $30,22\,^{\circ}\mathrm{C}$. En 98 días la media diaria supera $28\,^{\circ}\mathrm{C}$. Este recuento es un indicador exploratorio de sobrecalentamiento; no representa horas de disconfort, máximos horarios ni incumplimiento de un estándar de confort. La evaluación de confort requiere resultados horarios por zona durante la ocupación y la aplicación explícita del criterio seleccionado. Asimismo, el valor medio de $1,12\,\mathrm{ACH}$ no demuestra por sí solo suficiencia de ventilación durante las horas ocupadas.
 \end{textoDosTercios}
 
 \subsection{Iluminancia natural}
@@ -409,5 +423,7 @@ La puntuación del caso base se plantea como una lectura preliminar frente a los
 \section{Discusión diagnóstica del caso base}
 
 \begin{textoDosTercios}
-El resultado esperado de esta sección es una lectura clara de los puntos críticos del edificio. Entre ellos pueden aparecer ganancias solares excesivas, baja protección de la envolvente, ventilación insuficiente, alta demanda de enfriamiento o dependencia de sistemas activos.
+La evidencia disponible orienta el diagnóstico hacia el control de las ganancias solares, las cargas internas especiales y el funcionamiento de la ventilación. La exportación previa cuantifica $44482,07\,\mathrm{kWh}$ de ganancias solares a través de ventanas exteriores, mientras que la carga continua del datacenter introduce una condición de uso que debe mantenerse o justificarse de forma consistente en todos los escenarios. Los resultados agregados no permiten localizar por sí solos los recintos más desfavorables.
+
+La comparación de C1, C2 y C3 requiere congelar una misma versión del caso base una vez resueltas las incidencias relevantes. Deben conservarse clima, calendario, ocupación, cargas y criterios de control, modificando únicamente las variables que definen cada escenario. La reducción de demanda y electricidad se calculará con resultados de igual resolución temporal y alcance; las conclusiones sobre confort se basarán en las horas ocupadas por zona. Hasta completar esa verificación, los valores presentados constituyen un diagnóstico preliminar y no una demostración definitiva de ahorro o cumplimiento.
 \end{textoDosTercios}
