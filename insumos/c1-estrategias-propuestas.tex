@@ -3,11 +3,11 @@
 \subsection{Escenario pasivo (C1)}
 \label{sec:c1-propuesta}
 
-El escenario C1 se plantea como un paquete de protección solar exterior, optimización de aperturas y coordinación de la ventilación natural con la refrigeración. Se ha preparado una copia independiente del modelo base; las medidas descritas a continuación todavía no se han aplicado ni simulado. Por tanto, este apartado define la propuesta de ensayo y no demuestra ahorros energéticos.
+El escenario C1 se plantea como un paquete organizado en cinco criterios: protección solar exterior, área libre de ventanas, recorrido del aire por el atrio, control de la ventilación natural y aprovechamiento de luz natural. Se ha preparado una copia independiente del modelo base; las medidas descritas a continuación todavía no se han aplicado ni simulado. Por tanto, este apartado define la propuesta de ensayo y no demuestra ahorros energéticos.
 
 Para aislar el efecto de C1, se conservarán la orientación, la materialidad, el clima, la ocupación, las cargas y las consignas del caso base. Los cambios en capas o propiedades térmicas de la envolvente se reservan para C2. La cubierta del atrio y las rejillas superiores forman parte de la configuración base y se mantienen.
 
-\subsubsection{Protección solar exterior}
+\subsubsection{Criterio 1: protección solar exterior}
 La primera estrategia consiste en complementar las protecciones donde su cobertura resulte insuficiente. El modelo ya contiene celosías y voladizos, por lo que se debe comprobar su geometría antes de añadir aleros o lamas. La figura~\ref{fig:c1-solar} expresa el criterio de intervención; sus dimensiones se definirán por ventana y orientación. La evaluación conjunta de energía e iluminación permitirá reconocer posibles penalizaciones de luz natural.
 
 \begin{figure}[H]
@@ -19,9 +19,21 @@ La primera estrategia consiste en complementar las protecciones donde su cobertu
 \end{figure}
 
 \clearpage
-\subsubsection{Aperturas y recorrido de ventilación}
+\subsubsection{Criterio 2: área libre de ventanas}
 Se propone evaluar una fracción practicable del 20\,\% en ventanas exteriores de oficinas. El valor del 5\,\% se observó en el nivel general del edificio y en la zona 1PA-OF-02; no se extiende automáticamente a todas las ventanas. El 20\,\% constituye un parámetro propuesto de ensayo, pendiente de comprobar mediante el tipo de hoja, el área libre efectiva y su compatibilidad con las celosías.
 
+La figura~\ref{fig:c1-aperturas} distingue el valor observado del parámetro propuesto. La selección de ventanas deberá considerar su operación real, accesibilidad y compatibilidad con las protecciones exteriores.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figuras/c1/c1-aperturas.pdf}
+\caption{Fracción de apertura observada y propuesta de ensayo en ventanas de oficinas.}
+\label{fig:c1-aperturas}
+\fuente{Elaboración propia. Proporciones conceptuales; no representan dimensiones de hojas ni resultados de ventilación.}
+\end{figure}
+
+\clearpage
+\subsubsection{Criterio 3: recorrido del aire por el atrio}
 La figura~\ref{fig:c1-aire} representa el recorrido que se debe verificar entre exterior, oficinas, pasillos y atrio. El atrio comienza en la primera planta alta y conserva su cubierta. Las flechas no representan resultados de caudal ni prueban ventilación cruzada: se comprobarán las conexiones interiores efectivas y la respuesta de la red de flujo de aire. No se presuponen nuevos pasos en divisiones cerradas.
 
 \begin{figure}[H]
@@ -33,8 +45,8 @@ La figura~\ref{fig:c1-aire} representa el recorrido que se debe verificar entre 
 \end{figure}
 
 \clearpage
-\subsubsection{Coordinación con la refrigeración}
-La tercera estrategia plantea coordinar la apertura de ventanas con el horario de uso y la demanda de refrigeración. La secuencia de la figura~\ref{fig:c1-control} requiere definir y comprobar los umbrales interiores y exteriores, las restricciones de operación y el comportamiento del sistema cuando se habilita la ventilación natural. Se mantendrán las consignas del caso base para distinguir el efecto de la estrategia.
+\subsubsection{Criterio 4: control de la ventilación natural}
+El cuarto criterio plantea coordinar la apertura de ventanas con el horario de uso y la demanda de refrigeración. La secuencia de la figura~\ref{fig:c1-control} requiere definir y comprobar los umbrales interiores y exteriores, las restricciones de operación y el comportamiento del sistema cuando se habilita la ventilación natural. Se mantendrán las consignas del caso base para distinguir el efecto de la estrategia.
 
 \begin{figure}[H]
 \centering
@@ -45,6 +57,22 @@ La tercera estrategia plantea coordinar la apertura de ventanas con el horario d
 \end{figure}
 
 La evaluación considerará demanda térmica sensible y total, electricidad estimada de refrigeración, temperaturas durante horas ocupadas y ventilación por zona. La iluminación natural se recalculará con las mismas condiciones del caso base. Los resultados heredados al copiar el archivo no se utilizarán como resultados de C1.
+
+\clearpage
+\subsubsection{Criterio 5: aprovechamiento de luz natural}
+El quinto criterio consiste en ajustar la geometría de las protecciones para equilibrar el control solar y la entrada de luz natural, como se representa en la figura~\ref{fig:c1-luz}. Se evaluarán profundidad y separación de aleros o lamas, manteniendo el vidrio y las reflectancias del caso base. Este criterio complementa la protección solar y no constituye una sustitución de materiales.
+
+La comparación se realizará con cielo CIE cubierto de 10000 lux, plano de trabajo a 0,76 m y malla de 0,30 m. Se revisarán la distribución de iluminancia y la proporción de área que supera FLD 2\,\%. Este ensayo estático no permite afirmar autonomía lumínica anual ni ausencia de deslumbramiento. Tampoco se atribuirá ahorro de electricidad de iluminación sin modelar y evaluar el control correspondiente.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figuras/c1/c1-iluminacion-natural.pdf}
+\caption{Criterio de equilibrio entre protección solar y aprovechamiento de luz natural.}
+\label{fig:c1-luz}
+\fuente{Elaboración propia. Sección conceptual; condiciones de cálculo equivalentes al ensayo estático del caso base.}
+\end{figure}
+
+Los cinco criterios se evaluarán como un paquete C1. El área libre, el recorrido del aire y su control son aspectos complementarios de la ventilación; una sola corrida conjunta no permite atribuir por separado los ahorros a cada criterio. Para ello serían necesarios ensayos adicionales modificando una variable cada vez.
 
 \clearpage
 \subsubsection{Registro de intervención y validación}
@@ -67,7 +95,7 @@ Atrio & Cubierta, pasos abiertos y rejillas superiores. & Conservar y verificar 
 \addlinespace
 Operación & Controles particulares del modelo base. & Coordinar ventanas y refrigeración. & Horarios, umbrales y control exportado. \\
 \addlinespace
-Materialidad & Capas y propiedades del caso base. & Sin modificación en C1. & Comparación de construcciones en el IDF. \\
+Luz natural & Ensayo estático actualizado del CB. & Ajustar protecciones conservando vidrio y reflectancias. & Iluminancia y área con FLD mayor al 2\,\%. \\
 \bottomrule
 \end{tabular}}
 \fuente{Elaboración propia a partir de la revisión del modelo y de la propuesta de ensayo. Ninguna fila acredita una medida simulada.}
