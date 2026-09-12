@@ -1,0 +1,134 @@
+{
+  "fuente": "C:\\Users\\juand\\Documents\\New project 3\\Tesis-limpia\\output\\C3-combinado\\C3_combinado_revision01.xml",
+  "sha256_fuente": "29041030f450a5851d2c8cec042307041616bec7df32aff494ac23cc0a80b930",
+  "cambios": [
+    {
+      "tabla": "Materials",
+      "original": 5005,
+      "nuevo": 10007,
+      "parametros": {
+        "Name": "C3r02_Aislante_termico_especificacion",
+        "Source": "Hipotesis de desempeno; lambda 0.040 W/mK. Seleccion comercial y EPD pendientes.",
+        "Description": "Aislante fibroso generico. Propiedades termicas de biblioteca; no acredita carbono ni emisiones."
+      }
+    },
+    {
+      "tabla": "Constructions",
+      "original": 10042,
+      "nuevo": 10043,
+      "parametros": {
+        "Name": "C3r02_Cubierta_reflectante_aislada",
+        "NumberLayers": 6,
+        "U-Value": 0.2668375322139175,
+        "UValueSurfaceToSurface": 0.2771926900857481,
+        "RValue": 3.7475987418378724,
+        "Thickness": 0.338,
+        "Source": "Propuesta C3 revision02; especificacion termica sin producto certificado",
+        "Description": "Continuidad del aislamiento, humedad, fuego, fijacion y EPD pendientes de detalle.",
+        "Mat 1": 10006,
+        "Thick 1": 0.02,
+        "Mat 2": 5134,
+        "Thick 2": 0.015,
+        "Mat 3": 78,
+        "Thick 3": 0.005,
+        "Mat 4": 342,
+        "Thick 4": 0.018,
+        "Mat 5": 10007,
+        "Thick 5": 0.08,
+        "Mat 6": 48,
+        "Thick 6": 0.2
+      }
+    },
+    {
+      "tabla": "Constructions",
+      "original": 10020,
+      "nuevo": 10044,
+      "parametros": {
+        "Name": "C3r02_Muro_exterior_aislado",
+        "NumberLayers": 4,
+        "U-Value": 0.5342564573844766,
+        "UValueSurfaceToSurface": 0.5876268412438626,
+        "RValue": 1.871760249554367,
+        "Thickness": 0.24,
+        "Source": "Propuesta C3 revision02; especificacion termica sin producto certificado",
+        "Description": "Continuidad del aislamiento, humedad, fuego, fijacion y EPD pendientes de detalle.",
+        "Mat 1": 5145,
+        "Thick 1": 0.015,
+        "Mat 2": 10007,
+        "Thick 2": 0.06,
+        "Mat 3": 10001,
+        "Thick 3": 0.15,
+        "Mat 4": 5150,
+        "Thick 4": 0.015
+      }
+    },
+    {
+      "tabla": "Glazing",
+      "original": 10004,
+      "nuevo": 10007,
+      "parametros": {
+        "Name": "C3r02_Vidrio_control_solar_especificacion",
+        "DefinitionMethod": "2-Simple",
+        "U-Value": 1.8,
+        "TransSolar": 0.35,
+        "TransLight": 0.65,
+        "Source": "Especificacion de desempeno centro de vidrio; ficha comercial pendiente",
+        "Description": "U=1.8 W/m2K; SHGC=.35; VT=.65. Conservar marcos. No demuestra SHGC modificado menor .20."
+      }
+    }
+  ],
+  "asignaciones": {
+    "CombinedFlatRoofConstr": 8,
+    "WallConstr": 7,
+    "PitchedRoofConstr": 7,
+    "UnoccupiedPitchedRoofConstr": 4,
+    "GlazingType": 74
+  },
+  "zonas_iluminacion_8Wm2_y_control": [
+    "PLANTABAJA:PBXBOX01",
+    "PLANTABAJA:PBXBAX01",
+    "PLANTABAJA:PBXREX01",
+    "PLANTABAJA:PBXSEX01",
+    "PLANTABAJA:PBXOFX03",
+    "PLANTABAJA:PBXOFX02",
+    "PLANTABAJA:PBXOFX01",
+    "PRIMERAPLANTAALTA:1PAXDC",
+    "PRIMERAPLANTAALTA:1PAXSR",
+    "PRIMERAPLANTAALTA:1PAXPAS",
+    "PRIMERAPLANTAALTA:1PAXOFX02",
+    "PRIMERAPLANTAALTA:1PAXBAX02",
+    "PRIMERAPLANTAALTA:1PAXBAX01",
+    "PRIMERAPLANTAALTA:1PAXOFX03",
+    "PRIMERAPLANTAALTA:1PAXOFX01",
+    "SEGUNDAPLANTAALTA:2PAXBAX01",
+    "SEGUNDAPLANTAALTA:2PAXCAF",
+    "SEGUNDAPLANTAALTA:2PAXSUM",
+    "SEGUNDAPLANTAALTA:2PAXPAS"
+  ],
+  "geometria_vertices_identica": true,
+  "estado": "Propuesta por desempeno pendiente de simulacion y verificacion de exportacion. No certificacion.",
+  "conservado": [
+    "Clima, geometria, horarios, ocupacion, equipos, consignas y paquete pasivo C1",
+    "Resultados C3 revision01"
+  ],
+  "pendiente": [
+    "Fotometria LED y posicion de sensores",
+    "Puentes termicos, humedad y fuego",
+    "Proteccion solar eficaz por orientacion",
+    "Confort ocupado y calidad del aire",
+    "EDGE energia agua carbono con linea base reglamentaria",
+    "PV, SEER, EPD, emisiones y logistica insular"
+  ],
+  "estado_final": "Simulado y guardado: corrida-02, 324 advertencias, cero errores severos",
+  "modelo_final": "C3_integral_revision02_final 1.dsb",
+  "xml_final": "C3_integral_revision02_final.xml",
+  "maximo_dias_inicializacion": 100,
+  "resultado": {
+    "CB_kWh_termicos": 84759.41085315235,
+    "C3r02_kWh_termicos": 65767.88169795847,
+    "reduccion_pct": 22.406395896376807,
+    "reduccion_kWh_termicos": 18991.529155193886,
+    "diferencia_C3r01_kWh": -16981.07821507509,
+    "zonas_con_enfriamiento": 11
+  }
+}

@@ -1,0 +1,17 @@
+﻿id,tema,accion,evidencia_de_cierre,responsable_propuesto
+E01,Demanda térmica,Comparar CB y C3r02 con entradas comunes y nuevas cargas de diseño.,Series horarias conciliadas y reducción anual.,Simulación
+E02,Energía EDGE,Construir referencia EDGE y contabilizar todos los usos y sistemas reales.,Ahorro operacional mínimo del 20 % frente a referencia EDGE.,Especialista energético
+E03,Envolvente,"Resolver aislamiento continuo, puentes térmicos y humedad. Confirmar clima y compacidad.",Memoria de U del conjunto y detalles constructivos.,Arquitectura
+E04,Protección solar,Comprobar cada orientación y ajustar aleros o lamas sin anular luz natural.,"SHGC modificado <0,20 en al menos 90 % de superficies aplicables.",Arquitectura
+E05,Iluminación,"Especificar LED y verificar regulación, lux y cobertura del control.",Potencia ≤8 W/m²; fotometría y control según matriz.,Diseño eléctrico
+C01,Confort,Evaluar horas ocupadas por zona y separar funcionamiento mecánico y natural.,PMV o método adaptativo aplicable; porcentaje espacial y temporal.,Simulación
+C02,Aire interior,"Dimensionar aire exterior, filtración y recuperación; verificar condiciones de excepción.",Memoria de caudales y equipos según T4 y normativa aplicable.,Diseño HVAC
+C03,Luz natural,"Calcular sDA y ASE con la misma malla, ocupación y plano de trabajo.",Resultados anuales y tratamiento del deslumbramiento.,Simulación lumínica
+A01,Agua,Seleccionar griferías y sanitarios eficientes con caudales a presión de ensayo.,Balance de usuarios y ahorro ≥20 % respecto a referencia EDGE.,Diseño sanitario
+M01,Carbono,Medir cantidades y comparar EPD con igual unidad funcional y límites.,Balance EDGE de materiales; reducción ≥20 % demostrada.,Arquitectura y presupuesto
+M02,Emisiones,"Solicitar ensayos de emisiones para acabados, adhesivos y aislantes.",Expediente de todos los productos de la intervención.,Especificación y compras
+E06,Fotovoltaica,"Determinar SRE, área útil sin sombras y demanda eléctrica.",Potencia mínima según T2; diseño eléctrico y estructural.,Diseño eléctrico
+E07,Climatización,Seleccionar equipos con SEER verificable y revisar dimensionamiento.,"SEER ≥6 y sobredimensionamiento ≤15 %, según aplicación.",Diseño HVAC
+G01,Seguimiento,"Asignar medición de energía, agua e indicadores interiores.","Plan con responsable, frecuencia y acciones correctivas.",Operación
+G02,Viabilidad insular,"Comparar suministro, transporte, salinidad, mantenimiento y reposición.",Cotizaciones y evaluación de ciclo de vida y logística.,Presupuesto y operación
+P01,Ventilación nocturna,"Comprobar área libre respecto al suelo, seguridad y protección frente a lluvia.",Abertura efectiva ≥4 % en oficinas cuando aplique A6.,Arquitectura

@@ -1,0 +1,31 @@
+{
+  "CB": {
+    "source": "C:\\Users\\juand\\Documents\\New project 3\\Tesis-limpia\\output\\caso-base-revision-2026-09-12\\corrida-09-cargas-estabilidad\\eplusout.eso",
+    "sha256": "2ce2683d207bf9e3148e09099cb5bcdc7cf9d1bc797126dd435e291285555f73",
+    "ambiente": [
+      "SAN CRISTOBAL (01-01:31-12)"
+    ],
+    "series": 79,
+    "horas_por_serie": 8760
+  },
+  "C3": {
+    "source": "C:\\Users\\juand\\Documents\\New project 3\\Tesis-limpia\\output\\C3-revision02\\corrida-02\\eplusout.eso",
+    "sha256": "813f0aa0005aa868f8dd5d23f6ca792194ccfb4afb9c2d026be3629e6166433c",
+    "ambiente": [
+      "SAN CRISTOBAL (01-01:31-12)"
+    ],
+    "series": 79,
+    "horas_por_serie": 8760,
+    "contraste_anual_kWh_termicos": {
+      "reporte": 65767.88169795844,
+      "integracion_horaria": 65767.88169795847,
+      "diferencia": -2.9103830456733704e-11
+    }
+  },
+  "totales_enfriamiento_kWh_termicos": {
+    "CB": 84759.41085315234,
+    "C3": 65767.88169795847
+  },
+  "CB_contraste_eso_previo": true,
+  "estado": "Comparación preliminar; pendientes del CB y evaluación de confort e iluminación."
+}

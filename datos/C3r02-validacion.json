@@ -1,0 +1,88 @@
+{
+  "finalizacion": "EnergyPlus Completed Successfully-- 324 Warning; 0 Severe Errors; Elapsed Time=00hr 03min 22.98sec",
+  "LPD_Wm2": 8,
+  "zonas_iluminadas": 19,
+  "controles": 19,
+  "vidrio_U_SHGC_VT": [
+    1.8,
+    0.35,
+    0.65
+  ],
+  "entradas_comunes_iguales_C3r01": {
+    "People": true,
+    "ElectricEquipment": true,
+    "Schedule:Compact": true,
+    "Schedule:Year": true,
+    "Schedule:Week:Daily": true,
+    "Schedule:Day:Hourly": true,
+    "Schedule:Day:List": true,
+    "Schedule:Day:Interval": true,
+    "ThermostatSetpoint:DualSetpoint": true,
+    "RunPeriod": true,
+    "Sizing:Parameters": true
+  },
+  "geometria_superficies_igual_C3r01": true,
+  "clima_identico": true,
+  "building": [
+    [
+      "Building",
+      "Defensoria del Pueblo",
+      "0",
+      "Suburbs",
+      ".04",
+      ".4",
+      "FullExterior",
+      "100",
+      "6"
+    ]
+  ],
+  "archivos": {
+    "eplusout.eio": {
+      "bytes": 450094,
+      "sha256": "3fa66f702c50e3028001895cd0bc3151343376f797dd13b520b588068ac37efc"
+    },
+    "eplusout.end": {
+      "bytes": 100,
+      "sha256": "a644a2d0527a29de57894a2a386e8599b1d1f44cb022ae389de591483cca89f1"
+    },
+    "eplusout.err": {
+      "bytes": 218442,
+      "sha256": "b1acad095e0ce3ffa97cbb1d3c0be0d6f0d404174143081bb5dc9b2a56be68fe"
+    },
+    "eplusout.eso": {
+      "bytes": 286934516,
+      "sha256": "813f0aa0005aa868f8dd5d23f6ca792194ccfb4afb9c2d026be3629e6166433c"
+    },
+    "eplustbl.htm": {
+      "bytes": 4437694,
+      "sha256": "760c63015f4d1a687f722616222662f96f065f1ca1c3a217d840a342bf941700"
+    },
+    "in.epw": {
+      "bytes": 1602694,
+      "sha256": "63df03004deab4e056e97b767da2051a229943d2aa85cc80fce6bf23dfe7674d"
+    },
+    "in.idf": {
+      "bytes": 2937558,
+      "sha256": "b7edc7f846e919fa9a81eb45df734f1ce6a06a8d63124e95c533853d560a350c"
+    },
+    "simplehvacsettings.dat": {
+      "bytes": 9426,
+      "sha256": "c15cd5f494394534ff5f0b742f1b87e6945abb4ec5d9c1a08dce6402ed68e99e"
+    }
+  },
+  "limite": "Especificaciones hipoteticas. Verificacion de entradas y ejecucion no es certificacion ni validacion fisica completa.",
+  "modelo_final": {
+    "archivo": "C3_integral_revision02_final 1.dsb",
+    "bytes": 32322238,
+    "sha256": "11803186f7723a5a6cae90ab0b433efa43ee6152197f334943fe618efd69299c"
+  },
+  "controles_ignorados_sin_ventanas_exteriores": [
+    "PB-BO-01",
+    "PB-BA-01",
+    "PB-RE-01",
+    "1PA-DC",
+    "2PA-CAF",
+    "2PA-PAS"
+  ],
+  "maximo_dias_inicializacion": 100
+}
