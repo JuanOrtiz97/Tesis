@@ -156,16 +156,16 @@ Esta lectura climática orienta la construcción de la línea base. Antes de sim
 \vspace*{1.15cm}
 \section{Materiales y envolvente del caso base}
 
-\subsection{Comportamiento dinamico del muro exterior}
+\subsection{Propiedades del muro exterior modelado}
 
 \begin{textoDosTercios}
-La proteccion termica de un recinto no depende de un solo componente. En el caso base influyen de manera simultanea la radiacion solar directa a traves de ventanas, la ventilacion, las cargas internas y la capacidad de almacenamiento de calor de pisos, muros interiores y mobiliario. Por ello, los parametros siguientes deben leerse como propiedades del muro exterior evaluado de forma aislada, no como una conclusion directa sobre la proteccion termica completa de cada espacio.
+Las propiedades de las capas del muro exterior se extrajeron del modelo energético revisado. Su comportamiento debe analizarse junto con la radiación solar, las cargas internas y la ventilación; las magnitudes del componente aislado no describen por sí solas el desempeño del recinto.
 \end{textoDosTercios}
 
-\input{insumos/inercia-muro-exterior-tabla.tex}
+\input{insumos/muro-modelo-actual.tex}
 
 \begin{textoDosTercios}
-La lectura del componente muestra tres puntos criticos. Primero, la transmitancia termica de $2,587\,\mathrm{W/(m^2K)}$ evidencia una resistencia limitada frente al flujo de calor. Segundo, bajo las condiciones higrotermicas evaluadas, la temperatura superficial interior queda por debajo del punto de rocio, por lo que aparece riesgo de condensacion y moho si no se controla la humedad interior o se mejora el aislamiento. Tercero, aunque el muro presenta un desfase de $5,2$ horas y cierta capacidad de almacenamiento, esta condicion debe complementarse con control solar en ventanas, sombreamiento exterior y ventilacion, porque la radiacion directa sobre superficies transparentes puede dominar las ganancias termicas del recinto.
+Las propiedades anteriores corresponden a las capas introducidas en el modelo energético. El informe previo de Ubakus utiliza conductividades y densidades diferentes, además de condiciones exteriores de $-5\,^{\circ}\mathrm{C}$. Sus resultados de desfase, condensación y emisiones incorporadas no se trasladan a este caso base. Una evaluación higrotérmica o ambiental requiere un cálculo específico con materiales y condiciones locales coherentes.
 \end{textoDosTercios}
 
 \clearpage
@@ -174,10 +174,9 @@ La lectura del componente muestra tres puntos criticos. Primero, la transmitanci
 
 \input{insumos/db-resultados-revisados.tex}
 
-\subsection{Antecedentes de la exportación previa}
-
+\subsection{Síntesis de la exportación diaria actualizada}
 \begin{textoDosTercios}
-Las tablas siguientes resumen la exportación diaria previa \texttt{Datos Caso Base3.csv}: enfriamiento sensible, electricidad estimada, temperaturas, ventilación y balances mensuales y anuales. Se conservan como antecedente cuantitativo del diagnóstico, pendiente de sustitución por una corrida corregida y verificada. No corresponden a los resultados de la revisión ejecutada el 12 de septiembre de 2026 y no deben mezclarse con ella para calcular ahorros entre escenarios.
+Las tablas y gráficas siguientes se regeneraron a partir de los 365 días y 30 variables de la corrida 09. El archivo \texttt{Datos Caso Base3.csv} contiene ahora esta exportación; la versión anterior se conserva únicamente como respaldo. Se mantienen las unidades, los signos y la agregación del edificio utilizada por DesignBuilder.
 \end{textoDosTercios}
 
 \input{insumos/caso-base-final-tablas.tex}
@@ -185,9 +184,9 @@ Las tablas siguientes resumen la exportación diaria previa \texttt{Datos Caso B
 \subsection{Desempeño energético}
 
 \begin{textoDosTercios}
-La exportación diaria previa registra $85316,49\,\mathrm{kWh}$ de enfriamiento sensible anual y $45551,01\,\mathrm{kWh}$ de electricidad asociada al enfriamiento. Estas magnitudes corresponden, respectivamente, a energía térmica retirada y energía eléctrica estimada, por lo que no deben sumarse como consumos equivalentes. Equipos e iluminación aportan $39307,57$ y $13895,39\,\mathrm{kWh}$ eléctricos. El máximo diario de enfriamiento sensible es $472,80\,\mbox{kWh/día}$ y se registra el 12 de marzo; expresa energía acumulada durante un día, no potencia máxima horaria en kW.
+La corrida revisada registra $59018,63\,\mathrm{kWh}$ de enfriamiento sensible y $84759,41\,\mathrm{kWh}$ de enfriamiento total anual. DesignBuilder estima $45258,71\,\mathrm{kWh}$ eléctricos para enfriamiento, $39307,57\,\mathrm{kWh}$ para equipos y $13895,39\,\mathrm{kWh}$ para iluminación. Las magnitudes térmicas y eléctricas representan conceptos distintos y no deben sumarse. El máximo diario de enfriamiento sensible es $281,52\,\mathrm{kWh/día}$, el 12 de marzo; no representa potencia máxima horaria.
 
-En esa exportación, marzo concentra $11187,49\,\mathrm{kWh}$ de enfriamiento sensible y septiembre $4203,15\,\mathrm{kWh}$. La coincidencia del mayor requerimiento con el mes de mayor temperatura exterior media orienta el diagnóstico estacional. Sin embargo, el peso relativo de clima, ganancias solares y cargas internas debe contrastarse con resultados por zona y horarios antes de atribuir causalidad o seleccionar una estrategia de optimización.
+Las ganancias solares por ventanas exteriores suman $33884,25\,\mathrm{kWh}$ anuales. La distribución mensual permite reconocer la variación estacional de la demanda, pero la contribución causal de cada medida debe evaluarse mediante escenarios comparables y resultados por zona.
 \end{textoDosTercios}
 
 \subsection{Confort térmico}
@@ -195,65 +194,66 @@ En esa exportación, marzo concentra $11187,49\,\mathrm{kWh}$ de enfriamiento se
 \begin{textoDosTercios}
 El confort térmico del caso base se interpreta a partir de la relación entre el clima cálido-húmedo de San Cristóbal, la exposición de la envolvente, las cargas internas y la capacidad de ventilación representada en el modelo. La revisión del archivo climático y del IDF permite anticipar riesgo de sobrecalentamiento en espacios con mayor exposición solar, cubierta o cargas internas elevadas, especialmente cuando la ventilación disponible no compensa las ganancias térmicas.
 
-La serie diaria previa presenta una temperatura operativa media anual de $26,74\,^{\circ}\mathrm{C}$ y un máximo de las medias diarias de $30,22\,^{\circ}\mathrm{C}$. En 98 días la media diaria supera $28\,^{\circ}\mathrm{C}$. Este recuento es un indicador exploratorio de sobrecalentamiento; no representa horas de disconfort, máximos horarios ni incumplimiento de un estándar de confort. La evaluación de confort requiere resultados horarios por zona durante la ocupación y la aplicación explícita del criterio seleccionado. Asimismo, el valor medio de $1,12\,\mathrm{ACH}$ no demuestra por sí solo suficiencia de ventilación durante las horas ocupadas.
+La serie diaria actualizada presenta una temperatura operativa media anual del edificio de $26,53\,^{\circ}\mathrm{C}$ y una máxima media diaria de $30,06\,^{\circ}\mathrm{C}$. En 80 días la media supera $28\,^{\circ}\mathrm{C}$. Este recuento es exploratorio: no representa horas de disconfort ni máximos horarios. La ventilación e infiltración media es $1,68\,\mathrm{ACH}$; debe analizarse por zona y durante la ocupación antes de afirmar suficiencia de ventilación o cumplimiento de confort.
 \end{textoDosTercios}
 
 \subsection{Iluminancia natural}
 \begin{textoDosTercios}
-Las imágenes de esta subsección corresponden a la configuración anterior del modelo. Se conservan como antecedente; el cierre y la ventilación del atrio requieren actualizar el cálculo lumínico antes de adoptar estas salidas como resultados definitivos.
+El cálculo de iluminación natural se actualizó con la geometría revisada el 12 de septiembre de 2026. Se empleó cielo CIE cubierto de 10.000 lux, plano de trabajo a 0,76 m y malla de 0,30 m, con nivel de detalle bueno y cuatro rebotes ambientales. El umbral de evaluación es un factor de luz día (FLD) del 2\%. Se trata de una simulación estática; sus resultados no equivalen a autonomía lumínica anual ni a cumplimiento de deslumbramiento.
 \end{textoDosTercios}
 
 
 \begin{textoDosTercios}
-Los mapas de iluminancia exportados desde DesignBuilder permiten revisar la distribución espacial de luz natural por nivel. La escala gráfica está expresada en lux y conserva la salida original del programa, por lo que las figuras se incorporan sin edición para mantener la lectura cromática y numérica generada por la simulación.
+Los mapas de iluminancia exportados desde DesignBuilder permiten revisar la distribución espacial de luz natural por nivel. La escala gráfica está expresada en lux y conserva la salida original del programa, por lo que las figuras se incorporan con recorte de la interfaz para mantener la lectura cromática y numérica generada por la simulación.
 \end{textoDosTercios}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{figuras/iluminancia-planta-baja.png}
+  \includegraphics[trim=400bp 32bp 7bp 270bp,clip,width=\textwidth]{figuras/iluminancia-planta-baja.png}
   \caption{Mapa de iluminancia de la planta baja del caso base}
-  \fuente{Basado en la simulación de iluminancia exportada desde DesignBuilder.}
+  \fuente{Basado en el cálculo estático actualizado de DesignBuilder, 12 de septiembre de 2026; cielo CIE cubierto de 10.000 lux.}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{figuras/iluminancia-primera-planta-alta.png}
+  \includegraphics[trim=400bp 32bp 7bp 270bp,clip,width=\textwidth]{figuras/iluminancia-primera-planta-alta.png}
   \caption{Mapa de iluminancia de la primera planta alta del caso base}
-  \fuente{Basado en la simulación de iluminancia exportada desde DesignBuilder.}
+  \fuente{Basado en el cálculo estático actualizado de DesignBuilder, 12 de septiembre de 2026; cielo CIE cubierto de 10.000 lux.}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{figuras/iluminancia-segunda-planta-alta.png}
+  \includegraphics[trim=400bp 32bp 7bp 175bp,clip,width=\textwidth]{figuras/iluminancia-segunda-planta-alta.png}
   \caption{Mapa de iluminancia de la segunda planta alta del caso base}
-  \fuente{Basado en la simulación de iluminancia exportada desde DesignBuilder.}
+  \fuente{Basado en el cálculo estático actualizado de DesignBuilder, 12 de septiembre de 2026; cielo CIE cubierto de 10.000 lux.}
 \end{figure}
 
 \begin{textoDosTercios}
-La tabla siguiente resume los valores numéricos asociados a los mapas de iluminancia. El área sobre umbral indica la proporción de superficie que cumple el criterio definido en la simulación; el factor de luz día promedio permite comparar el acceso relativo a luz natural entre espacios; y los valores mínimo y máximo de iluminancia muestran el rango de variación interna registrado en lux.
+La cuadrícula comprende 19 espacios y 253,482 m$^2$ evaluados. Un área de 173,295 m$^2$ (68,366\%) supera el umbral de FLD del 2\%; el FLD promedio agregado informado es 3,816\%. La tabla siguiente resume los valores por espacio. El área sobre umbral indica la proporción de superficie que cumple el criterio definido en la simulación; el factor de luz día promedio permite comparar el acceso relativo a luz natural entre espacios; y los valores mínimo y máximo de iluminancia muestran el rango de variación interna registrado en lux.
 \end{textoDosTercios}
 
+\clearpage
 \input{insumos/iluminancia-resumen-tabla.tex}
 
-\subsection{Puntuación del CB por estándar de sostenibilidad}
+\subsection{Estado de los indicadores de sostenibilidad}
 
 \begin{textoDosTercios}
-La puntuación del caso base se plantea como una lectura preliminar frente a los criterios de sostenibilidad definidos para la investigación. En esta etapa no se busca declarar una certificación completa, sino reconocer el nivel inicial del edificio y establecer una referencia para comparar los escenarios de optimización. La matriz de indicadores organiza los criterios en cinco dimensiones: energía, confort térmico, iluminación natural, materiales y adaptación al contexto insular.
+La evaluación del caso base distingue los indicadores ya calculados de las verificaciones pendientes. Los resultados actuales permiten establecer un diagnóstico preliminar; todavía no sustentan una puntuación global ni una certificación de sostenibilidad.
 \end{textoDosTercios}
 
 \begin{table}[H]
   \centering
-  \caption{Dimensiones de evaluación del proyecto}
+  \caption{Estado de actualización de los indicadores del caso base}
   {\fontsize{9}{11}\selectfont
   \begin{tabular}{p{3.2cm}p{8.8cm}}
     \toprule
-    Dimensión & Indicadores de análisis \\
+    Dimensión & Evidencia disponible y verificación pendiente \\
     \midrule
-    Energía & Demanda energética, cargas térmicas, consumo estimado y reducción porcentual frente a línea base. \\
-    Confort térmico & Temperatura operativa, horas de confort, ventilación natural y riesgo de sobrecalentamiento. \\
-    Iluminación natural & Aprovechamiento de luz natural, necesidad de iluminación artificial y control de deslumbramiento. \\
-    Materiales & Huella ambiental, disponibilidad local o regional, durabilidad y comportamiento térmico. \\
-    Contexto insular & Factibilidad logística, mantenimiento, impacto visual y pertinencia ecológica. \\
+    Energía & Corrida 09 y exportación de 365 días actualizadas. Pendiente validar las cargas del datacenter y el dimensionamiento de invierno antes de comparar ahorros. \\
+    Confort térmico & Temperaturas diarias del edificio y horarias del atrio y salón disponibles. Pendiente evaluar horas ocupadas y criterios de confort por zona. \\
+    Iluminación natural & Cálculo estático actualizado en 19 espacios; 68,37\% del área evaluada supera FLD 2\%. Sin evaluación anual ni de deslumbramiento. \\
+    Materiales & Propiedades del muro corregidas con el IDF actual. Pendientes evaluación higrotérmica local y huella ambiental con datos compatibles. \\
+    Contexto insular & Clima EPW verificado. La factibilidad logística, el mantenimiento y la disponibilidad de materiales requieren documentación específica. \\
     \bottomrule
   \end{tabular}
   }
@@ -265,7 +265,7 @@ La puntuación del caso base se plantea como una lectura preliminar frente a los
 \section{Discusión diagnóstica del caso base}
 
 \begin{textoDosTercios}
-La evidencia disponible orienta el diagnóstico hacia el control de las ganancias solares, las cargas internas especiales y el funcionamiento de la ventilación. La exportación previa cuantifica $44482,07\,\mathrm{kWh}$ de ganancias solares a través de ventanas exteriores, mientras que la carga continua del datacenter introduce una condición de uso que debe mantenerse o justificarse de forma consistente en todos los escenarios. Los resultados agregados no permiten localizar por sí solos los recintos más desfavorables.
+La evidencia disponible orienta el diagnóstico hacia el control de las ganancias solares, las cargas internas especiales y el funcionamiento de la ventilación. La exportación actualizada cuantifica $33884,25\,\mathrm{kWh}$ de ganancias solares a través de ventanas exteriores, mientras que la carga continua del datacenter introduce una condición de uso que debe mantenerse o justificarse de forma consistente en todos los escenarios. Los resultados agregados no permiten localizar por sí solos los recintos más desfavorables.
 
 La comparación de C1, C2 y C3 requiere congelar una misma versión del caso base una vez resueltas las incidencias relevantes. Deben conservarse clima, calendario, ocupación, cargas y criterios de control, modificando únicamente las variables que definen cada escenario. La reducción de demanda y electricidad se calculará con resultados de igual resolución temporal y alcance; las conclusiones sobre confort se basarán en las horas ocupadas por zona. Hasta completar esa verificación, los valores presentados constituyen un diagnóstico preliminar y no una demostración definitiva de ahorro o cumplimiento.
 \end{textoDosTercios}

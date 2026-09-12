@@ -1,0 +1,13 @@
+{
+  "fecha": "2026-09-12",
+  "csv_filas": 365,
+  "variables": 30,
+  "comparaciones_exactas_exportacion": 10950,
+  "csv_original_igual_repositorio": true,
+  "csv_sha256": "537cdaa89b65f1967f60a0641da1242709e2cc6302f1349c21c41599b2a6f4e6",
+  "modelo_sha256": "921091ce4a7715806fdd853d3198f15bb69255f9bfa64a7742e2893fc3e9e85a",
+  "iluminancia_zonas": 19,
+  "epw_registros": 8760,
+  "errores_severos_simulacion": 0,
+  "advertencias_simulacion": 318
+}

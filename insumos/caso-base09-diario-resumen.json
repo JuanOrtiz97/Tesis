@@ -1,0 +1,40 @@
+{
+  "annual": {
+    "Glazing": -12280.436271999999,
+    "Walls": -6947.3450680000005,
+    "Ceilings (int)": 707.090199,
+    "Floors (int)": -490.763555,
+    "Ground Floors": -8780.934629000001,
+    "Partitions (int)": -748.272714,
+    "Roofs": -907.1527510000001,
+    "Floors (ext)": -336.17766,
+    "Internal Natural vent.": -977.2958359999999,
+    "Sensible Cooling": -59018.633129999995,
+    "External Air": -771.597473,
+    "External Vent.": -2601.1365049999995,
+    "Total Cooling": -84759.41122,
+    "General Lighting": 13895.387826,
+    "Miscellaneous": 34701.23684,
+    "Catering": 274.699755,
+    "Computer + Equip": 4331.63517,
+    "Occupancy": 6152.7213169999995,
+    "Solar Gains Interior Windows": 2463.167681,
+    "Solar Gains Exterior Windows": 33884.24884,
+    "Zone Sensible Heating": 82.83223041176299,
+    "Zone Sensible Cooling": -58988.299069999994,
+    "Room Electricity": 39307.572120000004,
+    "Lighting": 13895.387826,
+    "Cooling (Electricity)": 45258.70813
+  },
+  "means": {
+    "Mech Vent + Nat Vent + Infiltration": 1.6794346810958904,
+    "Air Temperature": 26.029254438356162,
+    "Radiant Temperature": 27.03339904109589,
+    "Operative Temperature": 26.531326493150686,
+    "Outside Dry-Bulb Temperature": 24.28090205479452
+  },
+  "op_daily_max": 30.06055,
+  "days_op_gt28": 80,
+  "peak_sensible_daily": 281.5192,
+  "peak_date": "12/03/2025"
+}

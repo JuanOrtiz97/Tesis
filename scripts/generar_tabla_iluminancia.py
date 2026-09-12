@@ -29,7 +29,7 @@ def tex_escape(value: str) -> str:
     return (
         value.replace("\\", "\\textbackslash{}")
         .replace("&", "\\&")
-        .replace("%", "\\%")
+        .replace("%", r"\%")
         .replace("_", "\\_")
         .replace("#", "\\#")
     )
@@ -42,16 +42,16 @@ def main() -> None:
 
     lines = [
         r"{\fontsize{9}{11}\selectfont",
-        r"\begin{longtable}{p{2.8cm}p{2.0cm}p{1.4cm}p{1.7cm}p{1.7cm}p{1.5cm}p{1.5cm}}",
+        r"\begin{longtable}{p{2.2cm}p{1.7cm}p{1.2cm}p{1.5cm}p{1.3cm}p{1.5cm}p{1.5cm}}",
         r"  \caption{Resumen de iluminancia natural por espacio del caso base} \\",
         r"  \toprule",
-        r"  Planta & Espacio & Área & Área sobre umbral & FLD prom. & Ilum. mín. & Ilum. máx. \\",
+        r"  Planta & Espacio & Área & Área FLD > 2\% & FLD prom. & Ilum. mín. & Ilum. máx. \\",
         r"  & & $\mathrm{m}^{2}$ & \% & \% & lux & lux \\",
         r"  \midrule",
         r"  \endfirsthead",
         r"  \caption[]{Resumen de iluminancia natural por espacio del caso base (continuación)} \\",
         r"  \toprule",
-        r"  Planta & Espacio & Área & Área sobre umbral & FLD prom. & Ilum. mín. & Ilum. máx. \\",
+        r"  Planta & Espacio & Área & Área FLD > 2\% & FLD prom. & Ilum. mín. & Ilum. máx. \\",
         r"  & & $\mathrm{m}^{2}$ & \% & \% & lux & lux \\",
         r"  \midrule",
         r"  \endhead",
@@ -62,7 +62,7 @@ def main() -> None:
     for row in rows:
         lines.append(
             "  {block} & {zone} & ${area}$ & ${area_threshold}$ & ${df_avg}$ & ${lux_min}$ & ${lux_max}$ \\\\".format(
-                block=tex_escape(row["Block"]),
+                block={"Planta Baja":"PB", "Primera Planta Alta":"1PA", "Segunda Planta Alta":"2PA"}.get(row["Block"], tex_escape(row["Block"])),
                 zone=tex_escape(row["Zone"]),
                 area=tex_number(row["Floor Area (m2)"]),
                 area_threshold=tex_number(row["Floor Area above Threshold (%)"]),
@@ -76,7 +76,7 @@ def main() -> None:
         [
             r"\end{longtable}",
             r"}",
-            r"\fuente{Basado en los resultados de iluminancia exportados desde DesignBuilder.}",
+            r"\fuente{Elaboración propia a partir de la cuadrícula de resultados de DesignBuilder recalculada el 12 de septiembre de 2026. Cielo CIE cubierto de 10.000 lux, plano a 0,76 m y malla de 0,30 m. Umbral FLD del 2\%. PB: planta baja; 1PA y 2PA: plantas altas. Evaluación estática; no representa autonomía anual.}",
             "",
         ]
     )

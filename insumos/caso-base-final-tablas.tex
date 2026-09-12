@@ -1,114 +1,131 @@
-{\fontsize{9}{11}\selectfont
-\begin{longtable}{p{4.9cm}p{3cm}p{5.5cm}}
-  \caption{Síntesis preliminar de la exportación diaria del caso base} \\
-  \toprule
-  Indicador & Valor & Lectura \\
-  \midrule
-  \endfirsthead
-  \caption[]{Síntesis preliminar de la exportación diaria del caso base (continuación)} \\
-  \toprule
-  Indicador & Valor & Lectura \\
-  \midrule
-  \endhead
-  \bottomrule
-  \endfoot
-  Enfriamiento sensible total & $85316,49\,\mbox{kWh/año}$ & Demanda térmica anual acumulada del caso base. \\
-  Electricidad para enfriamiento & $45551,01\,\mbox{kWh/año}$ & Consumo eléctrico anual asociado a enfriamiento. \\
-  Electricidad de equipos & $39307,57\,\mbox{kWh/año}$ & Equipos, misceláneos y cargas internas eléctricas. \\
-  Electricidad de iluminación & $13895,39\,\mbox{kWh/año}$ & Consumo anual de iluminación del modelo. \\
-  Ganancias solares por ventanas exteriores & $44482,07\,\mbox{kWh/año}$ & Ganancia solar directa por acristalamientos exteriores. \\
-  Pico diario de enfriamiento & $472,80\,\mbox{kWh/día}$ & Día crítico: 12/3/2025. \\
-  Pico diario de electricidad de enfriamiento & $251,37\,\mbox{kWh/día}$ & Día crítico: 12/3/2025. \\
-  Temperatura operativa media & $26,74\,^\circ C$ & Promedio diario anual del caso base. \\
-  Máxima media diaria de temperatura operativa & $30,22\,^\circ C$ & No equivale al máximo horario de temperatura operativa. \\
-  Días con media diaria de $T_{op}>28\,^\circ C$ & 98 días & Indicador exploratorio; no equivale a horas de disconfort. \\
-  Ventilación e infiltración media & $1,12\,\mathrm{ACH}$ & Renovación media diaria reportada por el modelo. \\
-\end{longtable}
-}
-\fuente{Elaboración propia a partir de \texttt{Datos Caso Base3.csv}.}
+\begin{table}[H]
+\centering
+\caption{Síntesis anual del caso base revisado}
+{\small\singlespacing\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{p{6.1cm}rp{4.5cm}}
+\toprule
+Indicador & Valor & Unidad o alcance \\
+\midrule
+Enfriamiento sensible & 59018,63 & kWh térmicos/año \\
+Enfriamiento total & 84759,41 & kWh térmicos/año \\
+Electricidad de enfriamiento estimada & 45258,71 & kWh eléctricos/año \\
+Electricidad de equipos & 39307,57 & kWh eléctricos/año \\
+Electricidad de iluminación & 13895,39 & kWh eléctricos/año \\
+Ganancia solar por ventanas exteriores & 33884,25 & kWh/año \\
+Máximo diario de enfriamiento sensible & 281,52 & kWh/día; 12/03/2025 \\
+Temperatura operativa media & 26,53 & $^\circ$C \\
+Máxima media diaria operativa & 30,06 & $^\circ$C \\
+Días con media operativa mayor de 28 °C & 80 & días; indicador exploratorio \\
+Ventilación e infiltración media & 1,68 & renovaciones/hora \\
+\bottomrule
+\end{tabular}}
+\fuente{Elaboración propia a partir de \texttt{Datos Caso Base3.csv}, exportado de la corrida 09 de DesignBuilder. Resultados provisionales.}
+\end{table}
 
-{\fontsize{8}{10}\selectfont
-\begin{longtable}{p{1.5cm}p{2.2cm}p{2.2cm}p{2.2cm}p{2.1cm}p{2.1cm}}
-  \caption{Resultados mensuales principales del caso base} \\
-  \toprule
-  Mes & Enfriamiento eléctrico & Enfriamiento térmico & Ganancia solar ext. & $T_{op}$ media & $T_{ext}$ media \\
-  & kWh & kWh & kWh & $^\circ C$ & $^\circ C$ \\
-  \midrule
-  \endfirsthead
-  \caption[]{Resultados mensuales principales del caso base (continuación)} \\
-  \toprule
-  Mes & Enfriamiento eléctrico & Enfriamiento térmico & Ganancia solar ext. & $T_{op}$ media & $T_{ext}$ media \\
-  & kWh & kWh & kWh & $^\circ C$ & $^\circ C$ \\
-  \midrule
-  \endhead
-  \bottomrule
-  \endfoot
-  Ene & $4765,23$ & $8965,13$ & $4669,81$ & $27,57$ & $25,60$ \\
-  Feb & $5086,33$ & $9551,71$ & $4008,96$ & $28,44$ & $26,68$ \\
-  Mar & $5965,21$ & $11187,49$ & $4174,12$ & $29,19$ & $27,10$ \\
-  Abr & $5295,87$ & $9941,35$ & $3384,26$ & $28,01$ & $26,74$ \\
-  May & $5041,00$ & $9446,77$ & $3172,50$ & $27,87$ & $25,96$ \\
-  Jun & $3377,53$ & $6311,44$ & $2973,76$ & $26,57$ & $24,18$ \\
-  Jul & $2693,94$ & $5020,97$ & $2945,50$ & $25,30$ & $23,11$ \\
-  Ago & $2437,36$ & $4518,71$ & $3113,56$ & $25,37$ & $22,11$ \\
-  Sep & $2263,51$ & $4203,15$ & $3212,36$ & $25,15$ & $21,73$ \\
-  Oct & $2543,08$ & $4740,31$ & $3971,79$ & $25,51$ & $22,14$ \\
-  Nov & $2507,90$ & $4693,88$ & $4315,66$ & $25,52$ & $22,49$ \\
-  Dic & $3574,05$ & $6735,58$ & $4539,81$ & $26,51$ & $23,69$ \\
-\end{longtable}
-}
-\fuente{Elaboración propia a partir de \texttt{Datos Caso Base3.csv}.}
-
-{\fontsize{8}{10}\selectfont
-\begin{longtable}{p{4.4cm}p{2.7cm}p{6cm}}
-  \caption{Balance anual por componentes del caso base} \\
-  \toprule
-  Componente & Balance anual & Interpretación \\
-  \midrule
-  \endfirsthead
-  \caption[]{Balance anual por componentes del caso base (continuación)} \\
-  \toprule
-  Componente & Balance anual & Interpretación \\
-  \midrule
-  \endhead
-  \bottomrule
-  \endfoot
-  Ganancia solar exterior & $44482,07\,\mathrm{kWh}$ & Ganancia neta de calor en el periodo anual. \\
-  Acristalamientos & $-15499,77\,\mathrm{kWh}$ & Pérdida neta de calor en el periodo anual. \\
-  Muros & $-10009,82\,\mathrm{kWh}$ & Pérdida neta de calor en el periodo anual. \\
-  Piso sobre terreno & $-9182,47\,\mathrm{kWh}$ & Pérdida neta de calor en el periodo anual. \\
-  Ocupación & $5621,16\,\mathrm{kWh}$ & Ganancia neta de calor en el periodo anual. \\
-  Ganancia solar interior & $5034,90\,\mathrm{kWh}$ & Ganancia neta de calor en el periodo anual. \\
-  Ventilación exterior & $-1491,29\,\mathrm{kWh}$ & Pérdida neta de calor en el periodo anual. \\
-  Cubiertas & $-1242,06\,\mathrm{kWh}$ & Pérdida neta de calor en el periodo anual. \\
-  Pisos interiores & $-748,40\,\mathrm{kWh}$ & Pérdida neta de calor en el periodo anual. \\
-  Particiones interiores & $-689,39\,\mathrm{kWh}$ & Pérdida neta de calor en el periodo anual. \\
-  Cielos interiores & $633,95\,\mathrm{kWh}$ & Ganancia neta de calor en el periodo anual. \\
-  Aire exterior & $-439,11\,\mathrm{kWh}$ & Pérdida neta de calor en el periodo anual. \\
-  Ventilación natural interna & $-420,75\,\mathrm{kWh}$ & Pérdida neta de calor en el periodo anual. \\
-\end{longtable}
-}
-\fuente{Elaboración propia a partir de \texttt{Datos Caso Base3.csv}.}
+La electricidad de enfriamiento es una estimación de DesignBuilder bajo las eficiencias configuradas, no un consumo medido. El enfriamiento total incluye el sensible; ambas magnitudes no se suman. Las temperaturas corresponden a medias del edificio exportadas por el programa.
+\clearpage
+\begin{table}[H]
+\centering
+\caption{Resultados mensuales del caso base revisado}
+{\small\singlespacing\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{lp{2.5cm}p{2.5cm}p{2.2cm}rr}
+\toprule
+Mes & Electricidad de enfriamiento & Enfriamiento sensible & Solar exterior & $T_{op}$ & $T_{ext}$ \\
+\midrule
+ & kWh & kWh & kWh & °C & °C \\
+Ene & 4758,16 & 5808,86 & 3502,81 & 27,42 & 25,60 \\
+Feb & 5091,22 & 6077,35 & 3045,26 & 28,25 & 26,68 \\
+Mar & 5898,76 & 7081,25 & 3228,37 & 29,04 & 27,10 \\
+Abr & 5362,01 & 6038,52 & 2625,60 & 27,86 & 26,74 \\
+May & 5051,05 & 6000,47 & 2428,64 & 27,63 & 25,96 \\
+Jun & 3363,42 & 4512,38 & 2269,70 & 26,35 & 24,18 \\
+Jul & 2685,92 & 3896,30 & 2247,28 & 25,13 & 23,11 \\
+Ago & 2392,37 & 3691,62 & 2388,76 & 25,11 & 22,11 \\
+Sep & 2197,24 & 3410,80 & 2480,55 & 24,90 & 21,73 \\
+Oct & 2492,05 & 3933,80 & 3023,60 & 25,24 & 22,14 \\
+Nov & 2453,15 & 3804,01 & 3244,45 & 25,27 & 22,49 \\
+Dic & 3513,36 & 4763,27 & 3399,24 & 26,28 & 23,69 \\
+\bottomrule
+\end{tabular}}
+\fuente{Elaboración propia a partir de \texttt{Datos Caso Base3.csv}, exportado de la corrida 09 de DesignBuilder. Resultados provisionales.}
+\end{table}
 
 \begin{figure}[H]
-  \centering
-  \includegraphics[width=0.9\textwidth]{figuras/caso-base-final-enfriamiento-mensual.pdf}
-  \caption{Enfriamiento eléctrico mensual del caso base: exportación preliminar}
-  \fuente{Elaboración propia a partir de \texttt{Datos Caso Base3.csv}.}
+\centering
+\includegraphics[width=\textwidth]{figuras/caso-base-final-enfriamiento-mensual.pdf}
+\caption{Electricidad estimada y energía térmica de enfriamiento por mes}
+\fuente{Elaboración propia a partir de \texttt{Datos Caso Base3.csv}, exportado de la corrida 09 de DesignBuilder. Resultados provisionales.}
+\end{figure}
+\clearpage
+\begin{table}[H]
+\centering
+\caption{Balance térmico anual por componentes del modelo revisado}
+{\small\singlespacing\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{p{6.2cm}rp{4cm}}
+\toprule
+Componente & Balance (kWh) & Signo del intercambio \\
+\midrule
+Misceláneos & 34701,24 & Ganancia neta \\
+Solar por ventanas exteriores & 33884,25 & Ganancia neta \\
+Iluminación & 13895,39 & Ganancia neta \\
+Ocupación & 6152,72 & Ganancia neta \\
+Computadores y equipos & 4331,64 & Ganancia neta \\
+Solar por ventanas interiores & 2463,17 & Ganancia neta \\
+Cielos interiores & 707,09 & Ganancia neta \\
+Cocina & 274,70 & Ganancia neta \\
+Calefacción sensible de zona & 82,83 & Ganancia neta \\
+Pisos exteriores & -336,18 & Pérdida neta \\
+Pisos interiores & -490,76 & Pérdida neta \\
+Particiones interiores & -748,27 & Pérdida neta \\
+Aire exterior & -771,60 & Pérdida neta \\
+Cubiertas & -907,15 & Pérdida neta \\
+Ventilación natural interna & -977,30 & Pérdida neta \\
+Ventilación exterior & -2601,14 & Pérdida neta \\
+Muros & -6947,35 & Pérdida neta \\
+Piso sobre terreno & -8780,93 & Pérdida neta \\
+Acristalamientos & -12280,44 & Pérdida neta \\
+Enfriamiento sensible de zona & -58988,30 & Pérdida neta \\
+\bottomrule
+\end{tabular}}
+\fuente{Elaboración propia a partir de \texttt{Datos Caso Base3.csv}, exportado de la corrida 09 de DesignBuilder. Resultados provisionales.}
+\end{table}
+
+Se conserva la convención de signos del programa: positivo hacia el recinto y negativo desde él. Los intercambios entre zonas se muestran como términos del reporte; esta tabla no constituye un balance cerrado de todo el edificio. La electricidad de equipos no se agrega nuevamente a sus ganancias térmicas.
+\clearpage
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figuras/caso-base-final-balance-componentes.pdf}
+\caption{Balance general anual: aportes y extracciones de calor}
+\fuente{Elaboración propia a partir de \texttt{Datos Caso Base3.csv}, exportado de la corrida 09 de DesignBuilder. Resultados provisionales.}
+\end{figure}
+\clearpage
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figuras/caso-base-final-temperatura-mensual.pdf}
+\caption{Temperaturas medias mensuales del edificio y del exterior}
+\fuente{Elaboración propia a partir de \texttt{Datos Caso Base3.csv}, exportado de la corrida 09 de DesignBuilder. Resultados provisionales.}
 \end{figure}
 
 \begin{figure}[H]
-  \centering
-  \includegraphics[width=0.9\textwidth]{figuras/caso-base-final-temperatura-mensual.pdf}
-  \caption{Temperatura mensual interior y exterior del caso base: exportación preliminar}
-  \fuente{Elaboración propia a partir de \texttt{Datos Caso Base3.csv}.}
+\centering
+\includegraphics[width=\textwidth]{figuras/caso-base-temperatura-diaria.pdf}
+\caption{Evolución de las medias diarias de temperatura}
+\fuente{Elaboración propia a partir de \texttt{Datos Caso Base3.csv}, exportado de la corrida 09 de DesignBuilder. Resultados provisionales.}
+\end{figure}
+\clearpage
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figuras/caso-base-ventilacion-mensual.pdf}
+\caption{Ventilación e infiltración: media mensual del edificio}
+\fuente{Elaboración propia a partir de \texttt{Datos Caso Base3.csv}, exportado de la corrida 09 de DesignBuilder. Resultados provisionales.}
 \end{figure}
 
 \begin{figure}[H]
-  \centering
-  \includegraphics[width=0.9\textwidth]{figuras/caso-base-final-balance-componentes.pdf}
-  \caption{Balance anual por componentes del caso base: exportación preliminar}
-  \fuente{Elaboración propia a partir de \texttt{Datos Caso Base3.csv}.}
+\centering
+\includegraphics[width=\textwidth]{figuras/caso-base-consumos-electricos.pdf}
+\caption{Distribución de la electricidad anual estimada}
+\fuente{Elaboración propia a partir de \texttt{Datos Caso Base3.csv}, exportado de la corrida 09 de DesignBuilder. Resultados provisionales.}
 \end{figure}
-
-La serie diaria final confirma que el caso base presenta una demanda anual relevante de enfriamiento, con mayor presion durante los meses de mayor ganancia solar y temperatura exterior. Las ventanas exteriores aportan $44482,07\,\mbox{kWh/año}$ de ganancia solar, por lo que las medidas de control solar y sombreamiento siguen siendo prioritarias antes de depender exclusivamente de sistemas activos.

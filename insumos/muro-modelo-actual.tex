@@ -1,0 +1,29 @@
+\begin{table}[H]
+\centering
+\caption{Propiedades de las capas del muro exterior en el modelo actualizado}
+{\small\begin{tabular}{p{4cm}rrrr}
+\toprule
+Capa, exterior a interior & $d$ (m) & $\lambda$ (W/mK) & $\rho$ (kg/m$^3$) & $c_p$ (J/kgK) \\
+\midrule
+Enlucido de cemento & 0,015 & 0,72 & 1760 & 840 \\
+Bloque de hormigón & 0,150 & 0,99 & 2000 & 1000 \\
+Enlucido de yeso & 0,015 & 0,51 & 1120 & 960 \\
+\bottomrule
+\end{tabular}}
+\fuente{Elaboración propia a partir de los objetos Material y Construction del IDF de la corrida 09; construcción 01.WA.ENL1.5-BLO15-EMP1.5.}
+\end{table}
+\begin{table}[H]
+\centering
+\caption{Magnitudes calculadas para las capas del muro exterior actualizado}
+{\small\begin{tabular}{p{6cm}rp{4cm}}
+\toprule
+Magnitud & Valor & Cálculo \\
+\midrule
+Espesor total (m) & 0,180 & $\sum d_i$ \\
+Resistencia de las capas (m$^2$K/W) & 0,2018 & $\sum d_i/\lambda_i$ \\
+Masa por superficie (kg/m$^2$) & 343,20 & $\sum \rho_i d_i$ \\
+Capacidad térmica por superficie (kJ/m$^2$K) & 338,30 & $\sum \rho_i d_i c_{p,i}/1000$ \\
+\bottomrule
+\end{tabular}}
+\fuente{Elaboración propia con las propiedades del IDF revisado. La resistencia excluye películas superficiales; la capacidad es la suma estática de las capas y no equivale a capacidad térmica efectiva ni determina por sí sola el desfase.}
+\end{table}
