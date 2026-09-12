@@ -183,7 +183,7 @@ En la primera planta alta se mantiene la organización por oficinas y circulaci�
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.86\textwidth]{figuras/zonificacion-primera-planta-alta.png}
-  \caption{Zonificación térmica de la primera planta alta del caso base en DesignBuilder}
+  \caption{Zonificación de la primera planta alta antes de corregir el patio}
   \fuente{Basado en el esquema de zonificación del modelo energético del caso base desarrollado en DesignBuilder.}
 \end{figure}
 
@@ -194,18 +194,18 @@ La segunda planta alta concentra espacios de apoyo y reunión. En este nivel apa
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.78\textwidth]{figuras/zonificacion-segunda-planta-alta.png}
-  \caption{Zonificación térmica de la segunda planta alta del caso base en DesignBuilder}
+  \caption{Zonificación de la segunda planta alta antes de corregir el patio}
   \fuente{Basado en el esquema de zonificación del modelo energético del caso base desarrollado en DesignBuilder.}
 \end{figure}
 
 \begin{textoDosTercios}
-La cubierta se modela como un espacio vacío independiente. Aunque no corresponde a un área principal de ocupación, su inclusión en el modelo permite representar la exposición superior del edificio, la transmisión térmica por cubierta y la relación con las superficies de envolvente que inciden en el desempeño del caso base.
+La versión inicial representa la cubierta mediante un volumen independiente denominado VACIO. Este volumen debe distinguirse del patio interior, que permanece abierto al cielo desde la primera planta alta. La revisión geométrica retira la parte de cubierta superpuesta al patio y conserva el volumen situado sobre el núcleo de escaleras y ascensor. La figura siguiente documenta la configuración anterior a esa corrección.
 \end{textoDosTercios}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.68\textwidth]{figuras/zonificacion-cubierta.png}
-  \caption{Zonificación térmica del espacio vacío de cubierta del caso base en DesignBuilder}
+  \caption{Volumen de cubierta anterior a la corrección del patio}
   \fuente{Basado en el esquema de zonificación del modelo energético del caso base desarrollado en DesignBuilder.}
 \end{figure}
 
@@ -252,13 +252,13 @@ La desagregación por zonas permite reconocer qué espacios concentran mayor ár
 
 {\fontsize{9}{11}\selectfont
 \begin{longtable}{p{2.8cm}p{2.2cm}p{1.7cm}p{1.9cm}p{1.7cm}p{1.9cm}}
-  \caption{Zonas térmicas del modelo IDF del caso base} \\
+  \caption{Zonas térmicas del IDF anterior a la corrección del patio} \\
   \toprule
   Planta & Zona & Área piso & Muro ext. & Cubierta & Fen. ext. \\
   & & $\mathrm{m}^{2}$ & $\mathrm{m}^{2}$ & $\mathrm{m}^{2}$ & $\mathrm{m}^{2}$ \\
   \midrule
   \endfirsthead
-  \caption[]{Zonas térmicas del modelo IDF del caso base (continuación)} \\
+  \caption[]{Zonas térmicas del IDF anterior a la corrección del patio (continuación)} \\
   \toprule
   Planta & Zona & Área piso & Muro ext. & Cubierta & Fen. ext. \\
   & & $\mathrm{m}^{2}$ & $\mathrm{m}^{2}$ & $\mathrm{m}^{2}$ & $\mathrm{m}^{2}$ \\
@@ -305,13 +305,17 @@ La desagregación por zonas permite reconocer qué espacios concentran mayor ár
 \begin{textoDosTercios}
 La revisión de trazabilidad distingue el IDF previamente documentado, la exportación diaria \texttt{Datos Caso Base3.csv} y la copia del modelo ejecutada el 12 de septiembre de 2026. La corrida de revisión abarca del 1 de enero al 31 de diciembre con calendario 2025 y cuatro pasos de cálculo por hora. El calendario organiza los horarios de uso; no convierte el TMYx 2011--2025 en un registro meteorológico observado exclusivamente en 2025. Se habilitaron salidas mensuales, diarias y horarias.
 
-La copia ejecutada mantiene 28 zonas y 320 superficies constructivas, pero contiene 101 superficies de fenestración, 28 objetos de climatización ideal y 33 objetos de cargas eléctricas de tipo \texttt{OtherEquipment}. La presencia de un objeto de climatización no implica que la zona esté acondicionada durante todo el año: también intervienen sus horarios de disponibilidad y consignas. Estas diferencias impiden atribuir automáticamente los resultados de la exportación anterior a la versión revisada.
+La copia anterior a la corrección del patio mantiene 28 zonas y 320 superficies constructivas, pero contiene 101 superficies de fenestración, 28 objetos de climatización ideal y 33 objetos de cargas eléctricas de tipo \texttt{OtherEquipment}. La presencia de un objeto de climatización no implica que la zona esté acondicionada durante todo el año: también intervienen sus horarios de disponibilidad y consignas. Estas diferencias impiden atribuir automáticamente los resultados de la exportación anterior a la versión revisada.
 
 El EPW fija una referencia de UTC$-6$ y una elevación de estación de $18,9\,\mathrm{m}$. La entrada original del modelo indicaba UTC$-5$ y $9,8\,\mathrm{m}$; el registro del motor informa que adopta la localización del archivo meteorológico. En la copia de revisión se ajustó la zona horaria a UTC$-6$ y se desactivó el horario de verano. Se conservó la elevación del proyecto, pues la altitud de la estación no demuestra la cota del edificio.
 
 La corrida inicial de revisión terminó en 2 minutos y 42 segundos, con 214 advertencias y cuatro errores severos. Las incidencias incluyen superficies auxiliares degeneradas en la red de aire del vacío de primera planta, cinco zonas cuyo cierre geométrico requiere revisión y valores fuera de rango durante el dimensionamiento. Se identificó además una actividad de $12\,\mathrm{W/persona}$ en el salón de usos múltiples y una carga de equipos de $500\,\mathrm{W/m^2}$ con horario continuo en el datacenter. La primera requiere corregir su correspondencia con la actividad del recinto; la segunda debe contrastarse con el inventario de equipos. Por tanto, la finalización del cálculo no equivale todavía a la validación del caso base.
 
 La segunda corrida anual, con diagnóstico ampliado, concluyó en 2 minutos y 57 segundos y mantuvo cuatro errores severos. Sus 4736 advertencias incluyen el detalle adicional activado, por lo que su número no es directamente comparable con las 214 de la primera corrida. El cierre geométrico pendiente se localiza en las zonas PBXBAX01 de planta baja, 1PAXES, 1PAXPAS y VACIO de primera planta, y 2PAXSUM de segunda planta. Las dos superficies auxiliares problemáticas se denominan \texttt{EXTRA CRACK 1} y \texttt{EXTRA CRACK 2}.
+
+La tercera corrida de diagnóstico incorpora el patio como espacio exterior desde la primera planta alta y conserva el recinto de planta baja situado debajo. Se retiraron las dos zonas térmicas ficticias del patio y se recortó la cubierta superpuesta, con lo que el modelo pasó de 28 a 26 zonas. El cálculo anual terminó en 2 minutos y 34 segundos, con 4704 advertencias y ningún error severo; ya no generó las superficies auxiliares \texttt{EXTRA CRACK}. Persisten advertencias de cierre en PBXBAX01, 1PAXES, 1PAXPAS y 2PAXSUM, además de las relativas a actividad y dimensionamiento. La comprobación detectó también una asignación automática de cubierta sobre la losa bajo el patio, corregida en la siguiente revisión.
+
+La cuarta corrida conservó la composición original de esa losa, con porcelanato hacia el patio y yeso hacia el recinto inferior, y amplió de 15000 a 50000 el límite de figuras del cálculo de sombras. Concluyó en 3 minutos y 24 segundos, con 2758 advertencias y ningún error severo. Persisten 2441 avisos de saturación del cálculo de sombras y valores fuera de rango durante el dimensionamiento. Por ello, la desaparición de los errores severos acredita una mejora del modelo, pero estas corridas aún no constituyen la base definitiva para calcular ahorros.
 
 Las especificaciones eléctricas describen un rack de 19UR, un switch de 48 puertos con consumo máximo aproximado de $49,3\,\mathrm{W}$ y un grabador de video con disco diseñado para operación continua \parencite[pp.~84--85, 101--102]{mogrovejoEspecificacionesElectricasGalapagos}. Esta documentación aporta una base para reconstruir la carga del cuarto de telecomunicaciones, pero no acredita por sí sola los $500\,\mathrm{W/m^2}$ asignados: deben completarse las potencias, cantidades y horarios de los equipos efectivamente previstos.
 \end{textoDosTercios}
