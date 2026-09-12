@@ -198,19 +198,7 @@
 }
 
 \newcommand{\graficoProblemaIntro}{%
-  \begin{tikzpicture}[>=Latex]
-    \node[draw=introOrange,fill=introSoft,line width=0.9pt,rounded corners=2pt,
-      text=introDark,font=\fontsize{7.5}{8.8}\selectfont,align=center,text width=5.7cm,minimum height=1.05cm] (a) at (0,2.05)
-      {\textbf{Condiciones iniciales}\\Clima cálido-húmedo, logística insular y envolvente por evaluar};
-    \node[fill=introDark,text=white,rounded corners=2pt,
-      font=\bfseries\fontsize{8.2}{9.5}\selectfont,align=center,text width=5.7cm,minimum height=1.15cm] (b) at (0,0)
-      {Desempeño del escenario base\\sin verificación comparativa};
-    \node[draw=introBlue,fill=introSoft,line width=0.9pt,rounded corners=2pt,
-      text=introDark,font=\fontsize{7.5}{8.8}\selectfont,align=center,text width=5.7cm,minimum height=1.05cm] (c) at (0,-2.05)
-      {\textbf{Necesidad de evaluación}\\Demanda energética, confort térmico y sostenibilidad};
-    \draw[->,line width=0.9pt,color=introOrange] (a) -- (b);
-    \draw[->,line width=0.9pt,color=introBlue] (b) -- (c);
-  \end{tikzpicture}%
+  \input{figuras/problema-investigacion-semicircular.tex}%
 }
 
 \newcommand{\graficoJustificacionIntro}{%
