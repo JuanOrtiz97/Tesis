@@ -6,6 +6,7 @@
 \usepackage[spanish,es-tabla]{babel}
 \usepackage[none]{hyphenat}
 \usepackage{mathptmx}
+\usepackage{icomma}
 \usepackage{setspace}
 \usepackage{geometry}
 \usepackage{graphicx}
@@ -669,32 +670,28 @@
 
 \pagenumbering{roman}
 
-\preliminarUnaPagina{Dedicatoria}{%
-\raggedleft
-Texto de dedicatoria.
-}
 
 \preliminarUnaPagina{Agradecimiento}{%
 \raggedleft
-Agradezco a Dios por sostenerme con fortaleza, claridad y perseverancia durante este proceso academico.
+Agradezco a Dios por sostenerme con fortaleza, claridad y perseverancia durante este proceso académico.
 
-A mi familia, por su amor, paciencia y apoyo constante. Su presencia fue una fuente de motivacion y confianza en cada etapa de este camino.
+A mi familia, por su amor, paciencia y apoyo constante. Su presencia fue una fuente de motivación y confianza en cada etapa de este camino.
 
-A mi director y a mis docentes, por su orientacion, exigencia academica y valiosos aportes al desarrollo de esta investigacion.
+A mi director y a mis docentes, por su orientación, exigencia académica y valiosos aportes al desarrollo de esta investigación.
 
-Finalmente, expreso mi gratitud a la Universidad del Azuay y a todas las personas que, de una u otra manera, contribuyeron a la culminacion de este trabajo de titulacion.
+Finalmente, expreso mi gratitud a la Universidad del Azuay y a todas las personas que, de una u otra manera, contribuyeron a la culminación de este trabajo de titulación.
 }
 
 \preliminarUnaPagina{Resumen}{%
-El desarrollo de edificaciones en contextos insulares plantea desafíos y oportunidades en materia de eficiencia energética y sostenibilidad. En este contexto, el análisis del proyecto arquitectónico de la Defensoría del Pueblo en la isla San Cristóbal estudia las condiciones actuales del proyecto diseñado y propone mejoras que integran estrategias pasivas, como ventilación natural y control solar, además del uso de materiales sostenibles. La investigación se plantea mediante una metodología BIM-BES que articula el modelado tridimensional desarrollado en plataformas BIM, como Revit, con simulaciones energéticas basadas en EnergyPlus e implementadas en DesignBuilder. Se espera cuantificar la incidencia de las estrategias propuestas sobre la demanda energética y el confort térmico, contribuyendo a la optimización del proyecto arquitectónico y a la generación de criterios replicables para edificaciones públicas en contextos insulares de alta fragilidad ambiental.
+El estudio evaluó el proyecto de la Defensoría del Pueblo en San Cristóbal, Galápagos, mediante una metodología BIM-BES y simulaciones en DesignBuilder/EnergyPlus. Se configuró una matriz de 16 indicadores a partir de Minergie, WELL, CEELA, EDGE y LEED, y se compararon cuatro escenarios mediante cinco corridas: caso base, C1, C2 y dos revisiones de C3. La demanda anual de enfriamiento del caso base fue de 84.759,41 kWh térmicos. C3 revisión 02, que incorpora estrategias pasivas, aislamiento, vidrio de control solar e iluminación eficiente, alcanzó 65.767,88 kWh térmicos, una reducción del 22,41\,\%. En seis oficinas, la temperatura operativa media durante las horas ocupadas disminuyó entre 0,74 y 0,89 \textdegree C. Estos resultados sustentan la mejora térmica del paquete conjunto; no representan consumo medido ni acreditan certificación. La verificación integral del confort, el carbono incorporado y las emisiones de los materiales requiere evidencia complementaria. La matriz y la comparación proporcionan una referencia trazable para orientar decisiones de diseño en edificaciones públicas insulares.
 
 \textbf{Palabras clave:} confort térmico, eficiencia energética, estrategias pasivas, Galápagos, materiales sostenibles, simulación energética.
 }
 
 \preliminarUnaPagina{Abstract}{%
-The development of buildings in island contexts poses challenges and opportunities related to energy efficiency and sustainability. In this context, the analysis of the architectural project for the Ombudsman's Office on San Cristóbal Island studies the current design conditions and proposes improvements that integrate passive strategies, such as natural ventilation and solar control, as well as the use of sustainable materials. The research is structured through a BIM-BES methodology that links three-dimensional modeling in BIM platforms, such as Revit, with EnergyPlus-based energy simulations implemented in DesignBuilder. The study aims to quantify the impact of the proposed strategies on energy demand and thermal comfort, contributing to the optimization of the architectural project and to the development of replicable criteria for public buildings in environmentally fragile island contexts.
+This study assessed the design of the Ombudsman’s Office on San Cristóbal Island, Galápagos, through a BIM-BES methodology and DesignBuilder/EnergyPlus simulations. A 16-indicator matrix integrated references from Minergie, WELL, CEELA, EDGE and LEED. Four scenarios were compared through five runs: the baseline, C1, C2 and two revisions of C3. Baseline annual cooling demand was 84,759.41 thermal kWh. C3 revision 02, combining passive strategies, insulation, solar-control glazing and efficient lighting, reached 65,767.88 thermal kWh, a 22.41\,\% reduction. Across six offices, mean operative temperature during occupied hours decreased by 0.74–0.89 \textdegree C. These findings support the thermal improvement of the combined package; they do not represent measured electricity use or certification. Comprehensive comfort assessment and verification of embodied carbon and material emissions require additional evidence. The matrix and comparative results provide a traceable reference for design decisions in public buildings in island settings.
 
-\textbf{Keywords:} energy efficiency, Galapagos, passive strategies, sustainable materials, thermal comfort.
+\textbf{Keywords:} energy efficiency, energy simulation, Galapagos, passive strategies, sustainable materials, thermal comfort.
 }
 
 \clearpage
@@ -702,6 +699,7 @@ The development of buildings in island contexts poses challenges and opportuniti
 \tableofcontents
 \listoftables
 \listoffigures
+\input{insumos/abreviaturas-revision}
 
 \clearpage
 \pagestyle{fancy}
@@ -724,8 +722,6 @@ The development of buildings in island contexts poses challenges and opportuniti
 
 \appendix
 \clearpage
-\chapter{Anexos}
-
-Se ubicará en anexos la información estrictamente necesaria para la comprensión del trabajo de grado: datos inéditos, textos de difícil acceso, cuestionarios, cálculos especializados u otros respaldos.
+\input{insumos/anexo-trazabilidad-revision}
 
 \end{document}

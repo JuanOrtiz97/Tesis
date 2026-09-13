@@ -1,0 +1,22 @@
+\clearpage
+\subsection{Acristalamiento y proporción de ventana por orientación}
+Las superficies transparentes exteriores se extraen de los objetos FenestrationSurface:Detailed y se vinculan con su muro exterior. Se excluyen ventanas interiores, puertas, rejillas y huecos de paso. La relación ventana-muro (WWR) utiliza el área bruta del muro como denominador y el polígono modelado de ventana como numerador; no es área libre de ventilación. Las orientaciones agrupan sectores de 45 grados respecto al norte del modelo.
+\begin{table}[H]\centering\caption{Ventanas exteriores y propiedades ópticas del caso base}
+{\small\singlespacing\begin{tabular}{p{4.6cm}rrrr}\toprule
+Construcción & Área (m$^2$) & U reportada & SHGC & VT \\ \midrule
+Vidrio claro de 6 mm & 114,20 & 5,78 & 0,82 & 0,88 \\
+\bottomrule\end{tabular}}
+\fuente{Elaboración propia a partir del IDF y WindowConstruction del EIO de la corrida 09. U en W/m$^2$K según reporte del vidrio; no acredita U del conjunto con marco ni puentes térmicos.}
+\end{table}
+\begin{table}[H]\centering\caption{Relación entre ventana y muro exterior por orientación}
+{\small\singlespacing\begin{tabular}{lrrr}\toprule
+Orientación & Muro bruto (m$^2$) & Ventana (m$^2$) & WWR (\%) \\ \midrule
+N & 5,27 & 0,00 & 0,00 \\
+NE & 109,79 & 42,78 & 38,97 \\
+SE & 138,33 & 19,18 & 13,87 \\
+SO & 114,26 & 52,24 & 45,72 \\
+NO & 135,54 & 0,00 & 0,00 \\
+\bottomrule\end{tabular}}
+\fuente{Elaboración propia por cálculo de polígonos del IDF. Los CSV del expediente conservan las superficies y la agregación por orientación.}
+\end{table}
+La transmitancia unidimensional del muro se desarrolla en la sección anterior. C3 revisión 02 declara U de muro de 0,53 y de cubierta de 0,27 W/m$^2$K, y vidrio con U de 1,80 W/m$^2$K, SHGC de 0,35 y VT de 0,65. Son parámetros del paquete simulado; su evaluación constructiva y ambiental requiere productos y detalles definitivos.

@@ -1,0 +1,14 @@
+{
+  "paginas": 140,
+  "referencias_sin_resolver": 0,
+  "paginas_vacias": 0,
+  "texto_fuera_de_pagina": 0,
+  "casos_conciliados": 5,
+  "estados_matriz": {
+    "NE": 7,
+    "EP": 6,
+    "NC": 2,
+    "LB": 1
+  },
+  "observaciones_registradas": 64
+}

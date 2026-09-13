@@ -1,0 +1,20 @@
+\chapter{Trazabilidad de modelos, datos y cálculos}
+\label{anexo:trazabilidad}
+Este anexo identifica los respaldos utilizados en la comparación. Las rutas son relativas al expediente digital de la investigación. Las versiones iniciales de C3 se conservan como antecedentes y no sustituyen la revisión 02.
+\section{Registro de los ensayos}
+\begin{description}\raggedright
+\item[CB.] Corrida 09: geometría del atrio cubierta y cargas revisadas. Entrada archivada en \nolinkurl{datos/db-caso-base-revision09.idf}; exportación \nolinkurl{Datos Caso Base3.csv}.
+\item[C1 y C2.] Corridas 01 de los paquetes pasivo y reflectante. Comparaciones por zona en \nolinkurl{datos/c1-comparacion-enfriamiento-anual.csv} y \nolinkurl{datos/c2-comparacion-enfriamiento-anual.csv}.
+\item[C3 revisión 01.] Paquete combinado inicial. Resultados por zona en \nolinkurl{datos/c3-comparacion-enfriamiento-anual.csv}.
+\item[C3 revisión 02.] Modelo final \nolinkurl{C3_integral_revision02_final 1.dsb}, corrida 02. Enfriamiento por zona en \nolinkurl{datos/C3r02-enfriamiento-anual-por-zona.csv} y temperaturas ocupadas en \nolinkurl{datos/C3r02-temperatura-oficinas-ocupadas.csv}.
+\end{description}
+\section{Reglas de procesamiento}
+La comparación conserva el mismo EPW TMYx 2011--2025 y calendario 2025. Las tasas horarias de enfriamiento, expresadas en W, se integran multiplicando cada valor por una hora y dividiendo entre 1.000 para obtener kWh. Los registros de energía en J se convierten a kWh dividiendo entre 3.600.000. No se promedian porcentajes mensuales para calcular el ahorro anual.
+
+Las tablas redondean la presentación a dos decimales; diferencias, sumas y porcentajes se calculan sobre valores originales. Las tablas de geometría y de luz natural proceden de exportaciones distintas y no deben intercambiar sus áreas. El análisis ocupado comprende seis oficinas, de lunes a sábado entre las 08:00 y las 18:00 del calendario 2025, sin ajuste de feriados: 3.130 horas por zona.
+
+El archivo \nolinkurl{datos/revision-comparacion-datacenter.csv} conserva la separación del datacenter, los usos eléctricos estimados y el denominador de intensidad. Los indicadores y sus evidencias se registran en \nolinkurl{datos/matriz-indicadores-sostenibilidad.csv}. El registro de atención al informe se entrega en \nolinkurl{revision/observaciones.csv}.
+\section{Condiciones de reproducción y límites}
+C3 revisión 02 se ejecutó con EnergyPlus 9.4.0.002: cero errores severos y 324 advertencias. Se amplió el máximo de días de inicialización a 100 manteniendo las tolerancias. Los archivos de salida originales y la configuración deben conservarse conjuntamente; los CSV no sustituyen el modelo ejecutable.
+
+Los planos definitivos coordinados, el inventario real del datacenter, la selección de productos, las declaraciones ambientales y los cálculos complementarios de confort e iluminación anual constituyen información pendiente de cierre. Este anexo no presenta esa documentación como existente ni como verificada.

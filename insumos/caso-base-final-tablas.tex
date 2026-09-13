@@ -6,12 +6,12 @@
 \toprule
 Indicador & Valor & Unidad o alcance \\
 \midrule
-Enfriamiento sensible & 59018,63 & kWh térmicos/año \\
-Enfriamiento total & 84759,41 & kWh térmicos/año \\
-Electricidad de enfriamiento estimada & 45258,71 & kWh eléctricos/año \\
-Electricidad de equipos & 39307,57 & kWh eléctricos/año \\
-Electricidad de iluminación & 13895,39 & kWh eléctricos/año \\
-Ganancia solar por ventanas exteriores & 33884,25 & kWh/año \\
+Enfriamiento sensible & 59.018,63 & kWh térmicos/año \\
+Enfriamiento total & 84.759,41 & kWh térmicos/año \\
+Electricidad de enfriamiento estimada & 45.258,71 & kWh eléctricos/año \\
+Electricidad de equipos & 39.307,57 & kWh eléctricos/año \\
+Electricidad de iluminación & 13.895,39 & kWh eléctricos/año \\
+Ganancia solar por ventanas exteriores & 33.884,25 & kWh/año \\
 Máximo diario de enfriamiento sensible & 281,52 & kWh/día; 12/03/2025 \\
 Temperatura operativa media & 26,53 & $^\circ$C \\
 Máxima media diaria operativa & 30,06 & $^\circ$C \\
@@ -22,7 +22,7 @@ Ventilación e infiltración media & 1,68 & renovaciones/hora \\
 \fuente{Elaboración propia a partir de \texttt{Datos Caso Base3.csv}, exportado de la corrida 09 de DesignBuilder. Resultados provisionales.}
 \end{table}
 
-La electricidad de enfriamiento es una estimación de DesignBuilder bajo las eficiencias configuradas, no un consumo medido. El enfriamiento total incluye el sensible; ambas magnitudes no se suman. Las temperaturas corresponden a medias del edificio exportadas por el programa.
+La electricidad de enfriamiento es una estimación de DesignBuilder bajo las eficiencias configuradas, no un consumo medido. El enfriamiento total incluye el sensible; ambas magnitudes no se suman. Las temperaturas corresponden a medias del edificio exportadas por el programa. Los 59.018,63 kWh corresponden a \textit{Zone Ideal Loads Supply Air Sensible Cooling Rate}; el balance por componentes usa \textit{Zone Air System Sensible Cooling Rate}, integrado en 58.988,30 kWh. La diferencia de 30,33 kWh responde a variables distintas del reporte y no a redondeo.
 \clearpage
 \begin{table}[H]
 \centering
@@ -33,18 +33,18 @@ La electricidad de enfriamiento es una estimación de DesignBuilder bajo las efi
 Mes & Electricidad de enfriamiento & Enfriamiento sensible & Solar exterior & $T_{op}$ & $T_{ext}$ \\
 \midrule
  & kWh & kWh & kWh & °C & °C \\
-Ene & 4758,16 & 5808,86 & 3502,81 & 27,42 & 25,60 \\
-Feb & 5091,22 & 6077,35 & 3045,26 & 28,25 & 26,68 \\
-Mar & 5898,76 & 7081,25 & 3228,37 & 29,04 & 27,10 \\
-Abr & 5362,01 & 6038,52 & 2625,60 & 27,86 & 26,74 \\
-May & 5051,05 & 6000,47 & 2428,64 & 27,63 & 25,96 \\
-Jun & 3363,42 & 4512,38 & 2269,70 & 26,35 & 24,18 \\
-Jul & 2685,92 & 3896,30 & 2247,28 & 25,13 & 23,11 \\
-Ago & 2392,37 & 3691,62 & 2388,76 & 25,11 & 22,11 \\
-Sep & 2197,24 & 3410,80 & 2480,55 & 24,90 & 21,73 \\
-Oct & 2492,05 & 3933,80 & 3023,60 & 25,24 & 22,14 \\
-Nov & 2453,15 & 3804,01 & 3244,45 & 25,27 & 22,49 \\
-Dic & 3513,36 & 4763,27 & 3399,24 & 26,28 & 23,69 \\
+Ene & 4.758,16 & 5.808,86 & 3.502,81 & 27,42 & 25,60 \\
+Feb & 5.091,22 & 6.077,35 & 3.045,26 & 28,25 & 26,68 \\
+Mar & 5.898,76 & 7.081,25 & 3.228,37 & 29,04 & 27,10 \\
+Abr & 5.362,01 & 6.038,52 & 2.625,60 & 27,86 & 26,74 \\
+May & 5.051,05 & 6.000,47 & 2.428,64 & 27,63 & 25,96 \\
+Jun & 3.363,42 & 4.512,38 & 2.269,70 & 26,35 & 24,18 \\
+Jul & 2.685,92 & 3.896,30 & 2.247,28 & 25,13 & 23,11 \\
+Ago & 2.392,37 & 3.691,62 & 2.388,76 & 25,11 & 22,11 \\
+Sep & 2.197,24 & 3.410,80 & 2.480,55 & 24,90 & 21,73 \\
+Oct & 2.492,05 & 3.933,80 & 3.023,60 & 25,24 & 22,14 \\
+Nov & 2.453,15 & 3.804,01 & 3.244,45 & 25,27 & 22,49 \\
+Dic & 3.513,36 & 4.763,27 & 3.399,24 & 26,28 & 23,69 \\
 \bottomrule
 \end{tabular}}
 \fuente{Elaboración propia a partir de \texttt{Datos Caso Base3.csv}, exportado de la corrida 09 de DesignBuilder. Resultados provisionales.}
@@ -65,12 +65,12 @@ Dic & 3513,36 & 4763,27 & 3399,24 & 26,28 & 23,69 \\
 \toprule
 Componente & Balance (kWh) & Signo del intercambio \\
 \midrule
-Misceláneos & 34701,24 & Ganancia neta \\
-Solar por ventanas exteriores & 33884,25 & Ganancia neta \\
-Iluminación & 13895,39 & Ganancia neta \\
-Ocupación & 6152,72 & Ganancia neta \\
-Computadores y equipos & 4331,64 & Ganancia neta \\
-Solar por ventanas interiores & 2463,17 & Ganancia neta \\
+Misceláneos & 34.701,24 & Ganancia neta \\
+Solar por ventanas exteriores & 33.884,25 & Ganancia neta \\
+Iluminación & 13.895,39 & Ganancia neta \\
+Ocupación & 6.152,72 & Ganancia neta \\
+Computadores y equipos & 4.331,64 & Ganancia neta \\
+Solar por ventanas interiores & 2.463,17 & Ganancia neta \\
 Cielos interiores & 707,09 & Ganancia neta \\
 Cocina & 274,70 & Ganancia neta \\
 Calefacción sensible de zona & 82,83 & Ganancia neta \\
@@ -80,17 +80,17 @@ Particiones interiores & -748,27 & Pérdida neta \\
 Aire exterior & -771,60 & Pérdida neta \\
 Cubiertas & -907,15 & Pérdida neta \\
 Ventilación natural interna & -977,30 & Pérdida neta \\
-Ventilación exterior & -2601,14 & Pérdida neta \\
-Muros & -6947,35 & Pérdida neta \\
-Piso sobre terreno & -8780,93 & Pérdida neta \\
-Acristalamientos & -12280,44 & Pérdida neta \\
-Enfriamiento sensible de zona & -58988,30 & Pérdida neta \\
+Ventilación exterior & -2.601,14 & Pérdida neta \\
+Muros & -6.947,35 & Pérdida neta \\
+Piso sobre terreno & -8.780,93 & Pérdida neta \\
+Acristalamientos & -12.280,44 & Pérdida neta \\
+Enfriamiento sensible de zona & -58.988,30 & Pérdida neta \\
 \bottomrule
 \end{tabular}}
 \fuente{Elaboración propia a partir de \texttt{Datos Caso Base3.csv}, exportado de la corrida 09 de DesignBuilder. Resultados provisionales.}
 \end{table}
 
-Se conserva la convención de signos del programa: positivo hacia el recinto y negativo desde él. Los intercambios entre zonas se muestran como términos del reporte; esta tabla no constituye un balance cerrado de todo el edificio. La electricidad de equipos no se agrega nuevamente a sus ganancias térmicas.
+Se conserva la convención de signos del programa: positivo hacia el recinto y negativo desde él. Los intercambios entre zonas se muestran como términos del reporte; esta tabla no constituye un balance cerrado de todo el edificio. La electricidad de equipos no se agrega nuevamente a sus ganancias térmicas. La suma de los términos positivos es 96.493,03 kWh y la de los negativos es -93.829,42 kWh; el residuo es +2.663,61 kWh (2,76\,\% de las ganancias). Se informa como residuo del conjunto de variables exportadas, sin atribuirlo a almacenamiento ni a otra causa física no verificada.
 \clearpage
 
 \begin{figure}[H]
