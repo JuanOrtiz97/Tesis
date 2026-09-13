@@ -1,0 +1,16 @@
+\subsection{Capacidad geométrica de apertura exterior}
+Se vincularon las ventanas exteriores con los componentes de apertura detallada de AirflowNetwork. Para cada recinto se calculó $A_{\mathrm{ap,max}}=\sum A_{v,i} f_{\mathrm{ancho},i}f_{\mathrm{alto},i}$, utilizando el máximo factor geométrico configurado. Este valor expresa la capacidad del modelo con la apertura máxima; no es el área libre certificada del producto ni el promedio de apertura durante la simulación.
+\begin{table}[htbp]\centering
+\caption{Capacidad de apertura exterior de las oficinas en C3 revisión 02}
+{\small\singlespacing\begin{tabular}{lrrrr}\toprule
+Oficina & Piso (m$^2$) & Ventana (m$^2$) & Apertura (m$^2$) & Apertura/piso (\%) \\ \midrule
+1PA-OF-01 & 15,20 & 10,99 & 2,20 & 14,46 \\
+1PA-OF-02 & 10,53 & 9,03 & 1,81 & 17,15 \\
+1PA-OF-03 & 18,66 & 6,93 & 1,39 & 7,43 \\
+PB-OF-01 & 12,72 & 4,08 & 0,82 & 6,42 \\
+PB-OF-02 & 9,87 & 4,08 & 0,82 & 8,26 \\
+PB-OF-03 & 13,46 & 4,08 & 0,82 & 6,06 \\
+\bottomrule\end{tabular}}
+\fuente{Elaboración propia a partir de polígonos y factores de apertura del IDF. Se excluyen puertas y conexiones interiores.}
+\end{table}
+La referencia P01 del 4\,\% corresponde al enfriamiento nocturno natural y exige además disponibilidad, protección y recorrido. Las oficinas del paquete utilizan un horario de ventilación diurno de 08:00 a 18:00; por ello no se acredita enfriamiento nocturno aunque la capacidad geométrica supere ese porcentaje. La verificación ejecutiva debe descontar obstrucciones y comprobar la posición real de hojas, marcos y rejillas. C02 requiere un balance de aire exterior por recinto: esta superficie no sustituye una medición ni una serie de caudal.

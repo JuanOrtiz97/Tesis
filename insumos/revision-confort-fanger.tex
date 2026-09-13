@@ -1,0 +1,20 @@
+\subsection{Confort de Fanger durante las horas analizadas}
+\label{sec:confort-fanger-comparado}
+Se recuperaron las variables horarias PMV y PPD calculadas por EnergyPlus en las cinco corridas. El análisis utiliza las mismas seis oficinas y 3.130 horas por zona que la comparación de temperatura operativa. El porcentaje mostrado corresponde a $|\mathrm{PMV}|\leq0,5$; el denominador permanece constante y no se pondera por área ni por número de personas.
+\begin{table}[htbp]\centering
+\caption{Horas analizadas dentro del intervalo PMV $\pm0,5$ (\%)}
+{\small\singlespacing\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{lrrrrr}\toprule
+Oficina & CB & C1 & C2 & C3 r01 & C3 r02 \\ \midrule
+PB-OF-01 & 16,39 & 18,82 & 16,55 & 18,85 & 25,88 \\
+PB-OF-02 & 11,47 & 12,08 & 11,57 & 12,04 & 18,95 \\
+PB-OF-03 & 13,99 & 14,35 & 14,12 & 14,41 & 21,41 \\
+1PA-OF-01 & 10,54 & 13,74 & 10,54 & 13,87 & 17,38 \\
+1PA-OF-02 & 11,37 & 11,85 & 12,17 & 12,43 & 17,96 \\
+1PA-OF-03 & 15,46 & 17,51 & 15,94 & 17,83 & 22,40 \\
+\bottomrule\end{tabular}}
+\fuente{Elaboración propia a partir de las series Fanger de los archivos ESO. Cada celda representa 3.130 horas de la oficina y corrida indicadas.}
+\end{table}
+C3 revisión 02 incrementa este porcentaje en todas las oficinas: pasa del intervalo 10,54--16,39\,\% del CB a 17,38--25,88\,\%. El PPD medio se reduce desde 22,21--26,06\,\% hasta 18,41--20,97\,\%. La mejora relativa no equivale a alcanzar una condición satisfactoria durante la mayor parte del horario analizado.
+
+El criterio T01 de WELL v2, edición Q4 2020, diferencia espacios acondicionados mecánicamente, naturalmente y de modo mixto. Su opción mecánica de PMV $\pm0,5$ exige al menos el 90\,\% de horas ocupadas en el 90\,\% de los espacios regularmente ocupados; el modo mixto exige comprobar cada régimen durante su operación \parencite{iwbiWellV22020}. La tabla es un diagnóstico comparativo de Fanger, no una comprobación integral de T01: no separa los regímenes de operación ni cubre todos los espacios regulares. El indicador C01 mantiene evidencia parcial.

@@ -1,14 +1,35 @@
 {
-  "paginas": 140,
+  "paginas": 129,
   "referencias_sin_resolver": 0,
   "paginas_vacias": 0,
   "texto_fuera_de_pagina": 0,
+  "desbordamientos_latex": 0,
   "casos_conciliados": 5,
+  "simulaciones_sensibilidad_aceptadas": 6,
+  "controles_delta_kWh": {
+    "CB": 0,
+    "C3": 0
+  },
   "estados_matriz": {
     "NE": 7,
     "EP": 6,
     "NC": 2,
     "LB": 1
   },
-  "observaciones_registradas": 64
+  "observaciones_registradas": 64,
+  "atendidas_o_verificadas": 53,
+  "parciales_o_pendientes": 11,
+  "pendientes_ids": [
+    "INC-11",
+    "GAP-01",
+    "GAP-02",
+    "GAP-03",
+    "GAP-04",
+    "GAP-07",
+    "GAP-08",
+    "GAP-09",
+    "GAP-11",
+    "GAP-15",
+    "REF-04"
+  ]
 }

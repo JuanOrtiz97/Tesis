@@ -1,0 +1,21 @@
+\subsection{Sensibilidad física a la carga del datacenter}
+\label{sec:sensibilidad-dc}
+Se ejecutaron ensayos adicionales para CB y C3 revisión 02 con cargas hipotéticas de 150 y 300 W/m\textsuperscript{2} en el datacenter, conservando su horario continuo. Se comparan pares con la misma carga; no se elimina el recinto ni se sustituye la línea base de 500 W/m\textsuperscript{2}. Las dos corridas de control reprodujeron exactamente las demandas anuales originales.
+\begin{table}[H]\centering
+\caption{Sensibilidad de la demanda anual de enfriamiento a la carga del datacenter}
+{\small\singlespacing\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{rrrrr}\toprule
+Carga (W/m$^2$) & CB (kWh) & C3 r02 (kWh) & Ahorro (kWh) & Ahorro (\%) \\ \midrule
+150 & 62.096,60 & 42.323,57 & 19.773,02 & 31,84 \\
+300 & 71.841,18 & 52.413,04 & 19.428,14 & 27,04 \\
+500 & 84.759,41 & 65.767,88 & 18.991,53 & 22,41 \\
+\bottomrule\end{tabular}}
+\fuente{Elaboración propia a partir de seis ejecuciones aceptadas de EnergyPlus 9.4: dos controles y cuatro sensibilidades. Todas las energías son térmicas.}
+\end{table}
+La reducción relativa de C3 revisión 02 varía del 22,41\,\% con 500 W/m\textsuperscript{2} al 31,84\,\% con 150 W/m\textsuperscript{2}. El ahorro absoluto permanece entre 18.991,53 y 19.773,02 kWh térmicos/año. Dentro de los valores ensayados, C3 conserva una demanda menor que CB; la magnitud porcentual depende del peso de la carga continua. Estos ensayos no identifican la potencia real instalada ni autorizan a elegir la carga que produzca el mayor porcentaje de mejora.
+\begin{figure}[H]\centering
+\includegraphics[width=.94\textwidth]{revision-sensibilidad-datacenter.pdf}
+\caption{Demanda de enfriamiento bajo tres hipótesis de carga del datacenter}
+\fuente{Elaboración propia. Puntos simulados; las líneas solo conectan los ensayos y no representan un ajuste predictivo.}
+\end{figure}
+Las seis ejecuciones aceptadas finalizaron sin errores severos, con 318 advertencias en CB y 324 en C3. El primer ensayo C3 de 150 W/m\textsuperscript{2} no alcanzó convergencia de cargas tras 100 días de inicialización y se descartó. Su repetición amplió el máximo a 500 días, conservando las tolerancias de 0,04 para cargas y 0,4 \textdegree C para temperatura. No se modificaron parámetros físicos para forzar convergencia. El inventario y la operación real de equipos permanecen como datos necesarios para validar el supuesto de partida.

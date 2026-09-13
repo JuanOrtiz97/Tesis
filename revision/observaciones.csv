@@ -13,53 +13,53 @@ ERR-11,Resuelto,Seis palabras clave equivalentes.
 ERR-12,Resuelto,EnergyPlus 9.4.0.002 identificado.
 INC-01,Resuelto,Resumen y abstract con resultados y límites.
 INC-02,Resuelto,Capítulo 3 describe lo ejecutado y delimita lo pendiente.
-INC-03,Resuelto,Cuatro escenarios; cinco corridas y dos revisiones C3.
+INC-03,Resuelto,"Cuatro escenarios y cinco corridas principales; seis ejecuciones aceptadas adicionales para sensibilidad, identificadas por separado."
 INC-04,Decisión del autor,Título conservado por instrucción expresa; límites ambientales visibles.
 INC-05,Resuelto,CEELA normalizado.
-INC-06,Parcial,Se elimina duplicación literal de extremos mensuales; siguen resúmenes climáticos pertinentes.
+INC-06,Resuelto,"Capítulo 3 conserva método climático y remite a sección 4.2; eliminada su repetición de medias, extremos y totales del diagnóstico."
 INC-07,Resuelto,Diferencia irradiancia media 8760h e irradiación anual.
 INC-08,Resuelto en texto y tablas,Separadores de miles normalizados; gráficos raster previos no reescritos.
 INC-09,Resuelto en resultados principales,Resumen lumínico ahora a dos decimales; fuentes y propiedades mantienen precisión.
 INC-10,Resuelto,Campos IDF nulos diferenciados de áreas inferidas EIO.
-INC-11,Parcial,Ascensores identificados por planta y abreviaturas; falta plano de programa definitivo.
+INC-11,Parcial,"Plantas A02/A03 incorporadas y programa visible. Falta conciliar nombres, límites y áreas BIM-BES y confirmar juego definitivo."
 INC-12,Resuelto,Selección analítica del caso en capítulo 3; descripción física en 4.
 INC-13,Resuelto en captions simples,Se retira punto final; notas de fuente conservan puntuación.
 GAP-01,Pendiente de evidencia,"Productos, cantidades y declaraciones ambientales para ACV y emisiones."
-GAP-02,Parcial,Comparación cinco corridas con/sin DC del agregado; sensibilidad física requiere nuevas corridas y carga real.
-GAP-03,Pendiente de planos,Se localizó Revit SAn cristobal.rvt y especificaciones; no juego definitivo PDF coordinado.
+GAP-02,Parcial avanzado,"Dos controles reproducen originales; cuatro sensibilidades aceptadas a 150/300 W/m², cero severos. Ahorro C3: 31,84/27,04/22,41% a 150/300/500. Inventario real pendiente."
+GAP-03,Parcial,"A01, A02 y A03 exportadas de Revit e incorporadas. Fachadas A04, cortes A05 y coordinación definitiva pendientes; Revit minimizado impidió continuar la exportación."
 GAP-04,Parcial,"EUI sobre 281,6308 m² explícitos IDF; no se denomina SRE sin verificación normativa."
-GAP-05,Parcial,Se explican denominadores de área; área del predio y construida requieren planos.
+GAP-05,Resuelto para documentación disponible,"Terreno 240 m²; áreas brutas PB 126,00, 1PA 137,80, 2PA 93,28: total 357,08 m² según A01. No confundir con 281,6308 m² del IDF ni SRE."
 GAP-06,Resuelto para modelo,"U muro=2,69; E03 NC contra referencia adoptada. Puentes/clima/certificación pendientes."
-GAP-07,Parcial avanzado,"Añadidas superficies de ventana, U, SHGC, VT y WWR por orientación del IDF/EIO; detalles de todo el conjunto pendientes."
-GAP-08,Pendiente de análisis,Confort ocupado exige criterio aplicable al régimen mixto; no basta temperatura media.
-GAP-09,Pendiente de simulación,Luz natural de C1/C3 con condiciones comparables y análisis anual.
+GAP-07,Parcial avanzado,"U, SHGC, VT y WWR documentados; se explicita discrepancia de soluciones A01 frente a IDF. Conciliar capas, productos y propiedades del conjunto con marcos."
+GAP-08,Parcial avanzado,"PMV/PPD de seis oficinas en cinco corridas: 3.130 horas por oficina. Supuestos de actividad, ropa y aire verificados. Falta separar regímenes y cubrir todos los espacios regulares para WELL."
+GAP-09,Pendiente de verificación y exportación,Se intentó cálculo puntual/anual en C3. La exportación pierde foco y no guarda CSV; no se incorporan cifras sin archivo y trazabilidad. Falta comparación lumínica CB-C1-C3 validada.
 GAP-10,Resuelto como estimación,"Cinco usos eléctricos estimados, método COP y EUI; no consumo medido ni EDGE."
-GAP-11,Pendiente de análisis,Áreas netas practicables y caudal por recinto; no adoptar tasas de oficina no verificadas del informe.
+GAP-11,Parcial avanzado,"CSV con capacidad geométrica de apertura de seis oficinas en cinco casos y tabla C3. Falta área neta de producto, operación real y caudales; ventilación diurna no acredita criterio nocturno P01."
 GAP-12,Resuelto en alcance,No se presenta evaluación económica como realizada.
-GAP-13,Parcial,Discusión nueva con revisión primaria Ribeiro; comparación cuantitativa multiestudio pendiente.
+GAP-13,Resuelto en discusión comparativa,"Contraste cuantitativo con Zoure y Genovese: 25,3% enfriamiento frente a 22,41% propio; se distinguen clima, base, forma y métricas. No se extrapola eficacia."
 GAP-14,Resuelto,Abreviaturas y símbolos.
-GAP-15,Pendiente de cartografía,"Mapa georreferenciado exige ubicación, límite y escala verificables."
-MT-01,Resuelto,Sustituidas15imágenes institucionales por tres esquemas propios; capítulo2 con flujo continuo.
-MT-02,Parcial,Nueva síntesis crítica y vacío de investigación; no matriz cuantitativa de literatura.
-MT-03,Resuelto en alcance,Se retira afirmación genérica de integración normativa ecuatoriana/local no documentada.
-MT-04,Pendiente bibliográfico,Ampliación específica de evidencia insular.
+GAP-15,Parcial,Retirado mapa de IA con límite supuesto. Figura 1.1 usa croquis A01 de Revit con calles y predio identificados; no se presenta como cartografía georreferenciada ni escala métrica.
+MT-01,Resuelto,"Marco teórico con seis figuras propias: tres síntesis y tres nuevas ilustraciones técnicas de ventilación, luz/sombra y resistencia térmica."
+MT-02,Resuelto en síntesis,"Tabla de tres referencias articula aporte utilizado y límites de transferencia; incluye estudio insular, ensayo de oficinas y revisión crítica."
+MT-03,Resuelto en alcance,Retirada afirmación de integración de regulaciones locales no documentadas; se distingue matriz técnica de conformidad normativa.
+MT-04,Resuelto en ampliación bibliográfica,"Añadidas dos fuentes oficiales insulares: ELECGALAPAGOS, rendición 2024, y Parque Nacional Galápagos, permisos de recursos. Sin inventar factor de emisión."
 REF-01,Verificado; aclarado,Portadas oficiales EDGE actualizadas 15/05/2026. Fechas no se deducen del URL 2024.
 REF-02,Resuelto,Ribeiro: Sustainability 2025 17(5)1876; DOI10.3390/su17051876.
 REF-03,Resuelto,Se identifica preprint no revisado por pares en texto.
-REF-04,Pendiente de alcance normativo,No se incorporan ASHRAE55/62.1 como evaluaciones ya ejecutadas.
+REF-04,Parcial,"Identificada ASHRAE 55-2013 en WELL v2 Q4 2020. ASHRAE 62.1 se conserva como referencia condicional de Minergie, sin tasas ni comprobación normativa propia."
 REF-05,Verificado; sin cambio,Martínes coincide con MDPI y Universidad de Cuenca; no cambiar a Martínez.
 REF-06,Resuelto para las imágenes observadas,Se retiran imágenes institucionales genéricas; esquemas propios con fuente.
 TEX-01,Resuelto,icomma evita espaciado matemático tras decimal.
-TEX-02,Parcial,Unidades nuevas normalizadas; revisión visual del documento existente.
-TEX-03,Parcial,Unidades nuevas normalizadas; fuentes brutas no alteradas.
+TEX-02,Resuelto,Grados Celsius normalizados en texto y expresiones matemáticas; compilación y revisión visual.
+TEX-03,Resuelto,Unidades de área y volumen con superíndices; se conservan nombres de variables y archivos fuente.
 TEX-04,Resuelto,Espacio en encabezado de porcentaje normalizado.
 TEX-05,Verificado,Marco teórico usa CO2 con subíndice.
-TEX-06,Pendiente editorial,Uniformidad exhaustiva de rangos de páginas.
-TEX-07,Pendiente editorial,Sangrías preservadas del formato actual; no cambio global sin auditoría de composición.
+TEX-06,Resuelto,Rangos de páginas normalizados en citas y bibliografía; no se alteran identificadores ni títulos.
+TEX-07,Resuelto,"Sangría de párrafo uniforme a cero, conservando separación entre párrafos y formato vertical actual."
 TEX-08,Resuelto,CUB normalizado.
 TEX-09,Verificado,Tabla de verificaciones del modelo contiene midrule y bottomrule.
 TEX-10,Resuelto,Anexo A real mediante appendix/chapter.
-RED-01,Parcial,"Límites concentrados en método, discusión y anexo; se mantienen cautelas que evitan falsas certificaciones."
+RED-01,Resuelto en pasajes observados,Eliminadas cautelas repetidas de cierre en capítulos 4 y 5; actualizada transición al análisis ejecutado. Los límites técnicos específicos permanecen junto a cada indicador y en capítulo 6.
 RED-02,Resuelto,Cuatro subsecciones por objetivo y aporte/hipótesis.
-RED-03,Parcial,Redacción metodológica corregida; estilo completo del marco pendiente.
-RED-04,Parcial,Añadido análisis DC/energía en capítulo5; se conserva estructura principal del4 solicitada por autor.
+RED-03,Resuelto en pasajes revisados,Reducidas construcciones repetidas con permitir y corregida concordancia en marco teórico; citas y límites conservados.
+RED-04,Resuelto en organización,"Capítulo 4 añade diagnóstico PMV/PPD real y planos; capítulo 5 reúne comparación, aperturas y sensibilidad. Discusión bibliográfica ubicada antes de síntesis."

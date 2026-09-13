@@ -15,7 +15,7 @@ Ganancia solar por ventanas exteriores & 33.884,25 & kWh/año \\
 Máximo diario de enfriamiento sensible & 281,52 & kWh/día; 12/03/2025 \\
 Temperatura operativa media & 26,53 & $^\circ$C \\
 Máxima media diaria operativa & 30,06 & $^\circ$C \\
-Días con media operativa mayor de 28 °C & 80 & días; indicador exploratorio \\
+Días con media operativa mayor de 28 \textdegree C & 80 & días; indicador exploratorio \\
 Ventilación e infiltración media & 1,68 & renovaciones/hora \\
 \bottomrule
 \end{tabular}}
@@ -23,7 +23,7 @@ Ventilación e infiltración media & 1,68 & renovaciones/hora \\
 \end{table}
 
 La electricidad de enfriamiento es una estimación de DesignBuilder bajo las eficiencias configuradas, no un consumo medido. El enfriamiento total incluye el sensible; ambas magnitudes no se suman. Las temperaturas corresponden a medias del edificio exportadas por el programa. Los 59.018,63 kWh corresponden a \textit{Zone Ideal Loads Supply Air Sensible Cooling Rate}; el balance por componentes usa \textit{Zone Air System Sensible Cooling Rate}, integrado en 58.988,30 kWh. La diferencia de 30,33 kWh responde a variables distintas del reporte y no a redondeo.
-\clearpage
+\par\medskip
 \begin{table}[H]
 \centering
 \caption{Resultados mensuales del caso base revisado}
@@ -32,7 +32,7 @@ La electricidad de enfriamiento es una estimación de DesignBuilder bajo las efi
 \toprule
 Mes & Electricidad de enfriamiento & Enfriamiento sensible & Solar exterior & $T_{op}$ & $T_{ext}$ \\
 \midrule
- & kWh & kWh & kWh & °C & °C \\
+ & kWh & kWh & kWh & \textdegree C & \textdegree C \\
 Ene & 4.758,16 & 5.808,86 & 3.502,81 & 27,42 & 25,60 \\
 Feb & 5.091,22 & 6.077,35 & 3.045,26 & 28,25 & 26,68 \\
 Mar & 5.898,76 & 7.081,25 & 3.228,37 & 29,04 & 27,10 \\
@@ -56,7 +56,7 @@ Dic & 3.513,36 & 4.763,27 & 3.399,24 & 26,28 & 23,69 \\
 \caption{Electricidad estimada y energía térmica de enfriamiento por mes}
 \fuente{Elaboración propia a partir de \texttt{Datos Caso Base3.csv}, exportado de la corrida 09 de DesignBuilder. Resultados provisionales.}
 \end{figure}
-\clearpage
+\par\medskip
 \begin{table}[H]
 \centering
 \caption{Balance térmico anual por componentes del modelo revisado}
@@ -91,7 +91,7 @@ Enfriamiento sensible de zona & -58.988,30 & Pérdida neta \\
 \end{table}
 
 Se conserva la convención de signos del programa: positivo hacia el recinto y negativo desde él. Los intercambios entre zonas se muestran como términos del reporte; esta tabla no constituye un balance cerrado de todo el edificio. La electricidad de equipos no se agrega nuevamente a sus ganancias térmicas. La suma de los términos positivos es 96.493,03 kWh y la de los negativos es -93.829,42 kWh; el residuo es +2.663,61 kWh (2,76\,\% de las ganancias). Se informa como residuo del conjunto de variables exportadas, sin atribuirlo a almacenamiento ni a otra causa física no verificada.
-\clearpage
+\par\medskip
 
 \begin{figure}[H]
 \centering
@@ -99,7 +99,7 @@ Se conserva la convención de signos del programa: positivo hacia el recinto y n
 \caption{Balance general anual: aportes y extracciones de calor}
 \fuente{Elaboración propia a partir de \texttt{Datos Caso Base3.csv}, exportado de la corrida 09 de DesignBuilder. Resultados provisionales.}
 \end{figure}
-\clearpage
+\par\medskip
 
 \begin{figure}[H]
 \centering
@@ -114,7 +114,7 @@ Se conserva la convención de signos del programa: positivo hacia el recinto y n
 \caption{Evolución de las medias diarias de temperatura}
 \fuente{Elaboración propia a partir de \texttt{Datos Caso Base3.csv}, exportado de la corrida 09 de DesignBuilder. Resultados provisionales.}
 \end{figure}
-\clearpage
+\par\medskip
 
 \begin{figure}[H]
 \centering

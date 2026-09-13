@@ -14,7 +14,7 @@ El atrio cubierto comienza en la primera planta alta, sobre una losa opaca. Sus 
 \fuente{Elaboración propia a partir de la vista del modelo revisado en DesignBuilder.}
 \end{figure}
 
-\clearpage
+\par\medskip
 \subsection{Representación térmica del atrio}
 \begin{textoDosTercios}
 El atrio se divide en tres zonas de aire: primera planta alta, segunda planta alta y volumen superior. Esta división permite conservar las cotas y las relaciones con los recintos adyacentes. Las aberturas horizontales entre niveles se incluyen en la red de aire, mientras que la cubierta superior y la franja de cierre actúan como superficies térmicas opacas. El modelo no asigna ocupantes, iluminación, equipos ni climatización a las zonas del atrio.
@@ -43,7 +43,7 @@ Cargas internas y HVAC & Sin ocupación, iluminación, equipos ni climatización
 \fuente{Elaboración propia a partir del modelo y de la comprobación del IDF exportado.}
 \end{table}
 
-\clearpage
+\par\medskip
 \section{Construcción del modelo energético}
 \subsection{Archivo climático y parámetros de cálculo}
 \begin{textoDosTercios}
@@ -53,7 +53,7 @@ El cálculo de sombras utiliza el método por píxeles y las ventanas se represe
 \end{textoDosTercios}
 \input{insumos/db-configuracion-actual.tex}
 
-\clearpage
+\par\medskip
 \subsection{Visualización de las protecciones solares}
 \begin{textoDosTercios}
 La vista solar permite reconocer la relación geométrica entre cubiertas, celosías y fachadas. Se presenta como comprobación visual del modelo; no sustituye los balances anuales de radiación ni permite cuantificar ahorros energéticos. Las sombras mostradas corresponden al 21 de diciembre a las 08:00, según la configuración de visualización de DesignBuilder.
@@ -67,14 +67,14 @@ La vista solar permite reconocer la relación geométrica entre cubiertas, celos
 \end{figure}
 
 
-\clearpage
+\par\medskip
 \subsection{Inventario de zonas y cargas internas}
 \begin{textoDosTercios}
 La tabla siguiente presenta las áreas y volúmenes explícitamente introducidos en el IDF. Estos valores corresponden a la geometría interior empleada en los balances y pueden diferir de las áreas calculadas sobre los polígonos de las superficies. Las áreas asignadas a niveles del atrio se conservan como parámetros de zona; no deben sumarse como superficie útil ocupable del edificio.
 \end{textoDosTercios}
 \input{insumos/db-zonas-actual.tex}
 
-\clearpage
+\par\medskip
 \subsection{Control de calidad y alcance de los resultados}
 \begin{textoDosTercios}
 La revisión distingue los errores que impiden ejecutar el cálculo de las advertencias que requieren una comprobación física. Se verificaron el cierre superior del atrio, sus conexiones de aire, la ausencia de cargas internas en el vacío y la eliminación de superficies auxiliares degeneradas. También se corrigió el factor metabólico del salón de usos múltiples: el valor 0,1 reducía la actividad seleccionada de 120 a $12\,\mathrm{W/persona}$. Se restableció el factor 1 sin modificar la densidad de ocupación.

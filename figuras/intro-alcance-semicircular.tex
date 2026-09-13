@@ -1,0 +1,92 @@
+% Figura conceptual editable. Las conexiones no representan magnitudes.
+\begingroup
+\setstretch{1}
+\begin{tikzpicture}[
+  >=Latex,
+  every node/.style={inner sep=0pt,outer sep=0pt,align=left,text=introDark},
+  problemaEtiqueta/.style={font=\fontfamily{phv}\selectfont\fontsize{7}{9}\selectfont,text=udaGray},
+  problemaTitulo/.style={font=\fontfamily{phv}\selectfont\bfseries\fontsize{11}{13}\selectfont},
+  problemaTexto/.style={font=\fontfamily{phv}\selectfont\fontsize{8.8}{11.5}\selectfont,text=udaGray},
+  problemaNumero/.style={font=\fontfamily{phv}\selectfont\bfseries\fontsize{8}{10}\selectfont,text=introBlue}
+]
+  \path[use as bounding box] (0,0) rectangle (15,11);
+
+  \node[anchor=north west,problemaEtiqueta] at (0.1,10.85) {ALCANCE Y DELIMITACIÓN};
+  \draw[udaSky,line width=0.5pt] (0.1,10.42) -- (4.2,10.42);
+  \node[anchor=north west,font=\fontfamily{phv}\selectfont\fontsize{17}{20}\selectfont] at (0.1,10.05)
+    {Del proyecto de diseño\\\textbf{al alcance de la evidencia}};
+
+  % Semicírculo y arco de conexión: síntesis cualitativa de las condiciones.
+  \fill[introBlue!12!white] (8.35,8.30)
+    arc[start angle=90,end angle=270,radius=3.35] -- cycle;
+  \draw[udaSky,line width=0.7pt] (8.35,8.60)
+    arc[start angle=90,end angle=270,radius=3.65];
+  \draw[udaSky,line width=0.6pt] (4.15,8.60) -- (8.35,8.60);
+  \draw[udaSky,line width=0.6pt] (4.40,4.95) -- (4.70,4.95);
+  \draw[udaSky,line width=0.6pt] (4.15,1.30) -- (8.35,1.30);
+  \foreach \x/\y in {8.35/8.60,4.70/4.95,8.35/1.30}{
+    \fill[introBlue] (\x,\y) circle (0.065);
+  }
+  \draw[udaSky,line width=0.5pt] (8.35,8.30) -- (8.35,1.60);
+
+  % Condiciones del caso de estudio. Los números solo ordenan la lectura.
+  \node[anchor=north west,problemaNumero] at (0.10,8.35) {01};
+  \node[anchor=north west,problemaTitulo] at (0.62,8.35) {Unidad de análisis};
+  \node[anchor=north west,problemaTexto] at (0.62,7.73)
+    {Edificio de la Defensoría\\del Pueblo en San Cristóbal.};
+
+  \node[anchor=north west,problemaNumero] at (0.10,5.65) {02};
+  \node[anchor=north west,problemaTitulo] at (0.62,5.65) {Trabajo incluido};
+  \node[anchor=north west,problemaTexto] at (0.62,5.03)
+    {Matriz, modelo energético\\y comparación de\\escenarios de diseño.};
+
+  \node[anchor=north west,problemaNumero] at (0.10,2.58) {03};
+  \node[anchor=north west,problemaTitulo] at (0.62,2.58) {Condiciones declaradas};
+  \node[anchor=north west,problemaTexto] at (0.62,1.96)
+    {Clima, cargas, horarios\\y propiedades del modelo.};
+
+  % Problema central, situado sobre la superficie semicircular.
+  \node[anchor=north west,problemaEtiqueta,text=introBlue] at (5.57,6.22) {TIPO DE ESTUDIO};
+  \node[anchor=north west,font=\fontfamily{phv}\selectfont\bfseries\fontsize{11.5}{14}\selectfont] at (5.57,5.72)
+    {Evaluación\\prospectiva y\\comparativa};
+  \node[anchor=north west,problemaTexto] at (5.57,3.86)
+    {Resultados\\de simulación.};
+  \draw[->,introOrange,line width=1pt] (8.48,5.45) -- (9.03,5.45);
+
+  % Evaluación requerida: mismo alcance del texto de la investigación.
+  \node[anchor=north west,problemaEtiqueta,text=introBlue] at (9.20,8.16) {FUERA DEL ALCANCE EJECUTADO};
+  \node[anchor=north west,font=\fontfamily{phv}\selectfont\bfseries\fontsize{16}{19}\selectfont] at (9.20,7.60)
+    {Delimitar las\\conclusiones};
+  \node[anchor=north west,problemaTexto] at (9.20,6.12)
+    {Los resultados no sustituyen\\la verificación del edificio.};
+
+  \foreach \y in {4.67,3.15,1.63}{
+    \path[draw=udaSky!75!white,fill=introSoft,line width=0.55pt,rounded corners=5pt]
+      (9.20,\y-0.60) rectangle (14.85,\y+0.60);
+    \fill[white] (9.77,\y) circle (0.29);
+  }
+  \node[anchor=west,problemaTitulo] at (10.31,4.87) {Operación medida};
+  \node[anchor=west,problemaTexto] at (10.31,4.43) {Sin calibración ni monitoreo};
+  \node[anchor=west,problemaTitulo] at (10.31,3.35) {Proyecto ejecutivo};
+  \node[anchor=west,problemaTexto] at (10.31,2.91) {Sin diseño HVAC detallado};
+  \node[anchor=west,problemaTitulo] at (10.31,1.83) {Cierre económico};
+  \node[anchor=west,problemaTexto] at (10.31,1.39) {Sin presupuesto definitivo};
+
+  % Iconos lineales de energía, temperatura y materialidad.
+  \draw[introBlue,line width=0.85pt,line join=round]
+    (9.81,4.87) -- (9.64,4.65) -- (9.77,4.65) -- (9.72,4.46) -- (9.92,4.71) -- (9.79,4.71) -- cycle;
+  \draw[introBlue,line width=0.8pt,rounded corners=1.2pt]
+    (9.71,3.11) -- (9.71,3.34) -- (9.82,3.34) -- (9.82,3.11);
+  \draw[introBlue,line width=0.8pt] (9.765,3.04) circle (0.105);
+  \draw[introBlue,line width=0.75pt] (9.765,3.10) -- (9.765,3.25);
+  \draw[introBlue,line width=0.8pt,line join=round]
+    (9.56,1.70) -- (9.77,1.83) -- (9.98,1.70) -- (9.77,1.57) -- cycle;
+  \draw[introBlue,line width=0.8pt,line join=round]
+    (9.56,1.60) -- (9.77,1.47) -- (9.98,1.60);
+
+  \node[anchor=south west,problemaEtiqueta] at (0.10,0.15)
+    {DEFENSORÍA DEL PUEBLO · SAN CRISTÓBAL};
+  \node[anchor=south east,problemaEtiqueta] at (14.85,0.15)
+    {Caso \quad / \quad Evaluación \quad / \quad Límites};
+\end{tikzpicture}
+\endgroup

@@ -1,4 +1,4 @@
-\clearpage
+\par\medskip
 \section{Influencia del datacenter y energía operacional estimada}
 \label{sec:revision-datacenter}
 El datacenter aporta 40.196,11 kWh térmicos/año en el caso base: el 47,42\,\% de la demanda de enfriamiento. Para distinguir su peso se presenta también la suma de las demás zonas. Esta exclusión es un procesamiento de las corridas existentes: mantiene sus intercambios térmicos con el datacenter y no equivale a simular la eliminación ni la reducción de su carga.
@@ -22,7 +22,7 @@ En las zonas distintas del datacenter, C3 revisión 02 reduce la demanda de 44.5
 \caption{Composición de la demanda de enfriamiento por escenario}
 \fuente{Elaboración propia con registros anuales por zona. DC: datacenter. Se conserva la carga en todas las simulaciones.}
 \end{figure}
-\clearpage
+\par\medskip
 \subsection{Estimación eléctrica y denominador de intensidad}
 La electricidad de enfriamiento se reconstruye como $E_{fr}=\sum_z Q_{fr,z}/COP_z$, con las eficiencias constantes de la configuración de climatización simple. La reconstrucción del CB con la configuración conservada en C1 reproduce los 45.258,71 kWh exportados por DesignBuilder, con una diferencia inferior a 0,01 kWh. No representa el rendimiento estacional medido de equipos seleccionados. Equipos e iluminación proceden de los medidores anuales de EnergyPlus; se suman a la electricidad de enfriamiento estimada, no a la demanda térmica.
 \begin{table}[H]\centering

@@ -10,7 +10,7 @@
 
 
 
-\vspace*{1.15cm}
+
 \section{Diseño y enfoque de la investigación}
 
 \begin{textoDosTerciosGrafico}{\graficoDisenoEnfoqueMetodologia}{Diseño y enfoque metodológico de la investigación}{Diagrama original de la investigación.}
@@ -23,8 +23,8 @@ La investigación es no experimental, cuantitativa, prospectiva y comparativa. E
 El enfoque se basa en la evaluación de escenarios mediante herramientas BIM y simulación energética. La investigación no busca medir un edificio en operación, sino estimar el comportamiento energético de un proyecto arquitectónico a partir de información técnica disponible, datos climáticos y modelos de simulación.
 \end{textoDosTerciosGrafico}
 
-\clearpage
-\vspace*{1.15cm}
+\par\medskip
+
 \section{Caso de estudio y unidad de análisis}
 
 \begin{textoDosTercios}
@@ -35,8 +35,8 @@ El modelo base corresponde al diseño actual del edificio, incluyendo su geometr
 La unidad de análisis se delimita al desempeño ambiental y energético del proyecto, por lo que no se evalúa la operación real de un edificio construido. Esta decisión permite trabajar con información de diseño y comparar alternativas bajo condiciones equivalentes de simulación.
 \end{textoDosTercios}
 
-\clearpage
-\vspace*{1.15cm}
+\par\medskip
+
 \section{Fases metodológicas}
 
 \tercioTextoTikz{%
@@ -45,8 +45,8 @@ La metodología se organiza en seis fases relacionadas. Cada una transforma los 
 La lectura secuencial expresa que el proceso mantiene trazabilidad entre los datos de entrada, la construcción del modelo, la simulación de escenarios y la interpretación de resultados. También permite regresar a fases previas cuando la validación exige ajustar parámetros o supuestos.
 }{\graficoFasesMetodologicas}{Secuencia y productos de las seis fases metodológicas}{Diagrama original de la investigación.}
 
-\clearpage
-\vspace*{1.15cm}
+\par\medskip
+
 \section{Fuentes de información y datos de entrada}
 
 \begin{textoDosTercios}
@@ -57,8 +57,8 @@ La investigación utilizó información técnica del proyecto y del contexto cli
 La documentación utilizada comprende el modelo arquitectónico de referencia en Revit y los archivos del modelo energético. Las propiedades térmicas proceden de las construcciones y materiales registrados en el IDF. La correspondencia con las especificaciones definitivas y el juego coordinado de planos debe comprobarse antes de la ejecución; no se atribuye una revisión integral a documentos cuya validación no está registrada.
 \end{textoDosTercios}
 
-\clearpage
-\vspace*{1.15cm}
+\par\medskip
+
 \subsection{Datos climáticos}
 
 \noindent
@@ -67,7 +67,7 @@ La documentación utilizada comprende el modelo arquitectónico de referencia en
 \rmfamily\fontsize{12}{18}\selectfont
 Se utilizó como insumo climático principal el archivo climático horario EPW de San Cristóbal, correspondiente a la estación San Cristóbal International Airport y construido como año meteorológico típico a partir del periodo 2011--2025. Este archivo contiene 8760 registros horarios y permite configurar las condiciones exteriores del modelo en DesignBuilder/EnergyPlus.
 
-La lectura preliminar del EPW muestra una temperatura media anual de $24,28\,^{\circ}\mathrm{C}$, con valores horarios entre $15,70\,^{\circ}\mathrm{C}$ y $32,90\,^{\circ}\mathrm{C}$. La humedad relativa media es de $81,37\,$\%, la radiación global horizontal anual alcanza $2.150,50\,\mathrm{kWh}/\mathrm{m}^{2}$, equivalente a $5,89\,\mathrm{kWh}/\mathrm{m}^{2}$ por día, y la velocidad media del viento es de $4,90\,\mathrm{m/s}$. Estos valores confirman que el caso de estudio debe evaluarse como una edificación ubicada en un clima cálido-húmedo, con alta incidencia solar y potencial de ventilación natural.
+El procesamiento climático comprendió medias, extremos y agregados mensuales, además de la revisión de las series horarias. Los resultados y su interpretación arquitectónica se presentan en la sección~\ref{sec:clima-caso}, evitando repetir aquí el diagnóstico del caso.
 \end{minipage}\par\vspace{0.5cm}
 \noindent\begin{minipage}[t]{\textwidth}
 \vspace{0pt}
@@ -77,8 +77,8 @@ La lectura preliminar del EPW muestra una temperatura media anual de $24,28\,^{\
     \toprule
     Variable & Unidad & Uso metodológico \\
     \midrule
-    Temperatura de bulbo seco & $^{\circ}\mathrm{C}$ & Condición exterior para cargas térmicas y confort. \\
-    Punto de rocío & $^{\circ}\mathrm{C}$ & Estimación de humedad relativa y condición higrotérmica. \\
+    Temperatura de bulbo seco & $\text{\textdegree C}$ & Condición exterior para cargas térmicas y confort. \\
+    Punto de rocío & $\text{\textdegree C}$ & Estimación de humedad relativa y condición higrotérmica. \\
     Radiación directa y difusa & $\mathrm{kWh}/\mathrm{m}^{2}$ & Evaluación de ganancias solares y control de sombreamiento. \\
     Velocidad y dirección del viento & $\mathrm{m/s}$ y grados & Análisis del potencial de ventilación natural. \\
     Presión atmosférica & Pa & Condición atmosférica de entrada para simulación. \\
@@ -89,8 +89,8 @@ La lectura preliminar del EPW muestra una temperatura media anual de $24,28\,^{\
   \fuente{Basado en el archivo climático EPW de San Cristóbal.}
 \end{minipage}
 
-\clearpage
-\vspace*{1.15cm}
+\par\medskip
+
 \subsection{Condiciones de uso y ocupación}
 
 \noindent
@@ -118,8 +118,8 @@ Se configuraron ocupación, horarios, cargas internas, iluminación, ventilació
   \fuente{Construcción metodológica a partir de los datos del estudio.}
 \end{minipage}
 
-\clearpage
-\vspace*{1.15cm}
+\par\medskip
+
 \section{Herramientas de simulación y análisis}
 
 \begin{textoDosTercios}
@@ -150,8 +150,8 @@ En esta fase se configuraron los principales parámetros térmicos:
 \end{itemize}
 \end{textoDosTercios}
 
-\clearpage
-\vspace*{1.15cm}
+\par\medskip
+
 \section{Escenarios de simulación (CB, C1, C2, C3)}
 
 \begin{textoDosTercios}
@@ -179,11 +179,11 @@ Las simulaciones evaluaron intercambios térmicos y demanda de enfriamiento bajo
 El escenario base estableció la línea de comparación. Los escenarios optimizados permitieron medir el impacto de estrategias pasivas, materiales sostenibles y combinación de ambas. Esta comparación permitió pasar de una valoración cualitativa de las estrategias a una evaluación cuantitativa de su incidencia.
 \end{textoDosTercios}
 
-\clearpage
-\vspace*{1.15cm}
+\par\medskip
+
 \input{insumos/matriz-metodologia}
 \input{insumos/objetivos-metodologia-control}
-\clearpage
+\par\medskip
 \section{Procedimiento y validación del modelo}
 
 \begin{textoDosTercios}
@@ -220,3 +220,15 @@ La evaluación económica y el análisis de ciclo de vida quedan fuera del alcan
 
 El producto final de la metodología es una propuesta de optimización del diseño arquitectónico mediante estrategias pasivas y materiales sostenibles. Esta propuesta se apoya en evidencia cuantitativa derivada de simulaciones, comparación de escenarios e identificación de prioridades de implementación.
 \end{textoDosTercios}
+
+
+\subsection{Procesamiento complementario del confort}
+Se extrajeron PMV y PPD horarios de los archivos ESO para seis oficinas, conservando el calendario 2025 y la ventana de lunes a sábado de 08:00 a 18:00, sin festivos adicionales (3.130 horas por zona). Se calcularon la media de PMV, la media de PPD y la fracción de intervalos con $|\mathrm{PMV}|\leq0,5$. Esta fracción se utilizó como diagnóstico comparativo entre corridas y se distinguió de una evaluación integral de WELL, que requiere verificar cobertura espacial y régimen de acondicionamiento. El procesamiento conserva los supuestos de actividad, vestimenta y velocidad del aire definidos en cada modelo; su sensibilidad y adecuación al uso real condicionan la interpretación.
+
+
+\paragraph{Supuestos de Fanger conservados en las cinco corridas.}
+Las seis oficinas comparten una actividad de 123 W/persona, eficiencia de trabajo externo nula y velocidad del aire de 0,137 m/s. El aislamiento de ropa es 0,5 clo del 1 de enero al 1 de abril y del 1 de octubre al 31 de diciembre; del 2 de abril al 30 de septiembre es 1,0 clo. Estos horarios se verificaron en los objetos People y Schedule:Compact de los cinco IDF. Son entradas de simulación y no observaciones de vestimenta o velocidad local. Mantenerlos constantes facilita la comparación, pero su representatividad en San Cristóbal requiere contraste con los usuarios; en particular, la velocidad fija no reproduce por sí sola la variación del aire asociada a la apertura de ventanas.
+
+
+\subsection{Ensayo complementario de cargas internas}
+La sensibilidad del datacenter se estudió después de la comparación principal. En copias aisladas de CB y C3 revisión 02 se modificó únicamente la densidad de potencia del objeto OtherEquipment de 1PA-DC, de 500 a 150 y 300 W/m\textsuperscript{2}. Se conservaron clima, geometría, horarios, sistemas y propiedades de cada caso. Se realizaron dos controles y cuatro ensayos aceptados; sus resultados no se incorporaron como escenarios nuevos a la serie principal de cuatro casos y cinco corridas. La aceptación exigió archivo de resultados completo y ausencia de errores severos; la estabilización numérica y los ensayos descartados se documentan en la sección~\ref{sec:sensibilidad-dc}.

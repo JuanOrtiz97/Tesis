@@ -1,0 +1,44 @@
+[
+  {
+    "ensayo": "CB-control",
+    "final": "EnergyPlus Completed Successfully-- 318 Warning; 0 Severe Errors; Elapsed Time=00hr 02min 36.68sec",
+    "idf_sha256": "acabd4ecb12e638da29af3d714363424e097a7fd813219474c020fe81231e607",
+    "epw_sha256": "63df03004deab4e056e97b767da2051a229943d2aa85cc80fce6bf23dfe7674d",
+    "carpeta": "C:\\Users\\juand\\Documents\\New project 3\\Tesis-limpia\\output\\sensibilidad-datacenter\\CB-control"
+  },
+  {
+    "ensayo": "C3-control",
+    "final": "EnergyPlus Completed Successfully-- 324 Warning; 0 Severe Errors; Elapsed Time=00hr 02min 56.91sec",
+    "idf_sha256": "b7edc7f846e919fa9a81eb45df734f1ce6a06a8d63124e95c533853d560a350c",
+    "epw_sha256": "63df03004deab4e056e97b767da2051a229943d2aa85cc80fce6bf23dfe7674d",
+    "carpeta": "C:\\Users\\juand\\Documents\\New project 3\\Tesis-limpia\\output\\sensibilidad-datacenter\\C3-control"
+  },
+  {
+    "ensayo": "CB-150",
+    "final": "EnergyPlus Completed Successfully-- 318 Warning; 0 Severe Errors; Elapsed Time=00hr 02min 55.82sec",
+    "idf_sha256": "ac07e6a70d330bd79daea8a300dd6edfa05f65149118cfe009e32ed965ee2410",
+    "epw_sha256": "63df03004deab4e056e97b767da2051a229943d2aa85cc80fce6bf23dfe7674d",
+    "carpeta": "C:\\Users\\juand\\Documents\\New project 3\\Tesis-limpia\\output\\sensibilidad-datacenter\\CB-150"
+  },
+  {
+    "ensayo": "C3-150-warmup500",
+    "final": "EnergyPlus Completed Successfully-- 324 Warning; 0 Severe Errors; Elapsed Time=00hr 03min 11.45sec",
+    "idf_sha256": "a0f8c7fd5f82a6125ac8c00f6611f4ca818b1779cb119f5d2c4ead80a930606d",
+    "epw_sha256": "63df03004deab4e056e97b767da2051a229943d2aa85cc80fce6bf23dfe7674d",
+    "carpeta": "C:\\Users\\juand\\Documents\\New project 3\\Tesis-limpia\\output\\sensibilidad-datacenter\\C3-150-warmup500"
+  },
+  {
+    "ensayo": "CB-300-verificado",
+    "final": "EnergyPlus Completed Successfully-- 318 Warning; 0 Severe Errors; Elapsed Time=00hr 02min 51.88sec",
+    "idf_sha256": "6361dc3b331b69c37642a0f920d7f01b760519a20df007fa1d15ca1c0295e045",
+    "epw_sha256": "63df03004deab4e056e97b767da2051a229943d2aa85cc80fce6bf23dfe7674d",
+    "carpeta": "C:\\Users\\juand\\Documents\\New project 3\\Tesis-limpia\\output\\sensibilidad-datacenter\\CB-300-verificado"
+  },
+  {
+    "ensayo": "C3-300",
+    "final": "EnergyPlus Completed Successfully-- 324 Warning; 0 Severe Errors; Elapsed Time=00hr 02min 43.13sec",
+    "idf_sha256": "92abff2cea82d4fe56d1aa6038a16e3b03f23f0aa6f94520cf4d042d8b7e5b22",
+    "epw_sha256": "63df03004deab4e056e97b767da2051a229943d2aa85cc80fce6bf23dfe7674d",
+    "carpeta": "C:\\Users\\juand\\Documents\\New project 3\\Tesis-limpia\\output\\sensibilidad-datacenter\\C3-300"
+  }
+]

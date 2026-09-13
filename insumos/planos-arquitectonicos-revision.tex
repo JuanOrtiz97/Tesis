@@ -1,0 +1,35 @@
+\subsection{Documentación arquitectónica de referencia}
+\label{sec:planos-revit}
+Las láminas A01--A03 se exportaron del modelo suministrado \texttt{2025-06-18 DEFENSORIA DEL PUEBLO-miguel.rvt}. El emplazamiento identifica la calle Alberto Spencer y un predio de 12,00 por 20,00 m. Se presentan como documentación del diseño disponible; no se asume que constituyan el juego definitivo aprobado ni que sus superficies coincidan automáticamente con las zonas térmicas.
+\begin{table}[htbp]\centering
+\caption{Superficies arquitectónicas declaradas en la lámina A01}
+\begin{tabular}{lr}\toprule
+Concepto & Superficie (m\textsuperscript{2}) \\ \midrule
+Terreno & 240,00 \\
+Planta baja, área bruta & 126,00 \\
+Primera planta alta, área bruta & 137,80 \\
+Segunda planta alta, área bruta & 93,28 \\
+Total de áreas brutas & 357,08 \\
+\bottomrule\end{tabular}
+\fuente{Lámina A01 del modelo arquitectónico suministrado. Suma verificada: 126,00 + 137,80 + 93,28 = 357,08 m\textsuperscript{2}.}
+\end{table}
+Los 357,08 m\textsuperscript{2} brutos de la lámina y los 281,6308 m\textsuperscript{2} explícitos del IDF tienen definiciones y coberturas distintas. Se conserva el segundo denominador en la comparación energética para no alterar retrospectivamente su método. Ninguno se declara superficie de referencia energética Minergie sin delimitar primero el perímetro térmico y aplicar sus reglas de cómputo.
+
+\begin{figure}[H]\centering
+\includegraphics[width=.84\textwidth,height=.50\textheight,keepaspectratio]{plano-revit-a01.pdf}
+\caption{Emplazamiento del proyecto en la calle Alberto Spencer}
+\fuente{Lámina A01 del modelo Revit suministrado. Reproducción reducida: no utilizar la escala impresa para medir esta figura.}
+\end{figure}
+\begin{figure}[H]\centering
+\includegraphics[width=.98\textwidth,height=.64\textheight,keepaspectratio]{plano-revit-a02.pdf}
+\caption{Planta baja y primera planta alta del diseño arquitectónico}
+\fuente{Lámina A02 del modelo Revit suministrado. Reproducción reducida; las cotas pertenecen al documento de origen.}
+\end{figure}
+La planta baja reúne la recepción y el apoyo junto al frente de acceso, la sala de espera en el sector central y las oficinas hacia el fondo. En la primera planta alta, la circulación conecta las oficinas y salas de mediación alrededor del vacío interior. Esta organización ayuda a interpretar la zonificación energética: las oficinas se analizan individualmente y los patios se distinguen de los recintos ocupados. Los rótulos arquitectónicos y los códigos del modelo se deben conciliar antes de trasladar indicadores entre ambos documentos; una coincidencia de planta no garantiza igualdad de superficie ni de límites térmicos.
+
+\begin{figure}[H]\centering
+\includegraphics[width=.98\textwidth,height=.62\textheight,keepaspectratio]{plano-revit-a03.pdf}
+\caption{Segunda planta alta y cubierta del diseño arquitectónico}
+\fuente{Lámina A03 del modelo Revit suministrado. Reproducción reducida.}
+\end{figure}
+La lámina A01 menciona bloque de pómez y steel frame en paredes, además de OSB y lámina asfáltica en cubierta. Esta descripción arquitectónica no equivale a las propiedades genéricas del modelo energético. La comparación CB--C3 representa las construcciones documentadas en el IDF; antes de extrapolarla al proyecto ejecutivo se requiere conciliar cada sistema por recinto y verificar producto, espesor y conductividad. Las figuras proporcionan respaldo geométrico, no una validación automática de la correspondencia BIM--BES.
