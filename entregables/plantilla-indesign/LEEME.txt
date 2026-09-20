@@ -1,0 +1,9 @@
+PLANTILLA MAESTRA DE TESIS UDA - INDESIGN
+
+Formato: A4 horizontal, 297 x 210 mm.
+Reticula: 6 columnas, medianil 5 mm, margenes 18 mm y 4 bandas horizontales.
+Linea base: 4 mm desde el margen superior.
+Maestras: A-Contenido Marfil, B-Contenido Oscuro y C-Portada Coral.
+Capas: fondos, imagenes, graficos, texto, anotaciones y guias.
+Incluye folios automaticos, colores, estilos de parrafo y estilos de objeto.
+Abra el archivo INDT para iniciar una copia nueva sin alterar la plantilla.
