@@ -64,6 +64,10 @@
 \definecolor{pilotoDosMustard}{HTML}{E6A40C}
 \definecolor{pilotoDosIvory}{HTML}{F2EEE5}
 \definecolor{pilotoDosInk}{HTML}{28243A}
+% Piloto 3: mezcla del coral del Piloto 1 con la reticula modular del Piloto 2.
+\definecolor{pilotoMixNavy}{HTML}{25253F}
+\definecolor{pilotoMixIvory}{HTML}{F6F2EA}
+\definecolor{pilotoMixInk}{HTML}{25253F}
 
 % Los enlaces de citas quedan visibles para facilitar la navegación en el PDF.
 \hypersetup{
@@ -989,11 +993,13 @@ This study assessed the design of the Ombudsman’s Office on San Cristóbal Isl
 \pagenumbering{arabic}
 \onehalfspacing
 
-\ifdefined\PilotoDos
+\ifdefined\PilotoTres
+  \include{capitulos/01-introduccion-piloto3}
+\else\ifdefined\PilotoDos
   \include{capitulos/01-introduccion-piloto2}
 \else
   \include{capitulos/01-introduccion}
-\fi
+\fi\fi
 \include{capitulos/02-marco-teorico}
 \include{capitulos/03-metodologia}
 \include{capitulos/04-resultados-analisis}

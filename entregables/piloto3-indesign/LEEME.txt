@@ -1,0 +1,7 @@
+PILOTO 3 - MIX EDITORIAL, CAPITULO 1
+
+Documento A4 horizontal de 9 paginas.
+Grilla: 6 columnas, margen 18 mm, medianil 5 mm y 4 bandas horizontales.
+La capa REFERENCIA_PDF contiene las paginas 16-24 de piloto3.pdf y esta bloqueada.
+La capa CONTENIDO_EDITABLE queda activa para reconstruir o ajustar la composicion.
+Incluye muestras P3 Coral, P3 Azul tinta y P3 Marfil, ademas de estilos de parrafo base.

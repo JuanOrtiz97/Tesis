@@ -1,0 +1,18 @@
+% Piloto 3: portada coral del Piloto 1 + reticula modular del Piloto 2.
+\begingroup
+\colorlet{pilotoDosViolet}{pilotoMixNavy}
+\colorlet{pilotoDosMustard}{pilotoCoral}
+\colorlet{pilotoDosIvory}{pilotoMixIvory}
+\colorlet{pilotoDosInk}{pilotoMixInk}
+\colorlet{pilotoInk}{pilotoMixInk}
+% La portada y su indice conservan la composicion del Piloto 1.
+\let\seccionPilotoUDA\seccionPilotoDosUDA
+\let\continuacionPilotoUDA\continuacionPilotoDosUDA
+\let\pilotoTextoImagen\pilotoDosTextoImagen
+\let\endpilotoTextoImagen\endpilotoDosTextoImagen
+\let\pilotoTextoGrafico\pilotoDosTextoGrafico
+\let\endpilotoTextoGrafico\endpilotoDosTextoGrafico
+\input{capitulos/01-introduccion}
+\nopagecolor
+\color{black}
+\endgroup
