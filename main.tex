@@ -49,10 +49,14 @@
 \definecolor{introSoft}{HTML}{F3F5F7}
 \definecolor{guiaTercio}{HTML}{D23B3B}
 \definecolor{guiaCaja}{HTML}{2D7F9D}
-% Paleta del piloto editorial derivada de la plantilla InDesign.
-\definecolor{pilotoLime}{HTML}{ECF22E}
-\definecolor{pilotoGreen}{HTML}{1B4643}
-\definecolor{pilotoSoft}{HTML}{F5F7F2}
+% Paleta del piloto editorial reinterpretada desde la referencia Catania
+% extra-moenia: coral dominante, tinta neutra y acentos diagramaticos suaves.
+\definecolor{pilotoCoral}{HTML}{E83C45}
+\definecolor{pilotoInk}{HTML}{272729}
+\definecolor{pilotoRose}{HTML}{F4D7D9}
+\definecolor{pilotoBlue}{HTML}{D9EEF1}
+\definecolor{pilotoOchre}{HTML}{F2D08B}
+\definecolor{pilotoSoft}{HTML}{F8F6F3}
 
 % Los enlaces de citas quedan visibles para facilitar la navegación en el PDF.
 \hypersetup{
@@ -554,43 +558,63 @@
 \newcommand{\capituloPilotoUDA}[3]{%
   \clearpage
   \thispagestyle{empty}%
-  \pagecolor{pilotoLime}%
+  \pagecolor{pilotoCoral}%
   \refstepcounter{chapter}%
   \setcounter{section}{0}%
   \setcounter{capituloItemUDA}{0}%
   \addcontentsline{toc}{chapter}{\protect\numberline{\thechapter}#1}%
   \markboth{#1}{#1}%
   \vspace*{-1.10cm}%
-  {\sffamily\color{pilotoGreen}%
+  {\color{white}%
+    \noindent\sffamily\fontsize{7.5}{9}\selectfont
+    MAESTRÍA EN ARQUITECTURA SOSTENIBLE
+    \hfill UNIVERSIDAD DEL AZUAY\par
+    \vspace{0.14cm}\rule{\textwidth}{0.45pt}\par
+    \vspace{1.05cm}%
     \noindent
-    \begin{minipage}[t]{0.58\textwidth}
+    \begin{minipage}[t]{0.62\textwidth}
       \vspace{0pt}%
-      {\bfseries\fontsize{42}{44}\selectfont\thechapter.\par}
-      \vspace{0.18cm}%
-      {\bfseries\fontsize{25}{29}\selectfont\MakeUppercase{#1}\par}
-      \vspace{0.28cm}%
-      {\fontsize{11}{14}\selectfont #2\par}
-      \vspace{0.65cm}%
-      \textcolor{pilotoGreen}{\rule{\linewidth}{1.4pt}}
+      {\rmfamily\bfseries\fontsize{31}{34}\selectfont
+        Capítulo \thechapter\par\vspace{0.10cm}#1\par}
+      \vspace{0.32cm}%
+      {\sffamily\fontsize{9.5}{12.5}\selectfont #2\par}
+      \vspace{0.60cm}%
+      \centering
+      \begin{tikzpicture}[x=0.72cm,y=0.72cm,line cap=round,line join=round]
+        \draw[white,line width=0.55pt] (0,1.1)--(2.1,2.3)--(4.5,1.05)--(2.4,-0.25)--cycle;
+        \draw[white,line width=0.55pt] (0,1.1)--(0,-1.3)--(2.4,-2.6)--(2.4,-0.25);
+        \draw[white,line width=0.55pt] (2.4,-2.6)--(4.5,-1.25)--(4.5,1.05);
+        \draw[white,line width=0.45pt] (0.55,0.8)--(2.15,1.68)--(3.82,0.82)--(2.25,-0.14)--cycle;
+        \draw[white,line width=0.45pt] (0.55,0.8)--(0.55,-0.75)--(2.25,-1.68)--(2.25,-0.14);
+        \draw[white,line width=0.45pt] (2.25,-1.68)--(3.82,-0.72)--(3.82,0.82);
+        \draw[white,line width=0.38pt] (1.15,0.48)--(1.15,-1.08) (3.12,0.46)--(3.12,-1.08);
+        \draw[white,line width=0.38pt] (1.65,1.40)--(1.65,-0.82) (2.92,1.42)--(2.92,-1.18);
+        \foreach \p in {(0.35,1.75),(4.62,1.68),(0.05,-1.95),(4.65,-1.75),(2.25,2.65)}
+          \fill[white] \p circle (0.035);
+      \end{tikzpicture}
     \end{minipage}%
     \hfill
-    \begin{minipage}[t]{0.35\textwidth}
-      \vspace{0.50cm}%
-      \raggedleft\fontsize{9}{12}\selectfont #3
+    \begin{minipage}[t]{0.29\textwidth}
+      \vspace{0.12cm}%
+      {\sffamily\bfseries\fontsize{7.5}{9}\selectfont CONTENIDO\par}
+      \vspace{0.30cm}%
+      {\sffamily\fontsize{8.2}{10.5}\selectfont #3}
     \end{minipage}%
     \par\vfill
-    \noindent{\bfseries\fontsize{8}{10}\selectfont UNIVERSIDAD DEL AZUAY}\par
+    \noindent\sffamily\fontsize{7}{8.5}\selectfont
+    JUAN ORTIZ\hfill CUENCA — ECUADOR\par
   }%
 }
 
 \newcommand{\itemPilotoUDA}[2]{%
   \par\noindent
-  \begin{minipage}[t]{0.18\linewidth}
-    \raggedleft\textcolor{pilotoGreen}{\sffamily\bfseries #1}%
+  \begin{minipage}[t]{0.17\linewidth}
+    \raggedright\color{white}\sffamily\bfseries #1%
   \end{minipage}\hfill
-  \begin{minipage}[t]{0.75\linewidth}
-    \raggedright\sffamily #2%
-  \end{minipage}\par\vspace{0.20cm}%
+  \begin{minipage}[t]{0.76\linewidth}
+    \raggedright\color{white}\sffamily #2%
+  \end{minipage}\par\vspace{0.13cm}%
+  \textcolor{pilotoRose}{\rule{\linewidth}{0.28pt}}\par\vspace{0.12cm}%
 }
 
 \newcommand{\seccionPilotoUDA}[1]{%
@@ -601,51 +625,47 @@
   \phantomsection
   \addcontentsline{toc}{section}{\protect\numberline{\thesection}#1}%
   \markright{#1}%
-  {\noindent\sffamily\fontsize{7.5}{9}\selectfont\color{pilotoGreen}%
-    CAPÍTULO 01\enspace\textcolor{pilotoLime}{|}\enspace INTRODUCCIÓN
+  {\noindent\sffamily\fontsize{7.2}{8.5}\selectfont\color{pilotoInk}%
+    CAPÍTULO 01\enspace\textcolor{pilotoCoral}{/}\enspace INTRODUCCIÓN
     \hfill
-    \colorbox{pilotoLime}{\makebox[0.72cm][c]{\bfseries\color{pilotoGreen}\thepage}}\par
-    \vspace{0.08cm}\textcolor{pilotoLime}{\rule{\textwidth}{0.45pt}}\par}
-  \vspace{0.32cm}%
+    \textcolor{pilotoCoral}{\bfseries\thepage}\par
+    \vspace{0.10cm}\textcolor{pilotoRose}{\rule{\textwidth}{0.45pt}}\par}
+  \vspace{0.42cm}%
   \noindent
-  \begin{tikzpicture}[baseline=(titulo.base)]
-    \node[circle,fill=pilotoLime,minimum size=0.92cm,inner sep=0pt,
-      text=pilotoGreen,font=\sffamily\bfseries\fontsize{12}{13}\selectfont] (numero) {\thesection};
-    \node[anchor=west,text=pilotoGreen,font=\sffamily\bfseries\fontsize{17}{20}\selectfont]
-      (titulo) at ([xshift=0.48cm]numero.east) {#1};
-  \end{tikzpicture}\par\vspace{0.42cm}%
+  {\sffamily\bfseries\fontsize{8}{10}\selectfont\color{pilotoCoral}\thesection\enspace/\par}
+  \vspace{0.05cm}%
+  {\rmfamily\bfseries\fontsize{21}{23}\selectfont\color{pilotoCoral}#1\par}
+  \vspace{0.24cm}%
 }
 
 \newcommand{\continuacionPilotoUDA}[1]{%
   \clearpage
   \thispagestyle{empty}%
-  {\noindent\sffamily\fontsize{7.5}{9}\selectfont\color{pilotoGreen}%
-    CAPÍTULO 01\enspace\textcolor{pilotoLime}{|}\enspace INTRODUCCIÓN
+  {\noindent\sffamily\fontsize{7.2}{8.5}\selectfont\color{pilotoInk}%
+    CAPÍTULO 01\enspace\textcolor{pilotoCoral}{/}\enspace INTRODUCCIÓN
     \hfill
-    \colorbox{pilotoLime}{\makebox[0.72cm][c]{\bfseries\color{pilotoGreen}\thepage}}\par
-    \vspace{0.08cm}\textcolor{pilotoLime}{\rule{\textwidth}{0.45pt}}\par}
-  \vspace{0.32cm}%
+    \textcolor{pilotoCoral}{\bfseries\thepage}\par
+    \vspace{0.10cm}\textcolor{pilotoRose}{\rule{\textwidth}{0.45pt}}\par}
+  \vspace{0.42cm}%
   \noindent
-  \begin{tikzpicture}[baseline=(titulo.base)]
-    \node[circle,draw=pilotoLime,line width=1pt,minimum size=0.92cm,inner sep=0pt,
-      text=pilotoGreen,font=\sffamily\bfseries\fontsize{12}{13}\selectfont] (numero) {\thesection};
-    \node[anchor=west,text=pilotoGreen,font=\sffamily\bfseries\fontsize{17}{20}\selectfont]
-      (titulo) at ([xshift=0.48cm]numero.east) {#1};
-  \end{tikzpicture}\par\vspace{0.55cm}%
+  {\sffamily\bfseries\fontsize{8}{10}\selectfont\color{pilotoCoral}\thesection\enspace/\par}
+  \vspace{0.05cm}%
+  {\rmfamily\bfseries\fontsize{21}{23}\selectfont\color{pilotoCoral}#1\par}
+  \vspace{0.46cm}%
 }
 
 \newenvironment{pilotoTextoImagen}[3]{%
   \def\pilotoArchivo{#1}%
   \def\pilotoCaption{#2}%
   \def\pilotoFuente{#3}%
-  \noindent\begin{minipage}[t]{0.445\textwidth}\vspace{0pt}%
-  \singlespacing\raggedright\sffamily\fontsize{8.5}{10.8}\selectfont\color{pilotoGreen}%
-  \setlength{\parskip}{3.5pt}%
+  \noindent\begin{minipage}[t]{0.405\textwidth}\vspace{0pt}%
+  \singlespacing\raggedright\sffamily\fontsize{7.75}{9.55}\selectfont\color{pilotoInk}%
+  \setlength{\parskip}{2.4pt}%
 }{%
   \end{minipage}\hfill
-  \begin{minipage}[t]{0.515\textwidth}\vspace{0pt}\centering
-    \includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{\pilotoArchivo}
-    \captionsetup{font={scriptsize,sf},labelfont=bf,justification=raggedright,singlelinecheck=false}%
+  \begin{minipage}[t]{0.555\textwidth}\vspace{0pt}\centering
+    \colorbox{pilotoSoft}{\includegraphics[width=0.965\linewidth,height=0.64\textheight,keepaspectratio]{\pilotoArchivo}}
+    \captionsetup{font={scriptsize,sf,color=pilotoInk},labelfont={bf,color=pilotoCoral},justification=raggedright,singlelinecheck=false}%
     \captionof{figure}{\pilotoCaption}
     \fuente{\pilotoFuente}
   \end{minipage}%
@@ -655,14 +675,24 @@
   \def\pilotoGrafico{#1}%
   \def\pilotoCaption{#2}%
   \def\pilotoFuente{#3}%
-  \noindent\begin{minipage}[t]{0.445\textwidth}\vspace{0pt}%
-  \singlespacing\raggedright\sffamily\fontsize{8.5}{10.8}\selectfont\color{pilotoGreen}%
-  \setlength{\parskip}{3.5pt}%
+  \noindent\begin{minipage}[t]{0.405\textwidth}\vspace{0pt}%
+  \singlespacing\raggedright\sffamily\fontsize{7.75}{9.55}\selectfont\color{pilotoInk}%
+  \setlength{\parskip}{2.4pt}%
 }{%
   \end{minipage}\hfill
-  \begin{minipage}[t]{0.515\textwidth}\vspace{0pt}\centering
-    \resizebox{\linewidth}{!}{\pilotoGrafico}
-    \captionsetup{font={scriptsize,sf},labelfont=bf,justification=raggedright,singlelinecheck=false}%
+  \begin{minipage}[t]{0.555\textwidth}\vspace{0pt}\centering
+    \begingroup
+      \colorlet{introOrange}{pilotoCoral}%
+      \colorlet{introBlue}{pilotoBlue}%
+      \colorlet{introDark}{pilotoInk}%
+      \colorlet{introSoft}{pilotoSoft}%
+      \colorlet{udaLime}{pilotoCoral}%
+      \colorlet{udaBlue}{pilotoBlue}%
+      \colorlet{udaSky}{pilotoRose}%
+      \colorlet{udaGray}{pilotoInk}%
+      \colorbox{pilotoSoft}{\resizebox{0.965\linewidth}{!}{\pilotoGrafico}}%
+    \endgroup
+    \captionsetup{font={scriptsize,sf,color=pilotoInk},labelfont={bf,color=pilotoCoral},justification=raggedright,singlelinecheck=false}%
     \captionof{figure}{\pilotoCaption}
     \fuente{\pilotoFuente}
   \end{minipage}%
