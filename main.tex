@@ -6,10 +6,12 @@
 \usepackage[spanish,es-tabla]{babel}
 \usepackage[none]{hyphenat}
 \usepackage{mathptmx}
+\usepackage[scaled=0.94]{helvet}
 \usepackage{icomma}
 \usepackage{amsmath}
 \usepackage{setspace}
 \usepackage{geometry}
+\usepackage{pdflscape}
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{booktabs}
@@ -47,6 +49,10 @@
 \definecolor{introSoft}{HTML}{F3F5F7}
 \definecolor{guiaTercio}{HTML}{D23B3B}
 \definecolor{guiaCaja}{HTML}{2D7F9D}
+% Paleta del piloto editorial derivada de la plantilla InDesign.
+\definecolor{pilotoLime}{HTML}{ECF22E}
+\definecolor{pilotoGreen}{HTML}{1B4643}
+\definecolor{pilotoSoft}{HTML}{F5F7F2}
 
 % Los enlaces de citas quedan visibles para facilitar la navegación en el PDF.
 \hypersetup{
@@ -541,6 +547,125 @@
   {\normalfont\bfseries\fontsize{16}{19}\selectfont
     \thechapter.\enspace\MakeUppercase{#1}\par}%
   \vspace{12pt}%
+}
+
+% Recursos del piloto InDesign-LaTeX. Se mantienen separados de las macros
+% generales para que la prueba del capitulo 1 sea reversible y comparable.
+\newcommand{\capituloPilotoUDA}[3]{%
+  \clearpage
+  \thispagestyle{empty}%
+  \pagecolor{pilotoLime}%
+  \refstepcounter{chapter}%
+  \setcounter{section}{0}%
+  \setcounter{capituloItemUDA}{0}%
+  \addcontentsline{toc}{chapter}{\protect\numberline{\thechapter}#1}%
+  \markboth{#1}{#1}%
+  \vspace*{-1.10cm}%
+  {\sffamily\color{pilotoGreen}%
+    \noindent
+    \begin{minipage}[t]{0.58\textwidth}
+      \vspace{0pt}%
+      {\bfseries\fontsize{42}{44}\selectfont\thechapter.\par}
+      \vspace{0.18cm}%
+      {\bfseries\fontsize{25}{29}\selectfont\MakeUppercase{#1}\par}
+      \vspace{0.28cm}%
+      {\fontsize{11}{14}\selectfont #2\par}
+      \vspace{0.65cm}%
+      \textcolor{pilotoGreen}{\rule{\linewidth}{1.4pt}}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[t]{0.35\textwidth}
+      \vspace{0.50cm}%
+      \raggedleft\fontsize{9}{12}\selectfont #3
+    \end{minipage}%
+    \par\vfill
+    \noindent{\bfseries\fontsize{8}{10}\selectfont UNIVERSIDAD DEL AZUAY}\par
+  }%
+}
+
+\newcommand{\itemPilotoUDA}[2]{%
+  \par\noindent
+  \begin{minipage}[t]{0.18\linewidth}
+    \raggedleft\textcolor{pilotoGreen}{\sffamily\bfseries #1}%
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.75\linewidth}
+    \raggedright\sffamily #2%
+  \end{minipage}\par\vspace{0.20cm}%
+}
+
+\newcommand{\seccionPilotoUDA}[1]{%
+  \clearpage
+  \nopagecolor
+  \thispagestyle{empty}%
+  \refstepcounter{section}%
+  \phantomsection
+  \addcontentsline{toc}{section}{\protect\numberline{\thesection}#1}%
+  \markright{#1}%
+  {\noindent\sffamily\fontsize{7.5}{9}\selectfont\color{pilotoGreen}%
+    CAPÍTULO 01\enspace\textcolor{pilotoLime}{|}\enspace INTRODUCCIÓN
+    \hfill
+    \colorbox{pilotoLime}{\makebox[0.72cm][c]{\bfseries\color{pilotoGreen}\thepage}}\par
+    \vspace{0.08cm}\textcolor{pilotoLime}{\rule{\textwidth}{0.45pt}}\par}
+  \vspace{0.32cm}%
+  \noindent
+  \begin{tikzpicture}[baseline=(titulo.base)]
+    \node[circle,fill=pilotoLime,minimum size=0.92cm,inner sep=0pt,
+      text=pilotoGreen,font=\sffamily\bfseries\fontsize{12}{13}\selectfont] (numero) {\thesection};
+    \node[anchor=west,text=pilotoGreen,font=\sffamily\bfseries\fontsize{17}{20}\selectfont]
+      (titulo) at ([xshift=0.48cm]numero.east) {#1};
+  \end{tikzpicture}\par\vspace{0.42cm}%
+}
+
+\newcommand{\continuacionPilotoUDA}[1]{%
+  \clearpage
+  \thispagestyle{empty}%
+  {\noindent\sffamily\fontsize{7.5}{9}\selectfont\color{pilotoGreen}%
+    CAPÍTULO 01\enspace\textcolor{pilotoLime}{|}\enspace INTRODUCCIÓN
+    \hfill
+    \colorbox{pilotoLime}{\makebox[0.72cm][c]{\bfseries\color{pilotoGreen}\thepage}}\par
+    \vspace{0.08cm}\textcolor{pilotoLime}{\rule{\textwidth}{0.45pt}}\par}
+  \vspace{0.32cm}%
+  \noindent
+  \begin{tikzpicture}[baseline=(titulo.base)]
+    \node[circle,draw=pilotoLime,line width=1pt,minimum size=0.92cm,inner sep=0pt,
+      text=pilotoGreen,font=\sffamily\bfseries\fontsize{12}{13}\selectfont] (numero) {\thesection};
+    \node[anchor=west,text=pilotoGreen,font=\sffamily\bfseries\fontsize{17}{20}\selectfont]
+      (titulo) at ([xshift=0.48cm]numero.east) {#1};
+  \end{tikzpicture}\par\vspace{0.55cm}%
+}
+
+\newenvironment{pilotoTextoImagen}[3]{%
+  \def\pilotoArchivo{#1}%
+  \def\pilotoCaption{#2}%
+  \def\pilotoFuente{#3}%
+  \noindent\begin{minipage}[t]{0.445\textwidth}\vspace{0pt}%
+  \singlespacing\raggedright\sffamily\fontsize{8.5}{10.8}\selectfont\color{pilotoGreen}%
+  \setlength{\parskip}{3.5pt}%
+}{%
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.515\textwidth}\vspace{0pt}\centering
+    \includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{\pilotoArchivo}
+    \captionsetup{font={scriptsize,sf},labelfont=bf,justification=raggedright,singlelinecheck=false}%
+    \captionof{figure}{\pilotoCaption}
+    \fuente{\pilotoFuente}
+  \end{minipage}%
+}
+
+\newenvironment{pilotoTextoGrafico}[3]{%
+  \def\pilotoGrafico{#1}%
+  \def\pilotoCaption{#2}%
+  \def\pilotoFuente{#3}%
+  \noindent\begin{minipage}[t]{0.445\textwidth}\vspace{0pt}%
+  \singlespacing\raggedright\sffamily\fontsize{8.5}{10.8}\selectfont\color{pilotoGreen}%
+  \setlength{\parskip}{3.5pt}%
+}{%
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.515\textwidth}\vspace{0pt}\centering
+    \resizebox{\linewidth}{!}{\pilotoGrafico}
+    \captionsetup{font={scriptsize,sf},labelfont=bf,justification=raggedright,singlelinecheck=false}%
+    \captionof{figure}{\pilotoCaption}
+    \fuente{\pilotoFuente}
+  \end{minipage}%
 }
 
 \begin{document}
